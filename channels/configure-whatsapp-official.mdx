@@ -1,0 +1,94 @@
+---
+title: "Configure WhatsApp Business API (official)"
+sidebarTitle: "WhatsApp Business API"
+description: "Connect WhatsApp to BluBash through Meta's official API for high volume, stability, approved templates, and campaigns."
+---
+
+WhatsApp Business API is Meta's official connection and the recommended option for your business's main operation. It supports high message volume, comes with official support and a stability guarantee, unlocks Meta-approved templates and campaigns, and lets you keep using the WhatsApp Business app on your phone.
+
+## Before you start
+
+| Requirement | Details |
+| --- | --- |
+| Meta access | A Facebook account with access to your company's business portfolio in Meta Business. If you do not have one yet, you can create it during the connection. See the [Meta help center](https://www.facebook.com/business/help). |
+| Phone number | The number the channel will use. It cannot be in another BluBash channel. |
+| Payment method on Meta | Meta charges for messages directly. Without an active payment method on the Meta account, the channel does not work. |
+| Browser | Allow popup windows for the BluBash address. The connection happens in a Meta window. |
+| Team | At least one team created to be the **Default Team**. |
+
+## Connect WhatsApp Business API
+
+<Steps>
+  <Step title="Create the channel">
+    In **Channels**, click **Add Channel** and choose the **WhatsApp Business API** card.
+  </Step>
+  <Step title="Fill in the details">
+    Fill in **Channel Name** and **Default Team**. In **AI Agent (Optional)**, choose an active AI agent or keep **No agent assigned**. Click **Create Channel**.
+  </Step>
+  <Step title="Open the Meta connection">
+    On the **WhatsApp Business API Setup** screen, click **Connect WhatsApp Account**. A Meta window opens. Follow the instructions in the popup window.
+  </Step>
+  <Step title="Sign in and choose the portfolio">
+    Sign in with the Facebook account that manages the business. Select the business portfolio or create a new one, and check the business details.
+  </Step>
+  <Step title="Choose the WhatsApp Business account">
+    Meta offers two paths:
+
+    - **Connect the WhatsApp Business app you already use.** You keep using the app on your phone. Meta asks you to confirm the connection in the app itself, usually by scanning a QR code.
+    - **Create a new WhatsApp Business account** with a number. Enter the country code and the number, and confirm the verification code sent by Meta.
+
+    <Note>
+      If the number is already in use on another WhatsApp Business account that cannot be connected, Meta may require that account to be removed first. Follow the guidance shown in the Meta window.
+    </Note>
+  </Step>
+  <Step title="Finish">
+    When you finish, the Meta window closes and BluBash shows **Setup completed successfully**. You are taken to the channel page.
+  </Step>
+  <Step title="Add payment and test">
+    On the channel page, under **Payment Method**, click **Manage payment on Meta** if you do not have an active payment method yet. Then send a message from another number to the connected number and check that the conversation shows up in the inbox.
+  </Step>
+</Steps>
+
+<Tip>
+  If you need to stop, click **Skip for now**. The channel is saved and waits for the connection. Click it in the channel list to open **Configure Channel** and continue.
+</Tip>
+
+## What the channel page shows
+
+| Section | Content |
+| --- | --- |
+| **Connected Account** | **Display Name**, **Phone Number**, and the creation date. |
+| **Technical Details** | **Business Account ID**, **Phone Number ID**, and **Business ID**. Useful for support and for Meta. |
+| **Payment Method** | The **Manage payment on Meta** button. It opens Meta's website: sign in with the same account used to connect the channel. |
+
+## Messages inside and outside the 24-hour window
+
+WhatsApp lets you reply freely while the customer has the conversation open. To reach a contact outside that window, or to start a conversation, use a Meta-approved template.
+
+- [Send templates in a conversation →](/conversations/send-templates)
+- [Create a template →](/templates/create-template)
+- [Create a campaign →](/campaigns/create-campaign)
+
+## How the AI agent takes part
+
+Link an AI agent to the channel to reply right away, qualify the contact, and transfer to the team with a context note. Team members keep replying through BluBash, and the agent can take over again when the team hands the conversation back. See [Hybrid service →](/ai-agents/hybrid-service) and [Hand off to AI →](/ai-agents/handoff-to-ai).
+
+## Common errors
+
+| Message | Cause and fix |
+| --- | --- |
+| **Setup popup was closed** | The Meta window was closed before finishing. Click **Try Again**. |
+| **Setup failed** or **Error during setup** | Meta did not complete the connection. Review the login and portfolio permissions, then click **Try Again**. |
+| **Facebook SDK not loaded. Please refresh the page.** | Meta's script did not load. Refresh the page and check for ad or popup blockers. |
+| "This WhatsApp number is already registered on another channel." | The number is already in another BluBash channel. Use another number or delete the old channel. |
+| Messages are not sent | Check the payment method on Meta through **Manage payment on Meta**. |
+
+<Warning>
+  If you still have trouble, contact BluBash support and share the channel's **Technical Details**.
+</Warning>
+
+## Next steps
+
+- [One number or several →](/channels/single-or-multiple-numbers)
+- [Edit a channel →](/channels/edit-channel)
+- [Templates and quick replies →](/templates/what-are-templates-quick-replies)

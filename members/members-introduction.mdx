@@ -1,0 +1,88 @@
+---
+title: "Manage workspace members"
+sidebarTitle: "Members overview"
+description: "Invite people to your workspace, set each person's role, and link them to teams so they work alongside the AI agent in conversations and Pipelines."
+---
+
+In BluBash, members are the people in your company who access the workspace: support staff, sales reps, coordinators, and administrators. They work side by side with AI agents. The AI agent answers, qualifies, and transfers to a team, and that team's members take over the conversation, work the deals in Pipelines, and follow up on tasks.
+
+The **Members** page is where you manage these people: invitations, roles, resending invitations, and removal.
+
+<Note>
+  Only **Administrators** can access the **Members** page. Managers and Members do not see it in the menu.
+</Note>
+
+## How access works
+
+Each person's access combines two layers:
+
+| Layer | What it defines | Where to configure it |
+| --- | --- | --- |
+| **Workspace role** | What the person can do: Administrator, Manager, or Member | **Members** page |
+| **Teams** | Which conversations, contacts, channels, and Pipelines they work on | In the invitation and, later, in each team's **Members** tab |
+
+<Warning>
+  Every member must belong to at least one team. Without a team, the person cannot use the product. Create your teams before inviting people.
+</Warning>
+
+## Available roles
+
+<CardGroup cols={3}>
+  <Card title="Administrator" icon="shield">
+    Full access: members, teams, channels, AI agents, Additional Fields, billing, and all conversations.
+  </Card>
+  <Card title="Manager" icon="users">
+    Coordinates their teams: Pipelines, campaigns, reports, templates, and tags. Does not manage AI agents, members, or billing.
+  </Card>
+  <Card title="Member" icon="user">
+    Handles conversations and works the contacts and deals of their teams. No access to campaigns or reports.
+  </Card>
+</CardGroup>
+
+See the full comparison in [Roles and permissions →](/members/roles-permissions).
+
+## What you can do on the Members page
+
+| Action | Where | Details |
+| --- | --- | --- |
+| Invite | **Add Member** button | Email, role, and teams. [Add a member →](/members/add-member) |
+| Change the role | Pencil icon (**Edit member**) | [Edit a member's role →](/members/edit-member-permissions) |
+| Resend an invitation | **Resend invitation** icon | Shown for people with the **Invitation Sent** status |
+| Remove | Trash icon (**Remove member**) | [Remove a member →](/members/remove-member) |
+| Search | **Search members...** field | [Search members →](/members/search-filter-members) |
+| Refresh the list | **Refresh** button | Reloads the latest data |
+
+The list shows the **Name**, **Email**, **Role**, and **Actions** columns, plus the number of members displayed.
+
+## Members, plan, and billing
+
+- Your plan defines how many users and teams the workspace supports. Check it in **Billing & Usage**, an Administrator-only area that also shows **AI Credits** and **Campaign Credits** usage.
+- Before a downgrade, BluBash shows the impact: how many members would be removed from the workspace and how many teams would be deactivated. If the change requires removing users who cannot be removed, the downgrade stays blocked until you resolve it.
+- The workspace must always have at least one Administrator.
+
+## Best practices
+
+- Set up teams first, then invite people and pick the right teams right away.
+- Keep the number of Administrators low. Use **Manager** for coordinators who need reports and Pipelines without access to account configuration.
+- Review the list regularly and remove people who left the company on the same day.
+- When you change your team structure, also review the AI agents' **Transfer to Team** skills, which point to specific teams.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Structure your teams before inviting people.
+  </Card>
+
+  <Card title="Add a member" icon="user-plus" href="/members/add-member">
+    Send the invitation with role and teams.
+  </Card>
+
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    Compare what each role can do.
+  </Card>
+
+  <Card title="Hybrid service" icon="bot" href="/ai-agents/hybrid-service">
+    Learn how members and AI agents share the work.
+  </Card>
+</CardGroup>

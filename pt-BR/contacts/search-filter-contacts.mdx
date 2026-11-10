@@ -1,0 +1,98 @@
+---
+title: "Pesquisar e encontrar contatos"
+sidebarTitle: "Pesquisar contatos"
+description: "Encontre contatos na BluBash por nome, e-mail ou telefone, entenda as regras da busca e saiba como segmentar a base por etiquetas e campos."
+---
+
+A lista de contatos mostra as pessoas da sua base e permite encontrar qualquer cadastro pela busca. Para montar segmentos por etiqueta, interação ou campo adicional, use os filtros de audiência das campanhas, descritos no fim desta página.
+
+## A lista de contatos
+
+Na barra lateral, clique em **Contatos**. A aba **Pessoas** mostra os contatos e a aba **Empresas** mostra as empresas cadastradas.
+
+| Coluna | Conteúdo |
+| --- | --- |
+| **Nome** | Nome e foto do contato. |
+| **Email** | E-mail cadastrado. |
+| **Telefone** | Telefone cadastrado. |
+| **Criado em** | Data de criação do contato. |
+| **Ações** | Menu com **Ver Detalhes** e **Iniciar Conversa**. |
+
+A lista carrega os contatos em blocos. Ao rolar até o fim, a BluBash carrega os próximos automaticamente. O contador no topo mostra quantos contatos estão visíveis do total.
+
+<Info>
+  O que você vê depende do seu papel. O **Administrador** vê todos os contatos do workspace. **Gerente** e **Membro** veem os contatos das equipes às quais pertencem.
+</Info>
+
+## Pesquisar um contato
+
+<Steps>
+  <Step title="Abra a lista">
+    Clique em **Contatos** na barra lateral.
+  </Step>
+  <Step title="Digite o termo">
+    No campo **Buscar contatos...**, digite parte do nome, do e-mail ou do telefone.
+  </Step>
+  <Step title="Confira os resultados">
+    A busca roda automaticamente enquanto você digita, sem precisar pressionar Enter. O rodapé mostra **Exibindo N resultado(s) encontrado(s)**.
+  </Step>
+  <Step title="Abra o contato">
+    Clique na linha para abrir a página do contato. Ao voltar, a lista mantém o termo pesquisado.
+  </Step>
+</Steps>
+
+### Regras da busca
+
+| Situação | Comportamento |
+| --- | --- |
+| Texto (nome ou e-mail) | A busca começa a partir de 3 caracteres. |
+| Número de telefone | A busca começa a partir de 4 dígitos. |
+| Campo vazio | A lista volta a mostrar todos os contatos. |
+| Nenhum resultado | Aparece **Nenhum contato encontrado**. |
+
+<Tip>
+  Se não encontrar o contato pelo telefone, tente pelo nome ou pelo e-mail. O número pode ter sido cadastrado em outro formato.
+</Tip>
+
+## Ações rápidas na lista
+
+Clique no menu **Ações** de uma linha para:
+
+- **Ver Detalhes**: abre a página do contato.
+- **Iniciar Conversa**: abre o fluxo de nova conversa já com o contato selecionado. A opção aparece apenas para quem pode iniciar conversas.
+
+## Segmentar a base
+
+A lista de contatos não tem filtros por etiqueta ou campo. Para trabalhar com grupos de contatos, use estes recursos:
+
+| Objetivo | Onde fazer |
+| --- | --- |
+| Enviar uma mensagem para um segmento | **Campanhas**: a etapa de audiência filtra por etiquetas, status da conversa, última interação e campos do contato, com prévia da quantidade. Disponível para Gerente e Administrador. |
+| Classificar contatos para achar depois | Aplique **etiquetas** no contato, manualmente ou pelo agente de IA. |
+| Guardar dados estruturados para segmentação | Use **campos adicionais** e filtre por eles nas campanhas. |
+
+## Boas práticas
+
+- Pesquise antes de criar um contato manualmente. Isso evita duplicados.
+- Padronize os números com DDI. A busca por telefone fica mais confiável.
+- Use etiquetas com nomes consistentes, por exemplo `cliente-ativo` e `lead-frio`, para segmentar nas campanhas.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Etiquetas do contato" icon="tag" href="/pt-BR/contacts/manage-contact-tags">
+    Classifique contatos para segmentar depois.
+  </Card>
+
+  <Card title="Campos adicionais" icon="list-plus" href="/pt-BR/contacts/use-custom-fields">
+    Guarde dados estruturados de cada contato.
+  </Card>
+
+  <Card title="Criar uma campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Filtre a audiência por etiquetas e campos.
+  </Card>
+
+  <Card title="Adicionar contatos" icon="user-plus" href="/pt-BR/contacts/add-new-contact">
+    Cadastre ou importe contatos.
+  </Card>
+</CardGroup>

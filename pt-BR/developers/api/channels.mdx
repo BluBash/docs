@@ -1,0 +1,362 @@
+---
+title: "Channels API: mensagens por um canal API"
+sidebarTitle: "Channels API"
+description: "Envie à BluBash as mensagens dos seus usuários por um canal API, em texto, imagem, áudio, vídeo ou documento, e receba a resposta do agente de IA na mesma chamada."
+---
+
+A Channels API conecta o chat do seu sistema (app, site, portal do cliente) ao agente de IA da BluBash. Seu servidor envia a mensagem que o usuário escreveu, a BluBash localiza ou cria o contato pelo `contactIdentifier`, encaminha a mensagem ao agente de IA e devolve a resposta na mesma chamada, de forma síncrona.
+
+```http
+POST /api/v1/channels/{channelId}/messages
+```
+
+<Info>
+  O canal API é apenas receptivo: a conversa sempre começa por uma mensagem enviada pelo seu sistema. As conversas desse canal são atendidas pelo agente de IA, e a resposta da API traz as mensagens do agente de IA. Não há transferência para atendente neste canal.
+</Info>
+
+## Antes de começar
+
+- Peça ao suporte da BluBash a configuração do canal API e o `channelId` correspondente.
+- Tenha a API Key do workspace. Veja [Introdução à API →](/pt-BR/developers/introduction).
+- Configure e teste o agente de IA que vai atender o canal. Veja [Testar o agente de IA →](/pt-BR/ai-agents/test-ai-agent).
+
+## URL
+
+```text
+https://api.blubash.io/api/v1/channels/{channelId}/messages
+```
+
+## Cabeçalhos
+
+```http
+X-API-Key: SUA_API_KEY
+Content-Type: application/json
+X-Idempotency-Key: chave_unica_opcional
+```
+
+| Cabeçalho | Obrigatório | Descrição |
+| --- | --- | --- |
+| `X-API-Key` | Sim | API Key do workspace |
+| `Content-Type` | Sim | Sempre `application/json` |
+| `X-Idempotency-Key` | Não | Valor único por operação. Evita mensagens duplicadas quando você repete uma requisição |
+
+## Parâmetros de path
+
+<ParamField path="channelId" type="string" required>
+  ID do canal API configurado no workspace.
+</ParamField>
+
+## Corpo da requisição
+
+<ParamField body="type" type="string" required>
+  Tipo da mensagem: `TEXT`, `IMAGE`, `AUDIO`, `VIDEO` ou `DOCUMENT`.
+</ParamField>
+
+<ParamField body="contactIdentifier" type="string" required>
+  Identificador único do contato no seu sistema. A BluBash usa esse valor para criar o contato na primeira mensagem e para encontrá-lo nas seguintes. Recomendamos o e-mail do usuário.
+</ParamField>
+
+<ParamField body="contactName" type="string">
+  Nome do contato. Usado ao criar um novo contato.
+</ParamField>
+
+<ParamField body="content" type="object" required>
+  Conteúdo da mensagem. O formato depende de `type`, conforme a tabela abaixo.
+</ParamField>
+
+| `type` | Formato de `content` | Campos |
+| --- | --- | --- |
+| `TEXT` | `{ "text": { ... } }` | `body` (obrigatório) |
+| `IMAGE` | `{ "image": { ... } }` | `url` (obrigatório), `caption` |
+| `AUDIO` | `{ "audio": { ... } }` | `url` (obrigatório) |
+| `VIDEO` | `{ "video": { ... } }` | `url` (obrigatório), `caption` |
+| `DOCUMENT` | `{ "document": { ... } }` | `url` (obrigatório), `filename`, `caption` |
+
+<Warning>
+  Use sempre o mesmo `contactIdentifier` para a mesma pessoa. Valores diferentes para o mesmo usuário (por exemplo, `joao@empresa.com` em uma chamada e o ID interno em outra) criam contatos separados e quebram o histórico da conversa.
+</Warning>
+
+## Exemplos de requisição
+
+<CodeGroup>
+
+```json Texto
+{
+  "type": "TEXT",
+  "contactIdentifier": "joao@empresa.com",
+  "contactName": "João Souza",
+  "content": {
+    "text": {
+      "body": "Olá, preciso de ajuda com o meu pedido."
+    }
+  }
+}
+```
+
+```json Imagem
+{
+  "type": "IMAGE",
+  "contactIdentifier": "joao@empresa.com",
+  "content": {
+    "image": {
+      "url": "https://example.com/foto-produto.jpg",
+      "caption": "O produto chegou assim"
+    }
+  }
+}
+```
+
+```json Áudio
+{
+  "type": "AUDIO",
+  "contactIdentifier": "joao@empresa.com",
+  "content": {
+    "audio": {
+      "url": "https://example.com/mensagem.mp3"
+    }
+  }
+}
+```
+
+```json Vídeo
+{
+  "type": "VIDEO",
+  "contactIdentifier": "joao@empresa.com",
+  "content": {
+    "video": {
+      "url": "https://example.com/video.mp4",
+      "caption": "Vídeo do problema"
+    }
+  }
+}
+```
+
+```json Documento
+{
+  "type": "DOCUMENT",
+  "contactIdentifier": "joao@empresa.com",
+  "content": {
+    "document": {
+      "url": "https://example.com/nota-fiscal.pdf",
+      "filename": "nota-fiscal.pdf",
+      "caption": "Nota fiscal da compra"
+    }
+  }
+}
+```
+
+</CodeGroup>
+
+## Exemplo de resposta
+
+A estrutura da resposta é a mesma para todos os tipos de mensagem.
+
+```json
+{
+  "success": true,
+  "contactId": "cmg5gdkb60000sb75h4yu6mam",
+  "conversationId": "cmg6etn5u000dsbx2htkjot8r",
+  "messageId": "cmg6zqegm0001sbw9ip35juiq",
+  "conversation": {
+    "status": "ACTIVE",
+    "assignedToHuman": false,
+    "aiAgentId": "cmdi03x0z0003sbz6ubwtdrml",
+    "aiAgentName": "Aurora",
+    "teamId": "0fb043a2-75f7-42d7-b542-1ffcc1f75ccf",
+    "teamName": "Suporte Técnico"
+  },
+  "aiMessages": [
+    {
+      "content": {
+        "text": {
+          "body": "Olá, João! Claro, me passe o número do pedido que eu verifico para você."
+        },
+        "type": "text"
+      },
+      "type": "TEXT",
+      "sender_type": "AI",
+      "sender_name": "Aurora",
+      "channel_message_id": null
+    }
+  ],
+  "usage": {
+    "credits": 1
+  }
+}
+```
+
+## Campos da resposta
+
+<ResponseField name="success" type="boolean" required>
+  Indica se a operação foi concluída.
+</ResponseField>
+
+<ResponseField name="contactId" type="string" required>
+  ID do contato criado ou encontrado pelo `contactIdentifier`.
+</ResponseField>
+
+<ResponseField name="conversationId" type="string" required>
+  ID da conversa.
+</ResponseField>
+
+<ResponseField name="messageId" type="string" required>
+  ID da mensagem enviada na requisição.
+</ResponseField>
+
+<ResponseField name="conversation" type="object" required>
+  Dados da conversa e da atribuição.
+
+  <Expandable title="Propriedades">
+    <ResponseField name="status" type="string">
+      Status atual da conversa, por exemplo `ACTIVE`.
+    </ResponseField>
+    <ResponseField name="assignedToHuman" type="boolean">
+      Indica se a conversa está atribuída a um atendente.
+    </ResponseField>
+    <ResponseField name="aiAgentId" type="string">
+      ID do agente de IA que atende a conversa.
+    </ResponseField>
+    <ResponseField name="aiAgentName" type="string">
+      Nome do agente de IA.
+    </ResponseField>
+    <ResponseField name="teamId" type="string">
+      ID da equipe da conversa.
+    </ResponseField>
+    <ResponseField name="teamName" type="string">
+      Nome da equipe.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="aiMessages" type="array" required>
+  Mensagens de resposta do agente de IA, da mais antiga para a mais recente. É uma lista porque o agente de IA pode dividir a resposta em várias mensagens, conforme a configuração **Dividir Respostas**. Exiba todas, na ordem.
+</ResponseField>
+
+<ResponseField name="usage" type="object" required>
+  Consumo de créditos.
+
+  <Expandable title="Propriedades">
+    <ResponseField name="credits" type="number">
+      Créditos consumidos pela requisição.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+## Códigos de status HTTP
+
+| Código | Descrição |
+|------|-------------|
+| `200` | Mensagem processada com sucesso |
+| `400` | Dados inválidos na requisição ou canal não encontrado |
+| `401` | API Key ausente ou inválida |
+| `404` | Canal não encontrado |
+| `500` | Erro interno do servidor |
+
+## Exemplos de integração
+
+<CodeGroup>
+
+```javascript JavaScript (Node.js)
+async function sendMessage(channelId, apiKey, contactIdentifier, text) {
+  const response = await fetch(
+    `https://api.blubash.io/api/v1/channels/${channelId}/messages`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': apiKey,
+        'X-Idempotency-Key': crypto.randomUUID()
+      },
+      body: JSON.stringify({
+        type: 'TEXT',
+        contactIdentifier,
+        content: { text: { body: text } }
+      })
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+  }
+
+  return response.json();
+}
+
+const result = await sendMessage('SEU_CHANNEL_ID', process.env.BLUBASH_API_KEY, 'joao@empresa.com', 'Olá!');
+for (const message of result.aiMessages) {
+  console.log(message.content.text?.body);
+}
+```
+
+```python Python
+import os
+import uuid
+import requests
+
+def send_message(channel_id, api_key, message_data):
+    url = f"https://api.blubash.io/api/v1/channels/{channel_id}/messages"
+    headers = {
+        "Content-Type": "application/json",
+        "X-API-Key": api_key,
+        "X-Idempotency-Key": str(uuid.uuid4()),
+    }
+    response = requests.post(url, headers=headers, json=message_data, timeout=60)
+    response.raise_for_status()
+    return response.json()
+
+message_data = {
+    "type": "TEXT",
+    "contactIdentifier": "joao@empresa.com",
+    "contactName": "João Souza",
+    "content": {"text": {"body": "Olá, preciso de ajuda!"}},
+}
+
+result = send_message("SEU_CHANNEL_ID", os.environ["BLUBASH_API_KEY"], message_data)
+for message in result["aiMessages"]:
+    print(message["content"]["text"]["body"])
+```
+
+```bash cURL
+curl -X POST "https://api.blubash.io/api/v1/channels/SEU_CHANNEL_ID/messages" \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: SUA_API_KEY" \
+  -d '{
+    "type": "TEXT",
+    "contactIdentifier": "joao@empresa.com",
+    "contactName": "João Souza",
+    "content": {
+      "text": {
+        "body": "Olá, preciso de ajuda!"
+      }
+    }
+  }'
+```
+
+</CodeGroup>
+
+<Tip>
+  A resposta só volta depois que o agente de IA termina de responder. Configure no seu cliente HTTP um timeout compatível e mostre um indicador de "digitando" para o usuário enquanto aguarda.
+</Tip>
+
+## Limitações
+
+| Item | Regra |
+| --- | --- |
+| **Atendimento** | Apenas agente de IA. Não há transferência para atendente neste canal. |
+| **`contactIdentifier`** | Use sempre o mesmo valor para a mesma pessoa. Recomendamos o e-mail. |
+| **URLs de mídia** | Precisam ser públicas e acessíveis sem autenticação. |
+| **Tamanho de arquivo** | Até 10 MB por arquivo. |
+| **Download de mídia** | Timeout de 30 segundos. |
+| **Duplicidade** | Use `X-Idempotency-Key` para evitar mensagens duplicadas em novas tentativas. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Treinar o agente de IA" icon="bot" href="/pt-BR/ai-agents/train-ai-agent">
+    Ensine o agente de IA que atende o canal API.
+  </Card>
+
+  <Card title="Campaigns API" icon="megaphone" href="/pt-BR/developers/api/campaigns">
+    Alimente campanhas contínuas do WhatsApp pelo seu sistema.
+  </Card>
+</CardGroup>

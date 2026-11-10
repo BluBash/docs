@@ -1,0 +1,81 @@
+---
+title: "Edit a channel"
+description: "Change the name, default team, and AI agent of any BluBash channel (WhatsApp, Instagram, or Webchat) from the channel page."
+---
+
+Once created, any channel can have its name, default team, and AI agent changed at any time. Changes work the same way for WhatsApp, Instagram, and Webchat. The connection details with Meta, Instagram, or the QR code are not part of this form.
+
+## When to edit
+
+- Switch the AI agent that handles the channel, for example after creating a new agent.
+- Change the team that receives the channel's conversations.
+- Turn off AI on the channel and leave service to the team only.
+- Rename the channel to make clear which area or brand it belongs to.
+
+## Edit the channel settings
+
+<Steps>
+  <Step title="Open the channel">
+    In the side menu, click **Channels** and then the channel card. The channel page opens.
+
+    <Note>
+      If the channel is still waiting for connection, or a WhatsApp Lite channel lost its connection, the click opens the **Configure Channel** window instead of the page. Finish the connection first.
+    </Note>
+  </Step>
+
+  <Step title="Change the fields">
+    On the **Channel Settings** card:
+
+    | Field | Required | What it changes |
+    | --- | --- | --- |
+    | **Channel Name** | Yes | Name shown in the channel list and in the inbox. The page title follows what you type. |
+    | **Default Team** | Yes | Team that handles this channel's conversations by default. |
+    | **AI Agent (Optional)** | No | AI agent that handles the channel. Only active agents appear. Choose **No agent assigned** to remove AI from the channel. |
+  </Step>
+
+  <Step title="Save">
+    Click **Save**. The button is only available after something changes. BluBash confirms with "Channel updated successfully".
+  </Step>
+</Steps>
+
+<Warning>
+  The **Default Team** defines where the channel's new conversations go. To move a conversation that is already in progress, use [transfer →](/conversations/transfer-attendance).
+</Warning>
+
+## Other settings by channel type
+
+| Channel | What else you adjust on the channel page |
+| --- | --- |
+| WhatsApp Business API | **Payment Method**, with the **Manage payment on Meta** button. |
+| WhatsApp Lite | QR code reconnection when the session drops. See [Configure WhatsApp Lite →](/channels/configure-whatsapp-lite). |
+| Instagram | Nothing beyond the form. The connected account appears under **Instagram Account**. |
+| Webchat | Appearance, media, and behavior in **Webchat Configuration**. See [Set up Webchat →](/channels/configure-webchat). |
+
+## Default team and linked teams
+
+When you change the **Default Team**, keep in mind:
+
+- The default team cannot be unlinked from the channel through the team's **Channels** tab. Change the default team here first.
+- Instagram and Webchat channels are connected to a team through the **Default Team**, because the team's **Channels** tab only lists WhatsApp channels to add.
+
+See [Create and configure teams →](/account-settings/create-configure-teams).
+
+## What you cannot edit
+
+- **Channel type.** To move from WhatsApp Lite to WhatsApp Business API, create a new channel.
+- **Connected account.** The number, Instagram account, and technical IDs come from the connection and are not in the form.
+
+## Common errors
+
+| Message | Cause and fix |
+| --- | --- |
+| "Channel name is required" | The name is empty. Fill it in before saving. |
+| "Default team is required" | Select a team. |
+| "Failed to update channel" | The change was not saved. The name goes back to the previous one. Try again. |
+| The AI agent is not listed | The agent is deactivated. See [Activate or deactivate an agent →](/ai-agents/activate-deactivate-agent). |
+
+## Next steps
+
+- [Activate or deactivate a channel →](/channels/activate-deactivate-channel)
+- [Hybrid service →](/ai-agents/hybrid-service)
+- [Search and filter channels →](/channels/search-filter-channels)

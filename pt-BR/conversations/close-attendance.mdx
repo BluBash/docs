@@ -1,0 +1,102 @@
+---
+title: "Encerrar uma conversa"
+description: "Saiba quando encerrar uma conversa, como preencher as notas de resolução e o que acontece depois: mensagem de encerramento, avaliação de satisfação e nova conversa."
+---
+
+Encerre a conversa quando o assunto do cliente estiver resolvido. Encerrar mantém a caixa de entrada limpa, deixa a equipe focada no que está em andamento e garante que o SLA e o tempo de resolução reflitam a operação real.
+
+## Quando encerrar
+
+- **Encerre** quando o cliente teve a resposta ou a solução que procurava.
+- **Encerre** quando o assunto vai continuar em outro lugar, por exemplo em um negócio do Pipeline com tarefa agendada.
+- **Não encerre** enquanto você aguarda uma resposta do cliente que faz parte do mesmo assunto, como o envio de um documento.
+
+Cada conversa deve representar um assunto. Se o cliente voltar com outro assunto, uma nova conversa começa.
+
+## Como encerrar
+
+<Steps>
+  <Step title="Abra a conversa">
+    Em **Conversas**, abra a conversa que você quer encerrar.
+  </Step>
+
+  <Step title="Clique em Encerrar">
+    O botão **Encerrar** fica no topo da conversa, à direita. A janela **Encerrar** é aberta com a descrição **Encerrar esta conversa e marcar como resolvida**.
+  </Step>
+
+  <Step title="Preencha as notas de resolução">
+    Em **Notas de resolução**, descreva como o assunto foi resolvido. O campo é opcional, a não ser que a sua equipe exija. Nesse caso, a janela mostra **Sua equipe exige que notas de resolução sejam adicionadas antes de encerrar conversas.**
+  </Step>
+
+  <Step title="Confirme">
+    Clique em **Encerrar**. Aparece a confirmação **Conversa encerrada com sucesso** e a conversa sai da lista de conversas em andamento.
+  </Step>
+</Steps>
+
+<Tip>
+  Escreva notas de resolução úteis para quem atender o cliente no futuro: o que foi pedido, o que foi feito e se há algo pendente em outro lugar. Exemplo: "Segunda via enviada por e-mail. Cliente vai pagar até sexta. Tarefa de cobrança criada no negócio."
+</Tip>
+
+## O que acontece depois de encerrar
+
+O que acontece depende das configurações da equipe da conversa.
+
+| Configuração da equipe | Efeito ao encerrar |
+| --- | --- |
+| **Exigir notas de resolução** | Você só consegue encerrar depois de preencher **Notas de resolução**. |
+| **Ativar mensagem de encerramento** | O contato recebe uma mensagem automática. Ela pode usar as variáveis `{{team_name}}`, `{{contact_name}}`, `{{agent_name}}` e `{{conversation_protocol}}` e pode ter a condição **Duração mínima**. |
+| **Avaliação de Satisfação** | O contato recebe a pesquisa com nota de 1 a 5. A conversa fica com o status **Aguardando Avaliação** até a resposta ou até a pesquisa expirar. |
+
+As regras são configuradas por um Administrador em **Regras de Encerramento** e **Avaliação de Satisfação**, nas configurações da equipe.
+
+[Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams)
+
+### A conversa encerrada
+
+- Você encontra conversas encerradas no filtro **Encerradas** da lista.
+- Ao abrir uma conversa encerrada, o campo de mensagem mostra **Esta conversa não está ativa. Você não pode enviar mensagens.**
+- Para falar de novo com o contato, clique em **Iniciar nova conversa**. A nova conversa usa o mesmo canal e, de preferência, a mesma equipe.
+- No Webchat e no Instagram, que são apenas receptivos, não há como iniciar. Aguarde o contato escrever de novo.
+
+## Encerramento pelo agente de IA
+
+Com a habilidade nativa **Encerrar conversa** ativada na aba **Habilidades** do agente, o agente de IA encerra sozinho os atendimentos que resolveu. Sem essa configuração, a conversa fica aberta até alguém da equipe encerrar.
+
+[Configurações do agente →](/pt-BR/ai-agents/configure-agent-settings)
+
+## Boas práticas
+
+- Encerre no mesmo dia em que o assunto foi resolvido. Conversas abertas sem necessidade distorcem o SLA.
+- Antes de encerrar, revise as etiquetas do contato e confira se o negócio do Pipeline foi atualizado.
+- Se o cliente agradeceu e não pediu mais nada, encerre. Não espere uma nova mensagem.
+- Use as notas de resolução para registrar o que o cliente não vê e a equipe precisa saber.
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="Aparece Notas de resolução são obrigatórias para encerrar esta conversa">
+    A equipe exige notas de resolução. Preencha o campo **Notas de resolução** e clique em **Encerrar** de novo.
+  </Accordion>
+
+  <Accordion title="Encerrei por engano">
+    Uma conversa encerrada não volta a ficar ativa. Abra a conversa e clique em **Iniciar nova conversa**. No WhatsApp Business API, fora da janela de 24 horas, a primeira mensagem precisa ser um template.
+
+    [Enviar um template →](/pt-BR/conversations/send-templates)
+  </Accordion>
+
+  <Accordion title="O cliente respondeu depois do encerramento">
+    Uma nova mensagem do cliente abre uma nova conversa, que segue as regras de distribuição e de IA do canal.
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Relatório de conversas" icon="chart-column" href="/pt-BR/reports/conversations-report">
+    Acompanhe volume, status e distribuição das conversas.
+  </Card>
+
+  <Card title="Notas internas" icon="sticky-note" href="/pt-BR/conversations/internal-notes">
+    Registre o contexto antes de encerrar ou transferir.
+  </Card>
+</CardGroup>

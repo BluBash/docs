@@ -1,0 +1,86 @@
+---
+title: "Excluir um contato"
+sidebarTitle: "Excluir contato"
+description: "Exclua permanentemente um contato da BluBash e entenda quais dados são removidos, quem pode excluir e quando é melhor não excluir."
+---
+
+Excluir um contato remove o cadastro e todos os dados ligados a ele. Use esta ação para eliminar registros duplicados, de teste ou contatos que pediram a remoção dos seus dados.
+
+<Warning>
+  A exclusão é **permanente e não pode ser desfeita**. Conversas, negócios e histórico do contato também são removidos e deixam de aparecer nos relatórios.
+</Warning>
+
+## Quem pode excluir
+
+| Papel | Pode excluir |
+| --- | --- |
+| **Administrador** | Sim |
+| **Gerente** | Sim, nos contatos das suas equipes |
+| **Membro** | Não. A opção não aparece. |
+
+## Passo a passo
+
+<Steps>
+  <Step title="Abra o contato">
+    Na barra lateral, clique em **Contatos** e depois no contato que deseja excluir.
+  </Step>
+  <Step title="Abra o menu de opções">
+    No cabeçalho do contato, ao lado do nome, clique em **Mais opções** (ícone de três pontos).
+  </Step>
+  <Step title="Escolha Excluir Contato">
+    Clique em **Excluir Contato**. A janela de confirmação **Excluir Contato** é aberta, com o nome e o e-mail ou telefone do contato.
+  </Step>
+  <Step title="Revise os dados afetados">
+    A janela lista os **Dados que serão excluídos**. Confira se este é mesmo o contato certo.
+  </Step>
+  <Step title="Confirme">
+    Clique em **Excluir Contato**. A BluBash exibe **Contato excluído com sucesso** e volta para a lista de contatos. Para desistir, clique em **Cancelar**.
+  </Step>
+</Steps>
+
+## O que é removido
+
+| Dado | O que acontece |
+| --- | --- |
+| **Conversas** | As conversas do contato são removidas. |
+| **Históricos de conversa** | As mensagens trocadas deixam de existir. |
+| **Dados do contato** | Nome, e-mail, telefone, WhatsApp, campos adicionais, etiquetas e responsáveis. |
+| **Negócios** | Os negócios vinculados ao contato nos Pipelines são removidos. |
+| **Arquivos** | Mídias e documentos ligados ao contato. |
+| **Relatórios do contato** | Os dados do contato deixam de compor os relatórios. |
+| **Atividades do contato** | Todo o **Histórico**, inclusive tarefas e eventos. |
+
+## Antes de excluir
+
+- **Contato duplicado**: confira qual cadastro tem as conversas e os negócios mais completos. Exclua o outro.
+- **Cliente inativo**: prefira manter o contato e aplicar uma etiqueta, como `inativo`. Assim você preserva o histórico e os indicadores.
+- **Negócios em andamento**: marque os negócios como ganho ou perdido antes, se quiser preservar o resultado nos relatórios. Excluir o contato também remove os negócios.
+- **Pedido de remoção de dados**: excluir é o caminho correto quando o titular pede a eliminação dos dados pessoais.
+
+## Erros comuns
+
+| Mensagem | Causa | Como resolver |
+| --- | --- | --- |
+| **Não é possível excluir contato que possui conversas ativas** | O contato tem conversa em andamento. | Encerre as conversas ativas e tente de novo. Veja [Encerrar atendimento →](/pt-BR/conversations/close-attendance). |
+| **Erro ao excluir contato** | Falha temporária ou falta de permissão. | Confirme seu papel e tente novamente. |
+| A opção **Excluir Contato** não aparece | Seu papel é Membro. | Peça a exclusão a um Gerente ou Administrador. |
+
+<Note>
+  Se o contato enviar uma nova mensagem depois de excluído, a BluBash cria um contato novo, sem o histórico anterior.
+</Note>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Pesquisar contatos" icon="search" href="/pt-BR/contacts/search-filter-contacts">
+    Encontre duplicados antes de excluir.
+  </Card>
+
+  <Card title="Etiquetas do contato" icon="tag" href="/pt-BR/contacts/manage-contact-tags">
+    Marque contatos inativos em vez de excluir.
+  </Card>
+
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Veja o que cada papel pode fazer.
+  </Card>
+</CardGroup>

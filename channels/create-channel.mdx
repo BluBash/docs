@@ -1,0 +1,145 @@
+---
+title: "BluBash channels: types and how to create one"
+sidebarTitle: "Create a channel"
+description: "Learn about BluBash channels (WhatsApp, Instagram, Webchat, and API), compare the types, and create a channel with a default team and an AI agent."
+---
+
+Channels are the connections that bring your customers' conversations into BluBash. BluBash is omnichannel: WhatsApp is the main channel, with two connection options, and you can also serve customers through Instagram Direct, the Webchat on your website, and an API channel. Every conversation lands in the same inbox, follows the rules of the responsible team, and can be handled by an AI agent working alongside your team members.
+
+## Channel types
+
+| Channel | How it connects | Volume | Receptive only | Templates and campaigns | Recommendation |
+| --- | --- | --- | --- | --- | --- |
+| **WhatsApp Business API** (official) | Meta login in a popup window, through the **Connect WhatsApp Account** button | High | No. You can also start conversations | Yes: Meta-approved templates and campaigns | Main sales and support operation, with stability and official support |
+| **WhatsApp Lite** | QR code scanned on the phone | Low | No. You can also start conversations | No Meta templates. Not recommended for bulk sends | Small businesses with few messages per day, and testing |
+| **Instagram** (official API) | Instagram login (Business Login) on a professional account | Follows your Direct volume | Yes. The conversation starts when the contact sends a message, and you can reply within 7 days of their last message | No | Businesses that use Direct as a relationship channel |
+| **WebChat** | Embed code pasted on the website, or a public link | Follows your website traffic | Yes. The visitor starts the conversation | No | Serving website visitors in real time |
+| **API** | Set up with BluBash support | Depends on your integration | Yes. Conversations are started externally | No | Custom integrations through the REST API |
+| **Telegram** and **Email** | Coming soon |  |  |  |  |
+
+<Info>
+  Receptive-only channels are disabled when you try to start a new conversation. On these channels, you reply to conversations the contact opens. See [Start a new conversation →](/conversations/start-new-attendance).
+</Info>
+
+### Which one to choose
+
+- **Start with WhatsApp Business API** if WhatsApp is your customers' main way in. It is the only type with Meta-approved templates, campaigns, and a stability guarantee.
+- **Use WhatsApp Lite** only to get started quickly, test, or run a low-volume operation. It is not official and can be interrupted.
+- **Add Instagram and Webchat** to reach people who contact your business through Direct or your website. Their conversations land in the same inbox and can be handled by the same AI agent.
+- **Unsure whether to use one WhatsApp number or several?** Read [One number or several →](/channels/single-or-multiple-numbers).
+
+## Before you start
+
+- **Create at least one team.** Every channel needs a **Default Team**. See [Create and configure teams →](/account-settings/create-configure-teams).
+- **For automation, keep the AI agent active.** Only active agents appear in the channel list. See [Create an AI agent →](/ai-agents/create-ai-agent).
+- **Have what each type requires:** access to the Meta account (WhatsApp Business API), the phone with the number (WhatsApp Lite), the professional account login (Instagram), or access to edit the website (Webchat).
+- **Allow popup windows** in your browser. Connecting WhatsApp Business API and Instagram opens a login window.
+
+## Create a channel
+
+<Steps>
+  <Step title="Open Channels">
+    In the side menu, click **Channels**. The page lists every channel in the workspace.
+  </Step>
+
+  <Step title="Click Add Channel">
+    In the top-right corner, click **Add Channel**. The **Select Channel Type** window shows a card for each type, with a description and **Resources**.
+  </Step>
+
+  <Step title="Choose the type">
+    Click the card for the type you want: **WhatsApp Business API**, **WhatsApp Lite**, **Instagram**, or **WebChat**.
+
+    The **API** card shows the **Contact Support** badge. When you click it, BluBash tells you to contact support to set up this channel.
+  </Step>
+
+  <Step title="Fill in the channel details">
+    In the **Configure Channel** step, fill in:
+
+    | Field | Required | What to do |
+    | --- | --- | --- |
+    | **Channel Name** | Yes | Use a name that identifies the channel and the area, such as "WhatsApp Sales" or "Website Webchat". The name cannot match another channel's name. |
+    | **Default Team** | Yes | Choose the team that will handle this channel's conversations by default. |
+    | **AI Agent (Optional)** | No | Choose an active AI agent to handle the channel's conversations, or keep **No agent assigned** for team-only service. |
+  </Step>
+
+  <Step title="Click Create Channel">
+    The **Create Channel** button is only available once the name and team are filled in. To change the type, click **Back**.
+  </Step>
+
+  <Step title="Finish the connection">
+    The next step depends on the type:
+
+    - **WhatsApp Business API:** click **Connect WhatsApp Account** and complete the Meta login. See [Configure WhatsApp Business API →](/channels/configure-whatsapp-official).
+    - **WhatsApp Lite:** click **Connect WhatsApp** and scan the QR code. See [Configure WhatsApp Lite →](/channels/configure-whatsapp-lite).
+    - **Instagram:** click **Connect with Instagram** and authorize the account. See [Connect Instagram →](/channels/configure-instagram).
+    - **WebChat:** BluBash opens the channel page with the embed code. See [Set up Webchat →](/channels/configure-webchat).
+
+    If you need to stop halfway, click **Skip for now**. The channel is saved and waits for the connection. When you click it in the list, the **Configure Channel** window opens again so you can finish.
+  </Step>
+
+  <Step title="Check the channel page">
+    When you finish, BluBash opens the channel page. Check the connected account details and send a test message.
+  </Step>
+</Steps>
+
+## What the channel page contains
+
+| Section | What it is for |
+| --- | --- |
+| **Channel Settings** | Change the name, default team, and AI agent. See [Edit a channel →](/channels/edit-channel). |
+| Connection details | **Connected Account** (WhatsApp), **Instagram Account** (Instagram), or **WebChat** and **Webchat Configuration** (Webchat). |
+| **Danger Zone** | **Channel Status** to activate or deactivate, and **Delete Channel**. See [Activate or deactivate →](/channels/activate-deactivate-channel) and [Delete →](/channels/delete-channel). |
+
+## How the AI agent and the team work together
+
+<Steps>
+  <Step title="The contact writes">
+    The message arrives through the channel (WhatsApp, Instagram, or Webchat) and opens a conversation in the inbox.
+  </Step>
+  <Step title="The AI agent responds">
+    If the channel has an AI agent, it replies, answers questions, and qualifies the contact based on its training.
+  </Step>
+  <Step title="The team takes over when needed">
+    With the **Transfer to Team** skill, the agent hands the conversation to the right team, with a context note. Without an agent, the conversation goes straight to the **Default Team**, which distributes it according to its rules.
+  </Step>
+</Steps>
+
+See [Hybrid service →](/ai-agents/hybrid-service) and [Configure skills →](/ai-agents/configure-skills).
+
+## Channels and teams
+
+The **Default Team** receives the channel's conversations and is linked to it. On the team page, the **Channels** tab shows the linked channels, with the **Default team** badge on the channel where it is the default.
+
+- To link a WhatsApp channel to other teams, use **Add** in the team's **Channels** tab. The list of channels you can add in that tab only shows WhatsApp channels.
+- To connect an Instagram or Webchat channel to a team, choose that team as the **Default Team** in **Channel Settings**.
+- To remove the link with the default team, first change the default team in the channel settings.
+
+## Common errors
+
+| Situation | Cause and fix |
+| --- | --- |
+| **Create Channel** is not available | The **Channel Name** or **Default Team** is missing, or the name already exists. Fill in both and use a unique name. |
+| "A channel with this name already exists. Choose another name." | Another channel uses the same name, even with different upper and lower case. |
+| "This WhatsApp number is already registered on another channel." | Each number can only belong to one channel. Use another number or delete the old channel. |
+| The AI agent is not in the list | Only active agents appear. See [Activate or deactivate an agent →](/ai-agents/activate-deactivate-agent). |
+| The channel is waiting for connection | You clicked **Skip for now** or closed the window. Click the channel in the list to resume. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Business API" icon="shield-check" href="/channels/configure-whatsapp-official">
+    Official Meta connection, templates, and campaigns.
+  </Card>
+
+  <Card title="WhatsApp Lite" icon="qr-code" href="/channels/configure-whatsapp-lite">
+    Quick QR code connection for low volume.
+  </Card>
+
+  <Card title="Instagram" icon="instagram" href="/channels/configure-instagram">
+    Direct messages in your inbox.
+  </Card>
+
+  <Card title="Webchat" icon="message-circle" href="/channels/configure-webchat">
+    Chat widget on your website.
+  </Card>
+</CardGroup>

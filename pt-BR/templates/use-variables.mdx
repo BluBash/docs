@@ -1,0 +1,99 @@
+---
+title: "Usar variáveis em templates e respostas rápidas"
+sidebarTitle: "Usar variáveis"
+description: "Personalize templates e respostas rápidas da BluBash com variáveis numeradas, preenchidas na hora do envio com dados do contato ou valores digitados."
+---
+
+Variáveis são espaços numerados, como `{{1}}` e `{{2}}`, que você coloca no texto de um template ou de uma resposta rápida. Na hora do envio, cada variável é substituída por um valor real, como o nome do contato ou o número do pedido. Assim, uma única mensagem serve para todos os contatos sem perder a personalização.
+
+## Como funcionam
+
+| Momento | O que acontece |
+| --- | --- |
+| **Na criação** | Você insere `{{1}}`, `{{2}}` no texto com **Adicionar Variável** e preenche **Exemplos de Variáveis** para ver a prévia. |
+| **No envio pela conversa** | O atendente preenche cada variável com um dado do contato ou com um valor digitado. |
+| **No envio por campanha** | Você relaciona cada variável a um dado do contato ao criar a campanha. |
+
+**Exemplo salvo:**
+
+```text
+Olá {{1}}, seu pedido {{2}} foi enviado e chega até {{3}}.
+```
+
+**Mensagem recebida pelo contato:**
+
+```text
+Olá Maria, seu pedido 4521 foi enviado e chega até sexta-feira.
+```
+
+## Onde usar variáveis
+
+| Local | Limite | Observação |
+| --- | --- | --- |
+| **Cabeçalho** do template (tipo **Texto**) | 1 variável | O cabeçalho usa sempre `{{1}}` |
+| **Corpo** do template | Até 10 variáveis | Numeração sequencial: `{{1}}`, `{{2}}`, `{{3}}` |
+| **Mensagem** da resposta rápida (tipo **Texto**) | Sequencial | Use **Adicionar Variável** no campo **Mensagem** |
+
+<Note>
+  O botão **Adicionar Variável** insere automaticamente o próximo número livre. Você não precisa controlar a numeração manualmente.
+</Note>
+
+## Inserir variáveis na criação
+
+<Steps>
+  <Step title="Posicione o cursor no texto">
+    No **Corpo** do template, no **Texto do Cabeçalho** ou na **Mensagem** da resposta rápida, clique no ponto onde a variável deve entrar.
+  </Step>
+  <Step title="Clique em Adicionar Variável">
+    A BluBash insere a próxima variável disponível. No cabeçalho, a variável é sempre `{{1}}`.
+  </Step>
+  <Step title="Preencha os exemplos">
+    Em **Exemplos de Variáveis**, digite um valor de exemplo para cada variável. Os exemplos aparecem na **Visualização** e não são enviados ao contato.
+  </Step>
+</Steps>
+
+## Preencher variáveis no envio
+
+Quando o atendente escolhe um template ou uma resposta rápida com variáveis na conversa, a BluBash abre os campos de preenchimento:
+
+- A **primeira variável** já vem preenchida com o nome do contato, quando ele existe.
+- Para cada variável, o atendente digita o valor ou clica no ícone do campo para escolher um dado do contato.
+- Os dados ficam agrupados em **Campos Básicos** (nome, e-mail e telefone), **Informações Adicionais** e **Campos Adicionais** (campos personalizados do contato).
+- Todas as variáveis precisam estar preenchidas para enviar. Confira o resultado em **Prévia da Mensagem**.
+
+[Enviar templates e respostas rápidas →](/pt-BR/templates/send-templates-quick-replies) · [Usar campos personalizados →](/pt-BR/contacts/use-custom-fields)
+
+## Variáveis e o agente de IA
+
+Os dados que o agente de IA coleta e grava no contato, como nome e e-mail, ficam disponíveis para preencher variáveis. Quando a habilidade nativa **Atualizar contato** está ativada no agente de IA, a equipe recebe o contato com mais dados prontos para personalizar templates e respostas rápidas.
+
+[Configurações do agente de IA →](/pt-BR/ai-agents/configure-agent-settings)
+
+## Boas práticas
+
+- **Coloque texto antes e depois das variáveis do template.** A Meta costuma rejeitar templates que começam ou terminam com variável.
+- **Não junte variáveis.** Evite `{{1}} {{2}}` lado a lado sem texto entre elas.
+- **Dê contexto.** Quem lê o template na aprovação precisa entender o que cada variável representa.
+- **Mantenha os dados do contato atualizados.** Variável preenchida com dado errado chega errada ao cliente.
+- **Revise a prévia antes de enviar.** Confira nomes, números e datas.
+
+## Erros comuns
+
+| Situação | Causa | Solução |
+| --- | --- | --- |
+| **Header suporta apenas 1 variável** | Você tentou inserir uma segunda variável no cabeçalho | Mova a informação para o corpo |
+| **Máximo de 10 variáveis atingido** | O corpo já tem 10 variáveis | Reduza o número de variáveis ou divida a mensagem |
+| O botão **Enviar Template** não funciona | Alguma variável está vazia | Preencha todas as variáveis |
+| O nome do contato não aparece | O contato não tem nome cadastrado | Digite o valor ou atualize o contato |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar um template" icon="file-text" href="/pt-BR/templates/create-template">
+    Monte um template com variáveis.
+  </Card>
+
+  <Card title="Criar uma resposta rápida" icon="zap" href="/pt-BR/templates/create-quick-reply">
+    Use variáveis em mensagens prontas.
+  </Card>
+</CardGroup>

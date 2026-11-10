@@ -1,0 +1,79 @@
+---
+title: "Remover um membro"
+description: "Revogue o acesso de uma pessoa ao workspace da BluBash. Apenas Administradores removem membros, e regras de segurança evitam bloqueios acidentais."
+---
+
+Quando alguém sai da empresa ou não precisa mais da BluBash, remova a pessoa do workspace. Ela perde o acesso assim que você confirma. Você também pode remover quem ainda está com o convite pendente, para cancelar o acesso antes do primeiro login.
+
+<Note>
+  Apenas **Administradores** removem membros.
+</Note>
+
+## Antes de remover
+
+A remoção não pode ser desfeita. Faça uma revisão rápida antes:
+
+| Verifique | Por quê | Onde |
+| --- | --- | --- |
+| Conversas em aberto com a pessoa | Para o cliente não ficar sem resposta | **Conversas**: transfira para outra pessoa, para a equipe ou para o agente de IA |
+| Negócios e tarefas sob responsabilidade dela | Para o acompanhamento não se perder | **Pipelines** e **Tarefas** |
+| Contatos carteirizados para ela | Para cada cliente continuar com um responsável | Ficha do contato |
+| Se ela é o único Gerente de uma equipe | Para a equipe continuar coordenada | **Equipes** → aba **Membros** |
+
+<Tip>
+  Se a pessoa só mudou de área, não remova: ajuste as equipes dela. Veja [Editar a função de um membro →](/pt-BR/members/edit-member-permissions).
+</Tip>
+
+## Remover
+
+<Steps>
+  <Step title="Localize o membro">
+    No menu lateral, clique em **Membros** e encontre a pessoa com **Pesquisar membros...**.
+  </Step>
+  <Step title="Clique na lixeira">
+    Clique no ícone de lixeira (**Remover membro**) na linha da pessoa.
+  </Step>
+  <Step title="Confirme">
+    A janela **Remover Membro** pergunta **Tem certeza de que deseja remover este membro do workspace?** e avisa que **Esta ação não pode ser desfeita.** Clique em **Remover Membro** para confirmar ou em **Cancelar** para desistir.
+  </Step>
+</Steps>
+
+A BluBash confirma com **Membro removido com sucesso** e a pessoa sai da lista.
+
+## Regras de segurança
+
+O ícone de remoção fica desabilitado nestes casos:
+
+| Situação | Motivo |
+| --- | --- |
+| Sua própria linha | Você não pode se remover do workspace |
+| **Proprietário** do workspace | O proprietário não pode ser removido |
+| Último membro do workspace | Não é possível remover o último membro do workspace |
+
+O workspace também precisa manter pelo menos um Administrador.
+
+## Depois da remoção
+
+- A pessoa perde o acesso ao workspace imediatamente.
+- Se ela ainda estava com **Convite Enviado**, o convite deixa de dar acesso.
+- Para trazer a pessoa de volta, envie um novo convite em **Adicionar Membro**.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Transferir atendimento" icon="arrow-right-left" href="/pt-BR/conversations/transfer-attendance">
+    Redistribua as conversas antes de remover alguém.
+  </Card>
+
+  <Card title="Adicionar um membro" icon="user-plus" href="/pt-BR/members/add-member">
+    Convide quem vai assumir a função.
+  </Card>
+
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Revise a composição das equipes.
+  </Card>
+
+  <Card title="Introdução a membros" icon="users" href="/pt-BR/members/members-introduction">
+    Volte para a visão geral de membros.
+  </Card>
+</CardGroup>

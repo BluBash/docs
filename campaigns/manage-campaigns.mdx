@@ -1,0 +1,149 @@
+---
+title: "Manage and track campaigns"
+sidebarTitle: "Manage campaigns"
+description: "Filter campaigns, track sends, deliveries, reads, and failures in real time, and pause, resume, cancel, or feed ongoing campaigns in BluBash."
+---
+
+The **Campaigns** screen lists all workspace campaigns you can see. From there, you track performance, control sending, and feed ongoing campaigns.
+
+## The campaign list
+
+In the sidebar, click **Campaigns**. Switch between **List view** and **Card view**.
+
+| Column | Content |
+| --- | --- |
+| **Campaign** | Name and description. |
+| **Channel** | WhatsApp channel used for sending. |
+| **Type** | **Template** or **Text**. |
+| **Messages** | Sent out of the total, with delivered, pending, and failed. |
+| **Recipients** | Total contacts in the audience. |
+| **Schedule** | Scheduled date, start, or completion of the send. |
+| **Status** | Current campaign status. |
+| **Actions** | Actions available for the current status. |
+
+### Search and filter
+
+Use **Search campaigns...** to search by name. Click **Filters** to refine:
+
+| Filter | Options |
+| --- | --- |
+| **Status** | All, Draft, Scheduled, Running, Paused, Completed, Cancelled |
+| **Channel** | Any connected WhatsApp channel |
+| **Date range** | A date interval |
+| **Sort by** | Field (**Created date**, **Updated date**, **Name**, **Scheduled date**) and direction (**Ascending** or **Descending**) |
+
+Click **Apply filters**. To return to the default, use **Clear all**.
+
+## Campaign status
+
+| Status | Meaning |
+| --- | --- |
+| **Draft** | Saved but not started yet. It can be edited. |
+| **Scheduled** | Waiting for the defined date and time. |
+| **Running** | Messages being sent at the configured speed. For an Ongoing Campaign, it means the automation is active. |
+| **Paused** | Sending temporarily stopped. |
+| **Completed** | All audience messages were processed. |
+| **Failed** | The send could not run. Check the channel. |
+| **Cancelled** | Sending permanently stopped. |
+
+## Control the send
+
+| Action | When it appears | Effect |
+| --- | --- | --- |
+| **Start** | Draft | Starts sending. |
+| **Edit** | Draft | Opens the wizard to change the campaign. |
+| **Pause** | Running | Stops temporarily. The remaining messages stay in the queue. |
+| **Resume** | Paused | Continues from where it stopped. |
+| **Cancel** | Running or Paused, for a Single Campaign | Stops sending the remaining messages. Cannot be undone. |
+| **End campaign** | Running or Paused, for an Ongoing Campaign | Ends the continuous sending and prevents new sends. |
+| **Delete** | Draft, Scheduled, Paused, Completed, or Cancelled | Deletes the campaign and all its data. Cannot be undone. |
+
+<Warning>
+  You can only edit campaigns in **Draft**. After a campaign starts, to change the message or the audience, cancel it and create a new campaign.
+</Warning>
+
+## The campaign page
+
+Click a campaign to open its details. The top shows the channel, message type, schedule, speed in msg/min, and the total recipients (or contacts added, for an Ongoing Campaign).
+
+### Overview
+
+Click **Refresh** to load the latest data.
+
+| Block | What it shows |
+| --- | --- |
+| **Campaign Performance** | **Send Rate**, **Delivery Rate**, **Read Rate**, and **Fail Rate**, with totals. |
+| **Performance Timeline** | Evolution of sends, deliveries, and reads over time. |
+| **Audience Distribution** | Current status of the entire audience. |
+| **Campaign Insights** | Automatic analysis, for example **High delivery**, **Delivery rate below 50%**, or **Abnormally high failure rate**. |
+| **Technical Execution Details** | Real-time state of the sending queue. |
+
+### Audience
+
+Lists each campaign contact with its individual status: **Pending**, **Queued**, **Sending**, **Sent**, **Delivered**, **Read**, **Failed**, or **Cancelled**. It also shows when the message was sent, delivered, and read.
+
+For an Ongoing Campaign, the table shows when each contact was added and the **Source** (**Manual**, **API**, or **Integration**). Individually scheduled sends can be cancelled with **Cancel schedule**.
+
+### Message Details
+
+Shows the type, the content or template sent, the variables, and a preview with the first audience contact's data.
+
+### Integrations (Ongoing Campaign)
+
+| Integration | How to use it |
+| --- | --- |
+| **Campaign API** | Copy the endpoint and send contacts from your system with the `x-api-key` header. See [Campaigns API →](/developers/api/campaigns). |
+| **RD Station Marketing** | Copy the **Webhook URL** and paste it into an RD Station Marketing automation. In **Field mapping rules**, map RD fields to contact fields (`name`, `email`, `phone`, and additional `cf_*` fields) and click **Save mapping**. |
+
+## Feed an Ongoing Campaign manually
+
+<Steps>
+  <Step title="Open the Audience tab">
+    On the campaign page, click **Audience**.
+  </Step>
+  <Step title="Click Add contacts">
+    Select contacts in the preview, using the same audience filters as in creation.
+  </Step>
+  <Step title="Choose when to send">
+    Select **Add and send** for an immediate send or **Add and schedule** to pick a date and time.
+  </Step>
+  <Step title="Confirm">
+    Confirm with **Confirm sending** or **Confirm scheduling**.
+  </Step>
+</Steps>
+
+<Note>
+  You cannot add contacts while the campaign is paused or ended.
+</Note>
+
+## How to read the metrics
+
+| Metric | What it shows | What to do if it is low |
+| --- | --- | --- |
+| **Delivery Rate** | Messages that reached the contact's device. | Review base quality, numbers without a country code, and channel health. |
+| **Read Rate** | Messages read among those delivered. Contacts with read receipts turned off in WhatsApp do not appear as read. | Test another time, a clearer opening line, or media. |
+| **Fail Rate** | Messages that could not be sent. | Check the template, the 24-hour window, Meta limits, and whether the channel is active. |
+
+<Tip>
+  Cross campaign results with deals created in Pipelines and with the **Conversations report**. This way you measure not only reads but the business result of replies handled by the AI agent and your team.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Build a new campaign with the wizard.
+  </Card>
+
+  <Card title="Campaigns introduction" icon="book-open" href="/campaigns/campaigns-introduction">
+    Review Meta rules, limits, and costs.
+  </Card>
+
+  <Card title="Conversations report" icon="chart-bar" href="/reports/conversations-report">
+    Track the volume of conversations generated.
+  </Card>
+
+  <Card title="Campaigns API" icon="code" href="/developers/api/campaigns">
+    Connect your system to ongoing campaigns.
+  </Card>
+</CardGroup>

@@ -1,0 +1,135 @@
+---
+title: "Ativar, desativar e vincular o agente de IA aos canais"
+sidebarTitle: "Ativar e vincular aos canais"
+description: "Ative ou desative um agente de IA na BluBash e vincule-o aos canais de WhatsApp, Instagram e Webchat que ele vai atender. Veja limites e cuidados."
+---
+
+Para um agente de IA atender clientes, duas condições precisam estar cumpridas:
+
+1. O agente está **Ativo**.
+2. O agente está vinculado a um ou mais canais no campo **Agente de IA (Opcional)**.
+
+Esta página explica as duas etapas, como pausar o agente e como trocar o agente de um canal. Só o papel **Administrador** ativa, desativa e exclui agentes de IA.
+
+## Como agente e canal se relacionam
+
+| Regra | Detalhe |
+| --- | --- |
+| Um agente por canal | Cada canal tem no máximo um agente de IA vinculado |
+| Um agente, vários canais | O mesmo agente pode ser vinculado a vários canais: um número de WhatsApp, a conta do Instagram e o Webchat do site, por exemplo |
+| Só agentes ativos | Apenas agentes **Ativo** aparecem para seleção no canal e na janela **Transferir para IA** |
+| Equipe padrão | O canal também define a **Equipe Padrão**, a equipe que recebe as conversas do canal por padrão |
+
+| Canal | O que o agente atende |
+| --- | --- |
+| **WhatsApp** (WhatsApp Business API oficial ou WhatsApp Lite) | As conversas que chegam ao número |
+| **Instagram** (Direct) | As mensagens recebidas no Direct. O canal é apenas receptivo. |
+| **Webchat** | Os visitantes que iniciam o chat no seu site. O canal é apenas receptivo. |
+
+## Ativar ou desativar um agente
+
+<Steps>
+  <Step title="Abra a lista de agentes">
+    Na barra lateral, clique em **Agentes de IA**. Cada card mostra o propósito, o tom e o status **Ativo** ou **Inativo**.
+  </Step>
+  <Step title="Abra o menu do card">
+    Passe o mouse sobre o card do agente e clique no menu de três pontos.
+  </Step>
+  <Step title="Clique em Ativar ou Desativar">
+    A opção muda conforme o status atual. A BluBash confirma com a mensagem **Status do agente alterado com sucesso!** e atualiza o selo do card.
+  </Step>
+</Steps>
+
+<Note>
+  O número de agentes ativos ao mesmo tempo depende do seu plano. Se o limite for atingido, a ativação não é concluída e a BluBash mostra o motivo. Em um downgrade de plano, agentes acima do novo limite são desativados.
+</Note>
+
+## Vincular o agente a um canal existente
+
+<Steps>
+  <Step title="Abra o canal">
+    Na barra lateral, clique em **Canais** e depois no canal (WhatsApp, Instagram ou Webchat).
+  </Step>
+  <Step title="Escolha o agente">
+    Na seção **Configurações do Canal**, abra o campo **Agente de IA (Opcional)** e selecione o agente.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**. A partir daí, as novas conversas desse canal são atendidas pelo agente.
+  </Step>
+  <Step title="Repita nos outros canais">
+    Para o agente atender também no Instagram ou no Webchat, faça o mesmo em cada canal.
+  </Step>
+</Steps>
+
+Você também pode escolher o agente ao criar um canal: o campo **Agente de IA (Opcional)** aparece junto com **Equipe Padrão** no assistente **Adicionar Novo Canal**.
+
+[Criar um canal →](/pt-BR/channels/create-channel) · [Editar um canal →](/pt-BR/channels/edit-channel)
+
+## Trocar ou remover o agente de um canal
+
+- **Trocar**: em **Configurações do Canal**, selecione outro agente em **Agente de IA (Opcional)** e clique em **Salvar**.
+- **Remover**: selecione **Nenhum agente atribuído** e clique em **Salvar**. O canal passa a ser atendido só pela equipe.
+
+Use a remoção para tirar a IA de um canal específico sem afetar os outros canais em que o agente atende.
+
+## Quando ativar e quando desativar
+
+| Ative quando | Desative quando |
+| --- | --- |
+| O treinamento essencial está **Treinado** | Você vai reescrever o **Comportamento** ou trocar muitos treinamentos |
+| As habilidades de nota, etiqueta e transferência estão configuradas | O agente está respondendo errado em produção |
+| O **Testar Agente** passou no roteiro de testes | Uma integração (app ou API externa) está fora do ar |
+| As equipes que recebem transferências têm o canal em **Canais da Equipe** | Você quer liberar o espaço do plano para outro agente |
+
+Desativar não apaga nada: treinamentos, habilidades, apps e configurações ficam salvos e voltam a valer quando você reativa.
+
+<Tip>
+  Para manutenção em um único canal, prefira remover o agente daquele canal. Para manutenção no agente inteiro, desative-o, ajuste, teste no **Testar Agente** e reative.
+</Tip>
+
+## Conversas que já estão com a IA
+
+Se uma conversa já está com a IA e você quer que uma pessoa continue, abra a conversa e clique em **Assumir Conversa**. Faça isso também antes de desativar o agente ou de removê-lo de um canal, nas conversas em que o cliente ainda espera resposta.
+
+[Transferir para a IA e assumir conversas →](/pt-BR/ai-agents/handoff-to-ai)
+
+## Excluir um agente
+
+<Steps>
+  <Step title="Abra o menu do card">
+    Em **Agentes de IA**, passe o mouse sobre o card e clique no menu de três pontos.
+  </Step>
+  <Step title="Clique em Excluir">
+    A janela **Excluir Agente** avisa que a ação não pode ser desfeita.
+  </Step>
+  <Step title="Confirme digitando o nome">
+    Digite o nome exato do agente no campo **Digite o nome do agente para confirmar:** e clique em **Excluir**.
+  </Step>
+</Steps>
+
+<Warning>
+  A exclusão é definitiva e não pode ser desfeita. Se você só quer pausar, desative. Antes de excluir, troque o agente nos canais em que ele está vinculado.
+</Warning>
+
+## Indicadores na interface
+
+| Onde | O que mostra |
+| --- | --- |
+| Lista de **Agentes de IA** | Selo **Ativo** ou **Inativo** em cada card |
+| **Configurações do Canal** | O agente vinculado em **Agente de IA (Opcional)** |
+| Conversa atendida pela IA | Aviso **Agente de IA Ativo** com o nome do agente e o botão **Assumir Conversa** |
+| **Relatório de conversas** | Conversas **Só agentes de IA** e **Híbrido (humano + IA)** no gráfico **Total de conversas ao longo do tempo** |
+
+## Boas práticas
+
+1. **Ative gradualmente**: comece por um canal, acompanhe as primeiras conversas e depois vincule os outros.
+2. **Acompanhe de perto no início**: revise as conversas do agente na **Visão 360°** e ajuste o treinamento.
+3. **Mantenha a equipe por perto**: configure transferências para cada área e garanta que alguém receba as conversas.
+4. **Valide em cada canal**: depois de vincular, envie uma mensagem real pelo WhatsApp, pelo Direct do Instagram e pelo Webchat.
+
+## Próximos passos
+
+- [Testar o agente →](/pt-BR/ai-agents/test-ai-agent)
+- [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+- [Configurar o Instagram →](/pt-BR/channels/configure-instagram)
+- [Configurar o Webchat →](/pt-BR/channels/configure-webchat)

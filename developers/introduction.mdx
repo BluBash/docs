@@ -1,0 +1,87 @@
+---
+title: "BluBash API: authentication and getting started"
+sidebarTitle: "Introduction"
+description: "Learn about the BluBash APIs, how to authenticate with the workspace API Key, use idempotency, handle errors, and integrate your system."
+---
+
+The BluBash REST API connects your system to the platform. With it, you forward messages to the AI agent through an API channel and feed ongoing WhatsApp campaigns with contacts from your CRM, website, or ERP.
+
+## Available APIs
+
+<CardGroup cols={2}>
+  <Card title="Channels API" icon="message-circle" href="/developers/api/channels">
+    Send your users' messages (text, image, audio, video, or document) to BluBash through an API channel and get the AI agent's reply in the same call.
+  </Card>
+  <Card title="Campaigns API" icon="megaphone" href="/developers/api/campaigns">
+    Add contacts to an Ongoing Campaign, schedule sends per contact, cancel queued messages, and check delivery status.
+  </Card>
+</CardGroup>
+
+| API | Endpoints | Typical use |
+| --- | --- | --- |
+| **Channels API** | `POST /api/v1/channels/{channelId}/messages` | Chat in your app or website handled by the BluBash AI agent |
+| **Campaigns API** | `POST /api/v1/campaigns/{campaignId}/audience`, `POST /api/v1/campaigns/{campaignId}/messages/{messageId}/cancel`, `GET /api/v1/campaigns/{campaignId}/messages`, `GET /api/v1/campaigns/{campaignId}/messages/{messageId}` | Welcome, post-purchase, reminder, and lead nurturing messages triggered by your system |
+
+## Base URL
+
+```text
+https://api.blubash.io/api/v1
+```
+
+## Authentication
+
+Every request needs the **workspace API Key** in the `X-API-Key` header. Header names are case-insensitive: `x-api-key` also works.
+
+```http
+X-API-Key: YOUR_API_KEY
+Content-Type: application/json
+```
+
+### Get the API Key
+
+The BluBash interface does not have a screen to generate API keys. Request the workspace API Key from BluBash support. To use the Channels API, also ask for the API channel setup, which support handles.
+
+<Warning>
+  Treat the API Key like a password. Do not put it in code that runs in the browser or in your customer's app, or in public repositories. Make calls from your server.
+</Warning>
+
+## Idempotency
+
+The Channels API accepts the optional `X-Idempotency-Key` header. Send a unique value per operation so that a retry of the same request does not create duplicate messages.
+
+```http
+X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
+```
+
+<Tip>
+  Use one UUID per logical operation or a hash of the request content. Reuse the same key only when retrying exactly the same operation.
+</Tip>
+
+## Response codes
+
+| Code | Meaning | What to do |
+| --- | --- | --- |
+| `200` | Success | Process the response. |
+| `400` | Invalid request data | Read the error message and fix the payload. Do not retry without fixing it. |
+| `401` | Missing or invalid API Key | Check the `X-API-Key` header. |
+| `403` | Feature not available on your plan | Contact BluBash support or sales. |
+| `404` | Resource not found | Check the `channelId` or `campaignId`. |
+| `500` | Internal error | Retry with exponential backoff and the same idempotency key. |
+
+## Best practices
+
+- **Always use the same identifier for the same contact.** In the Channels API, the `contactIdentifier`. In the Campaigns API, the `identifier` or `contact_id`. Different identifiers create duplicate contacts.
+- **Handle errors by code.** `4xx` errors need a fix; `5xx` errors can be retried.
+- **Retry with exponential backoff.** Wait longer between attempts and cap the number of retries.
+- **Validate in a test setup first.** Use a test channel and a test campaign before pointing production traffic.
+- **Store the returned IDs.** Keep `contactId`, `conversationId`, and `messageId` to trace service and delivery.
+
+## How the API connects to the rest of BluBash
+
+- Contacts created through the API appear in **Contacts**, with the tags and additional fields sent in the payload.
+- API channel conversations are handled by the AI agent configured for the channel. See [What are AI agents →](/ai-agents/what-are-ai-agents).
+- Contacts added through the API to an Ongoing Campaign appear with the **API** source in the campaign details. See [Manage campaigns →](/campaigns/manage-campaigns).
+
+## Support
+
+To get the API Key, set up the API channel, or ask integration questions, contact BluBash support at [suporte@blubash.io](mailto:suporte@blubash.io).

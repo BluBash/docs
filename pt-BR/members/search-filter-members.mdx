@@ -1,0 +1,66 @@
+---
+title: "Pesquisar membros"
+sidebarTitle: "Pesquisar membros"
+description: "Encontre membros por nome ou e-mail na página Membros e entenda os indicadores Você, Proprietário e Convite Enviado."
+---
+
+A página **Membros** tem um campo de pesquisa e indicadores que ajudam a manter a lista correta: quem já entrou, quem ainda não aceitou o convite e quem é o proprietário do workspace.
+
+<Note>
+  A página **Membros** é exclusiva de Administradores.
+</Note>
+
+## Pesquisar
+
+Digite no campo **Pesquisar membros...**, no topo da página. A lista é filtrada enquanto você digita, sem diferenciar maiúsculas e minúsculas.
+
+| Você digita | Encontra |
+| --- | --- |
+| Parte do nome | Membros cujo nome contém o texto |
+| Parte do e-mail, como `@empresa.com` | Membros com e-mails que contêm o texto |
+| `admin`, `manager` ou `member` | Membros com a função Administrador, Gerente ou Membro, respectivamente |
+
+<Info>
+  A pesquisa por função usa os códigos internos em inglês. Digitar "gerente" não filtra a função Gerente; use `manager`.
+</Info>
+
+O número ao lado do título **Membros** mostra quantas pessoas aparecem com o filtro atual. Se nada corresponder, a página mostra **Nenhum membro encontrado**. Apague o texto da pesquisa para voltar à lista completa.
+
+## Atualizar a lista
+
+Clique no botão **Atualizar** (ícone de seta circular) para recarregar os dados. Use depois de convidar, editar ou remover alguém, ou quando outro Administrador fez mudanças ao mesmo tempo.
+
+## Indicadores na lista
+
+| Indicador | Significado |
+| --- | --- |
+| **Você** | A sua própria conta |
+| **Proprietário** | O proprietário do workspace. Não pode ser removido e a função dele não muda |
+| **Convite Enviado** | O convite foi enviado, mas a pessoa ainda não concluiu o primeiro acesso. O ícone **Reenviar convite** fica disponível |
+| Selo de função | **Administrador**, **Gerente** ou **Membro** na coluna **Função** |
+
+## Rotina de revisão sugerida
+
+- Pesquise pelo domínio da empresa, como `@empresa.com`, para achar e-mails pessoais que deveriam ser corporativos.
+- Procure convites com **Convite Enviado** há muitos dias e reenvie ou remova.
+- Pesquise `admin` e confira se só as pessoas certas têm acesso total.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Editar a função de um membro" icon="user-cog" href="/pt-BR/members/edit-member-permissions">
+    Ajuste a função de quem você encontrou.
+  </Card>
+
+  <Card title="Remover um membro" icon="user-minus" href="/pt-BR/members/remove-member">
+    Revogue acessos desnecessários.
+  </Card>
+
+  <Card title="Adicionar um membro" icon="user-plus" href="/pt-BR/members/add-member">
+    Convide novas pessoas.
+  </Card>
+
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Revise o que cada função pode fazer.
+  </Card>
+</CardGroup>

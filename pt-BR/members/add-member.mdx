@@ -1,0 +1,99 @@
+---
+title: "Adicionar um membro"
+description: "Convide uma pessoa para o workspace da BluBash informando e-mail, função e equipes. Apenas Administradores enviam convites."
+---
+
+Adicionar um membro é enviar um convite por e-mail com a função e as equipes da pessoa. Ela define o próprio nome e a senha no primeiro acesso e, a partir daí, recebe as conversas que o agente de IA transfere para as equipes dela.
+
+<Note>
+  Apenas **Administradores** adicionam membros. O botão **Adicionar Membro** não aparece para Gerentes e Membros.
+</Note>
+
+## Antes de começar
+
+- **Crie as equipes primeiro.** O convite exige pelo menos uma equipe. Se o workspace ainda não tiver equipes, a BluBash mostra o aviso **Nenhuma equipe disponível. Crie uma equipe antes de adicionar membros.** Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+- **Confira o limite do plano.** O número de usuários depende do plano, consultado em **Faturamento & Uso**.
+- **Defina a função.** Consulte [Papéis e permissões →](/pt-BR/members/roles-permissions) se tiver dúvida entre Gerente e Membro.
+
+## Enviar o convite
+
+<Steps>
+  <Step title="Abra Membros">
+    No menu lateral, clique em **Membros** e depois em **Adicionar Membro**, no canto superior direito.
+  </Step>
+  <Step title="Informe e-mail e função">
+    Preencha os campos e clique em **Continuar**.
+
+    | Campo | Obrigatório | Descrição |
+    | --- | --- | --- |
+    | **Email** | Sim | Endereço que a pessoa usa no trabalho. O convite chega nele. |
+    | **Função** | Sim | **Administrador**, **Gerente** ou **Membro**. O padrão é **Membro**. |
+  </Step>
+  <Step title="Selecione as equipes">
+    Marque as equipes de que a pessoa vai participar. Use **Buscar equipes...** para filtrar a lista e **Selecionar todas** ou **Limpar seleção** para marcar ou desmarcar de uma vez. O contador mostra quantas equipes estão selecionadas.
+
+    <Warning>
+      Selecione pelo menos uma equipe. Sem equipe, o membro não consegue acessar as funcionalidades.
+    </Warning>
+  </Step>
+  <Step title="Envie">
+    Clique em **Adicionar Membro**. A BluBash confirma com **Convite de membro enviado com sucesso** e a pessoa aparece na lista com o status **Convite Enviado**.
+  </Step>
+</Steps>
+
+Para voltar e corrigir o e-mail ou a função, clique em **Voltar** na etapa de equipes.
+
+## O que acontece depois do convite
+
+| Momento | O que acontece |
+| --- | --- |
+| Convite enviado | A pessoa recebe um e-mail de convite e aparece na lista com **Convite Enviado** |
+| Primeiro acesso | Ela abre o convite e, na tela **Configurar Senha**, informa o **Nome** e cria a senha |
+| Acesso liberado | O status **Convite Enviado** some e a pessoa passa a ver as conversas, contatos e Pipelines das equipes escolhidas |
+| Atendimento | Quando o agente de IA usa **Transferir para Equipe** para uma dessas equipes, a conversa fica disponível para ela |
+
+A senha precisa ter pelo menos 8 caracteres, com letra maiúscula, letra minúscula, número e caractere especial.
+
+<Info>
+  O nome do membro é definido pela própria pessoa no perfil. O Administrador não preenche nem edita o nome.
+</Info>
+
+## Reenviar o convite
+
+Se a pessoa não encontrou o e-mail de convite, clique no ícone **Reenviar convite** na linha dela. O ícone aparece enquanto o status for **Convite Enviado**.
+
+## Boas práticas
+
+- Use o e-mail corporativo de cada pessoa. Evite e-mails compartilhados: cada atendente precisa de um acesso próprio para que relatórios e responsáveis fiquem corretos.
+- Escolha só as equipes em que a pessoa vai atender. Equipes a mais aumentam o volume de conversas que ela recebe.
+- Mantenha poucos Administradores. Para coordenação, use **Gerente**.
+- Peça que a pessoa verifique a caixa de spam se o convite não chegar.
+
+## Erros comuns
+
+| Situação | O que fazer |
+| --- | --- |
+| **Nenhuma equipe disponível. Crie uma equipe antes de adicionar membros.** | Crie uma equipe em **Equipes** e tente de novo |
+| **Selecione pelo menos uma equipe** | Marque ao menos uma equipe antes de enviar |
+| **Digite um email válido** | Corrija o endereço de e-mail |
+| A pessoa entrou mas não vê conversas | Verifique se ela está na equipe certa e se essa equipe atende o canal das conversas |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Editar a função de um membro" icon="user-cog" href="/pt-BR/members/edit-member-permissions">
+    Ajuste a função depois do convite.
+  </Card>
+
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Gerencie quem participa de cada equipe.
+  </Card>
+
+  <Card title="Adicionar usuários" icon="user-plus" href="/pt-BR/account-settings/add-users">
+    Veja o fluxo completo de entrada de uma pessoa no workspace.
+  </Card>
+
+  <Card title="Remover um membro" icon="user-minus" href="/pt-BR/members/remove-member">
+    Revogue o acesso de quem saiu.
+  </Card>
+</CardGroup>

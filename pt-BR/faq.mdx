@@ -1,0 +1,170 @@
+---
+title: "Perguntas frequentes"
+description: "Respostas diretas para as dúvidas mais comuns sobre a BluBash: agentes de IA, canais, atendimento, transferências, Pipelines, relatórios e permissões."
+---
+
+Estas são as dúvidas que mais aparecem nos treinamentos com clientes. Cada resposta aponta para a página com o passo a passo.
+
+## Agentes de IA
+
+<AccordionGroup>
+  <Accordion title="O agente de IA pode atender do começo ao fim, sem ninguém da equipe?">
+    Sim. Com a habilidade nativa **Encerrar conversa** ativada, o agente encerra os atendimentos que resolveu. Quando a conversa exige negociação ou decisão, ele transfere para a equipe pela habilidade **Transferir para Equipe**.
+
+    [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+  </Accordion>
+
+  <Accordion title="Como sei que a IA está atendendo uma conversa?">
+    Há três sinais. No painel lateral, a aba **Conversa** mostra o campo **Agente de IA**. Na lista, um ícone de brilho ao lado do nome indica **Conversa híbrida (usuário + IA)** quando a conversa tem atendente e agente ao mesmo tempo. Na conversa aberta, o campo de mensagem é substituído pelo aviso **Agente de IA Ativo** com o botão **Assumir Conversa**. O filtro **IA** da lista mostra as conversas conduzidas pela IA.
+  </Accordion>
+
+  <Accordion title="Posso escrever para o cliente enquanto a IA atende?">
+    Não. Enquanto o agente conduz a conversa, o campo de mensagem fica bloqueado para evitar duas respostas ao mesmo tempo. Clique em **Assumir Conversa**, informe um motivo se quiser e confirme. A partir daí, a conversa é sua.
+
+    [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+  </Accordion>
+
+  <Accordion title="Como a equipe sabe o que a IA já conversou com o cliente?">
+    Todas as mensagens da IA ficam no histórico da conversa, identificadas com o ícone de brilho. A habilidade nativa **Adicionar nota** permite que o agente deixe um resumo antes de transferir; reforce isso no **Comportamento** do agente. As notas aparecem no histórico e na aba **Conversa** do painel lateral.
+
+    [Configurar habilidades →](/pt-BR/ai-agents/configure-skills)
+  </Accordion>
+
+  <Accordion title="Depois que a equipe assume, posso devolver a conversa para a IA?">
+    Sim. Use **Transferir para IA** no topo da conversa e escolha um agente ativo. Isso é útil para a IA coletar documentos, confirmar dados ou encerrar o atendimento depois da parte humana.
+
+    [Transferir para a IA →](/pt-BR/ai-agents/handoff-to-ai)
+  </Accordion>
+
+  <Accordion title="Como sei se a IA está respondendo bem?">
+    Teste com **Testar Agente** antes de vincular ao canal. Depois, abra as conversas na **Visão 360°** e use **Gerar análise de IA**, que avalia o atendimento e sugere ajustes.
+
+    [Visão 360° e análise de IA →](/pt-BR/reports/ai-audit)
+  </Accordion>
+</AccordionGroup>
+
+## Canais
+
+<AccordionGroup>
+  <Accordion title="A BluBash atende só pelo WhatsApp?">
+    Não. O WhatsApp é o canal principal, pela **WhatsApp Business API** ou pelo **WhatsApp Lite**, mas você também atende pelo Direct do **Instagram** e pelo **Webchat** do seu site. Todas as conversas chegam na mesma caixa de entrada. Telegram e Email aparecem como **Em breve**.
+
+    [Criar um canal →](/pt-BR/channels/create-channel)
+  </Accordion>
+
+  <Accordion title="Posso iniciar uma conversa pelo Instagram ou pelo Webchat?">
+    Não. Instagram e Webchat são canais apenas receptivos: a conversa começa quando o contato envia uma mensagem. Na tela **Iniciar nova conversa**, esses canais aparecem com a indicação **Apenas receptivo**.
+
+    [Configurar Instagram →](/pt-BR/channels/configure-instagram) · [Configurar Webchat →](/pt-BR/channels/configure-webchat)
+  </Accordion>
+
+  <Accordion title="Por que não consigo mandar mensagem livre no WhatsApp?">
+    No **WhatsApp Business API**, a Meta só permite mensagem livre até 24 horas depois da última mensagem do contato. Fora dessa janela, ou quando o contato nunca escreveu, você precisa enviar um template aprovado. A BluBash mostra o aviso e o botão **Escolha o template**. No **WhatsApp Lite** essa regra não se aplica.
+
+    [Enviar um template →](/pt-BR/conversations/send-templates)
+  </Accordion>
+
+  <Accordion title="Por que não consigo responder no Instagram?">
+    O Instagram só permite responder em até 7 dias após a última mensagem do contato. Depois disso, a BluBash mostra **Não é possível enviar mensagens neste momento** e você precisa aguardar uma nova mensagem do contato. Notas internas continuam disponíveis.
+  </Accordion>
+
+  <Accordion title="Quem atende por outro número vê a conversa do primeiro número?">
+    Não. Cada canal tem as próprias conversas. Quem atende por outro canal vê o contato, o negócio, o histórico de etapas e as notas do negócio.
+
+    [Um número ou vários? →](/pt-BR/channels/single-or-multiple-numbers)
+  </Accordion>
+</AccordionGroup>
+
+## Atendimento
+
+<AccordionGroup>
+  <Accordion title="Por que preciso clicar em Atribuir a mim antes de responder?">
+    Conversas **Pendentes** ou **Transferidas** ainda não têm alguém ativo nelas. Ao clicar em **Atribuir a mim**, a conversa passa a ser sua e o campo de mensagem é liberado. Isso evita que duas pessoas respondam o mesmo cliente.
+  </Accordion>
+
+  <Accordion title="Como pego uma conversa que já tem outro responsável?">
+    Peça ao responsável para transferir a conversa para você pelo botão **Transferir**, escolhendo a equipe e o seu nome. Gerentes e Administradores também podem redistribuir as conversas da equipe.
+
+    [Transferir uma conversa →](/pt-BR/conversations/transfer-attendance) · [Papéis e permissões →](/pt-BR/members/roles-permissions)
+  </Accordion>
+
+  <Accordion title="Como passo o contexto ao transferir uma conversa?">
+    Antes de transferir, adicione uma nota interna com o resumo do caso e use o campo **Motivo** da transferência. O cliente não vê notas internas, e quem recebe a conversa já começa sabendo o que aconteceu.
+
+    [Notas internas →](/pt-BR/conversations/internal-notes)
+  </Accordion>
+
+  <Accordion title="Respondi o cliente. Encerro a conversa ou deixo aberta?">
+    Se o assunto foi resolvido, encerre. Cada conversa deve representar um assunto. Deixar a conversa aberta sem necessidade distorce o SLA e o tempo de resolução da equipe. A exceção são acompanhamentos contínuos, em que o cliente escreve com frequência sobre o mesmo processo.
+
+    [Encerrar uma conversa →](/pt-BR/conversations/close-attendance)
+  </Accordion>
+
+  <Accordion title="Encerrei por engano. E agora?">
+    Uma conversa encerrada não volta a ficar ativa. Abra a conversa e clique em **Iniciar nova conversa** para falar de novo com o contato no mesmo canal. Em canais apenas receptivos, como Instagram e Webchat, aguarde o contato escrever novamente.
+  </Accordion>
+
+  <Accordion title="Mensagens recebidas fora do expediente contam no meu tempo?">
+    Configure o **Calendário da Equipe** com o horário real de trabalho, os feriados e as exceções. Ele é a referência de expediente da equipe para as métricas de tempo.
+
+    [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams)
+  </Accordion>
+
+  <Accordion title="Posso reagir à mensagem do cliente com emoji?">
+    Ainda não. Você vê as reações que o cliente faz às mensagens e pode usar emojis no texto da resposta.
+  </Accordion>
+</AccordionGroup>
+
+## Pipelines e negócios
+
+<AccordionGroup>
+  <Accordion title="Preciso transferir a conversa para agendar uma reunião com outra pessoa?">
+    Não necessariamente. Defina a pessoa como responsável do negócio e mova para a etapa de reunião. Ela encontra o negócio na visão **Meus** do Pipeline. A conversa só precisa ser transferida se essa pessoa for falar com o cliente por ela.
+  </Accordion>
+
+  <Accordion title="As movimentações do negócio ficam registradas?">
+    Sim. Cada mudança de etapa fica no histórico do negócio, com data, assim como o ganho ou a perda e o motivo.
+  </Accordion>
+
+  <Accordion title="Posso mover um negócio para outro Pipeline?">
+    Pode, mas o Pipeline de origem perde o registro do resultado. Quando uma área termina e outra começa, use a derivação: o negócio é marcado como ganho na origem e um novo negócio é criado no destino.
+
+    [Derivação entre Pipelines →](/pt-BR/pipelines/derive-deals)
+  </Accordion>
+
+  <Accordion title="Como trato um lead desqualificado?">
+    Marque o negócio como perdido e escolha o motivo correspondente. Não crie uma etapa para isso.
+
+    [Ganho, perdido e motivos →](/pt-BR/pipelines/won-lost-reasons)
+  </Accordion>
+
+  <Accordion title="Um contato pode ter mais de um negócio aberto?">
+    Sim. Cada negócio fica no seu Pipeline, com etapa, valor e responsável próprios. No contato e na aba **Negócios** da conversa, você vê todos de uma vez.
+  </Accordion>
+
+  <Accordion title="O agente de IA cria negócios sozinho?">
+    Sim. Com a habilidade **Gerenciar negócios**, o agente cria o negócio durante a conversa, move de etapa, atualiza campos, registra notas, cria tarefas de follow-up e pode marcar como ganho ou perdido. Você escolhe o Pipeline, as etapas permitidas e o que a IA pode fazer.
+
+    [Gerenciar negócios nos Pipelines →](/pt-BR/ai-agents/configure-skills#gerenciar-negócios-nos-pipelines)
+  </Accordion>
+</AccordionGroup>
+
+## Relatórios e qualidade
+
+<AccordionGroup>
+  <Accordion title="Consigo ver o desempenho de cada atendente?">
+    No **Relatório de conversas**, filtre por membro para ver volume e status das conversas de cada pessoa, e abra cada conversa na **Visão 360°**. O relatório **Performance & Qualidade**, com tempos, SLA e satisfação por atendente, está em breve.
+
+    [Relatórios e Insights →](/pt-BR/reports/overview)
+  </Accordion>
+
+  <Accordion title="O atendente vê a análise da IA sobre o próprio atendimento?">
+    Não. Relatórios e análises de qualidade ficam disponíveis para **Gerentes** e **Administradores**. Compartilhe os pontos de melhoria com o atendente em uma conversa individual.
+
+    [Visão 360° e análise de IA →](/pt-BR/reports/ai-audit)
+  </Accordion>
+
+  <Accordion title="A análise de IA substitui uma análise jurídica de LGPD?">
+    Não. A análise aponta possíveis riscos no tratamento de dados pessoais na conversa, como pedir CPF sem registrar consentimento. É um alerta para o gestor revisar, não um parecer jurídico.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,108 @@
+---
+title: "Templates and quick replies: overview"
+sidebarTitle: "What are templates and quick replies"
+description: "Understand the difference between Meta-approved templates and quick replies, which channels each one works on, and when to use each one in BluBash."
+---
+
+BluBash has two types of ready-made messages: **message templates** and **quick replies**. Both live on the same page, **Templates & Quick Replies**, but they follow different rules for approval, channels, and usage.
+
+- **Message Template**: a structured message that Meta must approve before use. It exists only for the **WhatsApp Business API**.
+- **Quick Reply**: a ready-to-use message with no approval. It works on every channel.
+
+## Message templates
+
+On the WhatsApp Business API, Meta only allows free-form messages for 24 hours after the contact's last message. Outside that window, the only way to reach the contact is to send an approved template.
+
+Use templates to:
+
+- **Start a conversation** with a contact who has never written to you.
+- **Resume a conversation** after more than 24 hours without a message from the contact.
+- **Send notifications**: order confirmations, appointment reminders, payment notices.
+- **Run campaigns** on the WhatsApp Business API.
+
+Every template has a Meta category, which defines the allowed content and how Meta charges for the send:
+
+| Meta category | Use | Example |
+| --- | --- | --- |
+| **Marketing** | Promotions, offers, news, invitations to resume a sales conversation | "Black Friday: 50% off the whole store" |
+| **Utility** | Confirmations, order updates, reminders, account notices | "Your order #123 has shipped" |
+| **Authentication** | Verification codes and login confirmations | "Your verification code is 123456" |
+
+<Info>
+  Meta charges for template sends directly on your Meta account. The price depends on the template category and the recipient's country. BluBash does not set these prices. Check the current rules in the [Meta Business Help Center](https://www.facebook.com/business/help).
+</Info>
+
+## Quick replies
+
+Quick replies are a bank of ready-made messages your team uses during conversations. They do not go through Meta, are available as soon as you create them, and can contain text, an image, a video, a document, or contact cards.
+
+Use quick replies for:
+
+- **Greetings** and team member introductions.
+- **Frequently asked questions**: delivery times, payment methods, return policy.
+- **Fixed information**: address, business hours, payment details.
+- **Materials**: PDF catalog, price list, demo video.
+- Standardized **sign-offs**.
+
+## Key differences
+
+|  | Message template | Quick reply |
+| --- | --- | --- |
+| **Meta approval** | Required | Not needed |
+| **Channels** | WhatsApp Business API only | WhatsApp Business API, WhatsApp Lite, Instagram, and Webchat |
+| **Outside the 24-hour window (WhatsApp Business API)** | Can be sent | Cannot be sent |
+| **Content** | **Header**, **Body**, **Footer**, and **Buttons** | **Text**, **Image**, **Video**, **Document**, or **Contacts** |
+| **Variables** | Up to 10 in the body and 1 in the header | Yes, in the message text |
+| **Available to** | The selected channels | The selected teams |
+| **Used in campaigns** | Yes | No |
+| **Status** | Pending Approval, Approved, Rejected, Partial, Inactive | Active or Inactive |
+
+## Rules by channel
+
+| Channel | Templates | Quick replies |
+| --- | --- | --- |
+| **WhatsApp Business API** | Required to start a conversation and to resume after 24 hours | Within the 24-hour window |
+| **WhatsApp Lite** | Not used. You can send free-form messages at any time | Whenever you can reply |
+| **Instagram** | Not used. You can reply up to 7 days after the contact's last message | Within the Instagram window |
+| **Webchat** | Not used. The visitor starts the conversation from the widget | During the conversation |
+
+## Templates, quick replies, and the AI agent
+
+In hybrid service, the AI agent handles the first contact and transfers to your team when needed. Ready-made messages come in at the two points where a team member acts:
+
+- **After the transfer**: the team member takes over the conversation and uses quick replies to keep your company's standard without retyping everything.
+- **Contact who stopped replying**: if more than 24 hours have passed on the WhatsApp Business API, the team member sends a template to resume. When the contact replies, the window reopens.
+
+[Hybrid service →](/ai-agents/hybrid-service)
+
+## Who creates and who uses
+
+| Role | What they can do |
+| --- | --- |
+| **Administrator** | Create, edit, and delete all templates and quick replies |
+| **Manager** | Create, edit, and delete templates and quick replies for the channels and teams they can access |
+| **Member** | Use templates from their channels and quick replies from their teams in conversations |
+
+The page lists only what you can see: templates from your channels and quick replies from your teams.
+
+[Roles and permissions →](/members/roles-permissions)
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create a template" icon="file-text" href="/templates/create-template">
+    Build the template and submit it for Meta approval.
+  </Card>
+
+  <Card title="Create a quick reply" icon="zap" href="/templates/create-quick-reply">
+    Save ready-made messages for your team.
+  </Card>
+
+  <Card title="Use variables" icon="braces" href="/templates/use-variables">
+    Personalize messages with contact data.
+  </Card>
+
+  <Card title="Send in a conversation" icon="send" href="/templates/send-templates-quick-replies">
+    See how your team uses templates and quick replies.
+  </Card>
+</CardGroup>

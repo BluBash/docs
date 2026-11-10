@@ -1,0 +1,66 @@
+---
+title: "Search members"
+sidebarTitle: "Search members"
+description: "Find members by name or email on the Members page and understand the You, Owner, and Invitation Sent indicators."
+---
+
+The **Members** page has a search field and indicators that help you keep the list accurate: who has already joined, who has not accepted the invitation yet, and who owns the workspace.
+
+<Note>
+  The **Members** page is available to Administrators only.
+</Note>
+
+## Search
+
+Type in the **Search members...** field at the top of the page. The list filters as you type, and the search is not case-sensitive.
+
+| You type | You find |
+| --- | --- |
+| Part of a name | Members whose name contains the text |
+| Part of an email, such as `@company.com` | Members whose email contains the text |
+| `admin`, `manager`, or `member` | Members with the Administrator, Manager, or Member role, respectively |
+
+<Info>
+  Searching by role uses the internal role codes. Type `admin`, `manager`, or `member`.
+</Info>
+
+The number next to the **Members** heading shows how many people match the current search. If nothing matches, the page shows **No members found**. Clear the search text to see the full list again.
+
+## Refresh the list
+
+Click the **Refresh** button (circular arrow icon) to reload the data. Use it after inviting, editing, or removing someone, or when another Administrator made changes at the same time.
+
+## Indicators in the list
+
+| Indicator | Meaning |
+| --- | --- |
+| **You** | Your own account |
+| **Owner** | The workspace owner. They cannot be removed and their role cannot change |
+| **Invitation Sent** | The invitation was sent, but the person has not completed their first access. The **Resend invitation** icon is available |
+| Role badge | **Administrator**, **Manager**, or **Member** in the **Role** column |
+
+## Suggested review routine
+
+- Search for your company domain, such as `@company.com`, to spot personal addresses that should be work emails.
+- Look for people with **Invitation Sent** for many days and resend or remove the invitation.
+- Search `admin` and confirm that only the right people have full access.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Edit a member's role" icon="user-cog" href="/members/edit-member-permissions">
+    Adjust the role of the person you found.
+  </Card>
+
+  <Card title="Remove a member" icon="user-minus" href="/members/remove-member">
+    Revoke unnecessary access.
+  </Card>
+
+  <Card title="Add a member" icon="user-plus" href="/members/add-member">
+    Invite new people.
+  </Card>
+
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    Review what each role can do.
+  </Card>
+</CardGroup>

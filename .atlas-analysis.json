@@ -1,0 +1,144 @@
+{
+  "projectType": "saas",
+  "projectName": "BluBash",
+  "projectDescription": "BluBash is an AI-powered customer communication platform for WhatsApp, enabling teams to automate and manage customer conversations at scale.",
+  "theme": "almond",
+  "primaryColor": "#4247f3",
+  "lightColor": null,
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "implementation-guide"
+            ]
+          },
+          {
+            "group": "Conversations",
+            "pages": [
+              "conversations/start-new-attendance",
+              "conversations/transfer-attendance",
+              "conversations/close-attendance",
+              "conversations/internal-notes",
+              "conversations/send-templates",
+              "conversations/use-quick-messages",
+              "conversations/tags-purpose-usage"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "contacts/add-new-contact",
+              "contacts/edit-contact",
+              "contacts/delete-contact",
+              "contacts/search-filter-contacts",
+              "contacts/manage-contact-tags",
+              "contacts/use-custom-fields",
+              "contacts/view-activity-timeline",
+              "contacts/start-conversation-from-contact"
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "pages": [
+              "campaigns/campaigns-introduction",
+              "campaigns/create-campaign",
+              "campaigns/manage-campaigns"
+            ]
+          },
+          {
+            "group": "AI Agents",
+            "pages": [
+              "ai-agents/what-are-ai-agents",
+              "ai-agents/create-ai-agent",
+              "ai-agents/train-ai-agent",
+              "ai-agents/configure-agent-settings",
+              "ai-agents/configure-skills",
+              "ai-agents/test-ai-agent",
+              "ai-agents/handoff-to-ai",
+              "ai-agents/activate-deactivate-agent"
+            ]
+          },
+          {
+            "group": "Channels",
+            "pages": [
+              "channels/create-channel",
+              "channels/configure-whatsapp-lite",
+              "channels/configure-whatsapp-official",
+              "channels/edit-channel",
+              "channels/activate-deactivate-channel",
+              "channels/delete-channel",
+              "channels/search-filter-channels"
+            ]
+          },
+          {
+            "group": "Templates",
+            "pages": [
+              "templates/what-are-templates-quick-replies",
+              "templates/create-template",
+              "templates/create-quick-reply",
+              "templates/use-variables",
+              "templates/send-templates-quick-replies",
+              "templates/edit-delete"
+            ]
+          },
+          {
+            "group": "Team & Settings",
+            "pages": [
+              "members/members-introduction",
+              "members/add-member",
+              "members/edit-member-permissions",
+              "members/remove-member",
+              "members/search-filter-members",
+              "account-settings/create-configure-teams",
+              "account-settings/create-tags",
+              "account-settings/add-users"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "developers/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "developers/api/channels",
+              "developers/api/campaigns"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered customer service agents with 24/7 automated responses",
+    "WhatsApp channel management (Lite and Official API)",
+    "Bulk campaigns with scheduling and contact segmentation",
+    "Conversation management with team handoff and internal notes",
+    "Contact management with custom fields and activity timeline",
+    "Message templates and quick replies for WhatsApp",
+    "Team and member management with role-based permissions",
+    "REST API for programmatic channel messaging and campaigns"
+  ],
+  "publicApiSurface": [
+    "POST /api/v1/channels/{channelId}/messages",
+    "POST /api/v1/campaigns/:campaignId/audience",
+    "POST /api/v1/campaigns/:campaignId/messages/:messageId/cancel",
+    "GET /api/v1/campaigns/:campaignId/messages",
+    "GET /api/v1/campaigns/:campaignId/messages/:messageId",
+    "X-API-Key header authentication",
+    "X-Idempotency-Key header for deduplication"
+  ]
+}

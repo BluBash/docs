@@ -1,0 +1,112 @@
+---
+title: "Criar uma resposta rápida"
+sidebarTitle: "Criar resposta rápida"
+description: "Crie respostas rápidas na BluBash com texto, imagem, vídeo, documento ou contatos, defina quais equipes podem usar e padronize o atendimento em todos os canais."
+---
+
+Respostas rápidas são mensagens prontas que a equipe envia durante a conversa. Elas não passam pela aprovação da Meta, ficam disponíveis assim que você cria e funcionam em todos os canais: WhatsApp Business API, WhatsApp Lite, Instagram e Webchat.
+
+## Quando usar
+
+- Respostas que a equipe repete todo dia: formas de pagamento, prazos, endereço, horário.
+- Materiais que você envia com frequência: catálogo, tabela de preços, vídeo de demonstração.
+- Mensagens de continuidade depois que o agente de IA transfere a conversa para a equipe.
+- Encerramentos padronizados.
+
+<Note>
+  No WhatsApp Business API, respostas rápidas só podem ser enviadas dentro da janela de 24 horas. Para iniciar ou retomar a conversa fora dela, use um [template](/pt-BR/templates/create-template).
+</Note>
+
+## Antes de começar
+
+- Você precisa ser **Administrador** ou **Gerente**. Membros só usam respostas rápidas nas conversas.
+- Tenha pelo menos uma equipe ativa. A resposta rápida fica disponível por equipe. Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+
+## Como criar
+
+O assistente tem quatro etapas: **Configuração**, **Editar**, **Associações** e **Revisar**.
+
+<Steps>
+  <Step title="Abra Templates e Respostas Rápidas">
+    Acesse **Configurações** e clique em **Templates**. Na página **Templates e Respostas Rápidas**, clique em **Criar Template**.
+  </Step>
+  <Step title="Escolha Resposta Rápida">
+    Em **Escolha o tipo de mensagem**, clique em **Selecionar Resposta Rápida** no cartão **Resposta Rápida**, marcado com **Pronto para usar**.
+  </Step>
+  <Step title="Escreva a resposta rápida">
+    Na etapa **Crie sua resposta rápida**, preencha **Nome do Template**, escolha o **Tipo de Conteúdo** e preencha o **Conteúdo**. A **Visualização** ao lado mostra o resultado. Clique em **Continuar**.
+  </Step>
+  <Step title="Associe as equipes">
+    Em **Selecionar Equipes**, marque quais equipes podem usar a resposta rápida. Selecione pelo menos uma equipe. Só os atendentes dessas equipes veem a resposta rápida nas conversas.
+  </Step>
+  <Step title="Revise e crie">
+    Confira a prévia e as informações e clique em **Criar Template**. A resposta rápida fica disponível na hora, com o status **Ativo**.
+  </Step>
+</Steps>
+
+## Tipos de conteúdo
+
+| Tipo de Conteúdo | Campos | Limites |
+| --- | --- | --- |
+| **Texto** | **Mensagem**. Use **Adicionar Variável** para inserir `{{1}}`, `{{2}}` | Texto obrigatório |
+| **Imagem** | **Arquivo de Mídia** e **Legenda** | JPG, PNG, GIF ou WEBP, até 5 MB |
+| **Vídeo** | **Arquivo de Mídia** e **Legenda** | MP4, AVI, MOV ou WMV, até 16 MB |
+| **Documento** | **Arquivo de Mídia** e **Nome do Arquivo** | PDF, DOC, DOCX, TXT, CSV, XLS, XLSX, PPT ou PPTX, até 10 MB |
+| **Contatos** | Um ou mais cartões de contato, com **Adicionar Contato** | Pelo menos um contato |
+
+<Tip>
+  Para documentos, preencha **Nome do Arquivo** com um nome claro, como `tabela-precos-2026.pdf`. É o nome que o contato vê ao receber.
+</Tip>
+
+## Exemplos
+
+**Formas de pagamento (Texto):**
+
+```text
+Olá {{1}}! Aceitamos Pix, cartão de crédito em até 12x e boleto.
+Qual forma você prefere?
+```
+
+**Continuidade após a transferência do agente de IA (Texto):**
+
+```text
+Olá {{1}}, aqui é a {{2}}. Vi o seu histórico com nosso assistente e vou continuar o seu atendimento a partir daqui.
+```
+
+**Catálogo (Documento):** envie o PDF do catálogo com o nome `catalogo-produtos.pdf`.
+
+## Boas práticas
+
+- **Dê nomes fáceis de buscar.** Na conversa, o atendente procura pelo nome ou por uma palavra do texto. Prefira nomes como "pagamento pix" ou "endereço loja centro".
+- **Use variáveis para o nome do contato.** Na conversa, a primeira variável já vem preenchida com o nome do contato. Veja [Usar variáveis →](/pt-BR/templates/use-variables).
+- **Associe só às equipes certas.** Uma resposta do comercial não precisa aparecer para o suporte.
+- **Mantenha a lista enxuta.** Revise periodicamente e exclua o que ninguém usa.
+- **Alinhe com o agente de IA.** Use nas respostas rápidas as mesmas informações do treinamento do agente de IA, para o contato não receber versões diferentes. Veja [Treinar o agente de IA →](/pt-BR/ai-agents/train-ai-agent).
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="A resposta rápida não aparece na conversa">
+    Confira se a conversa é de uma equipe associada à resposta rápida. No WhatsApp Business API fora da janela de 24 horas, a lista mostra apenas templates.
+  </Accordion>
+
+  <Accordion title="Não consigo editar uma resposta rápida">
+    Você precisa ter acesso a todas as equipes associadas a ela. Veja [Editar e excluir →](/pt-BR/templates/edit-delete).
+  </Accordion>
+
+  <Accordion title="O arquivo não é aceito">
+    Confira o formato e o tamanho máximo na tabela de tipos de conteúdo.
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Usar variáveis" icon="braces" href="/pt-BR/templates/use-variables">
+    Personalize respostas com dados do contato.
+  </Card>
+
+  <Card title="Usar na conversa" icon="zap" href="/pt-BR/conversations/use-quick-messages">
+    Veja como o atendente envia uma resposta rápida.
+  </Card>
+</CardGroup>

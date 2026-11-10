@@ -1,0 +1,225 @@
+---
+title: "Add contacts manually or by import"
+sidebarTitle: "Add contacts"
+description: "Create contacts one by one or import a CSV file into BluBash, with field mapping, tags, owner assignment, and duplicate handling."
+---
+
+Contacts are the people your company talks to. Each contact brings together profile data, tags, additional fields, owners, conversations, deals, tasks, and the full relationship history.
+
+In BluBash, a contact can be created in three ways:
+
+| Source | How it happens | Who can do it |
+| --- | --- | --- |
+| **Automatically by channels** | When someone sends the first message to a connected channel (WhatsApp, Instagram, or Webchat), BluBash creates the contact and opens the conversation. | Automatic |
+| **Manually** | You fill in the **Add New Contact** form. | Administrator, Manager, and Member |
+| **CSV import** | You upload a spreadsheet and create or update many contacts at once, with the organization, tags, owner and, optionally, a Pipeline deal for each row. | Administrator |
+
+<Info>
+  In most operations, your contact base grows on its own through your channels. The AI agent can also complete the profile during the conversation, filling in name, email, phone, and additional fields. See [Edit a contact →](/contacts/edit-contact).
+</Info>
+
+## Add a contact manually
+
+Use manual entry when you receive a lead by phone, at an event, or through a referral and want to register it before starting the conversation.
+
+<Steps>
+  <Step title="Open the contact list">
+    In the sidebar, click **Contacts**. The **People** tab shows the contact list.
+  </Step>
+  <Step title="Open the form">
+    Click **New contact** in the upper-right corner. The **Add New Contact** window opens.
+  </Step>
+  <Step title="Fill in the details">
+    Enter the fields below. Only **Name** is required.
+
+    | Field | Required | How to fill it |
+    | --- | --- | --- |
+    | **Name** | Yes | The person's name, as you want to see it in the list and in conversations. |
+    | **Email** | No | A valid email. An invalid format blocks saving. |
+    | **Phone** | No | Contact phone number. Use the international format, with the country code. |
+    | **WhatsApp** | No | Number used for conversations on WhatsApp channels. Select the country and enter the number with the area code. |
+  </Step>
+  <Step title="Save the contact">
+    Click **Create Contact**. BluBash saves the record and opens the contact page, where you complete the remaining information.
+  </Step>
+</Steps>
+
+<Tip>
+  Always fill in **WhatsApp** when you plan to talk to the contact on that channel. Without this number, the contact cannot receive WhatsApp messages, whether in conversations started by your team or in campaigns.
+</Tip>
+
+### What to complete after creating
+
+On the contact page, you can add information that is not in the initial form:
+
+- **Organization**: links the contact to an organization in the **Organizations** tab.
+- **Source** and **UTM campaign**: record where the contact came from (Ad, Organic, Referral, WhatsApp, Instagram, Import, Manual, or Other).
+- **Global owner** and owners by team (contact portfolio).
+- **Additional fields** created by the Administrator.
+- **Tags**.
+
+See how in [Edit a contact →](/contacts/edit-contact).
+
+## Import contacts from a CSV file
+
+Importing creates or updates many contacts at once. It is the recommended way to migrate a contact base from another system or load a lead list.
+
+In a single import, each row can carry the contact, its tags, organization, owner and a Pipeline deal. Rows with an empty deal stage import only the contact and organization, so a mixed list (new leads and contacts that are not in a negotiation yet) fits in one file.
+
+<Note>
+  Only the **Administrator** sees the **Import** button. Each file can have up to 100,000 rows. If your spreadsheet is larger, split it into parts.
+</Note>
+
+### Prepare the file
+
+- Save the spreadsheet in **CSV** format.
+- The first line must contain the column names.
+- Include a column with the contact name and a column with the chosen identifier (email or phone). Rows without the chosen identifier are matched by the other one, as long as they have an email or a phone.
+- Write phone numbers in international format, for example `+5511999998888`.
+- Use the headers from [Accepted columns](#accepted-columns), such as `org.name` or `deal.stage`, so BluBash maps the columns for you.
+- To create deals, include the `deal.stage` column. Leave the stage empty on rows that should not get a deal.
+- To start with the right format, use **Download sample CSV file** in the first step.
+
+### Step by step
+
+<Steps>
+  <Step title="Open the import">
+    In **Contacts**, click **Import**. The **Import contacts** page opens.
+  </Step>
+  <Step title="Upload file">
+    Click **Choose CSV file** and select the spreadsheet. BluBash shows how many columns and rows were detected.
+
+    In **How do you want to identify these contacts?**, choose **Email** or **Phone**. This identifier is used to find an existing contact or create a new one, and it is saved as the contact's main channel.
+
+    To create deals in the same import, turn on **Create deals for rows with a stage** and choose the **Deals pipeline**. This option is shown to users who can manage Pipelines.
+  </Step>
+  <Step title="Map fields">
+    Match each file column to a system field. The screen shows a sample from row 1 so you can check it.
+
+    Columns whose header matches a known field (see [Accepted columns](#accepted-columns)), an additional field key or an additional field name are mapped automatically. You can change any choice. Columns you do not want stay as **Do not import**.
+
+    If a column has no matching field, the Administrator can click **Create custom field**, choose **Text** or **Number** and confirm with **Create and map**. The contact field is created with the header as its name and the column is mapped to it.
+
+    The **Next** button is enabled only when the required fields are mapped: **Name**, the chosen identifier and, with deals turned on, the **Deal stage**.
+  </Step>
+  <Step title="Map stages">
+    This step appears when deal creation is on. Match each value of the file's stage column to a Pipeline stage. Every value must be matched to continue.
+  </Step>
+  <Step title="Configure and import">
+    Define what happens when a contact already exists (same email or phone):
+
+    | Option in **Duplicate contacts** | Result |
+    | --- | --- |
+    | **Ignore duplicates** | Keeps the existing contact unchanged. |
+    | **Update existing contact and add tags** | Updates the data with the values from the file and adds the tags. |
+    | **Only add tags to existing contact** | Does not change the data, only adds the tags. |
+
+    Optionally, choose tags to apply to all imported contacts and an **Owner** for them. Tags from the file's column are added to these.
+
+    With deals turned on, use **Duplicate deals** to choose when a deal must not be created:
+
+    | Option | Default | What it does |
+    | --- | --- | --- |
+    | **Do not create a deal if the contact already has an open deal in this pipeline** | On | Only open deals that existed before the import count. Importing the same file again does not duplicate deals. |
+    | **Do not create deals for contacts that already existed** | On | Protects current customers: only contacts new in this import get a deal. |
+    | **Create at most one deal per company** | Off | One deal per organization (by tax ID or by name). Other rows from the same organization import only the contact. |
+
+    The duplicate contact options apply to the contact data. Whether a deal is created depends only on the **Duplicate deals** options.
+  </Step>
+  <Step title="Start and monitor">
+    Click **Start import**. Processing runs in the background. In the contact list, a banner shows progress, with processed rows, successes, and errors. Click **View details** to return to the import page, where you can use **Cancel import**.
+  </Step>
+  <Step title="Review the result">
+    When it finishes, the banner shows the status of the last import. On the import page, click **View history** to see previous files. If any rows failed or have warnings, use **Download CSV with errors and warnings** to see the reason for each one. The `severity` column shows whether the row failed (`error`) or was imported with a warning (`warning`). Fix the failed rows and upload only those again.
+  </Step>
+</Steps>
+
+### Accepted columns
+
+| Header | Field | Notes |
+| --- | --- | --- |
+| `name` | Contact name | Required. |
+| `email` | Email | Identifier. |
+| `phone` | Phone / WhatsApp | Identifier. Use the international format. |
+| `tags` | Tags | Comma-separated. Tags that do not exist yet are created. |
+| `utm_campaign` | Contact source campaign |  |
+| `owner.email` | Contact owner | Email of a workspace member. Depends on contact portfolio. |
+| `org.name` | Organization name | Without a tax ID, the organization is linked by name. |
+| `org.tax_id` | Tax ID (CNPJ) | With a valid tax ID, the organization is linked by tax ID. |
+| `org.legal_name`, `org.country`, `org.tax_id_type`, `org.email`, `org.phone` | Other organization data | Fill in `org.country` (for example, `BR`) so the tax ID is validated. |
+| `deal.stage` | Deal stage | With deals turned on. Empty: the row imports only the contact and organization. |
+| `deal.title` | Deal title | Empty: uses the organization name and, without an organization, the contact name. |
+| `deal.value`, `deal.recurring_value`, `deal.recurring_period`, `deal.expected_close_at`, `deal.close_note` | Value, recurrence, expected close date and close note | Without a period, the recurring value is treated as monthly. |
+| `deal.campaign` | Deal campaign | Empty: inherits `utm_campaign`. |
+| `deal.owner_email` | Deal owner | Must be a member of a team linked to the Pipeline. Empty: inherits the contact owner and then the default owner. |
+| `custom.<key>` or the field name | Additional field | The field must exist or be created during mapping. |
+
+### Mixed list example
+
+```csv
+name,email,phone,tags,utm_campaign,owner.email,org.name,org.tax_id,org.country,deal.title,deal.stage,deal.recurring_value
+Maria Silva,maria@example.com,+5511999998888,"cold-leads,vip",cold-leads-2026-11,sales@example.com,Acme Ltda,11.222.333/0001-81,BR,Acme annual plan,Prospecting,490
+Joao Souza,joao@example.com,+5511988887777,cold-leads,cold-leads-2026-11,sales@example.com,Acme Ltda,11.222.333/0001-81,BR,,Prospecting,
+Ana Lima,ana@example.com,,cold-leads,cold-leads-2026-11,,Padaria Sol,,BR,,,
+```
+
+In this example, Maria and Joao join the same organization and get a deal. With **Create at most one deal per company** turned on, only Maria gets one. Ana is imported only as a contact, linked to Padaria Sol by name, and is identified by email because she has no phone.
+
+**Download sample CSV file** in the first step gives you a file in the same format.
+
+<Warning>
+  Setting an **Owner** during import, in the configuration step or through the `owner.email` column, depends on the **Contact portfolio** feature of your plan. If your plan does not include it, BluBash shows the upgrade option and the import does not proceed with an owner.
+</Warning>
+
+Each imported contact records the **Contact added via import** or **Contact updated via import** event in its **History**.
+
+## Best practices
+
+- Standardize numbers with the country code before importing. Numbers without a country code create duplicate contacts or delivery failures.
+- Tags from the `tags` column are created automatically. For additional fields of a type other than text or number, create them before importing so you can map them in step 2.
+- Use a batch tag (for example, `import-oct-2026`) to find and segment these contacts later.
+- Test with a small file before importing your whole base.
+- Prefer **Ignore duplicates** for the first load and **Update existing contact and add tags** for update loads.
+
+## Common errors
+
+| Message | Cause | How to fix |
+| --- | --- | --- |
+| **A contact with this data already exists (phone, email, or WhatsApp).** | Another contact already uses the same phone, email, or WhatsApp. | Search for the existing contact and update its record. |
+| **Please enter a valid email** | Incorrect email format. | Fix the address. |
+| **Import is limited to 100,000 rows per file.** | File above the limit. | Split the CSV into smaller parts. |
+| **Select a CSV file before continuing.** | No file was uploaded. | Choose the file in step 1. |
+| **An import is in progress.** | Another import is already running. | Wait for it to finish or cancel it. |
+| `IMPORT_ROW_UNMAPPED_STAGE` in the errors CSV | The row has a stage value that was not matched in **Map stages**. | Fix the stage in the file and upload the row again. |
+
+Some rows are imported with a **warning**: the contact is imported and the row counts as a success, but something did not go as in the file. The warning total appears in the import summary, and each warning appears in the errors and warnings CSV with the code below.
+
+| Code in the CSV | What happened |
+| --- | --- |
+| `IMPORT_ROW_ORG_LINKED_BY_NAME` | The tax ID is not valid for the given country. The organization was linked by name. |
+| `IMPORT_ROW_ORG_LINK_FAILED` | The organization was not linked (invalid tax ID with no organization name, or a save failure). The contact was imported without it. |
+| `IMPORT_ROW_OWNER_NOT_FOUND` | The `owner.email` address is not a workspace member. The contact got the import default owner. |
+| `IMPORT_ROW_DEAL_OWNER_NOT_FOUND` | The `deal.owner_email` address is not a member of a team linked to the Pipeline. The deal got the inherited owner. |
+| `IMPORT_ROW_DEAL_SKIPPED_OPEN_DEAL` | Deal not created: the contact already had an open deal in the Pipeline. |
+| `IMPORT_ROW_DEAL_SKIPPED_EXISTING_CONTACT` | Deal not created: the contact already existed before the import. |
+| `IMPORT_ROW_DEAL_SKIPPED_ORGANIZATION` | Deal not created: the organization already got a deal in this import. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Edit a contact" icon="pencil" href="/contacts/edit-contact">
+    Complete data, set owners, and understand what the AI agent updates.
+  </Card>
+
+  <Card title="Additional fields" icon="list-plus" href="/contacts/use-custom-fields">
+    Store information specific to your business on each contact.
+  </Card>
+
+  <Card title="Contact tags" icon="tag" href="/contacts/manage-contact-tags">
+    Organize and segment your base with tags.
+  </Card>
+
+  <Card title="Start a conversation" icon="message-circle" href="/contacts/start-conversation-from-contact">
+    Talk to the contact from their page.
+  </Card>
+</CardGroup>

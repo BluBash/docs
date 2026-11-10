@@ -1,0 +1,98 @@
+---
+title: "Editar e excluir templates e respostas rápidas"
+sidebarTitle: "Editar e excluir"
+description: "Encontre, edite e exclua templates e respostas rápidas na BluBash, entenda as permissões necessárias e por que alguns templates não podem ser editados."
+---
+
+A página **Templates e Respostas Rápidas** lista tudo o que você pode ver: templates dos seus canais e respostas rápidas das suas equipes. Nela, você busca, edita e exclui mensagens prontas.
+
+## A lista
+
+| Coluna | O que mostra |
+| --- | --- |
+| **Nome** | Nome do template ou da resposta rápida. |
+| **Tipo** | **Template** ou **Resposta Rápida**. |
+| **Categoria** | Categoria do template. |
+| **Status** | Templates: **Aguardando Aprovação**, **Aprovado**, **Rejeitado**, **Parcial** ou **Inativo**. Respostas rápidas: **Ativo** ou **Inativo**. |
+| **Canais/Equipes** | Canais do template ou equipes da resposta rápida. Passe o mouse para ver o status em cada canal. |
+| **Criado em** | Data de criação. |
+| **Ações** | Botões para editar e remover. |
+
+Use **Buscar templates e respostas rápidas...** para filtrar a lista. Clique em **Atualizar** para recarregar os status de aprovação.
+
+## Quem pode editar e excluir
+
+| Papel | Permissão |
+| --- | --- |
+| **Administrador** | Edita e exclui qualquer template ou resposta rápida. |
+| **Gerente** | Edita e exclui os itens dos canais e equipes a que tem acesso. |
+| **Membro** | Não edita nem exclui. Apenas usa nas conversas. |
+
+Para editar ou excluir, você precisa ter acesso a todos os canais ou equipes associados ao item. Caso contrário, os botões ficam desabilitados com a mensagem **Você precisa ter acesso a todas as equipes/canais deste template para gerenciá-lo**.
+
+## Editar
+
+<Steps>
+  <Step title="Clique no ícone de lápis">
+    Na coluna **Ações**, clique em **Editar** na linha do item.
+  </Step>
+  <Step title="Ajuste o conteúdo">
+    O assistente abre direto na etapa **Editar**, com os dados atuais. O tipo e a categoria escolhidos na criação não mudam. Altere o texto, a mídia, os botões ou as variáveis e clique em **Continuar**.
+  </Step>
+  <Step title="Revise as associações">
+    Inclua ou remova canais (template) ou equipes (resposta rápida). Mantenha pelo menos um selecionado.
+  </Step>
+  <Step title="Salve">
+    Na etapa **Revisar**, clique em **Atualizar Template**.
+  </Step>
+</Steps>
+
+### Quando um template não pode ser editado
+
+O botão de edição fica desabilitado com a mensagem **Não é possível editar este template** quando o template ainda não está sincronizado com o WhatsApp em todos os canais associados. Nesse caso, aguarde a sincronização ou crie um novo template.
+
+<Note>
+  Mudanças em um template passam pelas regras da Meta. Depois de editar um template aprovado, acompanhe o **Status** na lista. Se a alteração mudar o objetivo da mensagem, prefira criar um novo template e manter o antigo até o novo ser aprovado.
+</Note>
+
+## Excluir
+
+<Steps>
+  <Step title="Clique no ícone de lixeira">
+    Na coluna **Ações**, clique em **Remover** na linha do item.
+  </Step>
+  <Step title="Confirme">
+    A janela **Excluir Template** mostra o aviso **Tem certeza que deseja excluir este template? Esta ação não pode ser desfeita.** e **Este template será removido de todos os canais e equipes onde está sendo usado.** Clique em **Excluir Template**.
+  </Step>
+</Steps>
+
+<Warning>
+  A exclusão não pode ser desfeita. Antes de excluir um template, confira se ele não está em uso em uma campanha ativa, principalmente em uma **Campanha Contínua**.
+</Warning>
+
+## Boas práticas
+
+- **Revise a lista periodicamente.** Exclua respostas rápidas que ninguém usa e templates rejeitados que não serão corrigidos.
+- **Padronize nomes.** Prefixos como `vendas_`, `suporte_` e `cobranca_` facilitam a busca.
+- **Atualize junto com o agente de IA.** Se uma informação mudar, como preço ou horário, atualize a resposta rápida e o treinamento do agente de IA no mesmo dia.
+- **Teste depois de editar.** Envie a mensagem para um contato interno e confira variáveis, mídia e botões.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar um template" icon="file-text" href="/pt-BR/templates/create-template">
+    Crie um novo template para aprovação.
+  </Card>
+
+  <Card title="Criar uma resposta rápida" icon="zap" href="/pt-BR/templates/create-quick-reply">
+    Cadastre uma nova mensagem pronta.
+  </Card>
+
+  <Card title="Gerenciar campanhas" icon="megaphone" href="/pt-BR/campaigns/manage-campaigns">
+    Confira quais campanhas usam seus templates.
+  </Card>
+
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Veja o que cada papel pode fazer.
+  </Card>
+</CardGroup>

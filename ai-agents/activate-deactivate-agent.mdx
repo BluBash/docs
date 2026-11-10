@@ -1,0 +1,135 @@
+---
+title: "Activate, deactivate and link the AI agent to channels"
+sidebarTitle: "Activate and link to channels"
+description: "Activate or deactivate an AI agent in BluBash and link it to the WhatsApp, Instagram and Webchat channels it will serve. See limits and precautions."
+---
+
+For an AI agent to serve customers, two conditions must be met:
+
+1. The agent is **Active**.
+2. The agent is linked to one or more channels in the **AI Agent (Optional)** field.
+
+This page explains both steps, how to pause the agent and how to change the agent on a channel. Only the **Administrator** role activates, deactivates and deletes AI agents.
+
+## How agents and channels relate
+
+| Rule | Detail |
+| --- | --- |
+| One agent per channel | Each channel has at most one linked AI agent |
+| One agent, many channels | The same agent can be linked to several channels: a WhatsApp number, the Instagram account and the website Webchat, for example |
+| Active agents only | Only **Active** agents appear for selection in the channel and in the **Handoff to AI** window |
+| Default team | The channel also defines the **Default Team**, the team that handles the channel's conversations by default |
+
+| Channel | What the agent handles |
+| --- | --- |
+| **WhatsApp** (official WhatsApp Business API or WhatsApp Lite) | Conversations that reach the number |
+| **Instagram** (Direct) | Messages received in the Direct inbox. The channel is inbound only. |
+| **Webchat** | Visitors who start the chat on your website. The channel is inbound only. |
+
+## Activate or deactivate an agent
+
+<Steps>
+  <Step title="Open the agent list">
+    In the sidebar, click **AI Agents**. Each card shows the purpose, the tone and the **Active** or **Inactive** status.
+  </Step>
+  <Step title="Open the card menu">
+    Hover over the agent card and click the three-dot menu.
+  </Step>
+  <Step title="Click Activate or Deactivate">
+    The option changes according to the current status. BluBash confirms with the message **Agent status changed successfully!** and updates the card badge.
+  </Step>
+</Steps>
+
+<Note>
+  The number of agents active at the same time depends on your plan. If the limit is reached, activation is not completed and BluBash shows the reason. On a plan downgrade, agents above the new limit are deactivated.
+</Note>
+
+## Link the agent to an existing channel
+
+<Steps>
+  <Step title="Open the channel">
+    In the sidebar, click **Channels** and then the channel (WhatsApp, Instagram or Webchat).
+  </Step>
+  <Step title="Choose the agent">
+    In the **Channel Settings** section, open the **AI Agent (Optional)** field and select the agent.
+  </Step>
+  <Step title="Save">
+    Click **Save**. From then on, new conversations on that channel are handled by the agent.
+  </Step>
+  <Step title="Repeat on other channels">
+    For the agent to also serve Instagram or Webchat, do the same on each channel.
+  </Step>
+</Steps>
+
+You can also choose the agent when creating a channel: the **AI Agent (Optional)** field appears together with **Default Team** in the **Add New Channel** wizard.
+
+[Create a channel →](/channels/create-channel) · [Edit a channel →](/channels/edit-channel)
+
+## Change or remove the agent on a channel
+
+- **Change**: in **Channel Settings**, select another agent in **AI Agent (Optional)** and click **Save**.
+- **Remove**: select **No agent assigned** and click **Save**. The channel is then handled by the team only.
+
+Use removal to take AI off a specific channel without affecting the other channels the agent serves.
+
+## When to activate and when to deactivate
+
+| Activate when | Deactivate when |
+| --- | --- |
+| The essential training is **Trained** | You are going to rewrite the **Behavior** or replace many trainings |
+| The note, tag and transfer skills are configured | The agent is answering incorrectly in production |
+| **Test Agent** passed the test script | An integration (app or external API) is down |
+| The teams that receive transfers have the channel in **Team Channels** | You want to free a plan slot for another agent |
+
+Deactivating does not delete anything: trainings, skills, apps and settings are kept and apply again when you reactivate.
+
+<Tip>
+  For maintenance on a single channel, prefer removing the agent from that channel. For maintenance on the whole agent, deactivate it, adjust, test in **Test Agent** and reactivate.
+</Tip>
+
+## Conversations already with AI
+
+If a conversation is already with AI and you want a person to continue, open the conversation and click **Take Over**. Do this also before deactivating the agent or removing it from a channel, in conversations where the customer is still waiting for an answer.
+
+[Hand off to AI and take over conversations →](/ai-agents/handoff-to-ai)
+
+## Delete an agent
+
+<Steps>
+  <Step title="Open the card menu">
+    In **AI Agents**, hover over the card and click the three-dot menu.
+  </Step>
+  <Step title="Click Delete">
+    The **Delete Agent** window warns that the action cannot be undone.
+  </Step>
+  <Step title="Confirm by typing the name">
+    Type the exact agent name in the **Type the agent name to confirm:** field and click **Delete**.
+  </Step>
+</Steps>
+
+<Warning>
+  Deletion is permanent and cannot be undone. If you only want to pause, deactivate. Before deleting, replace the agent on the channels it is linked to.
+</Warning>
+
+## Indicators in the interface
+
+| Where | What it shows |
+| --- | --- |
+| **AI Agents** list | **Active** or **Inactive** badge on each card |
+| **Channel Settings** | The linked agent in **AI Agent (Optional)** |
+| Conversation handled by AI | **AI Agent Active** notice with the agent name and the **Take Over** button |
+| **Conversations report** | **AI agents only** and **Hybrid (human + AI)** conversations in the **Total conversations over time** chart |
+
+## Best practices
+
+1. **Activate gradually**: start with one channel, follow the first conversations and then link the others.
+2. **Watch closely at the start**: review the agent's conversations in the **360° View** and adjust the training.
+3. **Keep the team close**: configure transfers for each area and make sure someone receives the conversations.
+4. **Validate on each channel**: after linking, send a real message through WhatsApp, Instagram Direct and Webchat.
+
+## Next steps
+
+- [Test the agent →](/ai-agents/test-ai-agent)
+- [Hybrid service →](/ai-agents/hybrid-service)
+- [Configure Instagram →](/channels/configure-instagram)
+- [Configure Webchat →](/channels/configure-webchat)

@@ -1,0 +1,87 @@
+---
+title: "API da BluBash: autenticação e primeiros passos"
+sidebarTitle: "Introdução"
+description: "Conheça as APIs da BluBash, como autenticar com a API Key do workspace, usar idempotência, tratar erros e integrar seu sistema."
+---
+
+A API REST da BluBash conecta seu sistema à plataforma. Com ela, você encaminha mensagens para o agente de IA por um canal API e alimenta campanhas contínuas do WhatsApp com contatos vindos do seu CRM, site ou ERP.
+
+## APIs disponíveis
+
+<CardGroup cols={2}>
+  <Card title="Channels API" icon="message-circle" href="/pt-BR/developers/api/channels">
+    Envie para a BluBash as mensagens dos seus usuários (texto, imagem, áudio, vídeo ou documento) por um canal API e receba a resposta do agente de IA na mesma chamada.
+  </Card>
+  <Card title="Campaigns API" icon="megaphone" href="/pt-BR/developers/api/campaigns">
+    Adicione contatos a uma Campanha Contínua, agende envios por contato, cancele mensagens na fila e consulte o status de entrega.
+  </Card>
+</CardGroup>
+
+| API | Endpoints | Uso típico |
+| --- | --- | --- |
+| **Channels API** | `POST /api/v1/channels/{channelId}/messages` | Chat do seu app ou site atendido pelo agente de IA da BluBash |
+| **Campaigns API** | `POST /api/v1/campaigns/{campaignId}/audience`, `POST /api/v1/campaigns/{campaignId}/messages/{messageId}/cancel`, `GET /api/v1/campaigns/{campaignId}/messages`, `GET /api/v1/campaigns/{campaignId}/messages/{messageId}` | Boas-vindas, pós-venda, lembretes e nutrição de leads disparados pelo seu sistema |
+
+## URL base
+
+```text
+https://api.blubash.io/api/v1
+```
+
+## Autenticação
+
+Toda requisição precisa da **API Key do workspace** no cabeçalho `X-API-Key`. O nome do cabeçalho não diferencia maiúsculas de minúsculas: `x-api-key` também funciona.
+
+```http
+X-API-Key: SUA_API_KEY
+Content-Type: application/json
+```
+
+### Obter a API Key
+
+A interface da BluBash não tem uma tela para gerar chaves de API. Solicite a API Key do workspace ao suporte da BluBash. Para usar a Channels API, peça também a configuração do canal API, que é feita pelo suporte.
+
+<Warning>
+  Trate a API Key como uma senha. Não a coloque em código que roda no navegador ou no aplicativo do cliente, nem em repositórios públicos. Faça as chamadas a partir do seu servidor.
+</Warning>
+
+## Idempotência
+
+A Channels API aceita o cabeçalho opcional `X-Idempotency-Key`. Envie um valor único por operação para que uma nova tentativa da mesma requisição não gere mensagens duplicadas.
+
+```http
+X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
+```
+
+<Tip>
+  Use um UUID por operação lógica ou um hash do conteúdo da requisição. Reutilize a mesma chave só quando estiver repetindo exatamente a mesma operação.
+</Tip>
+
+## Códigos de resposta
+
+| Código | Significado | O que fazer |
+| --- | --- | --- |
+| `200` | Sucesso | Processe a resposta. |
+| `400` | Dados inválidos na requisição | Leia a mensagem de erro e corrija o payload. Não repita sem corrigir. |
+| `401` | API Key ausente ou inválida | Confira o cabeçalho `X-API-Key`. |
+| `403` | Recurso não disponível no plano | Fale com o suporte ou com o comercial da BluBash. |
+| `404` | Recurso não encontrado | Confira o `channelId` ou o `campaignId`. |
+| `500` | Erro interno | Tente de novo com backoff exponencial e a mesma chave de idempotência. |
+
+## Boas práticas
+
+- **Use sempre o mesmo identificador para o mesmo contato.** Na Channels API, o `contactIdentifier`. Na Campaigns API, o `identifier` ou o `contact_id`. Identificadores diferentes criam contatos duplicados.
+- **Trate erros por código.** Erros `4xx` exigem correção; erros `5xx` podem ser repetidos.
+- **Repita com backoff exponencial.** Espere cada vez mais entre as tentativas e limite o número de repetições.
+- **Valide antes em um ambiente de testes.** Use um canal e uma campanha de teste antes de apontar o tráfego de produção.
+- **Registre os IDs retornados.** Guarde `contactId`, `conversationId` e `messageId` para rastrear o atendimento e a entrega.
+
+## Como a API se conecta ao restante da BluBash
+
+- Contatos criados pela API aparecem em **Contatos**, com etiquetas e campos adicionais enviados no payload.
+- Conversas do canal API são atendidas pelo agente de IA configurado para o canal. Veja [O que são agentes de IA →](/pt-BR/ai-agents/what-are-ai-agents).
+- Contatos adicionados por API em uma Campanha Contínua aparecem com a origem **API** nos detalhes da campanha. Veja [Gerenciar campanhas →](/pt-BR/campaigns/manage-campaigns).
+
+## Suporte
+
+Para obter a API Key, configurar o canal API ou tirar dúvidas de integração, fale com o suporte da BluBash em [suporte@blubash.io](mailto:suporte@blubash.io).

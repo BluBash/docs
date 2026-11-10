@@ -1,0 +1,122 @@
+---
+title: "Aplicar e remover etiquetas em um contato"
+sidebarTitle: "Etiquetas do contato"
+description: "Classifique contatos com etiquetas na BluBash, manualmente ou pelo agente de IA, e use as etiquetas para segmentar campanhas e importações."
+---
+
+Etiquetas são marcadores coloridos que classificam contatos por perfil, interesse, status ou etapa da jornada. Elas aparecem na página do contato, nas conversas e servem de filtro na audiência das campanhas.
+
+## Para que usar etiquetas
+
+| Uso | Exemplo |
+| --- | --- |
+| Perfil do contato | `cliente`, `lead`, `parceiro` |
+| Interesse | `plano-anual`, `produto-x` |
+| Status | `inadimplente`, `inativo`, `vip` |
+| Origem de lote | `importacao-out-2026`, `evento-feira` |
+| Segmentação de campanhas | Enviar uma oferta só para contatos com `lead` e `produto-x` |
+
+<Note>
+  As etiquetas são criadas em **Etiquetas**, na barra lateral, por Gerentes e Administradores. Na página do contato você aplica e remove etiquetas que já existem. Veja [Criar etiquetas →](/pt-BR/account-settings/create-tags).
+</Note>
+
+## Adicionar uma etiqueta
+
+<Steps>
+  <Step title="Abra o contato">
+    Clique em **Contatos** e depois no contato.
+  </Step>
+  <Step title="Localize a seção Etiquetas">
+    Em **Informações importantes**, role até o fim. A seção **Etiquetas** mostra as etiquetas atuais ou **Nenhuma etiqueta atribuída**.
+  </Step>
+  <Step title="Clique em +">
+    Clique no botão **\+** ao lado de **Etiquetas**. Uma lista abre com o campo **Buscar etiquetas...**.
+  </Step>
+  <Step title="Escolha a etiqueta">
+    Digite parte do nome ou role a lista e clique na etiqueta. Ela é aplicada na hora. A lista mostra apenas as etiquetas que o contato ainda não tem.
+  </Step>
+</Steps>
+
+Repita o processo para aplicar mais de uma etiqueta ao mesmo contato.
+
+## Remover uma etiqueta
+
+<Steps>
+  <Step title="Passe o cursor sobre a etiqueta">
+    Na seção **Etiquetas** do contato, posicione o cursor sobre a etiqueta. Um **X** aparece no lado direito.
+  </Step>
+  <Step title="Clique no X">
+    A etiqueta é removida do contato imediatamente.
+  </Step>
+</Steps>
+
+Cada inclusão e remoção fica registrada no **Histórico** do contato, como **Etiqueta "nome" adicionada** ou **Etiqueta "nome" removida**, com quem fez a ação.
+
+## Etiquetas aplicadas pelo agente de IA
+
+No atendimento híbrido, o agente de IA classifica os contatos durante a conversa. Isso mantém a base organizada sem depender da equipe.
+
+<Frame>
+  <img
+    src="/images/ai-agents/habilidades-lista.png"
+    alt="Lista de habilidades do agente de IA com Adicionar Etiqueta e Remover Etiqueta"
+  />
+</Frame>
+
+| Habilidade | O que faz | Exemplo de "Quando Usar" |
+| --- | --- | --- |
+| **Adicionar Etiqueta** | Aplica uma etiqueta específica ao contato. | "Quando o cliente demonstrar interesse no plano anual." |
+| **Remover Etiqueta** | Remove uma etiqueta específica do contato. | "Quando o cliente informar que já quitou a pendência." |
+
+Cada habilidade é configurada com uma etiqueta e uma instrução de quando usar. Crie uma habilidade para cada etiqueta que o agente deve gerenciar. Somente o Administrador configura agentes de IA. Veja [Configurar habilidades →](/pt-BR/ai-agents/configure-skills).
+
+<Tip>
+  Combine etiquetas aplicadas pelo agente com campanhas. Por exemplo, o agente marca `interesse-plano-anual` durante o atendimento e, depois, você envia uma campanha só para esse grupo.
+</Tip>
+
+## Onde mais as etiquetas aparecem
+
+- **Conversas**: a mesma etiqueta pode ser usada para organizar atendimentos. Veja [Etiquetas nas conversas →](/pt-BR/conversations/tags-purpose-usage).
+- **Importação de contatos**: você pode mapear uma coluna de etiquetas e aplicar etiquetas a todos os contatos importados.
+- **Campanhas**: a etapa de audiência filtra contatos por etiquetas.
+
+## Permissões e visibilidade
+
+| Papel | Criar e editar etiquetas | Aplicar e remover em contatos |
+| --- | --- | --- |
+| **Administrador** | Sim | Sim |
+| **Gerente** | Sim | Sim |
+| **Membro** | Não | Sim |
+
+Uma etiqueta pode estar disponível para todas as equipes ou apenas para equipes específicas. Você vê as etiquetas liberadas para as equipes às quais pertence.
+
+<Warning>
+  Ao remover uma etiqueta em **Etiquetas**, ela sai de todos os contatos e conversas onde estava aplicada. Essa ação não pode ser desfeita.
+</Warning>
+
+## Boas práticas
+
+- Defina um padrão de nomes curto e consistente, em minúsculas e com hífens.
+- Use cores por categoria, por exemplo verde para clientes e laranja para leads.
+- Evite etiquetas para dados que mudam muito ou que precisam de valor, como data de renovação. Para isso, use campos adicionais.
+- Revise periodicamente etiquetas sem uso.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar etiquetas" icon="tag" href="/pt-BR/account-settings/create-tags">
+    Crie etiquetas com cor e escopo por equipe.
+  </Card>
+
+  <Card title="Habilidades do agente" icon="bot" href="/pt-BR/ai-agents/configure-skills">
+    Deixe o agente de IA aplicar etiquetas.
+  </Card>
+
+  <Card title="Campos adicionais" icon="list-plus" href="/pt-BR/contacts/use-custom-fields">
+    Guarde dados com valor em cada contato.
+  </Card>
+
+  <Card title="Criar uma campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Envie mensagens para contatos com determinadas etiquetas.
+  </Card>
+</CardGroup>

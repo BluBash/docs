@@ -1,0 +1,100 @@
+---
+title: "Editar a função de um membro"
+sidebarTitle: "Editar função e equipes"
+description: "Altere a função de um membro no workspace e ajuste as equipes de que ele participa. Apenas Administradores fazem essa alteração."
+---
+
+Depois do convite, você pode promover ou restringir o acesso de uma pessoa a qualquer momento. A função é alterada na página **Membros**. As equipes de que a pessoa participa são ajustadas na própria equipe.
+
+<Note>
+  Apenas **Administradores** editam membros.
+</Note>
+
+## O que você pode alterar e onde
+
+| O que | Onde | Observação |
+| --- | --- | --- |
+| **Função** (Administrador, Gerente, Membro) | **Membros** → ícone de lápis | Vale para todo o workspace |
+| Equipes de que a pessoa participa | **Equipes** → equipe → aba **Membros** | A pessoa precisa continuar em pelo menos uma equipe |
+| Função na equipe (**Gerente** ou **Agente**) | **Equipes** → equipe → aba **Membros** | Vale só para aquela equipe |
+| Nome | Perfil da própria pessoa | O Administrador não edita o nome |
+
+## Alterar a função no workspace
+
+<Steps>
+  <Step title="Localize o membro">
+    No menu lateral, clique em **Membros**. Use **Pesquisar membros...** para encontrar a pessoa por nome ou e-mail.
+  </Step>
+  <Step title="Abra a edição">
+    Clique no ícone de lápis (**Editar membro**) na linha da pessoa. A janela **Editar Membro** mostra o nome, com o aviso **O nome é definido pelo próprio usuário no perfil.**
+  </Step>
+  <Step title="Escolha a nova função">
+    Em **Função**, selecione **Administrador**, **Gerente** ou **Membro**.
+  </Step>
+  <Step title="Salve">
+    Clique em **Atualizar Membro**. A BluBash confirma com **Membro atualizado com sucesso**.
+  </Step>
+</Steps>
+
+A mudança vale imediatamente. A pessoa recebe o aviso **Permissões Atualizadas**, e menus e ações passam a seguir a nova função.
+
+<Info>
+  Ao clicar no ícone de lápis na sua própria linha, a BluBash abre a página **Perfil**, onde você atualiza os seus dados. Você não altera a sua própria função.
+</Info>
+
+<Warning>
+  A função do **Proprietário** do workspace não pode ser alterada. Na edição, o campo aparece bloqueado com o aviso **A função de proprietário não pode ser alterada**.
+</Warning>
+
+## Ajustar as equipes de um membro
+
+<Steps>
+  <Step title="Abra a equipe">
+    No menu lateral, clique em **Equipes** e abra a equipe desejada.
+  </Step>
+  <Step title="Vá para a aba Membros">
+    Para incluir alguém, busque a pessoa, escolha a função na equipe (**Agente** ou **Gerente**) e clique em **Adicionar**.
+  </Step>
+  <Step title="Altere ou remova">
+    Em **Membros Atuais**, mude a função na equipe ou remova a pessoa da equipe.
+  </Step>
+</Steps>
+
+<Warning>
+  A BluBash não deixa remover alguém da única equipe dele no workspace. Adicione a pessoa a outra equipe antes de retirá-la da atual.
+</Warning>
+
+## Quando mudar a função
+
+| Situação | Mudança sugerida |
+| --- | --- |
+| Atendente passou a coordenar uma área e precisa de relatórios e Pipelines | **Membro** → **Gerente** |
+| Coordenador vai configurar agentes de IA, canais e equipes | **Gerente** → **Administrador** |
+| Pessoa não precisa mais configurar a conta | **Administrador** → **Gerente** ou **Membro** |
+| Atendente mudou de área | Mantenha a função e troque as equipes |
+
+## Boas práticas
+
+- Prefira ajustar as equipes antes de mudar a função. Muitas vezes o problema de acesso é de equipe, não de papel.
+- Combine a mudança com a pessoa antes de restringir o acesso, para evitar conversas abandonadas no meio.
+- Mantenha poucos Administradores para proteger o workspace.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Compare o que cada função pode fazer.
+  </Card>
+
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Organize membros, canais e regras de cada equipe.
+  </Card>
+
+  <Card title="Remover um membro" icon="user-minus" href="/pt-BR/members/remove-member">
+    Revogue o acesso de quem saiu.
+  </Card>
+
+  <Card title="Transferir atendimento" icon="arrow-right-left" href="/pt-BR/conversations/transfer-attendance">
+    Redistribua conversas antes de mudanças de equipe.
+  </Card>
+</CardGroup>

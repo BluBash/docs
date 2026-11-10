@@ -1,0 +1,112 @@
+---
+title: "Create a quick reply"
+sidebarTitle: "Create quick reply"
+description: "Create quick replies in BluBash with text, image, video, document, or contacts, choose which teams can use them, and standardize service on every channel."
+---
+
+Quick replies are ready-made messages your team sends during conversations. They do not go through Meta approval, are available as soon as you create them, and work on every channel: WhatsApp Business API, WhatsApp Lite, Instagram, and Webchat.
+
+## When to use
+
+- Answers your team repeats every day: payment methods, delivery times, address, business hours.
+- Materials you send often: catalog, price list, demo video.
+- Follow-up messages after the AI agent transfers the conversation to your team.
+- Standardized sign-offs.
+
+<Note>
+  On the WhatsApp Business API, quick replies can only be sent within the 24-hour window. To start or resume a conversation outside it, use a [template](/templates/create-template).
+</Note>
+
+## Before you start
+
+- You must be an **Administrator** or a **Manager**. Members only use quick replies in conversations.
+- Have at least one active team. Quick replies are available per team. See [Create and configure teams →](/account-settings/create-configure-teams).
+
+## How to create
+
+The wizard has four steps: **Setup**, **Edit**, **Associations**, and **Review**.
+
+<Steps>
+  <Step title="Open Templates & Quick Replies">
+    Go to **Settings** and click **Templates**. On the **Templates & Quick Replies** page, click **Create Template**.
+  </Step>
+  <Step title="Choose Quick Reply">
+    In **Choose message type**, click **Select Quick Reply** on the **Quick Reply** card, marked **Ready to use**.
+  </Step>
+  <Step title="Write the quick reply">
+    In the **Create your quick reply** step, fill in **Template Name**, choose the **Content Type**, and fill in the **Content**. The **Preview** on the side shows the result. Click **Continue**.
+  </Step>
+  <Step title="Associate teams">
+    In **Select Teams**, check which teams can use the quick reply. Select at least one team. Only team members of those teams see the quick reply in conversations.
+  </Step>
+  <Step title="Review and create">
+    Check the preview and the information, then click **Create Template**. The quick reply is available immediately, with the **Active** status.
+  </Step>
+</Steps>
+
+## Content types
+
+| Content Type | Fields | Limits |
+| --- | --- | --- |
+| **Text** | **Message**. Use **Add Variable** to insert `{{1}}`, `{{2}}` | Text required |
+| **Image** | **Media File** and **Caption** | JPG, PNG, GIF, or WEBP, up to 5 MB |
+| **Video** | **Media File** and **Caption** | MP4, AVI, MOV, or WMV, up to 16 MB |
+| **Document** | **Media File** and **Filename** | PDF, DOC, DOCX, TXT, CSV, XLS, XLSX, PPT, or PPTX, up to 10 MB |
+| **Contacts** | One or more contact cards, with **Add Contact** | At least one contact |
+
+<Tip>
+  For documents, fill in **Filename** with a clear name, such as `price-list-2026.pdf`. This is the name the contact sees when receiving it.
+</Tip>
+
+## Examples
+
+**Payment methods (Text):**
+
+```text
+Hi {{1}}! We accept bank transfer, credit card in up to 12 installments, and invoice.
+Which option do you prefer?
+```
+
+**Follow-up after the AI agent transfer (Text):**
+
+```text
+Hi {{1}}, this is {{2}}. I have read your conversation with our assistant and will continue helping you from here.
+```
+
+**Catalog (Document):** send the catalog PDF with the name `product-catalog.pdf`.
+
+## Best practices
+
+- **Use names that are easy to search.** In the conversation, team members search by name or by a word in the text. Prefer names like "payment options" or "downtown store address".
+- **Use variables for the contact name.** In the conversation, the first variable is already filled with the contact name. See [Use variables →](/templates/use-variables).
+- **Associate only the right teams.** A sales reply does not need to show up for support.
+- **Keep the list short.** Review it regularly and delete what nobody uses.
+- **Align with the AI agent.** Use the same information in quick replies and in the AI agent training, so the contact does not get different versions. See [Train the AI agent →](/ai-agents/train-ai-agent).
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="The quick reply does not appear in the conversation">
+    Check that the conversation belongs to a team associated with the quick reply. On the WhatsApp Business API outside the 24-hour window, the list shows only templates.
+  </Accordion>
+
+  <Accordion title="I cannot edit a quick reply">
+    You need access to all teams associated with it. See [Edit and delete →](/templates/edit-delete).
+  </Accordion>
+
+  <Accordion title="The file is not accepted">
+    Check the format and maximum size in the content types table.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Use variables" icon="braces" href="/templates/use-variables">
+    Personalize replies with contact data.
+  </Card>
+
+  <Card title="Use in a conversation" icon="zap" href="/conversations/use-quick-messages">
+    See how a team member sends a quick reply.
+  </Card>
+</CardGroup>

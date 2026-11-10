@@ -1,0 +1,101 @@
+---
+title: "Configure WhatsApp Lite"
+description: "Connect a WhatsApp number to BluBash by scanning a QR code. Best for small businesses with few messages per day and for testing."
+---
+
+WhatsApp Lite connects your number to BluBash with a QR code, the same way you link a device to WhatsApp. You do not need a Meta Business account or a WhatsApp Business account. It is the fastest way to get started, but it is not an official connection: it has no Meta support, no stability guarantee, and it can be interrupted.
+
+## When to use it
+
+| Use WhatsApp Lite when | Prefer WhatsApp Business API when |
+| --- | --- |
+| You receive few messages per day | Message volume is high or growing fast |
+| You want to try BluBash before migrating | WhatsApp is your operation's main channel |
+| You do not need templates or campaigns | You need Meta-approved templates and campaigns |
+| An occasional drop does not stop the business | The operation cannot stop |
+
+See the full comparison in [BluBash channels: types and how to create one →](/channels/create-channel).
+
+## Before you start
+
+- Have the phone with the number you will connect, with WhatsApp installed.
+- Have at least one team created to be the **Default Team**.
+- Make sure the number is not in another BluBash channel. Each number can only belong to one channel.
+
+## Connect WhatsApp Lite
+
+<Steps>
+  <Step title="Create the channel">
+    In **Channels**, click **Add Channel** and choose the **WhatsApp Lite** card.
+  </Step>
+  <Step title="Fill in the details">
+    Fill in **Channel Name** and **Default Team**. In **AI Agent (Optional)**, choose an active AI agent or keep **No agent assigned**. Click **Create Channel**.
+  </Step>
+  <Step title="Generate the QR code">
+    On the **WhatsApp Lite Setup** screen, click **Connect WhatsApp**. BluBash prepares the connection and shows the QR code under **Scan QR Code**.
+  </Step>
+  <Step title="Scan it on your phone">
+    1. Open WhatsApp on your phone.
+    2. Tap **Menu** or **Settings** and select **Linked devices**.
+    3. Tap **Link a device** and scan the code.
+  </Step>
+  <Step title="Wait for confirmation">
+    The status changes to **Connected** and BluBash opens the channel page. Under **Connected Account**, you see the **Display Name** and the **Phone Number**.
+  </Step>
+  <Step title="Test it">
+    Send a message from another number to the connected number and check that the conversation shows up in the default team's inbox.
+  </Step>
+</Steps>
+
+### Status during connection
+
+| Message | What it means |
+| --- | --- |
+| **Preparing connection...** | BluBash is creating the session. Wait a few seconds. |
+| **QR Code ready for scanning** | Scan the code with your phone. |
+| **Connecting...** | The phone read the code and the connection is being completed. |
+| **Connected** | The channel is ready to receive and send messages. |
+| **Waiting for connection** | The session is not connected. Generate and scan the QR code again. |
+
+<Note>
+  If you close the window before scanning, or click **Skip for now**, the channel is saved and waits for the connection. Click it in the channel list to resume.
+</Note>
+
+## Reconnect a disconnected channel
+
+The connection can drop, for example, if the device is removed under **Linked devices** on the phone. When this happens:
+
+1. In the **Channels** list, the channel shows the orange indicator.
+2. Click the channel. BluBash shows **Checking status...** and, if the connection dropped, opens the **Configure Channel** window.
+3. The screen shows **Reconnection needed**: "Your WhatsApp connection was lost. To continue receiving messages, scan the QR code again."
+4. Click **Reconnect WhatsApp** and scan the new QR code.
+
+<Warning>
+  While the channel is disconnected, messages sent to the number do not reach BluBash. Check the indicator in the channel list often.
+</Warning>
+
+## How the AI agent takes part
+
+With an AI agent linked to the channel, it replies to messages that arrive through WhatsApp Lite, qualifies the contact, and transfers to the team when needed. The flow is the same as on other channels. See [Hybrid service →](/ai-agents/hybrid-service).
+
+## Best practices
+
+- Do not remove the BluBash connection under **Linked devices** on the phone.
+- Avoid bulk sends. Unofficial connections carry a higher risk of restriction by WhatsApp.
+- Use an AI agent to reply after hours and reduce response time.
+- When volume grows, migrate to [WhatsApp Business API →](/channels/configure-whatsapp-official).
+
+## Limitations
+
+| Limitation | Impact |
+| --- | --- |
+| Not official | No Meta support and no stability guarantee. |
+| No Meta templates | You cannot send Meta-approved templates through this channel. |
+| Low volume | Suited to a few messages per day. |
+| Depends on the device session | If the session drops, you need to scan the QR code again. |
+
+## Next steps
+
+- [Edit a channel →](/channels/edit-channel)
+- [Activate or deactivate a channel →](/channels/activate-deactivate-channel)
+- [Configure WhatsApp Business API →](/channels/configure-whatsapp-official)

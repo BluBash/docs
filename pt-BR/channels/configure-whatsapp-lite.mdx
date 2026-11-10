@@ -1,0 +1,101 @@
+---
+title: "Configurar o WhatsApp Lite"
+description: "Conecte um número de WhatsApp à BluBash escaneando um QR code. Indicado para pequenos negócios com poucas mensagens por dia e para testes."
+---
+
+O WhatsApp Lite conecta o seu número à BluBash por QR code, do mesmo jeito que você vincula um aparelho ao WhatsApp. Não precisa de conta no Meta Business nem de conta WhatsApp Business. É a forma mais rápida de começar, mas não é uma conexão oficial: não tem suporte da Meta, não oferece garantia de estabilidade e pode ser interrompida.
+
+## Quando usar
+
+| Use o WhatsApp Lite quando | Prefira o WhatsApp Business API quando |
+| --- | --- |
+| Você recebe poucas mensagens por dia | O volume de mensagens é alto ou cresce rápido |
+| Quer testar a BluBash antes de migrar | O WhatsApp é o canal principal da operação |
+| Não precisa de templates nem campanhas | Precisa de templates aprovados pela Meta e campanhas |
+| Uma queda eventual não para o negócio | A operação não pode parar |
+
+Veja a comparação completa em [Canais da BluBash: tipos e como criar →](/pt-BR/channels/create-channel).
+
+## Antes de começar
+
+- Tenha em mãos o celular com o número que será conectado, com o WhatsApp instalado.
+- Tenha pelo menos uma equipe criada para ser a **Equipe Padrão**.
+- Confirme que o número não está em outro canal da BluBash. Cada número só pode estar em um canal.
+
+## Conectar o WhatsApp Lite
+
+<Steps>
+  <Step title="Criar o canal">
+    Em **Canais**, clique em **Adicionar Canal** e escolha o cartão **WhatsApp Lite**.
+  </Step>
+  <Step title="Preencher os dados">
+    Preencha **Nome do Canal** e **Equipe Padrão**. Em **Agente de IA (Opcional)**, escolha um agente de IA ativo ou deixe **Nenhum agente atribuído**. Clique em **Criar Canal**.
+  </Step>
+  <Step title="Gerar o QR code">
+    Na tela **Configuração WhatsApp Lite**, clique em **Conectar WhatsApp**. A BluBash prepara a conexão e exibe o QR code em **Escaneie o QR Code**.
+  </Step>
+  <Step title="Escanear no celular">
+    1. Abra o WhatsApp no seu celular.
+    2. Toque em **Menu** ou **Configurações** e selecione **Dispositivos conectados**.
+    3. Toque em **Conectar um dispositivo** e escaneie o código.
+  </Step>
+  <Step title="Aguardar a confirmação">
+    O status muda para **Conectado** e a BluBash abre a página do canal. Em **Conta Conectada**, você vê o **Nome de Exibição** e o **Número de Telefone**.
+  </Step>
+  <Step title="Testar">
+    Envie uma mensagem de outro número para o número conectado e confira se a conversa aparece na caixa de entrada da equipe padrão.
+  </Step>
+</Steps>
+
+### Status durante a conexão
+
+| Mensagem | O que significa |
+| --- | --- |
+| **Preparando conexão...** | A BluBash está gerando a sessão. Aguarde alguns segundos. |
+| **QR Code pronto para escaneamento** | Escaneie o código pelo celular. |
+| **Conectando...** | O celular leu o código e a conexão está sendo concluída. |
+| **Conectado** | O canal está pronto para receber e enviar mensagens. |
+| **Aguardando conexão** | A sessão não está conectada. Gere e escaneie o QR code de novo. |
+
+<Note>
+  Se você fechar a janela antes de escanear, ou clicar em **Pular por enquanto**, o canal fica salvo aguardando a conexão. Clique nele na lista de canais para retomar.
+</Note>
+
+## Reconectar um canal desconectado
+
+A conexão pode cair, por exemplo, se o aparelho for removido em **Dispositivos conectados** no celular. Quando isso acontece:
+
+1. Na lista de **Canais**, o canal aparece com o indicador laranja.
+2. Clique no canal. A BluBash mostra **Verificando status...** e, se a conexão caiu, abre a janela **Configurar Canal**.
+3. A tela mostra **Reconexão necessária**: "Sua conexão WhatsApp foi perdida. Para continuar recebendo mensagens, escaneie o QR code novamente."
+4. Clique em **Reconectar WhatsApp** e escaneie o novo QR code.
+
+<Warning>
+  Enquanto o canal está desconectado, as mensagens enviadas ao número não chegam na BluBash. Verifique o indicador na lista de canais com frequência.
+</Warning>
+
+## Como o agente de IA participa
+
+Com um agente de IA vinculado ao canal, ele responde as mensagens que chegam pelo WhatsApp Lite, qualifica o contato e transfere para a equipe quando necessário. O fluxo é o mesmo dos outros canais. Veja [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service).
+
+## Boas práticas
+
+- Não remova a conexão da BluBash em **Dispositivos conectados** no celular.
+- Evite disparos em massa. Conexões não oficiais têm mais risco de restrição pelo WhatsApp.
+- Use um agente de IA para responder fora do horário e reduzir o tempo de resposta.
+- Quando o volume crescer, migre para o [WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official).
+
+## Limitações
+
+| Limitação | Impacto |
+| --- | --- |
+| Não é oficial | Sem suporte da Meta e sem garantia de estabilidade. |
+| Sem templates da Meta | Você não envia templates aprovados pela Meta por este canal. |
+| Pouca volumetria | Indicado para poucas mensagens por dia. |
+| Depende da sessão do aparelho | Se a sessão cair, é preciso escanear o QR code de novo. |
+
+## Próximos passos
+
+- [Editar um canal →](/pt-BR/channels/edit-channel)
+- [Ativar ou desativar um canal →](/pt-BR/channels/activate-deactivate-channel)
+- [Configurar o WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official)

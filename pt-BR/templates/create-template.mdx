@@ -1,0 +1,173 @@
+---
+title: "Criar um template de mensagem"
+sidebarTitle: "Criar template"
+description: "Crie um template do WhatsApp Business API na BluBash: categoria, idioma, cabeçalho, corpo, rodapé, botões e variáveis, e acompanhe a aprovação da Meta."
+---
+
+Templates são mensagens aprovadas pela Meta para o **WhatsApp Business API**. Você usa um template para iniciar conversas, retomar o contato depois de 24 horas e disparar campanhas. Nesta página, você cria o template e o envia para aprovação.
+
+<Note>
+  Templates existem apenas para canais **WhatsApp Business API**. WhatsApp Lite, Instagram e Webchat não usam templates. Para mensagens prontas nesses canais, [crie uma resposta rápida](/pt-BR/templates/create-quick-reply).
+</Note>
+
+## Antes de começar
+
+- Tenha pelo menos um canal **WhatsApp Business API** ativo. Veja [Configurar o WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official).
+- Você precisa ser **Administrador** ou **Gerente**. Membros só usam templates nas conversas.
+- Defina o objetivo da mensagem antes de escrever. Isso indica a categoria correta e reduz o risco de rejeição.
+
+## Etapas do assistente
+
+O assistente de criação tem cinco etapas: **Configuração**, **Categoria**, **Editar**, **Associações** e **Revisar**. A barra no topo mostra o progresso.
+
+<Steps>
+  <Step title="Abra Templates e Respostas Rápidas">
+    Acesse **Configurações** e clique em **Templates**. Na página **Templates e Respostas Rápidas**, clique em **Criar Template**.
+  </Step>
+  <Step title="Escolha o tipo de mensagem">
+    Em **Escolha o tipo de mensagem**, clique em **Selecionar Template** no cartão **Template de Mensagem**, marcado com **Requer aprovação**.
+  </Step>
+  <Step title="Escolha a categoria">
+    Em **Escolha uma categoria de template**, selecione a opção que descreve a mensagem. Duas opções da BluBash são convertidas automaticamente em categorias da Meta, indicadas por **→ Categoria WhatsApp:**.
+
+    | Opção na BluBash | Categoria enviada à Meta | Quando usar |
+    | --- | --- | --- |
+    | **Marketing** | Marketing | Promoções, ofertas, newsletters, campanhas |
+    | **Utilitário** | Utilitário | Confirmação de pedido, status de entrega, lembretes, notificações |
+    | **Autenticação** | Autenticação | Códigos de verificação, confirmação de login, alertas de segurança |
+    | **Atendimento ao Cliente** | Utilitário | Dúvidas, agendamentos, suporte, retomar conversas |
+    | **Vendas** | Marketing | Apresentação de produtos, orçamentos, follow-up comercial |
+  </Step>
+  <Step title="Escreva o template">
+    Na etapa **Crie seu template**, preencha os campos descritos abaixo, na seção **Campos do template**. A **Visualização** ao lado mostra como a mensagem vai aparecer para o contato. Clique em **Continuar**.
+  </Step>
+  <Step title="Associe os canais">
+    Em **Selecionar Canais**, marque em quais canais o template ficará disponível. A lista mostra apenas canais **WhatsApp Business API** ativos. Selecione pelo menos um canal. O template é enviado para aprovação em cada canal escolhido.
+  </Step>
+  <Step title="Revise e crie">
+    Em **Revisar Template**, confira o **Preview Final**, as **Informações do Template** e os **Avisos**, se houver. Clique em **Criar Template**. O template vai para a Meta com o status **Aguardando Aprovação**.
+  </Step>
+</Steps>
+
+## Campos do template
+
+### Informações Básicas
+
+| Campo | Obrigatório | Regras |
+| --- | --- | --- |
+| **Nome do Template** | Sim | Use um nome descritivo. A BluBash converte para letras minúsculas e troca espaços por `_`. Exemplo: "Lembrete Consulta" vira `lembrete_consulta`. |
+| **Idioma** | Sim | **Português (Brasil)**, **English (US)** ou **Español**. Escolha o idioma em que o texto foi escrito. |
+
+### Cabeçalho
+
+O **Cabeçalho** é opcional. Em **Tipo de Cabeçalho**, escolha:
+
+| Tipo | Regras |
+| --- | --- |
+| **Sem Cabeçalho** | A mensagem começa pelo corpo. |
+| **Texto** | Até 60 caracteres. Aceita 1 variável, sempre `{{1}}`. |
+| **Imagem** | JPG, PNG, GIF ou WEBP, até 5 MB. |
+| **Vídeo** | MP4, AVI, MOV ou WMV, até 16 MB. |
+| **Documento** | PDF, DOC, DOCX, TXT, CSV, XLS, XLSX, PPT ou PPTX, até 10 MB. |
+
+<Tip>
+  A Meta é mais restritiva com mídia no cabeçalho. Para evitar rejeição, prefira imagem JPG ou PNG, vídeo MP4 e documento PDF.
+</Tip>
+
+### Corpo
+
+O **Corpo** é obrigatório e tem até 1.024 caracteres. É o texto principal da mensagem. Use **Adicionar Variável** para inserir `{{1}}`, `{{2}}` e assim por diante, até 10 variáveis. Veja [Usar variáveis →](/pt-BR/templates/use-variables).
+
+### Rodapé
+
+O **Rodapé** é opcional e tem até 60 caracteres. Use para assinatura ou aviso curto, como "Equipe de Entregas".
+
+### Botões
+
+Os **Botões** são opcionais. Clique em **Adicionar Botão** para incluir até 10 botões.
+
+| Tipo do botão | O que faz | Campos |
+| --- | --- | --- |
+| **Resposta Rápida** | O contato toca e responde com o texto do botão. A resposta reabre a janela de 24 horas. | Texto do botão |
+| **URL** | Abre um link. | Texto do botão e URL do botão |
+| **Telefone** | Liga para um número. | Texto do botão e número de telefone |
+
+- O texto de cada botão tem até 25 caracteres.
+- Não intercale tipos. Agrupe os botões **Resposta Rápida** de um lado e os botões **URL** e **Telefone** do outro. Exemplos válidos: Resposta Rápida, Resposta Rápida, URL, Telefone; ou URL, Telefone, Resposta Rápida, Resposta Rápida.
+
+### Exemplos de Variáveis
+
+Se o template tem variáveis, preencha valores de exemplo em **Exemplos de Variáveis**. Eles servem só para a visualização e não são enviados ao contato.
+
+## Status de aprovação
+
+Depois de criado, o template aparece na lista com um status. Clique em **Atualizar** para recarregar a lista.
+
+| Status | Significado | O que fazer |
+| --- | --- | --- |
+| **Aguardando Aprovação** | A Meta está analisando o template. | Aguarde. O prazo é definido pela Meta. |
+| **Aprovado** | O template pode ser usado nas conversas e em campanhas. | Use normalmente. |
+| **Rejeitado** | A Meta recusou o template. | Passe o mouse sobre o status para ver o **Motivo**. Ajuste e crie um novo template. |
+| **Parcial** | O status é diferente entre os canais associados. | Passe o mouse na coluna **Canais/Equipes** para ver o status de cada canal. |
+| **Inativo** | O template foi desativado. | Use outro template ou crie um novo. |
+
+## Boas práticas para aprovação
+
+- **Escolha a categoria certa.** Uma mensagem promocional marcada como Utilitário costuma ser rejeitada ou reclassificada pela Meta.
+- **Não comece nem termine o corpo com uma variável.** Coloque texto antes e depois.
+- **Dê contexto às variáveis.** `Olá {{1}}, seu pedido {{2}} foi enviado` é mais claro que `{{1}} {{2}}`.
+- **Revise ortografia e links.** Erros e URLs encurtadas aumentam o risco de rejeição.
+- **Seja claro sobre quem envia.** Mencione o nome da empresa no texto.
+- **Crie templates para retomar conversas.** Tenha pelo menos um template de Utilitário ou Atendimento ao Cliente para o atendente usar quando um lead parar de responder ao agente de IA ou à equipe.
+
+## Exemplo completo
+
+| Campo | Valor |
+| --- | --- |
+| **Categoria** | Atendimento ao Cliente (→ Utilitário) |
+| **Nome do Template** | `retomar_atendimento` |
+| **Idioma** | Português (Brasil) |
+| **Cabeçalho** | Texto: "Seu atendimento" |
+| **Corpo** | `Olá {{1}}, aqui é a equipe da Loja Exemplo. Ficou alguma dúvida sobre o seu pedido? Podemos continuar por aqui.` |
+| **Rodapé** | "Loja Exemplo" |
+| **Botões** | Resposta Rápida: "Quero continuar"; Resposta Rápida: "Não, obrigado" |
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="A lista de canais está vazia">
+    Aparece **Nenhum canal ativo disponível** quando não há canal WhatsApp Business API ativo. Confira o canal em **Canais**. Canais WhatsApp Lite, Instagram e Webchat não aparecem, porque não usam templates.
+  </Accordion>
+
+  <Accordion title="Ordem inválida dos botões">
+    Você intercalou botões **Resposta Rápida** com **URL** ou **Telefone**. Reorganize para que os botões do mesmo grupo fiquem juntos.
+  </Accordion>
+
+  <Accordion title="O arquivo de mídia não é aceito">
+    Confira o formato e o tamanho máximo do tipo escolhido na tabela do cabeçalho.
+  </Accordion>
+
+  <Accordion title="O template foi rejeitado">
+    Leia o **Motivo** no status. As causas mais comuns são categoria incorreta, variável no início ou no fim do texto e conteúdo promocional em template de Utilitário.
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Usar variáveis" icon="braces" href="/pt-BR/templates/use-variables">
+    Personalize o template com dados do contato.
+  </Card>
+
+  <Card title="Enviar na conversa" icon="send" href="/pt-BR/templates/send-templates-quick-replies">
+    Use o template para iniciar ou retomar conversas.
+  </Card>
+
+  <Card title="Criar campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Envie o template para uma lista de contatos.
+  </Card>
+
+  <Card title="Editar e excluir" icon="pencil" href="/pt-BR/templates/edit-delete">
+    Ajuste ou remova templates existentes.
+  </Card>
+</CardGroup>

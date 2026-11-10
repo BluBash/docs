@@ -1,0 +1,171 @@
+---
+title: "Frequently asked questions"
+sidebarTitle: "FAQ"
+description: "Straight answers to the most common questions about BluBash: AI agents, channels, service, transfers, Pipelines, reports and permissions."
+---
+
+These are the questions that come up most often in customer training sessions. Each answer points to the page with the step-by-step instructions.
+
+## AI agents
+
+<AccordionGroup>
+  <Accordion title="Can the AI agent handle a conversation from start to finish, with no one from the team?">
+    Yes. With the native **Close conversation** skill on, the agent closes the conversations it resolved. When the conversation requires negotiation or a decision, it transfers to the team through the **Transfer to Team** skill.
+
+    [Hybrid service →](/ai-agents/hybrid-service)
+  </Accordion>
+
+  <Accordion title="How do I know the AI is handling a conversation?">
+    There are three signals. In the side panel, the **Conversation** tab shows the **AI Agent** field. In the list, a sparkle icon next to the name indicates **Hybrid conversation (user + AI)** when the conversation has a team member and an agent at the same time. In the open conversation, the message box is replaced by the **AI Agent Active** notice with the **Take Over** button. The **AI** filter in the list shows the conversations handled by the AI.
+  </Accordion>
+
+  <Accordion title="Can I write to the customer while the AI is handling the conversation?">
+    No. While the agent is handling the conversation, the message box is locked to prevent two replies at once. Click **Take Over**, add a reason if you want, and confirm. From then on, the conversation is yours.
+
+    [Hybrid service →](/ai-agents/hybrid-service)
+  </Accordion>
+
+  <Accordion title="How does the team know what the AI already discussed with the customer?">
+    Every AI message stays in the conversation history, marked with the sparkle icon. Configure the **Add Note** skill so the agent leaves a summary before transferring. Notes appear in the history and in the **Conversation** tab of the side panel.
+
+    [Configure skills →](/ai-agents/configure-skills)
+  </Accordion>
+
+  <Accordion title="After the team takes over, can I hand the conversation back to the AI?">
+    Yes. Use **Handoff to AI** at the top of the conversation and choose an active agent. This is useful for the AI to collect documents, confirm data or close the conversation after the human part.
+
+    [Hand off to the AI →](/ai-agents/handoff-to-ai)
+  </Accordion>
+
+  <Accordion title="How do I know whether the AI is answering well?">
+    Test it with **Test Agent** before linking it to a channel. Then open conversations in the **360° View** and use **Generate AI analysis**, which scores the conversation and suggests adjustments.
+
+    [360° View and AI analysis →](/reports/ai-audit)
+  </Accordion>
+</AccordionGroup>
+
+## Channels
+
+<AccordionGroup>
+  <Accordion title="Does BluBash only work with WhatsApp?">
+    No. WhatsApp is the main channel, through the **WhatsApp Business API** or **WhatsApp Lite**, but you also serve customers on **Instagram** Direct and on your website's **Webchat**. Every conversation lands in the same inbox. Telegram and Email appear as **Coming soon**.
+
+    [Create a channel →](/channels/create-channel)
+  </Accordion>
+
+  <Accordion title="Can I start a conversation on Instagram or Webchat?">
+    No. Instagram and Webchat are receptive-only channels: the conversation starts when the contact sends a message. On the **Start New Conversation** screen, these channels are marked **Receptive only**.
+
+    [Configure Instagram →](/channels/configure-instagram) · [Configure Webchat →](/channels/configure-webchat)
+  </Accordion>
+
+  <Accordion title="Why can't I send a free-form message on WhatsApp?">
+    On the **WhatsApp Business API**, Meta only allows free-form messages up to 24 hours after the contact's last message. Outside that window, or when the contact has never written, you must send an approved template. BluBash shows the notice and the **Choose template** button. This rule does not apply to **WhatsApp Lite**.
+
+    [Send a template →](/conversations/send-templates)
+  </Accordion>
+
+  <Accordion title="Why can't I reply on Instagram?">
+    Instagram only allows replies within 7 days of the contact's last message. After that, BluBash shows **You can't send messages right now** and you need to wait for a new message from the contact. Internal notes remain available.
+  </Accordion>
+
+  <Accordion title="Does someone serving on another number see the conversation from the first number?">
+    No. Each channel has its own conversations. Someone serving on another channel sees the contact, the deal, the stage history and the deal notes.
+
+    [One number or several? →](/channels/single-or-multiple-numbers)
+  </Accordion>
+</AccordionGroup>
+
+## Service
+
+<AccordionGroup>
+  <Accordion title="Why do I need to click Assign to me before replying?">
+    **Pending** or **Transferred** conversations do not have anyone actively working on them yet. When you click **Assign to me**, the conversation becomes yours and the message box is unlocked. This prevents two people from replying to the same customer.
+  </Accordion>
+
+  <Accordion title="How do I get a conversation that already has another assignee?">
+    Ask the assignee to transfer the conversation to you with the **Transfer** button, choosing the team and your name. Managers and Administrators can also redistribute the team's conversations.
+
+    [Transfer a conversation →](/conversations/transfer-attendance) · [Roles and permissions →](/members/roles-permissions)
+  </Accordion>
+
+  <Accordion title="How do I pass on context when transferring a conversation?">
+    Before transferring, add an internal note with a summary of the case and fill in the transfer **Reason** field. The customer does not see internal notes, and whoever receives the conversation starts out knowing what happened.
+
+    [Internal notes →](/conversations/internal-notes)
+  </Accordion>
+
+  <Accordion title="I replied to the customer. Do I close the conversation or leave it open?">
+    If the subject is resolved, close it. Each conversation should represent one subject. Leaving conversations open without need distorts the team's SLA and resolution time. The exception is ongoing follow-up, where the customer writes frequently about the same process.
+
+    [Close a conversation →](/conversations/close-attendance)
+  </Accordion>
+
+  <Accordion title="I closed a conversation by mistake. What now?">
+    A closed conversation does not become active again. Open the conversation and click **Start new conversation** to talk to the contact again on the same channel. On receptive-only channels, such as Instagram and Webchat, wait for the contact to write again.
+  </Accordion>
+
+  <Accordion title="Do messages received outside business hours count toward my time?">
+    Configure the **Team Calendar** with the real working hours, holidays and exceptions. It is the team's reference for business hours in time metrics.
+
+    [Create and configure teams →](/account-settings/create-configure-teams)
+  </Accordion>
+
+  <Accordion title="Can I react to the customer's message with an emoji?">
+    Not yet. You can see the reactions the customer adds to messages, and you can use emojis in the text of your reply.
+  </Accordion>
+</AccordionGroup>
+
+## Pipelines and deals
+
+<AccordionGroup>
+  <Accordion title="Do I need to transfer the conversation to schedule a meeting with someone else?">
+    Not necessarily. Set that person as the deal owner and move the deal to the meeting stage. They will find the deal in the Pipeline's **Mine** view. The conversation only needs to be transferred if that person will talk to the customer through it.
+  </Accordion>
+
+  <Accordion title="Are deal moves recorded?">
+    Yes. Every stage change stays in the deal history, with its date, as do the win or loss and its reason.
+  </Accordion>
+
+  <Accordion title="Can I move a deal to another Pipeline?">
+    You can, but the source Pipeline loses the record of the result. When one area finishes and another begins, use derivation: the deal is marked as won in the source and a new deal is created in the destination.
+
+    [Derivation between Pipelines →](/pipelines/derive-deals)
+  </Accordion>
+
+  <Accordion title="How do I handle an unqualified lead?">
+    Mark the deal as lost and choose the matching reason. Do not create a stage for it.
+
+    [Won, lost and reasons →](/pipelines/won-lost-reasons)
+  </Accordion>
+
+  <Accordion title="Can a contact have more than one open deal?">
+    Yes. Each deal lives in its own Pipeline, with its own stage, value and owner. On the contact and in the conversation's **Deals** tab, you see all of them at once.
+  </Accordion>
+
+  <Accordion title="Does the AI agent create deals on its own?">
+    Yes. With the **Manage deals** skill, the agent creates the deal during the conversation, moves it through stages, updates fields, records notes, creates follow-up tasks and can mark it as won or lost. You choose the Pipeline, the allowed stages and what the AI can do. See [Manage deals in Pipelines →](/ai-agents/configure-skills#manage-deals-in-pipelines).
+
+    [Deals →](/pipelines/deals)
+  </Accordion>
+</AccordionGroup>
+
+## Reports and quality
+
+<AccordionGroup>
+  <Accordion title="Can I see each team member's performance?">
+    In the **Conversations** report, filter by member to see each person's conversation volume and status, and open each conversation in the **360° View**. The **Performance & Quality** report, with times, SLA and satisfaction per team member, is coming soon.
+
+    [Reports & Insights →](/reports/overview)
+  </Accordion>
+
+  <Accordion title="Do team members see the AI analysis of their own conversations?">
+    No. Reports and quality analyses are available to **Managers** and **Administrators**. Share improvement points with the team member in a one-on-one conversation.
+
+    [360° View and AI analysis →](/reports/ai-audit)
+  </Accordion>
+
+  <Accordion title="Does the AI analysis replace a legal data-protection review?">
+    No. The analysis flags possible risks in how personal data is handled in the conversation, such as asking for a tax ID without recording consent. It is an alert for the manager to review, not a legal opinion.
+  </Accordion>
+</AccordionGroup>

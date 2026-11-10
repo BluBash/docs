@@ -1,0 +1,100 @@
+---
+title: "Edit a member's role"
+sidebarTitle: "Edit role and teams"
+description: "Change a member's workspace role and adjust the teams they belong to. Only Administrators can make these changes."
+---
+
+After the invitation, you can promote or restrict a person's access at any time. You change the role on the **Members** page. You adjust which teams the person belongs to in the team itself.
+
+<Note>
+  Only **Administrators** can edit members.
+</Note>
+
+## What you can change and where
+
+| What | Where | Note |
+| --- | --- | --- |
+| **Role** (Administrator, Manager, Member) | **Members** → pencil icon | Applies to the whole workspace |
+| Teams the person belongs to | **Teams** → team → **Members** tab | The person must stay in at least one team |
+| Team role (**Manager** or **Agent**) | **Teams** → team → **Members** tab | Applies only to that team |
+| Name | The person's own profile | Administrators do not edit the name |
+
+## Change the workspace role
+
+<Steps>
+  <Step title="Find the member">
+    In the side menu, click **Members**. Use **Search members...** to find the person by name or email.
+  </Step>
+  <Step title="Open the editor">
+    Click the pencil icon (**Edit member**) on the person's row. The **Edit Member** window shows their name with the note **The display name is set by the user in their profile.**
+  </Step>
+  <Step title="Choose the new role">
+    In **Role**, select **Administrator**, **Manager**, or **Member**.
+  </Step>
+  <Step title="Save">
+    Click **Update Member**. BluBash confirms with **Member updated successfully**.
+  </Step>
+</Steps>
+
+The change takes effect immediately. The person sees the **Permissions Updated** notice, and menus and actions follow the new role.
+
+<Info>
+  If you click the pencil icon on your own row, BluBash opens the **Profile** page, where you update your own details. You cannot change your own role.
+</Info>
+
+<Warning>
+  The workspace **Owner** role cannot be changed. In the editor, the field is locked with the note **Owner role cannot be changed**.
+</Warning>
+
+## Adjust a member's teams
+
+<Steps>
+  <Step title="Open the team">
+    In the side menu, click **Teams** and open the team.
+  </Step>
+  <Step title="Go to the Members tab">
+    To add someone, search for the person, choose their team role (**Agent** or **Manager**), and click **Add**.
+  </Step>
+  <Step title="Change or remove">
+    In **Current Members**, change the team role or remove the person from the team.
+  </Step>
+</Steps>
+
+<Warning>
+  BluBash does not let you remove someone from their only team in the workspace. Add the person to another team before removing them from the current one.
+</Warning>
+
+## When to change the role
+
+| Situation | Suggested change |
+| --- | --- |
+| A team member now coordinates an area and needs reports and Pipelines | **Member** → **Manager** |
+| A coordinator will configure AI agents, channels, and teams | **Manager** → **Administrator** |
+| The person no longer needs to configure the account | **Administrator** → **Manager** or **Member** |
+| A team member moved to another area | Keep the role and change the teams |
+
+## Best practices
+
+- Adjust teams before changing the role. Access issues are often about teams, not roles.
+- Agree on the change with the person before restricting access, so conversations are not left halfway.
+- Keep the number of Administrators low to protect the workspace.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    Compare what each role can do.
+  </Card>
+
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Organize each team's members, channels, and rules.
+  </Card>
+
+  <Card title="Remove a member" icon="user-minus" href="/members/remove-member">
+    Revoke access for people who left.
+  </Card>
+
+  <Card title="Transfer a conversation" icon="arrow-right-left" href="/conversations/transfer-attendance">
+    Redistribute conversations before team changes.
+  </Card>
+</CardGroup>

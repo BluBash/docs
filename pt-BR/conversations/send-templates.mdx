@@ -1,0 +1,114 @@
+---
+title: "Enviar um template do WhatsApp na conversa"
+sidebarTitle: "Enviar templates"
+description: "Saiba quando o WhatsApp Business API exige template, como escolher, preencher as variáveis e enviar, e como funcionam as janelas do WhatsApp e do Instagram."
+---
+
+Templates são mensagens aprovadas pela Meta. No **WhatsApp Business API**, eles são a única forma de iniciar uma conversa e de retomar o contato depois de 24 horas sem mensagem do cliente. A BluBash identifica quando o template é necessário e mostra o aviso na própria conversa.
+
+## Quando o template é obrigatório
+
+| Situação | Aviso na conversa |
+| --- | --- |
+| O contato nunca enviou mensagem para você | **Iniciar conversa no WhatsApp** |
+| Passaram mais de 24 horas desde a última mensagem do contato | **Você atingiu o tempo limite de resposta do WhatsApp de 24 horas** |
+
+Nessas situações, o campo de mensagem mostra **Use um template para enviar mensagens** e fica bloqueado para mensagens livres. O modo **Nota** continua disponível.
+
+### Regras por canal
+
+| Canal | Regra de envio |
+| --- | --- |
+| **WhatsApp Business API** | Mensagem livre até 24 horas após a última mensagem do contato. Depois disso, só template. |
+| **WhatsApp Lite** | Não usa templates. Você envia mensagem livre a qualquer momento. |
+| **Instagram** | Não usa templates. Você responde em até 7 dias após a última mensagem do contato. Depois disso, aparece **Não é possível enviar mensagens neste momento** e é preciso aguardar o contato escrever. |
+| **Webchat** | Não usa templates. O visitante inicia a conversa pelo widget. |
+
+## Como enviar um template
+
+<Steps>
+  <Step title="Abra a conversa">
+    Em **Conversas**, abra a conversa. Para falar com alguém pela primeira vez, [inicie uma nova conversa](/pt-BR/conversations/start-new-attendance) antes.
+  </Step>
+
+  <Step title="Clique em Escolha o template">
+    O botão fica no aviso acima do campo de mensagem. A janela **Selecionar Template** é aberta com a orientação **Selecione um template para iniciar a conversa**. Nesse caso, a lista mostra apenas templates.
+  </Step>
+
+  <Step title="Encontre o template">
+    Use **Buscar templates...** para procurar pelo nome, pela categoria ou pelo texto. Você também pode navegar com as setas do teclado.
+  </Step>
+
+  <Step title="Preencha as variáveis">
+    Variáveis são os espaços `{{1}}`, `{{2}}` do template. A primeira variável já vem preenchida com o nome do contato, quando ele existe. Para cada variável, digite o valor ou clique no ícone do campo para escolher um dado do contato em **Campos Básicos**, **Informações Adicionais** ou **Campos Adicionais**. Todas as variáveis precisam estar preenchidas.
+  </Step>
+
+  <Step title="Confira a prévia e envie">
+    Revise o texto final em **Prévia da Mensagem** e clique em **Enviar Template**. Você também pode pressionar **Enter**. Para fechar sem enviar, pressione **Esc**.
+  </Step>
+</Steps>
+
+**Exemplo de template:**
+
+```text
+Olá {{1}}, aqui é a {{2}}, da equipe comercial.
+
+Combinamos de conversar hoje sobre a sua proposta. Podemos continuar por aqui?
+```
+
+**Depois de preencher as variáveis:**
+
+```text
+Olá Ana, aqui é a Maria, da equipe comercial.
+
+Combinamos de conversar hoje sobre a sua proposta. Podemos continuar por aqui?
+```
+
+## Templates dentro da janela de 24 horas
+
+Dentro da janela, você também pode usar templates sem esperar o aviso. Clique no botão de raio ao lado do campo de mensagem (**Templates**: **Usar template ou resposta rápida**). A lista mostra os templates primeiro, com a indicação **Template**, e depois as respostas rápidas, com a indicação **Resposta Rápida**.
+
+[Usar respostas rápidas →](/pt-BR/conversations/use-quick-messages)
+
+## Depois de enviar
+
+- **O contato respondeu**: a janela de 24 horas recomeça e você volta a enviar mensagens livres.
+- **O contato não respondeu**: para tentar de novo, envie outro template.
+
+<Warning>
+  A Meta cobra pelo envio de mensagens do WhatsApp Business API diretamente na sua conta Meta, que precisa ter um método de pagamento ativo. Use templates com objetivo claro e evite envios repetidos para quem não respondeu.
+</Warning>
+
+## Quem cria os templates
+
+Templates são criados na página **Templates e Respostas Rápidas** e enviados para aprovação da Meta. Na conversa, a lista mostra apenas os templates disponíveis para ela. Se você precisa de uma mensagem que ainda não existe, peça ao seu gestor.
+
+[O que são templates e respostas rápidas →](/pt-BR/templates/what-are-templates-quick-replies) · [Criar um template →](/pt-BR/templates/create-template) · [Usar variáveis →](/pt-BR/templates/use-variables)
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="Aparece Nenhum template disponível para esta conversa">
+    Não há template aprovado disponível para esta conversa. Peça a quem administra os templates para criar um e enviar para aprovação.
+  </Accordion>
+
+  <Accordion title="O botão Enviar Template não funciona">
+    Alguma variável está vazia. Preencha todas as variáveis e confira a **Prévia da Mensagem**.
+  </Accordion>
+
+  <Accordion title="O aviso de 24 horas apareceu, mas o cliente escreveu há pouco">
+    Confira se a última mensagem foi mesmo do contato. Mensagens enviadas pela equipe ou pela IA não reabrem a janela.
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Respostas rápidas" icon="zap" href="/pt-BR/conversations/use-quick-messages">
+    Responda mais rápido com textos prontos.
+  </Card>
+
+  <Card title="Campanhas" icon="megaphone" href="/pt-BR/campaigns/campaigns-introduction">
+    Envie templates em massa para listas segmentadas.
+  </Card>
+</CardGroup>

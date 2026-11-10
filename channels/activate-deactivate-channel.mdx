@@ -1,0 +1,74 @@
+---
+title: "Activate or deactivate a channel"
+description: "Pause and resume any BluBash channel (WhatsApp, Instagram, or Webchat) without losing its setup, from the Danger Zone on the channel page."
+---
+
+Deactivating a channel pauses the message flow without deleting anything. The setup, the connection, and the history stay saved, and you can reactivate it whenever you want. Use this instead of deleting when the pause is temporary.
+
+## When to use it
+
+- Maintenance or a process change during which the channel should not receive service.
+- A Webchat that needs to go offline for a while, for example during a website redesign.
+- A channel you want to keep, but are not using right now.
+
+## Deactivate or activate
+
+<Steps>
+  <Step title="Open the channel">
+    In **Channels**, click the channel card to open its page.
+  </Step>
+  <Step title="Open the Danger Zone">
+    At the bottom of the page, click **Danger Zone** to expand the section.
+  </Step>
+  <Step title="Use the Channel Status switch">
+    Under **Channel Status** ("Enable or disable this channel to control message flow"), click the switch:
+
+    - **On:** the status changes to **Active**.
+    - **Off:** the status changes to **Inactive**.
+
+    While BluBash saves the change, the label shows **Saving...**. If saving fails, the switch returns to its previous position.
+  </Step>
+</Steps>
+
+## What changes when the channel is inactive
+
+| Where | Effect |
+| --- | --- |
+| Webchat on the website | The widget shows **Chat Unavailable** and says new conversations cannot be started at this time. |
+| Channel list | The channel loses the green active indicator. |
+| Team creation | Only active channels are offered for linking while creating a team. |
+| Templates | Only active WhatsApp channels are offered when working with templates. |
+| Setup | Name, default team, AI agent, and connection details are kept. |
+
+<Warning>
+  Let your team know before deactivating a channel in use. Contacts may still try to reach the business through that number, account, or website. If the channel stays offline for long, point contacts to another channel.
+</Warning>
+
+## Activating does not replace the connection
+
+The switch only changes the channel status. If the channel has not finished connecting, or a WhatsApp Lite channel lost its session, turning on the switch does not reconnect it. In these cases, click the channel in the **Channels** list and finish the connection in **Configure Channel**.
+
+## Indicators in the channel list
+
+| Indicator on the icon | Meaning |
+| --- | --- |
+| Green dot | **Active** channel. |
+| Orange dot | Channel waiting for connection, or WhatsApp Lite disconnected. Click to finish or reconnect. |
+| No dot | Inactive channel or another state. Open the channel to check. |
+
+## Deactivate or delete?
+
+|  | Deactivate | Delete |
+| --- | --- | --- |
+| Reversible | Yes, at any time | No |
+| Setup | Kept | Lost |
+| Meta, Instagram, or QR code connection | Kept | Disconnected |
+| When to use | Temporary pauses | A channel you will not use again |
+
+See [Delete a channel →](/channels/delete-channel).
+
+## Next steps
+
+- [Edit a channel →](/channels/edit-channel)
+- [Search and filter channels →](/channels/search-filter-channels)
+- [Set up Webchat →](/channels/configure-webchat)

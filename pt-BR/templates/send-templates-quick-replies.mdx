@@ -1,0 +1,108 @@
+---
+title: "Enviar templates e respostas rápidas"
+sidebarTitle: "Enviar templates e respostas rápidas"
+description: "Veja como a equipe envia templates e respostas rápidas nas conversas da BluBash, como funciona a janela de 24 horas e como usar templates em campanhas."
+---
+
+Depois de criados, templates e respostas rápidas ficam disponíveis no campo de mensagem da conversa. O atendente escolhe a mensagem, preenche as variáveis e envia. Templates também podem ser enviados em massa por campanhas.
+
+## O que aparece em cada situação
+
+| Situação | O que o atendente vê |
+| --- | --- |
+| Conversa com envio liberado | Templates do canal e respostas rápidas da equipe. Os templates aparecem primeiro, com a indicação **Template**; depois, as respostas rápidas, com a indicação **Resposta Rápida**. |
+| WhatsApp Business API, contato nunca escreveu | Aviso **Iniciar conversa no WhatsApp** e apenas templates. |
+| WhatsApp Business API, mais de 24 horas sem mensagem do contato | Aviso **Você atingiu o tempo limite de resposta do WhatsApp de 24 horas** e apenas templates. |
+| WhatsApp Lite, Instagram ou Webchat | Apenas respostas rápidas, porque esses canais não usam templates. |
+
+## Enviar durante a conversa
+
+<Steps>
+  <Step title="Abra a conversa">
+    Em **Conversas**, abra a conversa atribuída a você. Se o agente de IA estiver conduzindo, clique em **Assumir Conversa** antes.
+  </Step>
+  <Step title="Clique no botão de raio">
+    O botão fica ao lado do campo de mensagem. Ao passar o mouse, aparece **Templates**: **Usar template ou resposta rápida**. A janela **Selecionar Template** é aberta.
+  </Step>
+  <Step title="Busque a mensagem">
+    Use **Buscar templates...** para procurar pelo nome, pela categoria ou por uma palavra do texto. Você também pode navegar com as setas do teclado.
+  </Step>
+  <Step title="Preencha as variáveis">
+    A primeira variável já vem com o nome do contato, quando ele existe. Para as demais, digite o valor ou escolha um dado em **Campos Básicos**, **Informações Adicionais** ou **Campos Adicionais**.
+  </Step>
+  <Step title="Confira e envie">
+    Revise a **Prévia da Mensagem** e clique em **Enviar Template**. O mesmo botão envia templates e respostas rápidas. Você também pode pressionar **Enter**. Para fechar sem enviar, pressione **Esc**.
+  </Step>
+</Steps>
+
+## Iniciar ou retomar no WhatsApp Business API
+
+Quando o template é obrigatório, o campo de mensagem mostra **Use um template para enviar mensagens** e fica bloqueado para texto livre. O modo **Nota** continua disponível.
+
+<Steps>
+  <Step title="Clique em Escolha o template">
+    O botão fica no aviso acima do campo de mensagem. A janela mostra **Selecione um template para iniciar a conversa** e lista apenas templates aprovados para o canal.
+  </Step>
+  <Step title="Preencha e envie">
+    Preencha as variáveis e clique em **Enviar Template**.
+  </Step>
+  <Step title="Aguarde a resposta">
+    Quando o contato responde, a janela de 24 horas recomeça e você volta a enviar mensagens livres e respostas rápidas.
+  </Step>
+</Steps>
+
+<Warning>
+  Mensagens enviadas pela equipe ou pelo agente de IA não reabrem a janela de 24 horas. Só uma mensagem do contato reabre. A Meta cobra cada template enviado na sua conta Meta.
+</Warning>
+
+## Templates em campanhas
+
+Para enviar um template para muitos contatos, use **Campanhas**. Você escolhe o canal, o template aprovado e a audiência, e relaciona as variáveis aos dados dos contatos.
+
+| Tipo de campanha | Uso |
+| --- | --- |
+| **Campanha Única** | Envio pontual para uma audiência definida, imediato ou agendado. |
+| **Campanha Contínua** | Envio automático para contatos que entram na campanha ao longo do tempo, manualmente, pela API ou pelo RD Station Marketing. |
+
+[Introdução às campanhas →](/pt-BR/campaigns/campaigns-introduction) · [Criar campanha →](/pt-BR/campaigns/create-campaign)
+
+## Atendimento híbrido na prática
+
+1. O agente de IA atende o contato, qualifica e transfere para a equipe.
+2. O atendente assume e usa uma resposta rápida para se apresentar e continuar o atendimento.
+3. Se o contato some por mais de 24 horas no WhatsApp Business API, o atendente envia um template para retomar.
+4. Quando o contato responde, a conversa segue com mensagens livres e respostas rápidas.
+
+[Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service) · [Transferir atendimento →](/pt-BR/conversations/transfer-attendance)
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="Aparece Nenhum template disponível para esta conversa">
+    Não há template aprovado para o canal da conversa nem resposta rápida para a sua equipe. Peça a um Administrador ou Gerente para criar.
+  </Accordion>
+
+  <Accordion title="O botão de raio está desabilitado">
+    O modo **Nota** está ativo. Volte para o modo de mensagem.
+  </Accordion>
+
+  <Accordion title="Só aparecem templates na lista">
+    A conversa está fora da janela de 24 horas do WhatsApp Business API. Envie um template e aguarde a resposta do contato.
+  </Accordion>
+
+  <Accordion title="Uma resposta rápida não aparece">
+    Ela não está associada à equipe da conversa. Peça para incluir a equipe em [Editar e excluir](/pt-BR/templates/edit-delete).
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Enviar templates na conversa" icon="file-text" href="/pt-BR/conversations/send-templates">
+    Detalhes do envio de templates no WhatsApp Business API.
+  </Card>
+
+  <Card title="Usar respostas rápidas" icon="zap" href="/pt-BR/conversations/use-quick-messages">
+    Detalhes do envio de respostas rápidas.
+  </Card>
+</CardGroup>

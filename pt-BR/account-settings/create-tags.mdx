@@ -1,0 +1,129 @@
+---
+title: "Criar etiquetas"
+description: "Crie etiquetas para classificar contatos e conversas e use-as em filtros, campanhas, Pipelines e nas habilidades do agente de IA."
+---
+
+Etiquetas classificam contatos e conversas. Com elas você filtra a caixa de entrada, segmenta campanhas, filtra o quadro dos Pipelines e deixa o agente de IA marcar automaticamente cada cliente durante o atendimento. Na interface, o recurso aparece como **Etiquetas**.
+
+<Info>
+  Uma etiqueta pode ser aplicada ao **contato** ou à **conversa**. Etiquetas do contato descrevem quem a pessoa é e continuam com ela em todas as conversas. Etiquetas da conversa descrevem aquele atendimento específico.
+</Info>
+
+## Onde as etiquetas são usadas
+
+| Onde | Como |
+| --- | --- |
+| Conversas | No painel do contato, em **Etiquetas do Contato** e **Etiquetas da Conversa**. Os filtros da caixa de entrada incluem etiquetas |
+| Contatos | Na ficha do contato e ao importar contatos, em **Adicionar etiquetas aos contatos importados (opcional)** |
+| Agente de IA | Habilidades **Adicionar Etiqueta** e **Remover Etiqueta**, que o agente aciona durante a conversa |
+| Campanhas | Na audiência, em **Etiquetas**, para escolher quem recebe a campanha |
+| Pipelines | No filtro **Etiquetas** do quadro |
+
+## Quem pode criar e gerenciar
+
+| Papel | Ver | Criar e gerenciar |
+| --- | --- | --- |
+| **Administrador** | Todas as etiquetas | Todas |
+| **Gerente** | Globais e as das suas equipes | Globais e as restritas a equipes das quais participa |
+| **Membro** | Globais e as das suas equipes | Usa as etiquetas disponíveis nas conversas e contatos |
+
+<Note>
+  Para editar ou remover uma etiqueta restrita a equipes, você precisa participar de **todas** as equipes dela. Caso contrário, os botões aparecem desabilitados com o aviso **Você precisa ter acesso a todas as equipes desta tag para gerenciá-la**.
+</Note>
+
+## Criar uma etiqueta
+
+<Steps>
+  <Step title="Abra Etiquetas">
+    No menu lateral, clique em **Etiquetas**. A página **Gerenciar Etiquetas** lista as etiquetas existentes.
+  </Step>
+  <Step title="Clique em Adicionar Etiqueta">
+    O botão fica no canto superior direito da página.
+  </Step>
+  <Step title="Preencha os campos">
+    | Campo | Obrigatório | Descrição |
+    | --- | --- | --- |
+    | **Nome** | Sim | Rótulo curto e claro, como "Cliente ativo" ou "Lead qualificado" |
+    | **Descrição** | Não | Quando usar a etiqueta. Ajuda a equipe e serve de referência ao configurar o agente de IA |
+    | **Cor** | Sim | Escolha no seletor ou digite o código hexadecimal. O padrão é azul (`#3B82F6`) |
+    | **Disponível para todas as equipes** | Ativado por padrão | Deixe ativado para uma etiqueta global |
+    | **Selecionar equipes específicas** | Quando a opção acima está desativada | Restringe a etiqueta às equipes escolhidas |
+  </Step>
+  <Step title="Salve">
+    Clique em **Criar Etiqueta**. A BluBash confirma com **Etiqueta criada com sucesso!**
+  </Step>
+</Steps>
+
+Na lista, a coluna **Equipes** mostra as equipes da etiqueta ou o selo **Global**. As demais colunas são **Nome**, **Descrição**, **Cor**, **Criada em** e **Ações**. Use **Buscar etiquetas...** para encontrar uma etiqueta.
+
+## Editar ou remover
+
+- **Editar**: clique em **Editar** na linha da etiqueta, ajuste os campos e clique em **Salvar Alterações**.
+- **Remover**: clique em **Remover** e confirme em **Remover Etiqueta**.
+
+<Warning>
+  Ao remover uma etiqueta, ela sai de todos os contatos e conversas em que estava aplicada. A ação não pode ser desfeita. Revise antes as campanhas e as habilidades do agente de IA que usam a etiqueta.
+</Warning>
+
+## Etiquetas e o agente de IA
+
+O agente de IA pode aplicar e retirar etiquetas sozinho, com base no que o cliente diz:
+
+| Habilidade | O que faz | Exemplo |
+| --- | --- | --- |
+| **Adicionar Etiqueta** | Adiciona uma etiqueta ao contato | Marcar "Interesse: plano anual" quando o cliente pergunta sobre o plano anual |
+| **Remover Etiqueta** | Remove uma etiqueta específica do contato | Retirar "Inadimplente" quando o cliente confirma o pagamento |
+
+Crie a etiqueta antes de configurar a habilidade, porque a habilidade aponta para uma etiqueta existente. Descreva na habilidade quando o agente deve usá-la. Veja [Configurar habilidades →](/pt-BR/ai-agents/configure-skills).
+
+<Tip>
+  Combine as duas pontas: o agente de IA etiqueta os contatos durante o atendimento e, depois, você usa essas etiquetas para montar a audiência de uma campanha ou filtrar o quadro de um Pipeline.
+</Tip>
+
+## Ideias de etiquetas
+
+<CardGroup cols={2}>
+  <Card title="Tipo de cliente" icon="users">
+    Pessoa física, Empresa, Distribuidor, Revendedor
+  </Card>
+
+  <Card title="Origem" icon="log-in">
+    Indicação, Instagram, Site, Evento
+  </Card>
+
+  <Card title="Status do relacionamento" icon="handshake">
+    Cliente ativo, Cliente inativo, Ex-cliente
+  </Card>
+
+  <Card title="Interesse" icon="star">
+    Produto A, Suporte técnico, Consultoria
+  </Card>
+</CardGroup>
+
+## Boas práticas
+
+- Defina um padrão de nomes, como "Origem: Instagram" e "Interesse: Produto A", para a lista continuar fácil de ler.
+- Use cores por categoria: uma cor para origem, outra para status, outra para interesse.
+- Evite etiquetas para o que já existe em outro lugar. Etapa do negócio fica no Pipeline; responsável fica na carteirização.
+- Restrinja a equipes as etiquetas que só fazem sentido para uma área.
+- Revise a lista periodicamente e remova duplicadas.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Usar etiquetas nas conversas" icon="tag" href="/pt-BR/conversations/tags-purpose-usage">
+    Aplique etiquetas durante o atendimento.
+  </Card>
+
+  <Card title="Gerenciar etiquetas do contato" icon="contact" href="/pt-BR/contacts/manage-contact-tags">
+    Organize os contatos com etiquetas.
+  </Card>
+
+  <Card title="Configurar habilidades" icon="zap" href="/pt-BR/ai-agents/configure-skills">
+    Deixe o agente de IA aplicar etiquetas.
+  </Card>
+
+  <Card title="Criar uma campanha" icon="send" href="/pt-BR/campaigns/create-campaign">
+    Segmente a audiência por etiquetas.
+  </Card>
+</CardGroup>

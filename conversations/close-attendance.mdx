@@ -1,0 +1,99 @@
+---
+title: "Close a conversation"
+description: "Learn when to close a conversation, how to fill in resolution notes and what happens next: closure message, satisfaction survey and new conversation."
+---
+
+Close the conversation when the customer's subject is resolved. Closing keeps the inbox clean, keeps the team focused on what is in progress and makes sure SLA and resolution time reflect your real operation.
+
+## When to close
+
+- **Close** when the customer got the answer or solution they were looking for.
+- **Close** when the subject will continue elsewhere, for example in a Pipeline deal with a scheduled task.
+- **Do not close** while you are waiting for a customer reply that is part of the same subject, such as a document.
+
+Each conversation should represent one subject. If the customer comes back with another subject, a new conversation starts.
+
+## How to close
+
+<Steps>
+  <Step title="Open the conversation">
+    In **Conversations**, open the conversation you want to close.
+  </Step>
+  <Step title="Click Close">
+    The **Close** button is at the top right of the conversation. The **Close** window opens with the description **Close this conversation and mark as resolved**.
+  </Step>
+  <Step title="Fill in the resolution notes">
+    In **Resolution notes**, describe how the subject was resolved. The field is optional unless your team requires it. In that case, the window shows **Your team requires resolution notes to be added before closing conversations.**
+  </Step>
+  <Step title="Confirm">
+    Click **Close**. The confirmation **Conversation closed successfully** appears and the conversation leaves the list of ongoing conversations.
+  </Step>
+</Steps>
+
+<Tip>
+  Write resolution notes that help whoever serves this customer in the future: what was requested, what was done and whether anything is pending elsewhere. Example: "Invoice copy sent by email. Customer will pay by Friday. Collection task created on the deal."
+</Tip>
+
+## What happens after closing
+
+What happens depends on the settings of the conversation's team.
+
+| Team setting | Effect when closing |
+| --- | --- |
+| **Require resolution notes** | You can only close after filling in **Resolution notes**. |
+| **Enable closure message** | The contact receives an automatic message. It can use the `{{team_name}}`, `{{contact_name}}`, `{{agent_name}}` and `{{conversation_protocol}}` variables and can have the **Minimum conversation duration** condition. |
+| **Satisfaction Survey** | The contact receives the survey with a 1 to 5 rating. The conversation stays in **Awaiting Survey** status until the contact answers or the survey expires. |
+
+An Administrator configures these rules in **Closure Rules** and **Satisfaction Survey**, in the team settings.
+
+[Create and configure teams →](/account-settings/create-configure-teams)
+
+### The closed conversation
+
+- You find closed conversations in the **Closed** filter of the list.
+- When you open a closed conversation, the message box shows **This conversation is not active. You cannot send messages.**
+- To talk to the contact again, click **Start new conversation**. The new conversation uses the same channel and, preferably, the same team.
+- On Webchat and Instagram, which are receptive only, you cannot start a conversation. Wait for the contact to write again.
+
+## Closing by the AI agent
+
+With the native **Close conversation** skill on in the agent's **Skills** tab, the AI agent closes the conversations it resolved on its own. Without this setting, the conversation stays open until someone on the team closes it.
+
+[Agent settings →](/ai-agents/configure-agent-settings)
+
+## Best practices
+
+- Close on the same day the subject is resolved. Conversations left open without need distort the SLA.
+- Before closing, review the contact's tags and check whether the Pipeline deal was updated.
+- If the customer said thanks and asked for nothing else, close. Do not wait for another message.
+- Use resolution notes to record what the customer does not see and the team needs to know.
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="Resolution notes are required to close this conversation appears">
+    Your team requires resolution notes. Fill in **Resolution notes** and click **Close** again.
+  </Accordion>
+
+  <Accordion title="I closed a conversation by mistake">
+    A closed conversation does not become active again. Open the conversation and click **Start new conversation**. On the WhatsApp Business API, outside the 24-hour window, the first message must be a template.
+
+    [Send a template →](/conversations/send-templates)
+  </Accordion>
+
+  <Accordion title="The customer replied after the conversation was closed">
+    A new message from the customer opens a new conversation, which follows the channel's distribution and AI rules.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Conversations report" icon="chart-column" href="/reports/conversations-report">
+    Track conversation volume, status and distribution.
+  </Card>
+
+  <Card title="Internal notes" icon="sticky-note" href="/conversations/internal-notes">
+    Record context before closing or transferring.
+  </Card>
+</CardGroup>

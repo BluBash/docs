@@ -1,0 +1,92 @@
+---
+title: "Usar respostas rápidas na conversa"
+sidebarTitle: "Respostas rápidas"
+description: "Envie textos e mídias prontos durante a conversa com as respostas rápidas da BluBash, com variáveis preenchidas pelos dados do contato."
+---
+
+Respostas rápidas são mensagens prontas que a equipe usa no dia a dia: apresentação, pergunta de abertura, formas de pagamento, endereço, horário de atendimento. Elas economizam digitação e mantêm o mesmo padrão de comunicação para toda a equipe.
+
+## Resposta rápida ou template?
+
+|  | Resposta rápida | Template |
+| --- | --- | --- |
+| Aprovação da Meta | Não precisa | Precisa |
+| Quando usar | Durante a conversa, quando o envio de mensagens está liberado | Para iniciar conversa ou retomar depois de 24 horas no WhatsApp Business API |
+| Conteúdo | Texto, imagem, vídeo, documento ou contatos | Formato definido pela Meta |
+| Indicação na lista | **Resposta Rápida** | **Template** |
+
+## Como enviar uma resposta rápida
+
+<Steps>
+  <Step title="Abra a conversa">
+    Em **Conversas**, abra a conversa. Ela precisa estar atribuída a você.
+  </Step>
+
+  <Step title="Clique no botão de raio">
+    O botão fica abaixo do campo de mensagem, ao lado do botão de anexar. Ao passar o mouse, aparece **Templates**: **Usar template ou resposta rápida**. A janela **Selecionar Template** é aberta com a descrição **Templates e respostas rápidas para uso na conversa**.
+  </Step>
+
+  <Step title="Encontre a resposta rápida">
+    Use **Buscar templates...** para procurar pelo nome ou por uma palavra do texto. Os templates aparecem primeiro; as respostas rápidas vêm depois, com a indicação **Resposta Rápida**.
+  </Step>
+
+  <Step title="Preencha as variáveis, se houver">
+    Variáveis como `{{1}}` e `{{2}}` personalizam o texto. A primeira já vem com o nome do contato, quando ele existe. Para as demais, digite o valor ou escolha um dado do contato em **Campos Básicos**, **Informações Adicionais** ou **Campos Adicionais**.
+  </Step>
+
+  <Step title="Confira a prévia e envie">
+    Revise o texto em **Prévia da Mensagem** e clique em **Enviar Template**. O mesmo botão envia templates e respostas rápidas. Você também pode pressionar **Enter**.
+  </Step>
+</Steps>
+
+A mensagem aparece na conversa como qualquer outra mensagem enviada por você.
+
+**Exemplo salvo como resposta rápida:**
+
+```text
+Olá {{1}}, aqui é a {{2}} e vou continuar o seu atendimento.
+
+Como posso ajudar você hoje?
+```
+
+**Depois de preencher as variáveis:**
+
+```text
+Olá Maria, aqui é a Ana e vou continuar o seu atendimento.
+
+Como posso ajudar você hoje?
+```
+
+## Quando as respostas rápidas não aparecem
+
+| Situação | O que acontece |
+| --- | --- |
+| Modo **Nota** ativo | O botão de raio fica desabilitado. Volte para **Mensagem**. |
+| WhatsApp Business API fora da janela de 24 horas | A janela lista apenas templates. Envie um template e aguarde a resposta do contato. |
+| Instagram depois de 7 dias sem mensagem do contato | O envio fica bloqueado até o contato escrever de novo. |
+| Agente de IA conduzindo a conversa | O campo de mensagem fica bloqueado. Clique em **Assumir Conversa** primeiro. |
+
+## Boas práticas
+
+- Dê nomes curtos e fáceis de buscar, como "pagamento pix" ou "endereço loja centro".
+- Use variáveis para o nome do contato e do atendente. A mensagem fica pessoal sem digitação extra.
+- Revise a prévia antes de enviar. Uma variável errada chega ao cliente.
+- Mantenha poucas respostas rápidas e atualizadas. Remova as que ninguém usa.
+
+## Criar e editar respostas rápidas
+
+As respostas rápidas são criadas e editadas na página **Templates e Respostas Rápidas**.
+
+[Criar uma resposta rápida →](/pt-BR/templates/create-quick-reply) · [Usar variáveis →](/pt-BR/templates/use-variables) · [Editar e excluir →](/pt-BR/templates/edit-delete)
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Enviar templates" icon="file-text" href="/pt-BR/conversations/send-templates">
+    Inicie e retome conversas no WhatsApp Business API.
+  </Card>
+
+  <Card title="Etiquetas na conversa" icon="tag" href="/pt-BR/conversations/tags-purpose-usage">
+    Classifique o contato enquanto atende.
+  </Card>
+</CardGroup>

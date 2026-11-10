@@ -1,0 +1,145 @@
+---
+title: "Canais da BluBash: tipos e como criar"
+sidebarTitle: "Criar um canal"
+description: "Conheça os canais da BluBash (WhatsApp, Instagram, Webchat e API), compare os tipos e crie um canal com equipe padrão e agente de IA."
+---
+
+Canais são as conexões que trazem as conversas dos seus clientes para a BluBash. A BluBash é omnicanal: o WhatsApp é o canal principal, com duas formas de conexão, e você também atende pelo Instagram Direct, pelo Webchat do seu site e por um canal API. Todas as conversas chegam na mesma caixa de entrada, seguem as regras da equipe responsável e podem ser atendidas por um agente de IA junto com a sua equipe.
+
+## Tipos de canal
+
+| Canal | Como conecta | Volume | Apenas receptivo | Templates e campanhas | Recomendação |
+| --- | --- | --- | --- | --- | --- |
+| **WhatsApp Business API** (oficial) | Login na Meta em uma janela pop-up, pelo botão **Conectar Conta WhatsApp** | Alto | Não. Você também inicia conversas | Sim: templates aprovados pela Meta e campanhas | Operação principal de vendas e atendimento, com estabilidade e suporte oficial |
+| **WhatsApp Lite** | QR code escaneado no celular | Baixo | Não. Você também inicia conversas | Sem templates da Meta. Não recomendado para disparos | Pequenos negócios com poucas mensagens por dia e testes |
+| **Instagram** (API oficial) | Login com o Instagram (Business Login) em uma conta profissional | Acompanha o volume do seu Direct | Sim. A conversa começa quando o contato envia uma mensagem, e você responde em até 7 dias após a última mensagem dele | Não | Empresas que usam o Direct como canal de relacionamento |
+| **WebChat** | Código de incorporação colado no site ou link público | Acompanha o tráfego do seu site | Sim. O visitante inicia a conversa | Não | Atender visitantes do site em tempo real |
+| **API** | Configurado com o suporte da BluBash | Conforme a sua integração | Sim. As conversas são iniciadas externamente | Não | Integrações próprias via API REST |
+| **Telegram** e **Email** | Em breve |  |  |  |  |
+
+<Info>
+  Canais apenas receptivos aparecem desabilitados quando você tenta iniciar uma nova conversa. Nesses canais, você responde as conversas que o contato abre. Veja [Iniciar um novo atendimento →](/pt-BR/conversations/start-new-attendance).
+</Info>
+
+### Qual escolher
+
+- **Comece pelo WhatsApp Business API** se o WhatsApp é a principal porta de entrada dos seus clientes. É o único tipo com templates aprovados pela Meta, campanhas e garantia de estabilidade.
+- **Use o WhatsApp Lite** apenas para começar rápido, testar ou operar com baixo volume. Ele não é oficial e pode sofrer interrupções.
+- **Some Instagram e Webchat** para receber quem procura sua empresa pelo Direct ou pelo site. As conversas caem na mesma caixa de entrada e podem ser atendidas pelo mesmo agente de IA.
+- **Na dúvida entre um ou vários números de WhatsApp**, leia [Um número ou vários →](/pt-BR/channels/single-or-multiple-numbers).
+
+## Antes de começar
+
+- **Tenha pelo menos uma equipe criada.** Todo canal precisa de uma **Equipe Padrão**. Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+- **Se quiser automação, deixe o agente de IA ativo.** Só agentes ativos aparecem na lista do canal. Veja [Criar um agente de IA →](/pt-BR/ai-agents/create-ai-agent).
+- **Separe o que cada tipo exige:** acesso à conta da Meta (WhatsApp Business API), o celular com o número (WhatsApp Lite), o login da conta profissional (Instagram) ou acesso para editar o site (Webchat).
+- **Permita janelas pop-up** no navegador. A conexão do WhatsApp Business API e do Instagram abre uma janela de login.
+
+## Criar um canal
+
+<Steps>
+  <Step title="Abrir Canais">
+    No menu lateral, clique em **Canais**. A página lista todos os canais do workspace.
+  </Step>
+
+  <Step title="Clicar em Adicionar Canal">
+    No canto superior direito, clique em **Adicionar Canal**. A janela **Selecionar Tipo de Canal** mostra um cartão para cada tipo, com descrição e **Recursos**.
+  </Step>
+
+  <Step title="Escolher o tipo">
+    Clique no cartão do tipo desejado: **WhatsApp Business API**, **WhatsApp Lite**, **Instagram** ou **WebChat**.
+
+    O cartão **API** mostra o selo **Contate o Suporte**. Ao clicar nele, a BluBash avisa que é preciso falar com o suporte para configurar esse canal.
+  </Step>
+
+  <Step title="Preencher os dados do canal">
+    Na etapa **Configurar Canal**, preencha:
+
+    | Campo | Obrigatório | O que fazer |
+    | --- | --- | --- |
+    | **Nome do Canal** | Sim | Use um nome que identifique o canal e a área, por exemplo "WhatsApp Comercial" ou "Webchat Site". O nome não pode repetir o de outro canal. |
+    | **Equipe Padrão** | Sim | Escolha a equipe que vai lidar com as conversas deste canal por padrão. |
+    | **Agente de IA (Opcional)** | Não | Escolha um agente de IA ativo para atender as conversas do canal ou deixe **Nenhum agente atribuído** para atendimento só pela equipe. |
+  </Step>
+
+  <Step title="Clicar em Criar Canal">
+    O botão **Criar Canal** só fica disponível com o nome e a equipe preenchidos. Para trocar de tipo, clique em **Voltar**.
+  </Step>
+
+  <Step title="Concluir a conexão">
+    O próximo passo depende do tipo:
+
+    - **WhatsApp Business API:** clique em **Conectar Conta WhatsApp** e conclua o login na Meta. Veja [Configurar o WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official).
+    - **WhatsApp Lite:** clique em **Conectar WhatsApp** e escaneie o QR code. Veja [Configurar o WhatsApp Lite →](/pt-BR/channels/configure-whatsapp-lite).
+    - **Instagram:** clique em **Conectar com Instagram** e autorize a conta. Veja [Conectar o Instagram →](/pt-BR/channels/configure-instagram).
+    - **WebChat:** a BluBash abre a página do canal com o código de incorporação. Veja [Configurar o Webchat →](/pt-BR/channels/configure-webchat).
+
+    Se precisar parar no meio, clique em **Pular por enquanto**. O canal fica salvo, aguardando a conexão. Quando você clicar nele na lista, a janela **Configurar Canal** abre de novo para você terminar.
+  </Step>
+
+  <Step title="Conferir a página do canal">
+    Ao concluir, a BluBash abre a página do canal. Confira os dados da conta conectada e envie uma mensagem de teste.
+  </Step>
+</Steps>
+
+## O que tem na página do canal
+
+| Seção | Para que serve |
+| --- | --- |
+| **Configurações do Canal** | Alterar nome, equipe padrão e agente de IA. Veja [Editar um canal →](/pt-BR/channels/edit-channel). |
+| Dados da conexão | **Conta Conectada** (WhatsApp), **Conta Instagram** (Instagram) ou **WebChat** e **Configurações do Webchat** (Webchat). |
+| **Zona de Perigo** | **Status do Canal** para ativar ou desativar e **Excluir Canal**. Veja [Ativar ou desativar →](/pt-BR/channels/activate-deactivate-channel) e [Excluir →](/pt-BR/channels/delete-channel). |
+
+## Como o agente de IA e a equipe participam
+
+<Steps>
+  <Step title="O contato escreve">
+    A mensagem chega pelo canal (WhatsApp, Instagram ou Webchat) e abre uma conversa na caixa de entrada.
+  </Step>
+  <Step title="O agente de IA atende">
+    Se o canal tem um agente de IA, ele responde, tira dúvidas e qualifica o contato com base no treinamento.
+  </Step>
+  <Step title="A equipe assume quando precisa">
+    Com a habilidade **Transferir para Equipe**, o agente passa a conversa para a equipe certa, com uma nota de contexto. Sem agente, a conversa vai direto para a **Equipe Padrão**, que distribui conforme as regras dela.
+  </Step>
+</Steps>
+
+Veja [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service) e [Configurar habilidades →](/pt-BR/ai-agents/configure-skills).
+
+## Canais e equipes
+
+A **Equipe Padrão** recebe as conversas do canal e fica vinculada a ele. Na página da equipe, a aba **Canais** mostra os canais vinculados, com o selo **Equipe padrão** no canal em que ela é a padrão.
+
+- Para vincular um canal de WhatsApp a outras equipes, use **Adicionar** na aba **Canais** da equipe. A lista de canais para adicionar nessa aba mostra apenas canais de WhatsApp.
+- Para ligar um canal de Instagram ou Webchat a uma equipe, escolha essa equipe como **Equipe Padrão** nas **Configurações do Canal**.
+- Para remover o vínculo da equipe padrão, primeiro troque a equipe padrão nas configurações do canal.
+
+## Erros comuns
+
+| Situação | Causa e solução |
+| --- | --- |
+| **Criar Canal** não fica disponível | Falta o **Nome do Canal** ou a **Equipe Padrão**, ou o nome já existe. Preencha os dois e use um nome único. |
+| "Já existe um canal com este nome. Escolha outro nome." | Outro canal usa o mesmo nome, mesmo com letras maiúsculas e minúsculas diferentes. |
+| "Este número de WhatsApp já está cadastrado em outro canal." | Cada número só pode estar em um canal. Use outro número ou exclua o canal antigo. |
+| O agente de IA não aparece na lista | Só agentes ativos aparecem. Veja [Ativar ou desativar um agente →](/pt-BR/ai-agents/activate-deactivate-agent). |
+| O canal ficou aguardando conexão | Você clicou em **Pular por enquanto** ou fechou a janela. Clique no canal na lista para retomar. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Business API" icon="shield-check" href="/pt-BR/channels/configure-whatsapp-official">
+    Conexão oficial com a Meta, templates e campanhas.
+  </Card>
+
+  <Card title="WhatsApp Lite" icon="qr-code" href="/pt-BR/channels/configure-whatsapp-lite">
+    Conexão rápida por QR code para baixo volume.
+  </Card>
+
+  <Card title="Instagram" icon="instagram" href="/pt-BR/channels/configure-instagram">
+    Mensagens do Direct na caixa de entrada.
+  </Card>
+
+  <Card title="Webchat" icon="message-circle" href="/pt-BR/channels/configure-webchat">
+    Widget de chat no seu site.
+  </Card>
+</CardGroup>

@@ -1,0 +1,97 @@
+---
+title: "View the contact history"
+sidebarTitle: "Contact history"
+description: "Track in the contact History everything that happened with a contact in BluBash: changes, tags, deals, tasks, campaigns, and AI agent actions."
+---
+
+The **History** is the contact's timeline. It shows, in chronological order, every recorded event: who changed the profile, which tags were added or removed, how deals moved through Pipelines, which tasks were created, and which campaigns the contact received.
+
+Use the history to understand the context before replying, audit changes, and see what the AI agent did during the conversation.
+
+## Open the history
+
+<Steps>
+  <Step title="Open the contact">
+    In the sidebar, click **Contacts** and then click the contact.
+  </Step>
+  <Step title="See the History tab">
+    The **History** tab opens by default in the center of the page. The most recent events appear first.
+  </Step>
+  <Step title="Scroll to see older events">
+    When you scroll to the end, BluBash loads earlier events automatically.
+  </Step>
+</Steps>
+
+If the contact has no events yet, **No history recorded yet** appears.
+
+## What each event shows
+
+| Information | Description |
+| --- | --- |
+| **Icon and color** | Identify the event type, such as tag, deal, task, or campaign. |
+| **Description** | What happened, for example **Tag "vip" added** or **Deal "Annual plan" moved from Proposal to Negotiation**. |
+| **Author** | Who performed the action: a user, an AI agent, the API, an integration, an automation, or the system. |
+| **Date and time** | When the event happened, in your time zone. |
+| **Details** | Changed fields, source and destination stages, or delivery status, when available. |
+
+## Event types
+
+| Category | Events |
+| --- | --- |
+| **Profile** | **Contact created**, **Contact updated**, **Contact added via import**, **Contact updated via import**, **Contact merged** |
+| **Owners** | **Owner change**, with the global or team owner before and after |
+| **Tags** | **Tag added**, **Tag removed** |
+| **Deals** | **Deal created**, **Deal moved**, **Deal won**, **Deal lost**, **Deal updated** |
+| **Tasks** | **Task created**, **Task completed**, **Task reopened**, **Task updated**, **Task removed** |
+| **Campaigns** | **Campaign sent**, **Campaign delivered**, **Campaign read**, **Campaign failed** |
+| **Messages and notes** | Messages received and sent per channel, **Note added** |
+| **Automations and integrations** | **Automation triggered**, **Automation completed**, **Automation failed**, **Integration sync**, **Integration error** |
+
+## AI agent actions in the history
+
+In hybrid service, the history shows the AI agent's work side by side with your team's. When the agent updates contact data or applies a tag, the event appears with the agent's name as the author.
+
+This lets you:
+
+- Check whether the agent collected the right data before the transfer.
+- Audit tags applied automatically.
+- Adjust the training when the agent saves information in the wrong field.
+
+See [Hybrid service →](/ai-agents/hybrid-service).
+
+## The other contact tabs
+
+| Tab | What it shows | Available action |
+| --- | --- | --- |
+| **Conversations** | The contact's conversations, with status and a preview of the last message. The number in parentheses shows open conversations. | **Create a conversation** |
+| **Deals** | Pipelines and stages for this contact, with amount and status (Open, Won, Lost, or Archived). | **Create a deal** |
+| **Tasks** | The contact's tasks, with type (Reminder, Call, or Meeting), due date, and an optional link to a deal. | **Create a task** |
+
+<Tip>
+  Before taking a conversation transferred by the AI agent, open the contact's **History**. In a few seconds you see the open deals, the latest tags, and what has already been agreed.
+</Tip>
+
+## Limitations
+
+- The history records events from the moment the related feature started being used. Actions taken outside BluBash appear only if they arrive through an integration or the API.
+- When the contact is deleted, the history is deleted with it and cannot be recovered.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Edit a contact" icon="pencil" href="/contacts/edit-contact">
+    Learn the fields and who can change them.
+  </Card>
+
+  <Card title="Deals" icon="kanban" href="/pipelines/deals">
+    Work the contact's deals in Pipelines.
+  </Card>
+
+  <Card title="Tasks" icon="list-checks" href="/tasks/overview">
+    Organize follow-ups, calls, and meetings.
+  </Card>
+
+  <Card title="Start a conversation" icon="message-circle" href="/contacts/start-conversation-from-contact">
+    Talk to the contact from their page.
+  </Card>
+</CardGroup>

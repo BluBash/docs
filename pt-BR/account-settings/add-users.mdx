@@ -1,0 +1,101 @@
+---
+title: "Adicionar usuários ao workspace"
+sidebarTitle: "Adicionar usuários"
+description: "Entenda o caminho completo para colocar sua equipe na BluBash: equipes, convite, primeiro acesso e entrada de quem já criou uma conta."
+---
+
+Esta página mostra o processo completo de entrada de uma pessoa no workspace, do lado de quem administra e do lado de quem é convidado. O passo a passo do formulário de convite está em [Adicionar um membro →](/pt-BR/members/add-member).
+
+<Info>
+  Na BluBash, toda pessoa com acesso ao workspace é um **membro**. "Adicionar usuários" e "adicionar membros" são o mesmo fluxo: um Administrador convida a pessoa pela página **Membros**.
+</Info>
+
+## Visão geral
+
+| Etapa | Quem faz | Onde |
+| --- | --- | --- |
+| 1. Criar as equipes | Administrador | **Equipes** |
+| 2. Enviar o convite com função e equipes | Administrador | **Membros** → **Adicionar Membro** |
+| 3. Aceitar o convite e criar a senha | A pessoa convidada | E-mail de convite → **Configurar Senha** |
+| 4. Começar a atender | A pessoa convidada | **Conversas**, com as transferências do agente de IA para as equipes dela |
+
+## Antes de convidar
+
+<Steps>
+  <Step title="Monte as equipes">
+    O convite exige pelo menos uma equipe. Crie as equipes e vincule os canais e Pipelines de cada uma. Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+  </Step>
+  <Step title="Defina a função de cada pessoa">
+    Liste quem será **Administrador**, **Gerente** ou **Membro**. Veja [Papéis e permissões →](/pt-BR/members/roles-permissions).
+  </Step>
+  <Step title="Confira o plano">
+    O número de usuários depende do plano. Confira em **Faturamento & Uso** antes de convidar a equipe inteira.
+  </Step>
+</Steps>
+
+## Convidar
+
+Siga [Adicionar um membro →](/pt-BR/members/add-member): informe o **Email**, a **Função** e as equipes, e clique em **Adicionar Membro**. A pessoa aparece na lista com **Convite Enviado**.
+
+## O que a pessoa convidada vê
+
+<Tabs>
+  <Tab title="Recebeu o convite por e-mail">
+    1. A pessoa abre o e-mail de convite da BluBash.
+    2. Na tela **Configurar Senha**, ela informa o **Nome**, a **Nova Senha** e a **Confirmar Senha**.
+    3. A senha precisa ter pelo menos 8 caracteres, com letra maiúscula, letra minúscula, número e caractere especial.
+    4. Ao concluir, ela entra no workspace com a função e as equipes definidas no convite.
+  </Tab>
+  <Tab title="Criou a conta antes de ser convidada">
+    1. Ao entrar pela primeira vez, a BluBash pergunta como a pessoa vai usar a plataforma. Ela escolhe **Entrar em um workspace existente**.
+    2. A tela **Aguardando seu administrador** mostra o e-mail da conta, com o botão **Copiar**.
+    3. A pessoa envia esse e-mail ao Administrador, que o adiciona em **Membros** com **Adicionar Membro**.
+    4. A tela verifica automaticamente a cada minuto. Para conferir na hora, use **Verificar agora**. Quando o convite é registrado, aparece **Você foi adicionado a um workspace!** e a pessoa entra.
+  </Tab>
+</Tabs>
+
+<Warning>
+  O Administrador precisa usar exatamente o mesmo e-mail da conta da pessoa. Um e-mail diferente gera um novo convite e a tela de espera não libera o acesso.
+</Warning>
+
+<Tip>
+  Quem escolheu **Entrar em um workspace existente** por engano pode voltar e usar **Criar meu próprio workspace**. Para trabalhar com a sua equipe, porém, a pessoa precisa ser adicionada ao workspace da empresa.
+</Tip>
+
+## Depois da entrada
+
+| Verifique | Como |
+| --- | --- |
+| O status **Convite Enviado** sumiu | Página **Membros** |
+| A pessoa vê as conversas certas | Ela deve estar nas equipes que atendem os canais dessas conversas |
+| O agente de IA transfere para a equipe dela | Revise a habilidade **Transferir para Equipe** do agente |
+| A pessoa sabe usar o básico | Compartilhe [Iniciar um atendimento →](/pt-BR/conversations/start-new-attendance) e [Transferir atendimento →](/pt-BR/conversations/transfer-attendance) |
+
+## Erros comuns
+
+| Situação | Causa provável | O que fazer |
+| --- | --- | --- |
+| A pessoa não recebeu o convite | E-mail digitado errado ou mensagem na caixa de spam | Confira o e-mail na lista e use **Reenviar convite** |
+| A pessoa continua em **Aguardando seu administrador** | O convite foi feito com outro e-mail | Remova o convite errado e convide o e-mail mostrado na tela de espera |
+| A pessoa entra e vê **Sem Acesso a Equipes** | Ela não está em nenhuma equipe | Adicione a pessoa a uma equipe |
+| Não é possível convidar | Não há equipes criadas | Crie uma equipe antes |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Adicionar um membro" icon="user-plus" href="/pt-BR/members/add-member">
+    Passo a passo do formulário de convite.
+  </Card>
+
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Prepare as equipes antes de convidar.
+  </Card>
+
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Escolha a função certa para cada pessoa.
+  </Card>
+
+  <Card title="Guia de implantação" icon="rocket" href="/pt-BR/implementation-guide">
+    Veja a ordem recomendada para colocar a BluBash no ar.
+  </Card>
+</CardGroup>

@@ -1,0 +1,99 @@
+---
+title: "Use variables in templates and quick replies"
+sidebarTitle: "Use variables"
+description: "Personalize BluBash templates and quick replies with numbered variables, filled at send time with contact data or typed values."
+---
+
+Variables are numbered placeholders, such as `{{1}}` and `{{2}}`, that you put in the text of a template or a quick reply. At send time, each variable is replaced with a real value, such as the contact name or the order number. This way, a single message works for every contact without losing personalization.
+
+## How they work
+
+| Moment | What happens |
+| --- | --- |
+| **When creating** | You insert `{{1}}`, `{{2}}` in the text with **Add Variable** and fill in **Variable Examples** to see the preview. |
+| **When sending in a conversation** | The team member fills in each variable with contact data or a typed value. |
+| **When sending in a campaign** | You map each variable to contact data when creating the campaign. |
+
+**Saved example:**
+
+```text
+Hi {{1}}, your order {{2}} has shipped and will arrive by {{3}}.
+```
+
+**Message received by the contact:**
+
+```text
+Hi Maria, your order 4521 has shipped and will arrive by Friday.
+```
+
+## Where to use variables
+
+| Location | Limit | Note |
+| --- | --- | --- |
+| Template **Header** (**Text** type) | 1 variable | The header always uses `{{1}}` |
+| Template **Body** | Up to 10 variables | Sequential numbering: `{{1}}`, `{{2}}`, `{{3}}` |
+| Quick reply **Message** (**Text** type) | Sequential | Use **Add Variable** in the **Message** field |
+
+<Note>
+  The **Add Variable** button automatically inserts the next free number. You do not need to track the numbering manually.
+</Note>
+
+## Insert variables when creating
+
+<Steps>
+  <Step title="Place the cursor in the text">
+    In the template **Body**, the **Header Text**, or the quick reply **Message**, click where the variable should go.
+  </Step>
+  <Step title="Click Add Variable">
+    BluBash inserts the next available variable. In the header, the variable is always `{{1}}`.
+  </Step>
+  <Step title="Fill in the examples">
+    In **Variable Examples**, type a sample value for each variable. The examples appear in the **Preview** and are not sent to the contact.
+  </Step>
+</Steps>
+
+## Fill in variables when sending
+
+When a team member picks a template or quick reply with variables in a conversation, BluBash opens the fill-in fields:
+
+- The **first variable** is already filled with the contact name, when there is one.
+- For each variable, the team member types the value or clicks the field icon to pick contact data.
+- The data is grouped into **Basic Fields** (name, email, and phone), **Additional Information**, and **Additional Fields** (the contact's custom fields).
+- All variables must be filled in to send. Check the result in **Message Preview**.
+
+[Send templates and quick replies →](/templates/send-templates-quick-replies) · [Use custom fields →](/contacts/use-custom-fields)
+
+## Variables and the AI agent
+
+The data the AI agent collects and saves on the contact, such as name and email, is available to fill in variables. When the native **Update contact** skill is on for the AI agent, your team gets the contact with more data ready to personalize templates and quick replies.
+
+[AI agent settings →](/ai-agents/configure-agent-settings)
+
+## Best practices
+
+- **Put text before and after template variables.** Meta often rejects templates that start or end with a variable.
+- **Do not stack variables.** Avoid `{{1}} {{2}}` side by side with no text between them.
+- **Give context.** The Meta reviewer needs to understand what each variable stands for.
+- **Keep contact data up to date.** A variable filled with wrong data reaches the customer wrong.
+- **Check the preview before sending.** Verify names, numbers, and dates.
+
+## Common errors
+
+| Situation | Cause | Solution |
+| --- | --- | --- |
+| **Header supports only 1 variable** | You tried to insert a second variable in the header | Move the information to the body |
+| **Maximum of 10 variables reached** | The body already has 10 variables | Reduce the number of variables or split the message |
+| The **Send Template** button does not work | A variable is empty | Fill in every variable |
+| The contact name does not appear | The contact has no name saved | Type the value or update the contact |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create a template" icon="file-text" href="/templates/create-template">
+    Build a template with variables.
+  </Card>
+
+  <Card title="Create a quick reply" icon="zap" href="/templates/create-quick-reply">
+    Use variables in ready-made messages.
+  </Card>
+</CardGroup>

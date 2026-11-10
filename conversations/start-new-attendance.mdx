@@ -1,0 +1,157 @@
+---
+title: "Conversations: inbox and new conversation"
+sidebarTitle: "Start a conversation"
+description: "Get to know the Conversations inbox, take conversations from the queue or from the AI, and start a new conversation with a contact on WhatsApp."
+---
+
+The **Conversations** screen brings WhatsApp, Instagram and Webchat messages together in a single inbox. On this page you learn how to find conversations, take the ones that reached you or are with the AI, and start a new conversation with a contact.
+
+## Get to know the inbox
+
+### Quick filters
+
+At the top of the list, quick filters split conversations by situation. On narrow screens, some of them move to **More types**.
+
+| Filter | What it shows |
+| --- | --- |
+| **All** | Every conversation you can see. |
+| **Mine** | Conversations assigned to you. |
+| **Queue** | Conversations waiting for someone to take them. |
+| **AI** | Conversations handled by an AI agent. |
+| **Unread** | Conversations with messages nobody has read. |
+| **Closed** | Conversations already closed, for reference. |
+
+### Search and advanced filters
+
+- Use the **Search conversations...** field to find a specific conversation.
+- Click **Filters** to open **More filters** and combine **Channel**, **Team**, **Member** and **Tags**. Active filters are highlighted below the search. Use **Clear** to remove them.
+
+### What each list item shows
+
+| Signal | Meaning |
+| --- | --- |
+| Icon on the corner of the photo | The conversation's channel: WhatsApp, Instagram or Webchat. Hover to see the channel name. |
+| Sparkle icon next to the name | **Hybrid conversation (user + AI)**: the conversation has a team member and an AI agent. |
+| Alert icon and highlighted background | **Transferred to you - requires attention** or **Pending - awaiting your action**. |
+| Archive icon | The conversation is closed. |
+| Colored tags | The contact's tags. |
+| Highlighted number | Unread messages. |
+
+## Reply to incoming conversations
+
+### Pending conversation or one transferred to you
+
+When nobody has taken the conversation yet, the message box shows **This conversation needs to be assigned**. Click **Assign to me**. The conversation becomes yours and the message box is unlocked.
+
+### Conversation handled by the AI agent
+
+If the channel has an AI agent, it answers first. Meanwhile, the message box is replaced by the **AI Agent Active** notice, with the text "agent name **is managing this conversation**".
+
+<Frame>
+  <img
+    src="/images/conversations/ia-atendendo.png"
+    alt="Conversation handled by the AI agent, with the AI Agent Active notice and the Take Over button"
+  />
+</Frame>
+
+To talk to the customer:
+
+<Steps>
+  <Step title="Click Take Over">
+    The button is in the **AI Agent Active** notice, in place of the message box.
+  </Step>
+
+  <Step title="Enter the reason (optional)">
+    In the **Take Over** window, describe why you are taking over, for example "customer asked for a discount".
+  </Step>
+
+  <Step title="Confirm">
+    Click **Take Over**. The agent stops replying and the message box is unlocked for you.
+  </Step>
+</Steps>
+
+When the human part is done, you can hand the conversation back to the AI with **Handoff to AI**.
+
+[Hand off to the AI →](/ai-agents/handoff-to-ai) · [Hybrid service →](/ai-agents/hybrid-service)
+
+## Start a new conversation
+
+Start a conversation when you need to reach out to the customer first: a quote follow-up, a payment reminder, a heads-up. The contact must already exist. If not, [add the contact](/contacts/add-new-contact) first.
+
+### Which channels let you start a conversation
+
+| Channel | Can you start? | Note |
+| --- | --- | --- |
+| **WhatsApp Business API** | Yes | The first message must be a Meta-approved template. |
+| **WhatsApp Lite** | Yes | You send a free-form message. |
+| **Instagram** | No | Receptive only: the conversation starts when the contact sends a Direct message. |
+| **Webchat** | No | Receptive only: the visitor starts it from the website widget. |
+
+### Step by step
+
+<Steps>
+  <Step title="Open Conversations">
+    Click **Conversations** in the side menu.
+  </Step>
+  <Step title="Click the + button">
+    The button is at the top of the list, next to the refresh button. The **Start New Conversation** window opens.
+  </Step>
+  <Step title="Choose the contact">
+    In **Contact**, type at least 3 characters of the name, phone or email and select the contact from the results. To switch, click **Change contact**.
+  </Step>
+  <Step title="Choose the team">
+    In **Team**, select the team responsible for the conversation. If you belong to only one team, it is already selected.
+  </Step>
+  <Step title="Choose the channel">
+    In **Channel**, select the WhatsApp number. The list only shows the channels of the selected team. Instagram and Webchat channels appear disabled, marked **Receptive only**.
+  </Step>
+  <Step title="Click Start Conversation">
+    The conversation is created and opened on screen.
+  </Step>
+  <Step title="Send the first message">
+    On the **WhatsApp Business API**, BluBash shows the **Start WhatsApp conversation** notice and the **Choose template** button. Send an approved template. After the contact replies, you continue with free-form messages. On **WhatsApp Lite**, write normally.
+
+    [Send a template →](/conversations/send-templates)
+  </Step>
+</Steps>
+
+<Info>
+  If a conversation with the contact is already in progress on the same channel, BluBash does not create another one: you are taken to the existing conversation with the **Redirected to existing conversation** notice.
+</Info>
+
+### Other ways to start
+
+- **From the contact record**: use the conversation action on the contact. [Start a conversation from a contact →](/contacts/start-conversation-from-contact)
+- **From a closed conversation**: open the conversation and click **Start new conversation**. BluBash creates the conversation on the same channel, preferably with the same team.
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="The + button does not appear">
+    You need to belong to at least one active team. Ask an Administrator to add you to the right team.
+  </Accordion>
+
+  <Accordion title="The message You cannot initiate conversations in this channel appears">
+    The team or the channel does not allow you to start conversations. Ask the Administrator to review your teams and the **Allow initiating conversations** option in the team settings. On receptive-only channels, such as Instagram and Webchat, only the contact starts the conversation.
+  </Accordion>
+
+  <Accordion title="No channels available for this team appears">
+    The selected team has no linked channel. Choose another team or ask the Administrator to link a channel to it.
+  </Accordion>
+
+  <Accordion title="The contact does not appear in the search">
+    Type at least 3 characters and check the spelling or the number. If the contact does not exist, add it in **Contacts**.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Send templates" icon="file-text" href="/conversations/send-templates">
+    How to start and resume conversations on the WhatsApp Business API.
+  </Card>
+
+  <Card title="Transfer a conversation" icon="arrow-right-left" href="/conversations/transfer-attendance">
+    Pass the conversation to another team, another team member or the AI.
+  </Card>
+</CardGroup>

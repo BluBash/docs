@@ -1,0 +1,122 @@
+---
+title: "What are AI agents in BluBash?"
+sidebarTitle: "What are AI agents"
+description: "BluBash AI agents serve customers on WhatsApp, Instagram and Webchat at any hour, take actions and hand off to the right team when needed."
+---
+
+BluBash AI agents serve your customers on your channels: WhatsApp, Instagram and Webchat. They understand messages, answer based on what you taught them, take actions such as adding notes and applying tags, and resolve routine requests on their own. When a conversation needs a person, the agent transfers it to the right team with the context recorded.
+
+<Frame>
+  <img
+    src="/images/conversations/ia-atendendo.png"
+    alt="AI agent Lia serving a customer on WhatsApp"
+  />
+</Frame>
+
+## What AI agents do for you
+
+<CardGroup cols={2}>
+  <Card title="Service at any hour" icon="clock">
+    They answer in seconds, including outside your team's working hours.
+  </Card>
+  <Card title="All your channels" icon="message-circle">
+    The same agent can serve WhatsApp, Instagram and the Webchat on your website.
+  </Card>
+  <Card title="Less load on the team" icon="users">
+    They resolve routine requests and leave to the team what requires a decision.
+  </Card>
+  <Card title="Lead qualification" icon="filter">
+    They ask the right questions and hand Sales a lead that is already qualified.
+  </Card>
+  <Card title="Automatic actions" icon="zap">
+    They create and move deals in Pipelines, send media, add notes, apply tags, transfer conversations and query external systems.
+  </Card>
+  <Card title="Your brand's tone" icon="pen">
+    They talk in the tone you choose: Formal, Normal or Relaxed.
+  </Card>
+</CardGroup>
+
+## How an AI agent works
+
+<Steps>
+  <Step title="You create the agent">
+    You define the name, purpose, tone, behavior and company information in the creation wizard.
+  </Step>
+  <Step title="You teach the agent">
+    In the **Trainings** tab, you add text, files and your company website. The agent answers based on this content.
+  </Step>
+  <Step title="You define what it can do">
+    In the **Skills** tab, you turn on native skills and set up tags, transfers, media sending and deal management in Pipelines. In the **Apps** tab, you connect external APIs and tools such as Google Calendar, Asaas and RD Station. In the **Settings** tab, you adjust the conversation style.
+  </Step>
+  <Step title="You test">
+    In **Test Agent**, you simulate conversations and check the answers and the skills executed.
+  </Step>
+  <Step title="You link the agent to channels">
+    In **Channels**, you choose the agent in the **AI Agent (Optional)** field of each channel. New conversations on that channel are then handled by the agent.
+  </Step>
+  <Step title="The agent and the team work together">
+    The agent resolves routine requests and transfers the rest. The team hands the conversation back to the agent with **Handoff to AI** and takes it back with **Take Over**.
+  </Step>
+</Steps>
+
+[See hybrid service step by step →](/ai-agents/hybrid-service)
+
+## Where the agent works
+
+| Channel | How the agent takes part |
+| --- | --- |
+| **WhatsApp** (official WhatsApp Business API or WhatsApp Lite) | Handles conversations that reach the linked number. It is the main channel for most operations. |
+| **Instagram** (Direct) | Answers messages received in the Direct inbox of the connected account. The channel is inbound only. |
+| **Webchat** | Answers visitors who open the chat on your website. The channel is inbound only. |
+
+Each channel has at most one linked AI agent. The same agent can be linked to several channels: use a single agent for WhatsApp, Instagram and Webchat, or create specific agents for each channel.
+
+## Agent tabs
+
+| Tab | What it is for |
+| --- | --- |
+| **Profile** | Purpose, tone, behavior and company information |
+| **Trainings** | Content the agent uses to answer: text, file and website |
+| **Skills** | Native skills and configured actions: tags, transfers, media and Pipelines |
+| **Apps** | External APIs and ready-made integrations with external tools |
+| **Settings** | Response style, voice response, topic restriction and timezone |
+
+The **Test Agent** button, in the top right corner of the agent page, opens the test chat.
+
+## Available purposes
+
+| Purpose | Use case |
+| --- | --- |
+| **Sales** | Lead qualification, presenting services and routing to Sales |
+| **Support** | Solving questions and issues about products and services |
+| **Customer Service** | General assistance and routing to teams |
+| **Lead Generation** | Capturing and qualifying potential customers |
+
+## Who can manage agents
+
+Only the **Administrator** role creates, configures, activates, deactivates and deletes AI agents. **Manager** and **Member** work on the conversations handled by agents, including handing conversations off to AI and taking over conversations from AI.
+
+[Roles and permissions →](/members/roles-permissions)
+
+## Limits and precautions
+
+- The number of agents active at the same time depends on your plan.
+- Trainings and voice responses consume AI credits.
+- The agent answers based on what it was taught and configured. Review the training whenever products, prices or procedures change.
+- The AI agent only acts in the Pipelines and stages you unlocked in the **Manage deals** skill. Review the skill whenever you change the stages.
+
+<Tip>
+  Start with an agent that answers frequent questions and routes to the team. Adjust the training based on real conversations and gradually increase what it resolves on its own.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create an AI agent" icon="bot" href="/ai-agents/create-ai-agent">
+    Set up profile and company and review in a few minutes.
+  </Card>
+
+  <Card title="Hybrid service" icon="users" href="/ai-agents/hybrid-service">
+    See how AI and the team share the work.
+  </Card>
+</CardGroup>

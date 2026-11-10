@@ -1,0 +1,94 @@
+---
+title: "Configurar o WhatsApp Business API (oficial)"
+sidebarTitle: "WhatsApp Business API"
+description: "Conecte o WhatsApp à BluBash pela API oficial da Meta para ter alto volume, estabilidade, templates aprovados e campanhas."
+---
+
+O WhatsApp Business API é a conexão oficial da Meta e a recomendada para a operação principal da sua empresa. Ele suporta alto volume de mensagens, tem suporte oficial e garantia de estabilidade, libera templates aprovados pela Meta e campanhas, e permite manter o uso do aplicativo WhatsApp Business no celular.
+
+## Antes de começar
+
+| Requisito | Detalhe |
+| --- | --- |
+| Acesso à Meta | Uma conta do Facebook com acesso ao portfólio empresarial da sua empresa no Meta Business. Se ainda não tiver, você pode criar durante a conexão. Veja a [central de ajuda da Meta](https://www.facebook.com/business/help). |
+| Número de telefone | O número que será usado no canal. Ele não pode estar em outro canal da BluBash. |
+| Método de pagamento na Meta | A Meta cobra pelas mensagens diretamente. Sem um método de pagamento ativo na conta da Meta, o canal não funciona. |
+| Navegador | Permita janelas pop-up para o endereço da BluBash. A conexão acontece em uma janela da Meta. |
+| Equipe | Pelo menos uma equipe criada para ser a **Equipe Padrão**. |
+
+## Conectar o WhatsApp Business API
+
+<Steps>
+  <Step title="Criar o canal">
+    Em **Canais**, clique em **Adicionar Canal** e escolha o cartão **WhatsApp Business API**.
+  </Step>
+  <Step title="Preencher os dados">
+    Preencha **Nome do Canal** e **Equipe Padrão**. Em **Agente de IA (Opcional)**, escolha um agente de IA ativo ou deixe **Nenhum agente atribuído**. Clique em **Criar Canal**.
+  </Step>
+  <Step title="Abrir a conexão com a Meta">
+    Na tela **Configuração do WhatsApp Business API**, clique em **Conectar Conta WhatsApp**. Uma janela da Meta abre. Siga as instruções na janela pop-up.
+  </Step>
+  <Step title="Entrar e escolher o portfólio">
+    Faça login com a conta do Facebook que administra a empresa. Selecione o portfólio empresarial ou crie um novo e confira os dados da empresa.
+  </Step>
+  <Step title="Escolher a conta do WhatsApp Business">
+    A Meta oferece dois caminhos:
+
+    - **Conectar o app WhatsApp Business que você já usa.** Você continua usando o aplicativo no celular. A Meta pede que você confirme a conexão pelo próprio app, normalmente escaneando um QR code.
+    - **Criar uma nova conta do WhatsApp Business** com um número. Informe o código do país e o número e confirme o código de verificação enviado pela Meta.
+
+    <Note>
+      Se o número já estiver em uso em outra conta do WhatsApp Business que não possa ser conectada, a Meta pode exigir que essa conta seja removida antes. Siga as orientações exibidas na janela da Meta.
+    </Note>
+  </Step>
+  <Step title="Concluir">
+    Ao terminar, a janela da Meta fecha e a BluBash mostra **Configuração concluída com sucesso**. Você é levado para a página do canal.
+  </Step>
+  <Step title="Cadastrar o pagamento e testar">
+    Na página do canal, em **Método de Pagamento**, clique em **Gerenciar pagamento na Meta** se ainda não tiver um método de pagamento ativo. Depois, envie uma mensagem de outro número para o número conectado e confira se a conversa aparece na caixa de entrada.
+  </Step>
+</Steps>
+
+<Tip>
+  Se precisar interromper, clique em **Pular por enquanto**. O canal fica salvo aguardando a conexão. Clique nele na lista de canais para abrir **Configurar Canal** e continuar.
+</Tip>
+
+## O que aparece na página do canal
+
+| Seção | Conteúdo |
+| --- | --- |
+| **Conta Conectada** | **Nome de Exibição**, **Número de Telefone** e a data de criação. |
+| **Detalhes Técnicos** | **ID da Conta Business**, **ID do Número de Telefone** e **ID do Negócio**. Úteis para o suporte e para a Meta. |
+| **Método de Pagamento** | Botão **Gerenciar pagamento na Meta**. Ele abre o site da Meta: entre com a mesma conta usada para conectar o canal. |
+
+## Mensagens dentro e fora da janela de 24 horas
+
+O WhatsApp permite responder livremente enquanto a conversa está aberta pelo cliente. Para falar com um contato fora dessa janela, ou para iniciar uma conversa, use um template aprovado pela Meta.
+
+- [Enviar templates em uma conversa →](/pt-BR/conversations/send-templates)
+- [Criar um template →](/pt-BR/templates/create-template)
+- [Criar uma campanha →](/pt-BR/campaigns/create-campaign)
+
+## Como o agente de IA participa
+
+Vincule um agente de IA ao canal para responder na hora, qualificar o contato e transferir para a equipe com uma nota de contexto. A equipe continua respondendo pela BluBash, e o agente pode voltar a atender quando a equipe devolver a conversa. Veja [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service) e [Devolver para a IA →](/pt-BR/ai-agents/handoff-to-ai).
+
+## Erros comuns
+
+| Mensagem | Causa e solução |
+| --- | --- |
+| **Popup de configuração foi fechado** | A janela da Meta foi fechada antes do fim. Clique em **Tentar Novamente**. |
+| **Falha na configuração** ou **Erro durante a configuração** | A Meta não concluiu a conexão. Revise o login e as permissões do portfólio e clique em **Tentar Novamente**. |
+| **SDK do Facebook não carregado. Atualize a página.** | O script da Meta não carregou. Atualize a página e verifique bloqueadores de anúncios ou pop-ups. |
+| "Este número de WhatsApp já está cadastrado em outro canal." | O número já está em outro canal da BluBash. Use outro número ou exclua o canal antigo. |
+| Mensagens não são enviadas | Verifique o método de pagamento na Meta em **Gerenciar pagamento na Meta**. |
+
+<Warning>
+  Se continuar com dificuldade, fale com o suporte da BluBash informando os **Detalhes Técnicos** do canal.
+</Warning>
+
+## Próximos passos
+
+- [Um número ou vários →](/pt-BR/channels/single-or-multiple-numbers)
+- [Editar um canal →](/pt-BR/channels/edit-channel)
+- [Templates e respostas rápidas →](/pt-BR/templates/what-are-templates-quick-replies)

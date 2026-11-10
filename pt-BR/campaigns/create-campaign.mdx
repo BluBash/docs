@@ -1,0 +1,151 @@
+---
+title: "Criar uma campanha"
+sidebarTitle: "Criar campanha"
+description: "Crie uma campanha de WhatsApp na BluBash com o assistente: tipo, detalhes, canal, audiência com filtros, template ou texto, agendamento e revisão."
+---
+
+O assistente **Nova campanha** guia você em etapas, do tipo de campanha até a revisão final. Ao concluir, você pode salvar como rascunho, iniciar na hora ou agendar.
+
+<Note>
+  Somente **Gerente** e **Administrador** criam campanhas. As campanhas são enviadas apenas por canais de WhatsApp. Leia antes a [Introdução às campanhas →](/pt-BR/campaigns/campaigns-introduction) para entender as regras da Meta.
+</Note>
+
+## Antes de começar
+
+- Tenha um canal de WhatsApp ativo. Para envios à base em geral, use a **WhatsApp Business API (oficial)**.
+- Na API oficial, crie e aprove o template que será enviado. Veja [Criar template →](/pt-BR/templates/create-template).
+- Organize os contatos com etiquetas e campos adicionais para filtrar a audiência.
+- Confirme que os contatos deram opt-in para receber mensagens da sua empresa.
+
+## Passo a passo
+
+<Steps>
+  <Step title="Abra o assistente">
+    Na barra lateral, clique em **Campanhas** e depois em **Nova campanha**.
+  </Step>
+  <Step title="Escolha o tipo de campanha">
+    | Tipo | Quando escolher |
+    | --- | --- |
+    | **Campanha Única** (Em Lote) | Envio pontual para uma audiência definida agora, imediato ou agendado. |
+    | **Campanha Contínua** (Automação) | Envio automático para contatos que entram na campanha ao longo do tempo, manualmente, pela API ou pelo RD Station Marketing. |
+
+    Clique em **Próximo**.
+  </Step>
+  <Step title="Preencha os detalhes da campanha">
+    | Campo | Descrição |
+    | --- | --- |
+    | **Nome da campanha** | Nome curto para identificar a campanha. Até 100 caracteres. |
+    | **Descrição (opcional)** | Objetivo da campanha para a equipe. |
+    | **Velocidade de envio** | Mensagens enviadas por minuto, de 1 a 300. O padrão é 60. |
+    | **Enviar agora** ou **Agendar** | Só na Campanha Única. Em **Agendar**, escolha **Data e hora**. Não é possível agendar no passado nem a mais de 365 dias. |
+
+    <Warning>
+      Taxas de envio muito altas podem resultar em restrições ao canal. Ajuste a velocidade conforme o tamanho da audiência e os limites do seu número.
+    </Warning>
+  </Step>
+  <Step title="Selecione o canal de envio">
+    Escolha o canal de WhatsApp que entregará a campanha. Apenas canais que você tem permissão para usar aparecem. Confirme se o canal está ativo.
+
+    Se aparecer **Nenhum canal de WhatsApp disponível**, crie um canal ou peça acesso ao Administrador.
+  </Step>
+  <Step title="Defina a audiência (Campanha Única)">
+    Combine filtros para chegar aos contatos certos. A **Prévia da audiência**, à direita, mostra quantos contatos foram selecionados e exemplos de contatos.
+
+    | Filtro | Como funciona |
+    | --- | --- |
+    | **Etiquetas** | Seleciona contatos com as etiquetas escolhidas. |
+    | **Filtrar por status de conversa** | **Todas**, **Apenas abertas** ou **Apenas fechadas**. |
+    | **Última interação** | Período da última interação: **Hoje**, **Ontem**, **Últimos 7 dias**, **Últimos 30 dias**, **Este mês**, **Mês passado** ou **Outra data**. |
+    | **Filtros de Campos** | Filtra por **Campos Padrão** (Nome, Email, Telefone) ou **Campos Adicionais**, com condições como **Igual a**, **Diferente de**, **Contém**, **Não contém**, **Começa com**, **Termina com**, **Está vazio** e **Tem valor**. |
+
+    Você precisa aplicar pelo menos um filtro, e a audiência precisa ter pelo menos um contato para avançar.
+
+    <Info>
+      A Campanha Contínua pula esta etapa. Ela não usa lista fixa: você adiciona contatos depois de criada.
+    </Info>
+  </Step>
+  <Step title="Escolha como se comunicar">
+    | Formato | Quando usar |
+    | --- | --- |
+    | **Template** | Usa um template salvo. Na API oficial, escolha um template aprovado pela Meta para alcançar contatos fora da janela de 24 horas. |
+    | **Texto** | Mensagem livre personalizada com variáveis. Na API oficial, só é entregue a quem interagiu nas últimas 24 horas. |
+  </Step>
+  <Step title="Construa a mensagem">
+    **Se escolheu Template:**
+
+    1. Em **Use um template aprovado**, busque e selecione o template. Filtre por **Todos**, **Templates** ou **Respostas rápidas**.
+    2. Em **Mapeamento de variáveis**, associe cada variável do template a um campo do contato ou campo adicional. Todas as variáveis precisam estar mapeadas.
+    3. Confira a **Prévia**, que mostra cabeçalho, corpo, rodapé e botões com os dados de um contato de exemplo.
+
+    **Se escolheu Texto:**
+
+    1. Escreva em **Conteúdo da mensagem**.
+    2. Use **Variáveis** para inserir dados do contato, como Nome, Email, Telefone ou campos adicionais.
+    3. Confira a **Prévia**, que mostra como o primeiro contato da audiência receberá a mensagem.
+
+    <Tip>
+      Templates e respostas rápidas podem incluir imagem, vídeo ou documento. Mídia costuma aumentar a taxa de leitura em ofertas e lançamentos.
+    </Tip>
+  </Step>
+  <Step title="Revise e confirme">
+    Confira **Informações básicas**, **Canal**, **Audiência**, **Agendamento** e **Mensagem**. Depois escolha:
+
+    | Botão | Resultado |
+    | --- | --- |
+    | **Salvar rascunho** | Salva sem enviar. Você inicia depois pela lista ou pela página da campanha. |
+    | **Salvar e iniciar** | Salva e começa o envio imediatamente. Aparece quando você escolheu **Enviar agora**. |
+    | **Salvar e agendar** | Salva e agenda o envio para a data escolhida. Aparece quando você escolheu **Agendar**. |
+    | **Criar campanha** | Na Campanha Contínua, cria a campanha e ativa a automação. |
+  </Step>
+</Steps>
+
+## Depois de criar uma Campanha Contínua
+
+A Campanha Contínua começa sem contatos. Para alimentar a audiência, abra a campanha e use:
+
+| Forma | Como |
+| --- | --- |
+| **Manual** | Na aba **Audiência**, clique em **Adicionar contatos**, selecione os contatos na prévia e escolha **Adicionar e enviar** ou **Adicionar e agendar**. |
+| **API** | Na aba **Integrações**, copie o endpoint da campanha e envie contatos do seu sistema com autenticação por `x-api-key`. Veja [API de campanhas →](/pt-BR/developers/api/campaigns). |
+| **RD Station Marketing** | Na aba **Integrações**, copie o webhook e cole em uma automação do RD Station Marketing. Cada lead enviado entra na audiência. |
+
+Veja [Gerenciar campanhas →](/pt-BR/campaigns/manage-campaigns).
+
+## Boas práticas
+
+- Comece com uma audiência pequena para validar a mensagem antes de enviar para toda a base.
+- Agende para horário comercial e evite madrugadas e feriados.
+- Use velocidades menores em números novos ou com qualidade baixa na Meta.
+- Personalize com o nome do contato e uma informação relevante, como o plano ou o produto de interesse.
+- Prepare o agente de IA e a equipe para o volume de respostas que a campanha vai gerar.
+
+## Erros comuns
+
+| Mensagem | Causa | Como resolver |
+| --- | --- | --- |
+| **Selecione um canal para continuar.** | Nenhum canal escolhido. | Selecione um canal de WhatsApp. |
+| **Selecione um template para continuar.** | Formato Template sem template. | Escolha um template na lista. |
+| **Mapeie todas as variáveis obrigatórias antes de continuar.** | Há variáveis sem campo associado. | Complete o **Mapeamento de variáveis**. |
+| **Escreva o conteúdo da mensagem antes de continuar.** | Formato Texto sem conteúdo. | Escreva a mensagem. |
+| **Defina data e horário do agendamento.** | **Agendar** sem data. | Escolha a data e a hora. |
+| **Nenhum template disponível no momento.** | O canal não tem templates aprovados. | Crie e aprove um template para o canal. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Gerenciar campanhas" icon="chart-bar" href="/pt-BR/campaigns/manage-campaigns">
+    Acompanhe entregas, leituras e falhas.
+  </Card>
+
+  <Card title="Introdução às campanhas" icon="book-open" href="/pt-BR/campaigns/campaigns-introduction">
+    Revise regras da Meta, limites e custos.
+  </Card>
+
+  <Card title="Usar variáveis" icon="braces" href="/pt-BR/templates/use-variables">
+    Personalize templates com dados do contato.
+  </Card>
+
+  <Card title="Campos adicionais" icon="list-plus" href="/pt-BR/contacts/use-custom-fields">
+    Crie campos para segmentar a audiência.
+  </Card>
+</CardGroup>

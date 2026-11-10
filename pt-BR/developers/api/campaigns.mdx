@@ -1,0 +1,445 @@
+---
+title: "Campaigns API: alimente campanhas contínuas"
+sidebarTitle: "Campaigns API"
+description: "Adicione contatos a uma Campanha Contínua do WhatsApp, agende envios por contato, cancele mensagens na fila e consulte o status pela API da BluBash."
+---
+
+A Campaigns API alimenta uma **Campanha Contínua** da BluBash a partir do seu sistema. Cada contato que você envia entra na audiência da campanha e recebe a mensagem configurada, na hora ou no horário agendado. Use para boas-vindas a novos cadastros, pós-venda, lembretes e nutrição de leads.
+
+<Info>
+  Campanhas são enviadas pelo WhatsApp. A Campanha Contínua não usa lista fixa: os contatos entram aos poucos, manualmente, pela API ou pela integração com o RD Station Marketing. Na API, a Campanha Contínua corresponde ao tipo `EVERGREEN`.
+</Info>
+
+## URL base
+
+```text
+https://api.blubash.io/api/v1/campaigns
+```
+
+## Autenticação
+
+Envie a API Key do workspace no cabeçalho `X-API-Key`. Veja [Introdução à API →](/pt-BR/developers/introduction).
+
+```http
+X-API-Key: SUA_API_KEY
+Content-Type: application/json
+```
+
+<Warning>
+  O recurso de Campanhas precisa estar incluído no plano do workspace. Sem ele, as operações de escrita retornam `403` com a mensagem `Campaigns feature is not available in your current plan`.
+</Warning>
+
+## Pré-requisitos
+
+A API não cria campanhas. Ela só adiciona contatos e controla as mensagens de uma Campanha Contínua já criada na BluBash.
+
+<Steps>
+  <Step title="Crie a Campanha Contínua">
+    Em **Campanhas**, crie uma campanha do tipo **Campanha Contínua**. Escolha o canal de WhatsApp, a mensagem (template ou texto) e o limite de envio. Veja [Criar campanha →](/pt-BR/campaigns/create-campaign).
+  </Step>
+  <Step title="Copie o endpoint">
+    Abra a campanha, vá para a aba **Integrações** e expanda **API da Campanha**. Copie o **Endpoint para envio**. O `campaignId` é o trecho entre `/campaigns/` e `/audience`.
+  </Step>
+  <Step title="Mantenha a campanha ativa">
+    Não é possível adicionar contatos a uma campanha pausada, cancelada ou com falha.
+  </Step>
+</Steps>
+
+## Endpoints
+
+| Método | Endpoint | Descrição |
+| --- | --- | --- |
+| `POST` | `/api/v1/campaigns/{campaignId}/audience` | Adiciona contatos à audiência e agenda o envio |
+| `POST` | `/api/v1/campaigns/{campaignId}/messages/{messageId}/cancel` | Cancela uma mensagem na fila |
+| `GET` | `/api/v1/campaigns/{campaignId}/messages` | Lista as mensagens da campanha |
+| `GET` | `/api/v1/campaigns/{campaignId}/messages/{messageId}` | Consulta uma mensagem |
+
+---
+
+## Adicionar contatos à audiência
+
+```http
+POST /api/v1/campaigns/{campaignId}/audience
+```
+
+Adiciona um ou mais contatos à campanha e define o agendamento de cada um. Cada item do array `items` é um contato.
+
+<Tip>
+  Para adicionar um único contato, envie `items` com um elemento. O mesmo endpoint atende envios individuais e em lote.
+</Tip>
+
+### Corpo da requisição
+
+<ParamField body="default_schedule_timezone" type="string">
+  Fuso horário IANA (por exemplo, `America/Sao_Paulo`) aplicado aos itens cujo `datetime` não tem offset UTC e que não informam `schedule.timezone`.
+</ParamField>
+
+<ParamField body="items" type="array" required>
+  Lista de contatos com o agendamento de cada um. Pelo menos um item é obrigatório.
+
+  <Expandable title="Campos do item">
+    <ParamField body="contact_id" type="string">
+      ID de um contato existente no workspace. Obrigatório se `identifier` não for enviado.
+    </ParamField>
+
+    <ParamField body="identifier" type="string">
+      Identificador do contato no canal da campanha, como o número de WhatsApp com código do país e DDD (`5511999999999`). Obrigatório se `contact_id` não for enviado. Usado para localizar ou criar o contato.
+    </ParamField>
+
+    <ParamField body="name" type="string">
+      Nome do contato. Usado ao criar um novo contato.
+    </ParamField>
+
+    <ParamField body="email" type="string">
+      E-mail do contato. Usado para localizar e para criar o contato.
+    </ParamField>
+
+    <ParamField body="custom_fields" type="object">
+      Campos adicionais no formato chave e valor. As chaves usam o prefixo `cf_`, por exemplo `{ "cf_plano": "pro" }`.
+    </ParamField>
+
+    <ParamField body="tags" type="string[]">
+      Etiquetas aplicadas ao contato. A BluBash remove espaços nas pontas, converte para minúsculas e elimina duplicadas. As etiquetas são somadas às existentes; nenhuma é removida.
+    </ParamField>
+
+    <ParamField body="schedule" type="object">
+      Agendamento do envio para este contato. Se omitido, o envio é `immediate`.
+
+      <Expandable title="Campos de schedule">
+        <ParamField body="type" type="string" required>
+          `immediate` para enviar o quanto antes ou `absolute` para enviar em data e hora definidas.
+        </ParamField>
+
+        <ParamField body="datetime" type="string">
+          Data e hora em ISO 8601. Obrigatório quando `type` é `absolute`. Se o valor tem offset UTC ou `Z`, `timezone` é ignorado. Sem offset, informe `schedule.timezone` ou `default_schedule_timezone`.
+        </ParamField>
+
+        <ParamField body="timezone" type="string">
+          Fuso horário IANA usado para converter um `datetime` sem offset para UTC.
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+### Resolução do contato
+
+Quando você envia `identifier` em vez de `contact_id`, a BluBash procura o contato nesta ordem:
+
+1. Pelo identificador do canal (por exemplo, o número de WhatsApp normalizado).
+2. Se não encontrar e houver `email`, pelo e-mail, sem diferenciar maiúsculas e minúsculas.
+   - Se o contato encontrado não tem identificador no canal, o `identifier` é vinculado a ele.
+   - Se o contato encontrado tem um identificador **diferente** no canal, a API retorna `400`, para não unir pessoas diferentes.
+3. Se ainda não encontrar, cria um novo contato com `name`, `email` e `identifier`.
+
+### Regras de agendamento
+
+| Formato do `datetime` | Comportamento |
+| --- | --- |
+| Com `Z` ou offset numérico (por exemplo, `-03:00` ou `+0530`) | Tratado como instante absoluto. `timezone` é ignorado. |
+| Sem offset (por exemplo, `2026-03-11T09:00:00`) | Exige `schedule.timezone` ou `default_schedule_timezone` para converter para UTC. |
+
+<Warning>
+  Se o `datetime` não tem offset e nenhum fuso horário foi informado, a requisição retorna `400`.
+</Warning>
+
+### Exemplo de requisição
+
+```json
+{
+  "default_schedule_timezone": "America/Sao_Paulo",
+  "items": [
+    {
+      "contact_id": "<CONTACT_ID_1>",
+      "schedule": {
+        "type": "immediate"
+      }
+    },
+    {
+      "identifier": "5511999999999",
+      "name": "Maria Silva",
+      "email": "maria@empresa.com",
+      "custom_fields": {
+        "cf_plano": "pro",
+        "cf_origem": "site"
+      },
+      "tags": ["Lead Quente", "Cliente VIP"],
+      "schedule": {
+        "type": "absolute",
+        "datetime": "2026-03-10T14:30:00.000Z"
+      }
+    },
+    {
+      "contact_id": "<CONTACT_ID_3>",
+      "schedule": {
+        "type": "absolute",
+        "datetime": "2026-03-11T09:00:00",
+        "timezone": "America/Sao_Paulo"
+      }
+    }
+  ]
+}
+```
+
+### Campos da resposta
+
+<ResponseField name="items" type="array" required>
+  Um resultado por item enviado, na mesma ordem da requisição.
+
+  <Expandable title="Campos do item">
+    <ResponseField name="messageId" type="string">
+      ID da mensagem de campanha criada para o contato.
+    </ResponseField>
+
+    <ResponseField name="contactId" type="string">
+      ID do contato encontrado ou criado.
+    </ResponseField>
+
+    <ResponseField name="scheduled_at" type="string | null">
+      Horário agendado no fuso ou offset informado. `null` em envios imediatos.
+    </ResponseField>
+
+    <ResponseField name="scheduled_at_utc" type="string | null">
+      Horário agendado em UTC, sempre terminando em `Z`. `null` em envios imediatos.
+    </ResponseField>
+
+    <ResponseField name="timezone" type="string | null">
+      Fuso IANA (por exemplo, `America/Sao_Paulo`) ou offset numérico (por exemplo, `-03:00`) usado no agendamento. `null` em envios imediatos.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Exemplo de resposta
+
+```json
+{
+  "items": [
+    {
+      "messageId": "<MESSAGE_ID_1>",
+      "contactId": "<CONTACT_ID_1>",
+      "scheduled_at": null,
+      "scheduled_at_utc": null,
+      "timezone": null
+    },
+    {
+      "messageId": "<MESSAGE_ID_2>",
+      "contactId": "<CONTACT_ID_2>",
+      "scheduled_at": "2026-03-10T14:30:00.000Z",
+      "scheduled_at_utc": "2026-03-10T14:30:00.000Z",
+      "timezone": null
+    },
+    {
+      "messageId": "<MESSAGE_ID_3>",
+      "contactId": "<CONTACT_ID_3>",
+      "scheduled_at": "2026-03-11T09:00:00.000-03:00",
+      "scheduled_at_utc": "2026-03-11T12:00:00.000Z",
+      "timezone": "America/Sao_Paulo"
+    }
+  ]
+}
+```
+
+---
+
+## Cancelar uma mensagem na fila
+
+```http
+POST /api/v1/campaigns/{campaignId}/messages/{messageId}/cancel
+```
+
+Cancela o envio de uma mensagem específica que ainda está na fila. As demais mensagens da campanha não são afetadas.
+
+<Info>
+  Só mensagens com status `QUEUED` podem ser canceladas. Mensagens `SENDING`, `SENT` ou `FAILED` não podem.
+</Info>
+
+### Resposta
+
+```json
+{
+  "id": "<MESSAGE_ID>",
+  "status": "CANCELLED"
+}
+```
+
+---
+
+## Listar mensagens da campanha
+
+```http
+GET /api/v1/campaigns/{campaignId}/messages?limit=50&offset=0
+```
+
+Retorna uma lista paginada das mensagens da campanha, cada uma com o status atual.
+
+### Parâmetros de query
+
+<ParamField query="limit" default="50" type="number">
+  Quantidade de resultados por página.
+</ParamField>
+
+<ParamField query="offset" default="0" type="number">
+  Quantidade de resultados a pular, para paginação.
+</ParamField>
+
+---
+
+## Consultar uma mensagem
+
+```http
+GET /api/v1/campaigns/{campaignId}/messages/{messageId}
+```
+
+Retorna os detalhes e o status atual de uma mensagem da campanha.
+
+---
+
+## Status das mensagens
+
+| Status | Descrição |
+| --- | --- |
+| `PENDING` | Aguardando processamento |
+| `QUEUED` | Na fila para envio. Pode ser cancelada |
+| `SENDING` | Sendo enviada |
+| `SENT` | Enviada com sucesso |
+| `FAILED` | Falha no envio |
+| `CANCELLED` | Cancelada pela API |
+
+---
+
+## Fluxo recomendado
+
+<Steps>
+  <Step title="Configure a campanha na BluBash">
+    Crie a Campanha Contínua e copie o endpoint na aba **Integrações**.
+  </Step>
+  <Step title="Adicione contatos">
+    Chame `POST /api/v1/campaigns/{campaignId}/audience` com o array `items`, por exemplo a cada novo cadastro no seu sistema.
+  </Step>
+  <Step title="Escolha o agendamento">
+    Use `schedule.type = immediate` para envio imediato ou `schedule.type = absolute` com `datetime` para envio agendado.
+  </Step>
+  <Step title="Cancele se necessário">
+    Para impedir o envio de uma mensagem na fila, chame `POST /api/v1/campaigns/{campaignId}/messages/{messageId}/cancel`.
+  </Step>
+  <Step title="Acompanhe a entrega">
+    Use `GET /api/v1/campaigns/{campaignId}/messages` para consultar o status. Na BluBash, os contatos adicionados pela API aparecem com a origem **API** nos detalhes da campanha.
+  </Step>
+</Steps>
+
+Quando o contato responde à mensagem da campanha, a conversa segue no canal de WhatsApp. O agente de IA ou a equipe assume o atendimento conforme a configuração do canal.
+
+---
+
+## Exemplos de código
+
+<CodeGroup>
+
+```bash Envio imediato (cURL)
+curl -X POST "https://api.blubash.io/api/v1/campaigns/{campaignId}/audience" \
+  -H "X-API-Key: SUA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "items": [
+      {
+        "identifier": "5511999999999",
+        "name": "Maria Silva",
+        "tags": ["Lead Quente"],
+        "schedule": { "type": "immediate" }
+      }
+    ]
+  }'
+```
+
+```bash Envio agendado (cURL)
+curl -X POST "https://api.blubash.io/api/v1/campaigns/{campaignId}/audience" \
+  -H "X-API-Key: SUA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "default_schedule_timezone": "America/Sao_Paulo",
+    "items": [
+      {
+        "contact_id": "<CONTACT_ID>",
+        "schedule": {
+          "type": "absolute",
+          "datetime": "2026-04-01T10:00:00"
+        }
+      }
+    ]
+  }'
+```
+
+```bash Lote com agendamentos mistos (cURL)
+curl -X POST "https://api.blubash.io/api/v1/campaigns/{campaignId}/audience" \
+  -H "X-API-Key: SUA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "default_schedule_timezone": "America/Sao_Paulo",
+    "items": [
+      {
+        "contact_id": "<CONTACT_ID_1>",
+        "schedule": { "type": "immediate" }
+      },
+      {
+        "identifier": "5511888887777",
+        "name": "Pedro Lima",
+        "custom_fields": { "cf_plano": "enterprise" },
+        "tags": ["Cliente VIP", "Lead Quente"],
+        "schedule": {
+          "type": "absolute",
+          "datetime": "2026-04-05T09:00:00",
+          "timezone": "America/Sao_Paulo"
+        }
+      },
+      {
+        "contact_id": "<CONTACT_ID_3>",
+        "schedule": {
+          "type": "absolute",
+          "datetime": "2026-04-06T12:00:00.000Z"
+        }
+      }
+    ]
+  }'
+```
+
+```bash Cancelar mensagem (cURL)
+curl -X POST "https://api.blubash.io/api/v1/campaigns/{campaignId}/messages/{messageId}/cancel" \
+  -H "X-API-Key: SUA_API_KEY"
+```
+
+```bash Listar mensagens (cURL)
+curl -X GET "https://api.blubash.io/api/v1/campaigns/{campaignId}/messages?limit=50&offset=0" \
+  -H "X-API-Key: SUA_API_KEY"
+```
+
+</CodeGroup>
+
+---
+
+## Referência de erros
+
+| Status | Mensagem | Causa |
+| --- | --- | --- |
+| `400` | `Each item must provide contact_id or identifier` | Um item não tem `contact_id` nem `identifier` |
+| `400` | `Identifier is invalid` | `identifier` vazio ou inválido após a normalização |
+| `400` | `schedule.timezone (IANA) is required when datetime has no UTC offset` | `datetime` sem offset e sem fuso horário |
+| `400` | `Campaign is not an evergreen campaign` | O `campaignId` é de uma Campanha Única |
+| `400` | `Cannot add contacts to cancelled or failed campaigns` | A campanha está `CANCELLED` ou `FAILED` |
+| `400` | `Cannot add contacts while the campaign is paused. Resume the campaign first.` | A campanha está `PAUSED` |
+| `400` | `Contact found by email already has a different identifier for this campaign channel` | O e-mail pertence a um contato com outro identificador no canal |
+| `400` | `Contact does not have a valid channel identifier for this campaign channel` | O contato não tem identificador válido no canal da campanha |
+| `401` | - | API Key ausente ou inválida |
+| `403` | `Campaigns feature is not available in your current plan` | Campanhas não estão incluídas no plano do workspace |
+| `404` | `Campaign not found` | O `campaignId` não existe no workspace |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Gerenciar campanhas" icon="megaphone" href="/pt-BR/campaigns/manage-campaigns">
+    Acompanhe envios, pause e retome campanhas.
+  </Card>
+
+  <Card title="Channels API" icon="message-circle" href="/pt-BR/developers/api/channels">
+    Integre o agente de IA ao chat do seu sistema.
+  </Card>
+</CardGroup>

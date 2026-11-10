@@ -1,0 +1,103 @@
+---
+title: "Start a conversation from a contact"
+sidebarTitle: "Start conversation"
+description: "Open or start a conversation directly from the BluBash contact page or contact list, choosing team and channel and respecting the WhatsApp 24-hour window."
+---
+
+You can talk to a contact without leaving their profile. BluBash opens the ongoing conversation, if there is one, or starts a new one with the contact already selected.
+
+Use this feature for follow-ups, proposal check-ins, confirmations, and any outbound contact by your team.
+
+## Ways to start
+
+| Where | Action | Result |
+| --- | --- | --- |
+| Contact page, header | **Conversation** (tooltip: **Start a conversation**) | Opens the contact's most recent open conversation that you can see. If there is none, starts a new one. |
+| Contact page, **Conversations** tab | **Create a conversation** | Opens the **Start New Conversation** window with the contact selected. |
+| Contact list, **Actions** menu | **Start Conversation** | Opens the **Start New Conversation** window with the contact selected. |
+
+## Step by step
+
+<Steps>
+  <Step title="Open the contact">
+    In the sidebar, click **Contacts** and then click the contact.
+  </Step>
+  <Step title="Click Conversation">
+    In the header, click **Conversation**. If an open conversation already exists, it is shown and you can reply. If not, the **Start New Conversation** window opens.
+  </Step>
+  <Step title="Check the contact">
+    The **Contact** field is already filled in. To change it, click **Change contact**.
+  </Step>
+  <Step title="Choose the team">
+    In **Team**, select the team that will handle the conversation. Only teams where you are allowed to start conversations appear.
+  </Step>
+  <Step title="Choose the channel">
+    In **Channel**, select the number or channel to send from. The list shows the channels of the selected team.
+  </Step>
+  <Step title="Start">
+    Click **Start Conversation**. The conversation opens in the inbox, ready for the first message.
+  </Step>
+</Steps>
+
+<Info>
+  If a conversation with the contact is already in progress on the same channel, BluBash does not create another one. You are taken to the existing conversation and see the message **Redirected to existing conversation**.
+</Info>
+
+## Channels that allow starting a conversation
+
+| Channel | Can start? | Notes |
+| --- | --- | --- |
+| **WhatsApp Business API (official)** | Yes | Outside the 24-hour window, the first message must be a template approved by Meta. |
+| **WhatsApp Lite** | Yes | Use it in moderation to avoid blocks on the number. |
+| **Instagram** | No | Shown as **Receptive only**. The contact must write first. |
+| **Webchat** | No | Shown as **Receptive only**. The contact must start from the website widget. |
+
+## The official WhatsApp 24-hour window
+
+On the official WhatsApp API, Meta only allows free-form messages up to 24 hours after the contact's last message. Outside this window:
+
+1. Send a **template** approved by Meta to reopen the contact.
+2. When the contact replies, the 24-hour window opens again and you can send free text, audio, and files.
+
+Official API templates have a cost defined by Meta. See [Send templates →](/conversations/send-templates).
+
+## Permissions
+
+- You must belong to at least one team with **Allow initiating conversations** turned on. Without it, the window shows **You do not have permission to initiate conversations. Contact your administrator.**
+- The team must have access to at least one channel. Otherwise, **No channels available for this team** appears.
+- For WhatsApp conversations, the contact must have a WhatsApp number registered.
+
+See [Create and configure teams →](/account-settings/create-configure-teams).
+
+## Hybrid service after the first contact
+
+Once the conversation starts, it follows the normal inbox flow. You can, for example, send the opening message and transfer the conversation to an AI agent to qualify the contact when they reply. See [Hand off to the AI agent →](/ai-agents/handoff-to-ai).
+
+## Common errors
+
+| Message | Cause | How to fix |
+| --- | --- | --- |
+| **You do not have permission to initiate conversations. Contact your administrator.** | None of your teams allows starting conversations. | Ask the Administrator to turn on the option for the team. |
+| **No channels available for this team** | The team has no linked channels. | Link a channel to the team. |
+| **Please select a contact, team and channel** | A field was left empty. | Fill in all three fields. |
+| **A conversation is already in progress with this contact on this channel** | There is already an open conversation. | Use the existing conversation. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Start a conversation" icon="message-circle" href="/conversations/start-new-attendance">
+    See the full new conversation flow in the inbox.
+  </Card>
+
+  <Card title="Send templates" icon="send" href="/conversations/send-templates">
+    Reopen contacts outside the 24-hour window.
+  </Card>
+
+  <Card title="Contact history" icon="history" href="/contacts/view-activity-timeline">
+    Review the context before talking to the contact.
+  </Card>
+
+  <Card title="Hand off to AI" icon="bot" href="/ai-agents/handoff-to-ai">
+    Let the AI agent continue the conversation.
+  </Card>
+</CardGroup>

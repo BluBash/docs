@@ -1,0 +1,111 @@
+---
+title: "Configurar o Webchat"
+description: "Coloque um chat no seu site com o Webchat da BluBash: instale o código, personalize a aparência e atenda visitantes com agente de IA e equipe."
+---
+
+O Webchat é um widget de chat para o seu site. O visitante clica no botão, informa nome e email e conversa com a sua empresa em tempo real. As conversas chegam na mesma caixa de entrada do WhatsApp e do Instagram, e podem ser atendidas pelo agente de IA e pela equipe. O widget aceita texto, imagens, áudio, vídeo e documentos, e a aparência é personalizável.
+
+<Info>
+  O Webchat é um canal apenas receptivo. Quem inicia a conversa é o visitante do site.
+</Info>
+
+## Quando usar
+
+- Você quer atender visitantes no momento em que eles estão no site, por exemplo, na página de preços ou de checkout.
+- Você quer que o agente de IA tire dúvidas e capte contatos com nome e email, 24 horas por dia.
+- Você quer um link de atendimento para compartilhar onde não dá para instalar código, como na assinatura de email.
+
+## Antes de começar
+
+- Tenha acesso para editar o código do site, ou alguém que possa colar o script para você.
+- Tenha pelo menos uma equipe criada para ser a **Equipe Padrão**.
+
+## Criar e instalar o Webchat
+
+<Steps>
+  <Step title="Criar o canal">
+    Em **Canais**, clique em **Adicionar Canal** e escolha o cartão **WebChat**. Preencha **Nome do Canal** e **Equipe Padrão**, escolha o **Agente de IA (Opcional)** e clique em **Criar Canal**.
+  </Step>
+  <Step title="Abrir os dados de instalação">
+    A BluBash abre a página do canal. No cartão **WebChat**, você encontra:
+
+    | Campo | Para que serve |
+    | --- | --- |
+    | **ID do Canal** | Identificador do canal, usado pelo script. |
+    | **URL Pública** | Link direto para acessar a interface do webchat, sem instalar nada. |
+    | **Código de Incorporação** | Script para incorporar o widget de chat no seu site. |
+  </Step>
+  <Step title="Copiar o código">
+    Clique em **Copiar Código**. O código tem este formato:
+
+    ```html
+    <script src="https://ENDERECO-DA-BLUBASH/webchat-widget.js" data-channel-id="ID-DO-CANAL" data-position="bottom-right"></script>
+    ```
+
+    Use sempre o código copiado da tela, porque ele já vem com o endereço e o ID corretos.
+  </Step>
+  <Step title="Colar no site">
+    Cole o código antes da tag de fechamento `</body>` em todas as páginas onde o chat deve aparecer. Em construtores de site, use o campo de scripts personalizados do rodapé.
+  </Step>
+  <Step title="Conferir o status">
+    Na página do canal, abra **Zona de Perigo** e confirme que **Status do Canal** está **Ativo**. Com o canal inativo, o widget mostra **Chat Indisponível** para o visitante.
+  </Step>
+  <Step title="Testar">
+    Abra o site, clique no botão do chat, informe nome e email e envie uma mensagem. Confira se a conversa aparece na caixa de entrada da equipe padrão.
+  </Step>
+</Steps>
+
+<Tip>
+  Use a **URL Pública** em lugares onde não dá para instalar o script: assinatura de email, bio de redes sociais, QR code em material impresso ou botão em outra página.
+</Tip>
+
+## Personalizar o widget
+
+Na mesma página, a seção **Configurações do Webchat** controla a aparência e o comportamento. À direita, a **Prévia do Widget** mostra como o chat aparece no site, fechado e aberto. Depois de alterar, clique em **Salvar**. Enquanto houver mudanças pendentes, a página avisa "Você tem alterações não salvas".
+
+| Seção | Campo | O que faz |
+| --- | --- | --- |
+| **Aparência e Identidade Visual** | **Cor Primária** | Cor dos botões, links e destaques do chat, em hexadecimal (por exemplo, `#0171E4`, o padrão). |
+|  | **Título do Chat** | Título no cabeçalho do chat. Se ficar em branco, a prévia mostra "Atendimento". |
+|  | **Subtítulo do Chat** | Texto abaixo do título. Se ficar em branco, a prévia mostra "Estamos online". |
+|  | **Mensagem de Boas-vindas** | Balão exibido ao lado do botão do chat no site. Cada linha vira um balão. Deixe em branco para não exibir. |
+|  | **Placeholder do Campo de Mensagem** | Texto de exemplo no campo onde o visitante digita. |
+| **Permissões de Mídia** | **Permitir Mídia** | Permite que o visitante envie imagens, vídeos, áudio e documentos. Vem ligado. |
+|  | **Tamanho Máximo de Arquivo (MB)** | Limite por arquivo, de 1 a 50 MB. O padrão é 50 MB. Só aparece com **Permitir Mídia** ligado. |
+| **Comportamento do Chat** | **Exibir Nome do Agente** | Mostra o nome de quem está atendendo no cabeçalho do chat. Vem ligado. |
+
+## A experiência do visitante
+
+1. O visitante vê o botão do chat e, se configurada, a mensagem de boas-vindas em balões.
+2. Ao abrir o chat, ele informa o nome e depois o email. Esses dados são obrigatórios no Webchat e identificam o contato na BluBash.
+3. Ele envia a mensagem e a conversa chega na caixa de entrada.
+4. O agente de IA responde, se houver um vinculado ao canal, e transfere para a equipe quando necessário.
+5. O visitante pode encerrar o chat. Uma conversa encerrada mostra **Conversa Encerrada** e não aceita novas mensagens. Para voltar a falar, ele inicia uma nova conversa.
+
+## Como o agente de IA participa
+
+O Webchat é um ótimo lugar para o agente de IA: o visitante já está interessado e espera resposta imediata. Vincule um agente treinado com as informações do site, configure a habilidade **Transferir para Equipe** para casos que pedem um atendente e acompanhe a qualidade nos relatórios. Veja [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service) e [Treinar o agente de IA →](/pt-BR/ai-agents/train-ai-agent).
+
+## Limitações
+
+| Limitação | Detalhe |
+| --- | --- |
+| Apenas receptivo | Você não inicia conversas pelo Webchat. |
+| Sem templates e campanhas | Templates aprovados pela Meta e campanhas são do [WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official). |
+| Canal inativo ou excluído | O widget avisa o visitante que o chat está indisponível e não abre novas conversas. |
+| Vínculo com equipes | A aba **Canais** da equipe lista apenas canais de WhatsApp para adicionar. Para ligar o Webchat a uma equipe, defina-a como **Equipe Padrão** do canal. |
+
+## Erros comuns
+
+| Situação | Causa e solução |
+| --- | --- |
+| O botão do chat não aparece | O código não foi colado em todas as páginas, foi colado fora do `</body>` ou o cache do site ainda não atualizou. |
+| O visitante vê **Chat Indisponível** | O canal está inativo. Ative em **Zona de Perigo**. |
+| O visitante não consegue enviar arquivo | **Permitir Mídia** está desligado ou o arquivo passa do **Tamanho Máximo de Arquivo (MB)**. |
+| A cor não é salva | O valor não está em hexadecimal. Use o formato `#RRGGBB`, por exemplo `#0171E4`. |
+
+## Próximos passos
+
+- [Canais da BluBash: tipos e como criar →](/pt-BR/channels/create-channel)
+- [Ativar ou desativar um canal →](/pt-BR/channels/activate-deactivate-channel)
+- [Conectar o Instagram →](/pt-BR/channels/configure-instagram)

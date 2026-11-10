@@ -1,0 +1,122 @@
+---
+title: "Add and remove tags on a contact"
+sidebarTitle: "Contact tags"
+description: "Classify contacts with tags in BluBash, manually or through the AI agent, and use tags to segment campaigns and imports."
+---
+
+Tags are colored labels that classify contacts by profile, interest, status, or journey stage. They appear on the contact page and in conversations, and they work as filters for campaign audiences.
+
+## What to use tags for
+
+| Use | Example |
+| --- | --- |
+| Contact profile | `customer`, `lead`, `partner` |
+| Interest | `annual-plan`, `product-x` |
+| Status | `overdue`, `inactive`, `vip` |
+| Batch source | `import-oct-2026`, `trade-show` |
+| Campaign segmentation | Send an offer only to contacts with `lead` and `product-x` |
+
+<Note>
+  Tags are created in **Tags**, in the sidebar, by Managers and Administrators. On the contact page you add and remove tags that already exist. See [Create tags →](/account-settings/create-tags).
+</Note>
+
+## Add a tag
+
+<Steps>
+  <Step title="Open the contact">
+    Click **Contacts** and then click the contact.
+  </Step>
+  <Step title="Find the Tags section">
+    In **About this contact**, scroll to the end. The **Tags** section shows the current tags or **No tags assigned**.
+  </Step>
+  <Step title="Click +">
+    Click the **\+** button next to **Tags**. A list opens with the **Search tags...** field.
+  </Step>
+  <Step title="Choose the tag">
+    Type part of the name or scroll the list and click the tag. It is applied immediately. The list shows only tags the contact does not have yet.
+  </Step>
+</Steps>
+
+Repeat the process to add more than one tag to the same contact.
+
+## Remove a tag
+
+<Steps>
+  <Step title="Hover over the tag">
+    In the contact's **Tags** section, hover over the tag. An **X** appears on the right side.
+  </Step>
+  <Step title="Click the X">
+    The tag is removed from the contact immediately.
+  </Step>
+</Steps>
+
+Every addition and removal is recorded in the contact's **History**, as **Tag "name" added** or **Tag "name" removed**, with who performed the action.
+
+## Tags applied by the AI agent
+
+In hybrid service, the AI agent classifies contacts during the conversation. This keeps your base organized without depending on your team.
+
+<Frame>
+  <img
+    src="/images/ai-agents/habilidades-lista.png"
+    alt="AI agent skills list with Add Tag and Remove Tag"
+  />
+</Frame>
+
+| Skill | What it does | "When to Use" example |
+| --- | --- | --- |
+| **Add Tag** | Applies a specific tag to the contact. | "When the customer shows interest in the annual plan." |
+| **Remove Tag** | Removes a specific tag from the contact. | "When the customer says the pending payment has been settled." |
+
+Each skill is configured with one tag and an instruction on when to use it. Create one skill for each tag the agent should manage. Only the Administrator configures AI agents. See [Configure skills →](/ai-agents/configure-skills).
+
+<Tip>
+  Combine tags applied by the agent with campaigns. For example, the agent marks `annual-plan-interest` during the conversation, and later you send a campaign only to that group.
+</Tip>
+
+## Where else tags appear
+
+- **Conversations**: the same tag can be used to organize conversations. See [Tags in conversations →](/conversations/tags-purpose-usage).
+- **Contact import**: you can map a tags column and apply tags to all imported contacts.
+- **Campaigns**: the audience step filters contacts by tags.
+
+## Permissions and visibility
+
+| Role | Create and edit tags | Add and remove on contacts |
+| --- | --- | --- |
+| **Administrator** | Yes | Yes |
+| **Manager** | Yes | Yes |
+| **Member** | No | Yes |
+
+A tag can be **Available for all teams** or limited to specific teams. You see the tags enabled for the teams you belong to.
+
+<Warning>
+  When you delete a tag in **Tags**, it is removed from all contacts and conversations where it was applied. This action cannot be undone.
+</Warning>
+
+## Best practices
+
+- Define a short, consistent naming pattern, in lowercase and with hyphens.
+- Use colors by category, for example green for customers and orange for leads.
+- Avoid tags for data that changes often or needs a value, such as a renewal date. Use additional fields for that.
+- Review unused tags periodically.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create tags" icon="tag" href="/account-settings/create-tags">
+    Create tags with color and team scope.
+  </Card>
+
+  <Card title="Agent skills" icon="bot" href="/ai-agents/configure-skills">
+    Let the AI agent apply tags.
+  </Card>
+
+  <Card title="Additional fields" icon="list-plus" href="/contacts/use-custom-fields">
+    Store data with values on each contact.
+  </Card>
+
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Send messages to contacts with specific tags.
+  </Card>
+</CardGroup>

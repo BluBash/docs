@@ -1,0 +1,92 @@
+---
+title: "Use quick replies in a conversation"
+sidebarTitle: "Quick replies"
+description: "Send ready-made texts and media during a conversation with BluBash quick replies, with variables filled in from the contact's data."
+---
+
+Quick replies are ready-made messages your team uses every day: introduction, opening question, payment methods, address, business hours. They save typing and keep the same communication standard across the whole team.
+
+## Quick reply or template?
+
+|  | Quick reply | Template |
+| --- | --- | --- |
+| Meta approval | Not required | Required |
+| When to use | During the conversation, when sending messages is allowed | To start a conversation or resume after 24 hours on the WhatsApp Business API |
+| Content | Text, image, video, document or contacts | Format defined by Meta |
+| Marker in the list | **Quick Reply** | **Template** |
+
+## How to send a quick reply
+
+<Steps>
+  <Step title="Open the conversation">
+    In **Conversations**, open the conversation. It must be assigned to you.
+  </Step>
+
+  <Step title="Click the lightning button">
+    The button is below the message box, next to the attach button. Hover over it to see **Templates**: **Use template or quick reply**. The **Select Template** window opens with the description **Templates and quick replies for use in conversation**.
+  </Step>
+
+  <Step title="Find the quick reply">
+    Use **Search templates...** to search by name or by a word in the text. Templates appear first; quick replies come next, marked **Quick Reply**.
+  </Step>
+
+  <Step title="Fill in the variables, if any">
+    Variables such as `{{1}}` and `{{2}}` personalize the text. The first one is already filled with the contact's name, when available. For the others, type the value or pick contact data from **Basic Fields**, **Additional Information** or **Additional Fields**.
+  </Step>
+
+  <Step title="Check the preview and send">
+    Review the text in **Message Preview** and click **Send Template**. The same button sends templates and quick replies. You can also press **Enter**.
+  </Step>
+</Steps>
+
+The message appears in the conversation like any other message you sent.
+
+**Example saved as a quick reply:**
+
+```text
+Hi {{1}}, this is {{2}} and I'll be taking over your request.
+
+How can I help you today?
+```
+
+**After filling in the variables:**
+
+```text
+Hi Maria, this is Ana and I'll be taking over your request.
+
+How can I help you today?
+```
+
+## When quick replies are not available
+
+| Situation | What happens |
+| --- | --- |
+| **Note** mode on | The lightning button is disabled. Switch back to **Message**. |
+| WhatsApp Business API outside the 24-hour window | The window only lists templates. Send a template and wait for the contact to reply. |
+| Instagram after 7 days without a message from the contact | Sending is blocked until the contact writes again. |
+| AI agent handling the conversation | The message box is locked. Click **Take Over** first. |
+
+## Best practices
+
+- Use short, searchable names, such as "pix payment" or "downtown store address".
+- Use variables for the contact's and team member's names. The message feels personal with no extra typing.
+- Check the preview before sending. A wrong variable reaches the customer.
+- Keep a small, up-to-date set of quick replies. Remove the ones nobody uses.
+
+## Create and edit quick replies
+
+Quick replies are created and edited on the **Templates & Quick Replies** page.
+
+[Create a quick reply →](/templates/create-quick-reply) · [Use variables →](/templates/use-variables) · [Edit and delete →](/templates/edit-delete)
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Send templates" icon="file-text" href="/conversations/send-templates">
+    Start and resume conversations on the WhatsApp Business API.
+  </Card>
+
+  <Card title="Tags in conversations" icon="tag" href="/conversations/tags-purpose-usage">
+    Classify the contact while you serve them.
+  </Card>
+</CardGroup>

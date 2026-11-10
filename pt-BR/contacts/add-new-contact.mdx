@@ -1,0 +1,225 @@
+---
+title: "Adicionar contatos manualmente ou por importação"
+sidebarTitle: "Adicionar contatos"
+description: "Crie contatos um a um ou importe uma planilha CSV na BluBash, com mapeamento de campos, etiquetas, responsável e tratamento de duplicados."
+---
+
+Contatos são as pessoas com quem sua empresa conversa. Cada contato reúne dados de cadastro, etiquetas, campos adicionais, responsáveis, conversas, negócios, tarefas e todo o histórico de relacionamento.
+
+Na BluBash, um contato pode surgir de três formas:
+
+| Origem | Como acontece | Quem pode |
+| --- | --- | --- |
+| **Automática pelos canais** | Quando alguém envia a primeira mensagem para um canal conectado (WhatsApp, Instagram ou Webchat), a BluBash cria o contato e abre a conversa. | Automático |
+| **Manual** | Você preenche o formulário **Adicionar Novo Contato**. | Administrador, Gerente e Membro |
+| **Importação CSV** | Você envia uma planilha e cria ou atualiza vários contatos de uma vez, com empresa, etiquetas, responsável e, se quiser, um negócio no Pipeline para cada linha. | Administrador |
+
+<Info>
+  Na maioria das operações, a base cresce sozinha pelos canais. O agente de IA também pode completar o cadastro durante o atendimento, preenchendo nome, e-mail, telefone e campos adicionais. Veja [Editar um contato →](/pt-BR/contacts/edit-contact).
+</Info>
+
+## Adicionar um contato manualmente
+
+Use o cadastro manual quando você recebe um lead por telefone, em um evento ou por indicação e quer registrá-lo antes de iniciar a conversa.
+
+<Steps>
+  <Step title="Abra a lista de contatos">
+    Na barra lateral, clique em **Contatos**. A aba **Pessoas** mostra a lista de contatos.
+  </Step>
+  <Step title="Abra o formulário">
+    Clique em **Novo contato**, no canto superior direito. A janela **Adicionar Novo Contato** é aberta.
+  </Step>
+  <Step title="Preencha os dados">
+    Informe os campos abaixo. Apenas o **Nome** é obrigatório.
+
+    | Campo | Obrigatório | Como preencher |
+    | --- | --- | --- |
+    | **Nome** | Sim | Nome da pessoa, como você quer ver na lista e nas conversas. |
+    | **Email** | Não | E-mail válido. Um formato inválido impede o salvamento. |
+    | **Telefone** | Não | Número de telefone para contato. Use o formato internacional, com DDI. |
+    | **WhatsApp** | Não | Número usado nas conversas em canais do tipo WhatsApp. Selecione o país e informe o número com DDD. |
+  </Step>
+  <Step title="Salve o contato">
+    Clique em **Criar Contato**. A BluBash salva o cadastro e abre a página do contato, onde você completa as demais informações.
+  </Step>
+</Steps>
+
+<Tip>
+  Preencha o **WhatsApp** sempre que pretender falar com o contato por esse canal. Sem esse número, o contato não recebe mensagens de WhatsApp, seja em conversas iniciadas pela equipe ou em campanhas.
+</Tip>
+
+### O que completar depois de criar
+
+Na página do contato, você pode adicionar informações que não aparecem no formulário inicial:
+
+- **Empresa**: vincula o contato a uma empresa da aba **Empresas**.
+- **Origem** e **Campanha UTM**: registram de onde o contato veio (Anúncio, Orgânico, Indicação, WhatsApp, Instagram, Importação, Manual ou Outros).
+- **Responsável global** e responsáveis por equipe (carteirização).
+- **Campos adicionais** criados pelo Administrador.
+- **Etiquetas**.
+
+Veja como em [Editar um contato →](/pt-BR/contacts/edit-contact).
+
+## Importar contatos por planilha CSV
+
+A importação cria ou atualiza muitos contatos de uma vez. Ela é a forma recomendada para migrar uma base de outro sistema ou carregar uma lista de leads.
+
+Numa única importação, cada linha do arquivo pode levar o contato, as etiquetas, a empresa, o responsável e um negócio no Pipeline. Linhas com a etapa do negócio vazia importam só o contato e a empresa, então uma base mista (leads novos e contatos que ainda não estão em negociação) cabe num arquivo só.
+
+<Note>
+  Somente o **Administrador** vê o botão **Importar**. Cada arquivo pode ter até 100.000 linhas. Se a sua planilha for maior, divida em partes.
+</Note>
+
+### Prepare o arquivo
+
+- Salve a planilha no formato **CSV**.
+- A primeira linha precisa conter os nomes das colunas.
+- Inclua uma coluna com o nome do contato e uma coluna com o identificador escolhido (e-mail ou telefone). Linhas sem o identificador escolhido entram pelo outro, desde que tenham e-mail ou telefone.
+- Escreva telefones no formato internacional, por exemplo `+5511999998888`.
+- Use como cabeçalho os nomes da tabela [Colunas aceitas](#colunas-aceitas), como `org.name` ou `deal.stage`. Assim a BluBash já mapeia as colunas sozinha.
+- Para criar negócios, inclua a coluna `deal.stage`. Deixe a etapa vazia nas linhas que não devem ganhar negócio.
+- Para começar com o formato certo, use **Baixar arquivo CSV de exemplo** na primeira etapa.
+
+### Passo a passo
+
+<Steps>
+  <Step title="Abra a importação">
+    Em **Contatos**, clique em **Importar**. A página **Importar contatos** é aberta.
+  </Step>
+  <Step title="Enviar arquivo">
+    Clique em **Escolher arquivo CSV** e selecione a planilha. A BluBash mostra quantas colunas e linhas foram detectadas.
+
+    Em **Como você quer identificar estes contatos?**, escolha **E-mail** ou **Telefone**. Esse identificador é usado para encontrar um contato existente ou criar um novo, e é salvo como canal principal do contato.
+
+    Para criar negócios na mesma importação, ligue **Criar negócios para as linhas com etapa preenchida** e escolha o **Pipeline dos negócios**. A opção aparece para quem pode gerenciar Pipelines.
+  </Step>
+  <Step title="Mapear campos">
+    Relacione cada coluna do arquivo a um campo do sistema. A tela mostra um exemplo da 1ª linha para você conferir.
+
+    Colunas cujo cabeçalho é igual a um campo conhecido (veja [Colunas aceitas](#colunas-aceitas)), à chave de um campo adicional ou ao nome dele já chegam mapeadas. Você pode trocar qualquer escolha. As colunas que você não quer usar ficam em **Não importar**.
+
+    Se uma coluna não tem campo correspondente, o Administrador pode clicar em **Criar campo adicional**, escolher **Texto** ou **Número** e confirmar em **Criar e mapear**. O campo de contato é criado com o nome do cabeçalho e a coluna passa a apontar para ele.
+
+    O botão **Próximo** só é liberado quando os campos obrigatórios estão mapeados: **Nome**, o identificador escolhido e, com negócios ligados, a **Etapa do negócio**.
+  </Step>
+  <Step title="Mapear etapas">
+    Esta etapa aparece quando a criação de negócios está ligada. Associe cada valor da coluna de etapa do arquivo a uma etapa do Pipeline. Todos os valores precisam estar associados para continuar.
+  </Step>
+  <Step title="Configurar e importar">
+    Defina o que fazer quando um contato já existir (mesmo e-mail ou telefone):
+
+    | Opção em **Contatos duplicados** | Resultado |
+    | --- | --- |
+    | **Ignorar duplicados** | Mantém o contato existente sem alterações. |
+    | **Atualizar contato existente e adicionar etiquetas** | Atualiza os dados com os valores do arquivo e soma as etiquetas. |
+    | **Apenas adicionar etiquetas ao contato existente** | Não altera os dados, apenas adiciona as etiquetas. |
+
+    Opcionalmente, escolha etiquetas para aplicar a todos os contatos importados e um **Responsável** para eles. As etiquetas da coluna do arquivo são somadas a essas.
+
+    Com negócios ligados, defina em **Negócios duplicados** quando o negócio não deve ser criado:
+
+    | Opção | Padrão | O que faz |
+    | --- | --- | --- |
+    | **Não criar negócio se o contato já tiver um negócio aberto neste pipeline** | Ligada | Considera só negócios abertos que existiam antes da importação. Reimportar o mesmo arquivo não duplica negócios. |
+    | **Não criar negócio para contatos que já existiam na base** | Ligada | Protege os clientes atuais: só contatos novos nesta importação ganham negócio. |
+    | **Criar no máximo um negócio por empresa** | Desligada | Um negócio por empresa (pelo CNPJ ou pelo nome). As demais linhas da mesma empresa importam só o contato. |
+
+    As opções de contato duplicado valem para os dados do contato. Se o negócio é criado ou não depende só das opções de **Negócios duplicados**.
+  </Step>
+  <Step title="Inicie e acompanhe">
+    Clique em **Iniciar importação**. O processamento acontece em segundo plano. Na lista de contatos, uma faixa mostra o progresso, com linhas processadas, sucessos e erros. Clique em **Mostrar detalhes** para voltar à página de importação, onde você pode usar **Cancelar importação**.
+  </Step>
+  <Step title="Revise o resultado">
+    Ao final, a faixa informa o status da última importação. Na página de importação, clique em **Ver histórico** para ver arquivos anteriores. Se houver linhas com erro ou aviso, use **Baixar CSV de erros e avisos** para ver o motivo de cada uma. A coluna `severity` mostra se a linha falhou (`error`) ou entrou com aviso (`warning`). Corrija as linhas com erro e reenvie só elas.
+  </Step>
+</Steps>
+
+### Colunas aceitas
+
+| Cabeçalho | Campo | Observação |
+| --- | --- | --- |
+| `name` | Nome do contato | Obrigatório. |
+| `email` | E-mail | Identificador. |
+| `phone` | Telefone / WhatsApp | Identificador. Use o formato internacional. |
+| `tags` | Etiquetas | Separe por vírgula. Etiquetas que ainda não existem são criadas. |
+| `utm_campaign` | Campanha de origem do contato |  |
+| `owner.email` | Responsável pelo contato | E-mail de um membro do workspace. Depende da carteirização. |
+| `org.name` | Nome da empresa | Sem CNPJ, a empresa é vinculada pelo nome. |
+| `org.tax_id` | CNPJ / documento fiscal | Com CNPJ válido, a empresa é vinculada pelo CNPJ. |
+| `org.legal_name`, `org.country`, `org.tax_id_type`, `org.email`, `org.phone` | Demais dados da empresa | Informe `org.country` (por exemplo, `BR`) para o CNPJ ser validado. |
+| `deal.stage` | Etapa do negócio | Com negócios ligados. Vazia: a linha importa só contato e empresa. |
+| `deal.title` | Título do negócio | Vazio: usa o nome da empresa e, sem empresa, o nome do contato. |
+| `deal.value`, `deal.recurring_value`, `deal.recurring_period`, `deal.expected_close_at`, `deal.close_note` | Valores, recorrência, previsão de fechamento e nota de fechamento | Sem período, o valor recorrente é tratado como mensal. |
+| `deal.campaign` | Campanha do negócio | Vazio: herda `utm_campaign`. |
+| `deal.owner_email` | Responsável pelo negócio | Precisa ser membro de uma equipe vinculada ao Pipeline. Vazio: herda o responsável do contato e, depois, o responsável padrão. |
+| `custom.<chave>` ou o nome do campo | Campo adicional | O campo precisa existir ou ser criado no mapeamento. |
+
+### Exemplo de base mista
+
+```csv
+name,email,phone,tags,utm_campaign,owner.email,org.name,org.tax_id,org.country,deal.title,deal.stage,deal.recurring_value
+Maria Silva,maria@example.com,+5511999998888,"leads-frios,vip",leads-frios-2026-11,vendas@example.com,Acme Ltda,11.222.333/0001-81,BR,Plano anual Acme,Prospecção,490
+João Souza,joao@example.com,+5511988887777,leads-frios,leads-frios-2026-11,vendas@example.com,Acme Ltda,11.222.333/0001-81,BR,,Prospecção,
+Ana Lima,ana@example.com,,leads-frios,leads-frios-2026-11,,Padaria Sol,,BR,,,
+```
+
+Neste exemplo, Maria e João entram na mesma empresa e ganham negócio. Com **Criar no máximo um negócio por empresa** ligada, só Maria ganha. Ana entra só como contato, vinculada à Padaria Sol pelo nome, e é identificada pelo e-mail porque não tem telefone.
+
+O **Baixar arquivo CSV de exemplo** da primeira etapa traz um arquivo com o mesmo formato.
+
+<Warning>
+  Definir um **Responsável** na importação, no passo de configuração ou pela coluna `owner.email`, depende do recurso **Carteirização de contatos** do seu plano. Se o plano não incluir o recurso, a BluBash mostra a opção de upgrade e a importação não prossegue com responsável.
+</Warning>
+
+Cada contato importado registra no **Histórico** os eventos **Contato adicionado via importação** ou **Contato atualizado via importação**.
+
+## Boas práticas
+
+- Padronize os números com DDI antes de importar. Números sem DDI geram contatos duplicados ou falhas de envio.
+- Etiquetas da coluna `tags` são criadas automaticamente. Para campos adicionais com outro tipo além de texto ou número, crie-os antes da importação para mapeá-los na etapa 2.
+- Use uma etiqueta de lote (por exemplo, `importacao-out-2026`) para encontrar e segmentar esses contatos depois.
+- Teste com um arquivo pequeno antes de importar a base inteira.
+- Prefira **Ignorar duplicados** na primeira carga e **Atualizar contato existente e adicionar etiquetas** em cargas de atualização.
+
+## Erros comuns
+
+| Mensagem | Causa | Como resolver |
+| --- | --- | --- |
+| **Já existe um contato com esses dados (telefone, e-mail ou WhatsApp).** | Outro contato já usa o mesmo telefone, e-mail ou WhatsApp. | Pesquise o contato existente e atualize o cadastro dele. |
+| **Digite um e-mail válido** | Formato de e-mail incorreto. | Corrija o endereço. |
+| **A importação é limitada a 100.000 linhas por arquivo.** | Arquivo acima do limite. | Divida o CSV em partes menores. |
+| **Selecione um arquivo CSV antes de continuar.** | Nenhum arquivo foi enviado. | Escolha o arquivo na etapa 1. |
+| **Uma importação está em andamento.** | Já existe uma importação rodando. | Aguarde terminar ou cancele a atual. |
+| `IMPORT_ROW_UNMAPPED_STAGE` no CSV de erros | A linha tem um valor de etapa que não foi associado em **Mapear etapas**. | Corrija a etapa no arquivo e reenvie a linha. |
+
+Algumas linhas entram com **aviso**: o contato é importado e a linha conta como sucesso, mas algo não saiu como no arquivo. O total de avisos aparece no resumo da importação, e cada aviso aparece no CSV de erros e avisos com o código abaixo.
+
+| Código no CSV | O que aconteceu |
+| --- | --- |
+| `IMPORT_ROW_ORG_LINKED_BY_NAME` | O CNPJ não é válido para o país informado. A empresa foi vinculada pelo nome. |
+| `IMPORT_ROW_ORG_LINK_FAILED` | A empresa não foi vinculada (CNPJ inválido sem nome da empresa, ou falha ao salvar). O contato foi importado sem ela. |
+| `IMPORT_ROW_OWNER_NOT_FOUND` | O e-mail de `owner.email` não é de um membro do workspace. O contato ficou com o responsável padrão da importação. |
+| `IMPORT_ROW_DEAL_OWNER_NOT_FOUND` | O e-mail de `deal.owner_email` não é de um membro de uma equipe do Pipeline. O negócio ficou com o responsável herdado. |
+| `IMPORT_ROW_DEAL_SKIPPED_OPEN_DEAL` | Negócio não criado: o contato já tinha um negócio aberto no Pipeline. |
+| `IMPORT_ROW_DEAL_SKIPPED_EXISTING_CONTACT` | Negócio não criado: o contato já existia antes da importação. |
+| `IMPORT_ROW_DEAL_SKIPPED_ORGANIZATION` | Negócio não criado: a empresa já recebeu um negócio nesta importação. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Editar um contato" icon="pencil" href="/pt-BR/contacts/edit-contact">
+    Complete dados, defina responsáveis e entenda o que o agente de IA atualiza.
+  </Card>
+
+  <Card title="Campos adicionais" icon="list-plus" href="/pt-BR/contacts/use-custom-fields">
+    Guarde informações específicas do seu negócio em cada contato.
+  </Card>
+
+  <Card title="Etiquetas do contato" icon="tag" href="/pt-BR/contacts/manage-contact-tags">
+    Organize e segmente a base com etiquetas.
+  </Card>
+
+  <Card title="Iniciar conversa" icon="message-circle" href="/pt-BR/contacts/start-conversation-from-contact">
+    Fale com o contato a partir da página dele.
+  </Card>
+</CardGroup>

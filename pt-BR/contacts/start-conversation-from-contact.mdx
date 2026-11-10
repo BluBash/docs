@@ -1,0 +1,103 @@
+---
+title: "Iniciar uma conversa a partir do contato"
+sidebarTitle: "Iniciar conversa"
+description: "Abra ou inicie uma conversa direto da página ou da lista de contatos da BluBash, escolhendo equipe e canal, e respeitando a janela de 24 horas do WhatsApp."
+---
+
+Você pode falar com um contato sem sair do cadastro dele. A BluBash abre a conversa em andamento, se houver, ou inicia uma nova com o contato já selecionado.
+
+Use este recurso para retornos, follow-ups de proposta, confirmações e qualquer contato ativo da equipe.
+
+## Formas de iniciar
+
+| Onde | Ação | Resultado |
+| --- | --- | --- |
+| Página do contato, cabeçalho | **Conversa** (dica: **Iniciar uma conversa**) | Abre a conversa aberta mais recente do contato que você pode ver. Se não houver, inicia uma nova. |
+| Página do contato, aba **Conversas** | **Crie uma conversa** | Abre a janela **Iniciar nova conversa** com o contato selecionado. |
+| Lista de contatos, menu **Ações** | **Iniciar Conversa** | Abre a janela **Iniciar nova conversa** com o contato selecionado. |
+
+## Passo a passo
+
+<Steps>
+  <Step title="Abra o contato">
+    Na barra lateral, clique em **Contatos** e depois no contato.
+  </Step>
+  <Step title="Clique em Conversa">
+    No cabeçalho, clique em **Conversa**. Se já existir uma conversa aberta, ela é exibida e você pode responder. Se não existir, a janela **Iniciar nova conversa** é aberta.
+  </Step>
+  <Step title="Confira o contato">
+    O campo **Contato** já vem preenchido. Para trocar, clique em **Alterar contato**.
+  </Step>
+  <Step title="Escolha a equipe">
+    Em **Equipe**, selecione a equipe que vai cuidar da conversa. Só aparecem equipes em que você tem permissão para iniciar conversas.
+  </Step>
+  <Step title="Escolha o canal">
+    Em **Canal**, selecione o número ou canal de envio. A lista mostra os canais da equipe escolhida.
+  </Step>
+  <Step title="Inicie">
+    Clique em **Iniciar conversa**. A conversa abre na caixa de entrada, pronta para a primeira mensagem.
+  </Step>
+</Steps>
+
+<Info>
+  Se já houver uma conversa em andamento com o contato no mesmo canal, a BluBash não cria outra. Você é levado para a conversa existente e vê a mensagem **Redirecionado para conversa existente**.
+</Info>
+
+## Canais que permitem iniciar conversa
+
+| Canal | Inicia conversa? | Observação |
+| --- | --- | --- |
+| **WhatsApp Business API (oficial)** | Sim | Fora da janela de 24 horas, a primeira mensagem precisa ser um template aprovado pela Meta. |
+| **WhatsApp Lite** | Sim | Use com moderação para evitar bloqueios no número. |
+| **Instagram** | Não | Aparece como **Apenas receptivo**. O contato precisa escrever primeiro. |
+| **Webchat** | Não | Aparece como **Apenas receptivo**. O contato precisa iniciar pelo widget do site. |
+
+## A janela de 24 horas do WhatsApp oficial
+
+Na API oficial do WhatsApp, a Meta só permite mensagens livres até 24 horas depois da última mensagem do contato. Fora desse prazo:
+
+1. Envie um **template** aprovado pela Meta para reabrir o contato.
+2. Quando o contato responder, a janela de 24 horas é reaberta e você volta a enviar texto livre, áudios e arquivos.
+
+Templates da API oficial têm custo definido pela Meta. Veja [Enviar templates →](/pt-BR/conversations/send-templates).
+
+## Permissões
+
+- Você precisa pertencer a pelo menos uma equipe com **Permitir iniciar conversas** ativo. Sem isso, a janela mostra **Você não tem permissão para iniciar conversas. Fale com o administrador.**
+- A equipe precisa ter acesso a pelo menos um canal. Caso contrário, aparece **Nenhum canal disponível para esta equipe**.
+- Para conversas de WhatsApp, o contato precisa ter o número de WhatsApp cadastrado.
+
+Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+
+## Atendimento híbrido depois do primeiro contato
+
+Depois que a conversa começa, ela segue o fluxo normal da caixa de entrada. Você pode, por exemplo, enviar a abordagem inicial e transferir a conversa para um agente de IA qualificar o contato quando ele responder. Veja [Transferir para o agente de IA →](/pt-BR/ai-agents/handoff-to-ai).
+
+## Erros comuns
+
+| Mensagem | Causa | Como resolver |
+| --- | --- | --- |
+| **Você não tem permissão para iniciar conversas. Fale com o administrador.** | Nenhuma das suas equipes permite iniciar conversas. | Peça ao Administrador para ativar a opção na equipe. |
+| **Nenhum canal disponível para esta equipe** | A equipe não tem canais vinculados. | Vincule um canal à equipe. |
+| **Selecione um contato, equipe e canal** | Algum campo ficou vazio. | Preencha os três campos. |
+| **Já existe uma conversa em andamento com este contato neste canal** | Já há conversa aberta. | Use a conversa existente. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Iniciar atendimento" icon="message-circle" href="/pt-BR/conversations/start-new-attendance">
+    Veja o fluxo completo de nova conversa na caixa de entrada.
+  </Card>
+
+  <Card title="Enviar templates" icon="send" href="/pt-BR/conversations/send-templates">
+    Reabra contatos fora da janela de 24 horas.
+  </Card>
+
+  <Card title="Histórico do contato" icon="history" href="/pt-BR/contacts/view-activity-timeline">
+    Revise o contexto antes de falar com o contato.
+  </Card>
+
+  <Card title="Transferir para a IA" icon="bot" href="/pt-BR/ai-agents/handoff-to-ai">
+    Deixe o agente de IA continuar o atendimento.
+  </Card>
+</CardGroup>

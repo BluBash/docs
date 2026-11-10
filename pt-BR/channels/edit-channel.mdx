@@ -1,0 +1,81 @@
+---
+title: "Editar um canal"
+description: "Altere o nome, a equipe padrão e o agente de IA de qualquer canal da BluBash (WhatsApp, Instagram ou Webchat) na página do canal."
+---
+
+Depois de criado, qualquer canal pode ter o nome, a equipe padrão e o agente de IA alterados a qualquer momento. As mudanças valem para WhatsApp, Instagram e Webchat da mesma forma. Os dados da conexão com a Meta, com o Instagram ou com o QR code não ficam neste formulário.
+
+## Quando editar
+
+- Trocar o agente de IA que atende o canal, por exemplo, depois de criar um agente novo.
+- Mudar a equipe que recebe as conversas do canal.
+- Desligar a IA do canal e deixar o atendimento só com a equipe.
+- Renomear o canal para deixar claro a que área ou marca ele pertence.
+
+## Editar as configurações do canal
+
+<Steps>
+  <Step title="Abrir o canal">
+    No menu lateral, clique em **Canais** e depois no cartão do canal. A página do canal abre.
+
+    <Note>
+      Se o canal ainda está aguardando conexão, ou se um WhatsApp Lite perdeu a conexão, o clique abre a janela **Configurar Canal** em vez da página. Conclua a conexão primeiro.
+    </Note>
+  </Step>
+
+  <Step title="Alterar os campos">
+    No cartão **Configurações do Canal**:
+
+    | Campo | Obrigatório | O que muda |
+    | --- | --- | --- |
+    | **Nome do Canal** | Sim | Nome exibido na lista de canais e na caixa de entrada. O título da página acompanha o que você digita. |
+    | **Equipe Padrão** | Sim | Equipe que lida com as conversas deste canal por padrão. |
+    | **Agente de IA (Opcional)** | Não | Agente de IA que atende o canal. Só agentes ativos aparecem. Escolha **Nenhum agente atribuído** para tirar a IA do canal. |
+  </Step>
+
+  <Step title="Salvar">
+    Clique em **Salvar**. O botão só fica disponível depois que algo muda. A BluBash confirma com "Canal atualizado com sucesso".
+  </Step>
+</Steps>
+
+<Warning>
+  A **Equipe Padrão** define para onde vão as novas conversas do canal. Para mover uma conversa que já está em andamento, use a [transferência →](/pt-BR/conversations/transfer-attendance).
+</Warning>
+
+## Outras configurações por tipo de canal
+
+| Canal | O que mais você ajusta na página do canal |
+| --- | --- |
+| WhatsApp Business API | **Método de Pagamento**, com o botão **Gerenciar pagamento na Meta**. |
+| WhatsApp Lite | Reconexão por QR code quando a sessão cai. Veja [Configurar o WhatsApp Lite →](/pt-BR/channels/configure-whatsapp-lite). |
+| Instagram | Nada além do formulário. A conta conectada aparece em **Conta Instagram**. |
+| Webchat | Aparência, mídia e comportamento em **Configurações do Webchat**. Veja [Configurar o Webchat →](/pt-BR/channels/configure-webchat). |
+
+## Equipe padrão e equipes vinculadas
+
+Ao trocar a **Equipe Padrão**, lembre que:
+
+- A equipe padrão não pode ser desvinculada do canal pela aba **Canais** da equipe. Primeiro troque a equipe padrão aqui.
+- Canais de Instagram e Webchat são ligados a uma equipe pela **Equipe Padrão**, porque a aba **Canais** da equipe só lista canais de WhatsApp para adicionar.
+
+Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+
+## O que não é editável
+
+- **Tipo do canal.** Para mudar de WhatsApp Lite para WhatsApp Business API, crie um novo canal.
+- **Conta conectada.** Número, conta do Instagram e IDs técnicos vêm da conexão e não aparecem no formulário.
+
+## Erros comuns
+
+| Mensagem | Causa e solução |
+| --- | --- |
+| "Nome do canal é obrigatório" | O nome ficou vazio. Preencha antes de salvar. |
+| "Equipe padrão é obrigatória" | Selecione uma equipe. |
+| "Falha ao atualizar canal" | A alteração não foi salva. O nome volta ao anterior. Tente de novo. |
+| O agente de IA não aparece | O agente está desativado. Veja [Ativar ou desativar um agente →](/pt-BR/ai-agents/activate-deactivate-agent). |
+
+## Próximos passos
+
+- [Ativar ou desativar um canal →](/pt-BR/channels/activate-deactivate-channel)
+- [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+- [Pesquisar e filtrar canais →](/pt-BR/channels/search-filter-channels)

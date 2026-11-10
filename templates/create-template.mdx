@@ -1,0 +1,173 @@
+---
+title: "Create a message template"
+sidebarTitle: "Create template"
+description: "Create a WhatsApp Business API template in BluBash: category, language, header, body, footer, buttons, and variables, then track Meta approval."
+---
+
+Templates are Meta-approved messages for the **WhatsApp Business API**. You use a template to start conversations, resume contact after 24 hours, and run campaigns. On this page, you create the template and submit it for approval.
+
+<Note>
+  Templates exist only for **WhatsApp Business API** channels. WhatsApp Lite, Instagram, and Webchat do not use templates. For ready-made messages on those channels, [create a quick reply](/templates/create-quick-reply).
+</Note>
+
+## Before you start
+
+- Have at least one active **WhatsApp Business API** channel. See [Configure the WhatsApp Business API →](/channels/configure-whatsapp-official).
+- You must be an **Administrator** or a **Manager**. Members only use templates in conversations.
+- Define the goal of the message before writing. This points to the right category and lowers the risk of rejection.
+
+## Wizard steps
+
+The creation wizard has five steps: **Setup**, **Category**, **Edit**, **Associations**, and **Review**. The bar at the top shows your progress.
+
+<Steps>
+  <Step title="Open Templates & Quick Replies">
+    Go to **Settings** and click **Templates**. On the **Templates & Quick Replies** page, click **Create Template**.
+  </Step>
+  <Step title="Choose the message type">
+    In **Choose message type**, click **Select Template** on the **Message Template** card, marked **Requires approval**.
+  </Step>
+  <Step title="Choose the category">
+    In **Choose a template category**, select the option that describes the message. Two BluBash options are mapped automatically to Meta categories, shown by **→ WhatsApp Category:**.
+
+    | Option in BluBash | Category sent to Meta | When to use |
+    | --- | --- | --- |
+    | **Marketing** | Marketing | Promotions, offers, newsletters, campaigns |
+    | **Utility** | Utility | Order confirmation, delivery status, reminders, notifications |
+    | **Authentication** | Authentication | Verification codes, login confirmations, security alerts |
+    | **Customer Service** | Utility | Questions, scheduling, support, resuming conversations |
+    | **Sales** | Marketing | Product presentations, quotes, sales follow-up |
+  </Step>
+  <Step title="Write the template">
+    In the **Create your template** step, fill in the fields described below, in the **Template fields** section. The **Preview** on the side shows how the message will look to the contact. Click **Continue**.
+  </Step>
+  <Step title="Associate channels">
+    In **Select Channels**, check the channels where the template will be available. The list shows only active **WhatsApp Business API** channels. Select at least one channel. The template is submitted for approval on each selected channel.
+  </Step>
+  <Step title="Review and create">
+    In **Review Template**, check the **Final Preview**, the **Template Information**, and any **Warnings**. Click **Create Template**. The template goes to Meta with the **Pending Approval** status.
+  </Step>
+</Steps>
+
+## Template fields
+
+### Basic Information
+
+| Field | Required | Rules |
+| --- | --- | --- |
+| **Template Name** | Yes | Use a descriptive name. BluBash converts it to lowercase and replaces spaces with `_`. Example: "Appointment Reminder" becomes `appointment_reminder`. |
+| **Language** | Yes | **Portuguese (Brazil)**, **English (US)**, or **Spanish**. Choose the language the text is written in. |
+
+### Header
+
+The **Header** is optional. In **Header Type**, choose:
+
+| Type | Rules |
+| --- | --- |
+| **No Header** | The message starts with the body. |
+| **Text** | Up to 60 characters. Accepts 1 variable, always `{{1}}`. |
+| **Image** | JPG, PNG, GIF, or WEBP, up to 5 MB. |
+| **Video** | MP4, AVI, MOV, or WMV, up to 16 MB. |
+| **Document** | PDF, DOC, DOCX, TXT, CSV, XLS, XLSX, PPT, or PPTX, up to 10 MB. |
+
+<Tip>
+  Meta is stricter with header media. To avoid rejection, prefer JPG or PNG images, MP4 videos, and PDF documents.
+</Tip>
+
+### Body
+
+The **Body** is required and has up to 1,024 characters. It is the main text of the message. Use **Add Variable** to insert `{{1}}`, `{{2}}`, and so on, up to 10 variables. See [Use variables →](/templates/use-variables).
+
+### Footer
+
+The **Footer** is optional and has up to 60 characters. Use it for a signature or a short notice, such as "Delivery Team".
+
+### Buttons
+
+**Buttons** are optional. Click **Add Button** to include up to 10 buttons.
+
+| Button type | What it does | Fields |
+| --- | --- | --- |
+| **Quick Reply** | The contact taps it and replies with the button text. The reply reopens the 24-hour window. | Button text |
+| **URL** | Opens a link. | Button text and button URL |
+| **Phone** | Calls a number. | Button text and phone number |
+
+- Each button text has up to 25 characters.
+- Do not interleave types. Group the **Quick Reply** buttons on one side and the **URL** and **Phone** buttons on the other. Valid examples: Quick Reply, Quick Reply, URL, Phone; or URL, Phone, Quick Reply, Quick Reply.
+
+### Variable Examples
+
+If the template has variables, fill in sample values in **Variable Examples**. They are used only for the preview and are not sent to the contact.
+
+## Approval status
+
+After you create it, the template appears in the list with a status. Click **Refresh** to reload the list.
+
+| Status | Meaning | What to do |
+| --- | --- | --- |
+| **Pending Approval** | Meta is reviewing the template. | Wait. Meta sets the review time. |
+| **Approved** | The template can be used in conversations and campaigns. | Use it normally. |
+| **Rejected** | Meta declined the template. | Hover over the status to see the **Reason**. Adjust it and create a new template. |
+| **Partial** | The status differs across the associated channels. | Hover over the **Channels/Teams** column to see the status of each channel. |
+| **Inactive** | The template was disabled. | Use another template or create a new one. |
+
+## Best practices for approval
+
+- **Choose the right category.** A promotional message marked as Utility is often rejected or recategorized by Meta.
+- **Do not start or end the body with a variable.** Put text before and after it.
+- **Give variables context.** `Hi {{1}}, your order {{2}} has shipped` is clearer than `{{1}} {{2}}`.
+- **Check spelling and links.** Typos and shortened URLs increase the risk of rejection.
+- **Make the sender clear.** Mention your company name in the text.
+- **Create templates to resume conversations.** Keep at least one Utility or Customer Service template for team members to use when a lead stops replying to the AI agent or to the team.
+
+## Full example
+
+| Field | Value |
+| --- | --- |
+| **Category** | Customer Service (→ Utility) |
+| **Template Name** | `resume_conversation` |
+| **Language** | English (US) |
+| **Header** | Text: "Your request" |
+| **Body** | `Hi {{1}}, this is the Example Store team. Do you still have questions about your order? We can continue here.` |
+| **Footer** | "Example Store" |
+| **Buttons** | Quick Reply: "Continue"; Quick Reply: "No, thanks" |
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="The channel list is empty">
+    **No active channels available** appears when there is no active WhatsApp Business API channel. Check the channel in **Channels**. WhatsApp Lite, Instagram, and Webchat channels do not appear because they do not use templates.
+  </Accordion>
+
+  <Accordion title="Invalid button order">
+    You interleaved **Quick Reply** buttons with **URL** or **Phone** buttons. Reorder them so that buttons of the same group stay together.
+  </Accordion>
+
+  <Accordion title="The media file is not accepted">
+    Check the format and maximum size for the selected type in the header table.
+  </Accordion>
+
+  <Accordion title="The template was rejected">
+    Read the **Reason** on the status. The most common causes are a wrong category, a variable at the start or end of the text, and promotional content in a Utility template.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Use variables" icon="braces" href="/templates/use-variables">
+    Personalize the template with contact data.
+  </Card>
+
+  <Card title="Send in a conversation" icon="send" href="/templates/send-templates-quick-replies">
+    Use the template to start or resume conversations.
+  </Card>
+
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Send the template to a list of contacts.
+  </Card>
+
+  <Card title="Edit and delete" icon="pencil" href="/templates/edit-delete">
+    Adjust or remove existing templates.
+  </Card>
+</CardGroup>

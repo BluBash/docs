@@ -1,0 +1,108 @@
+---
+title: "Send templates and quick replies"
+sidebarTitle: "Send templates and quick replies"
+description: "See how your team sends templates and quick replies in BluBash conversations, how the 24-hour window works, and how to use templates in campaigns."
+---
+
+Once created, templates and quick replies are available in the conversation message field. The team member picks the message, fills in the variables, and sends it. Templates can also be sent in bulk through campaigns.
+
+## What appears in each situation
+
+| Situation | What the team member sees |
+| --- | --- |
+| Conversation open for sending | Channel templates and team quick replies. Templates come first, labeled **Template**; quick replies follow, labeled **Quick Reply**. |
+| WhatsApp Business API, contact has never written | The **Start WhatsApp conversation** notice and templates only. |
+| WhatsApp Business API, more than 24 hours without a message from the contact | The **You have reached the WhatsApp 24-hour response time limit** notice and templates only. |
+| WhatsApp Lite, Instagram, or Webchat | Quick replies only, because these channels do not use templates. |
+
+## Send during a conversation
+
+<Steps>
+  <Step title="Open the conversation">
+    In **Conversations**, open a conversation assigned to you. If the AI agent is handling it, click **Take Over** first.
+  </Step>
+  <Step title="Click the lightning button">
+    The button is next to the message field. On hover, it shows **Templates**: **Use template or quick reply**. The **Select Template** window opens.
+  </Step>
+  <Step title="Search for the message">
+    Use **Search templates...** to search by name, category, or a word in the text. You can also navigate with the arrow keys.
+  </Step>
+  <Step title="Fill in the variables">
+    The first variable already has the contact name, when there is one. For the others, type the value or pick data from **Basic Fields**, **Additional Information**, or **Additional Fields**.
+  </Step>
+  <Step title="Check and send">
+    Review the **Message Preview** and click **Send Template**. The same button sends templates and quick replies. You can also press **Enter**. To close without sending, press **Esc**.
+  </Step>
+</Steps>
+
+## Start or resume on the WhatsApp Business API
+
+When a template is required, the message field shows **Use a template to send messages** and is locked for free text. **Note** mode is still available.
+
+<Steps>
+  <Step title="Click Choose template">
+    The button is in the notice above the message field. The window shows **Select a template to start the conversation** and lists only templates approved for the channel.
+  </Step>
+  <Step title="Fill in and send">
+    Fill in the variables and click **Send Template**.
+  </Step>
+  <Step title="Wait for the reply">
+    When the contact replies, the 24-hour window restarts and you can send free-form messages and quick replies again.
+  </Step>
+</Steps>
+
+<Warning>
+  Messages sent by your team or by the AI agent do not reopen the 24-hour window. Only a message from the contact reopens it. Meta charges each template sent on your Meta account.
+</Warning>
+
+## Templates in campaigns
+
+To send a template to many contacts, use **Campaigns**. You choose the channel, the approved template, and the audience, and map the variables to contact data.
+
+| Campaign type | Use |
+| --- | --- |
+| **Single Campaign** | One-time send to a defined audience, immediate or scheduled. |
+| **Ongoing Campaign** | Automatic send to contacts who join the campaign over time, manually, through the API, or through RD Station Marketing. |
+
+[Campaigns introduction →](/campaigns/campaigns-introduction) · [Create a campaign →](/campaigns/create-campaign)
+
+## Hybrid service in practice
+
+1. The AI agent serves the contact, qualifies them, and transfers to your team.
+2. The team member takes over and uses a quick reply to introduce themselves and continue.
+3. If the contact goes silent for more than 24 hours on the WhatsApp Business API, the team member sends a template to resume.
+4. When the contact replies, the conversation continues with free-form messages and quick replies.
+
+[Hybrid service →](/ai-agents/hybrid-service) · [Transfer a conversation →](/conversations/transfer-attendance)
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="No templates available for this conversation appears">
+    There is no approved template for the conversation channel and no quick reply for your team. Ask an Administrator or Manager to create one.
+  </Accordion>
+
+  <Accordion title="The lightning button is disabled">
+    **Note** mode is on. Switch back to message mode.
+  </Accordion>
+
+  <Accordion title="Only templates appear in the list">
+    The conversation is outside the WhatsApp Business API 24-hour window. Send a template and wait for the contact to reply.
+  </Accordion>
+
+  <Accordion title="A quick reply does not appear">
+    It is not associated with the conversation's team. Ask for the team to be added in [Edit and delete](/templates/edit-delete).
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Send templates in a conversation" icon="file-text" href="/conversations/send-templates">
+    Details on sending templates on the WhatsApp Business API.
+  </Card>
+
+  <Card title="Use quick replies" icon="zap" href="/conversations/use-quick-messages">
+    Details on sending quick replies.
+  </Card>
+</CardGroup>

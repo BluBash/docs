@@ -1,0 +1,101 @@
+---
+title: "Add users to your workspace"
+sidebarTitle: "Add users"
+description: "Understand the full path for bringing your team into BluBash: teams, invitation, first access, and joining for people who already created an account."
+---
+
+This page shows the full process for bringing a person into the workspace, from the administrator's side and from the invited person's side. The step-by-step for the invitation form is in [Add a member →](/members/add-member).
+
+<Info>
+  In BluBash, everyone with access to the workspace is a **member**. "Adding users" and "adding members" are the same flow: an Administrator invites the person from the **Members** page.
+</Info>
+
+## Overview
+
+| Step | Who | Where |
+| --- | --- | --- |
+| 1. Create the teams | Administrator | **Teams** |
+| 2. Send the invitation with role and teams | Administrator | **Members** → **Add Member** |
+| 3. Accept the invitation and create a password | The invited person | Invitation email → **Setup Password** |
+| 4. Start handling conversations | The invited person | **Conversations**, with AI agent transfers to their teams |
+
+## Before inviting
+
+<Steps>
+  <Step title="Set up the teams">
+    The invitation requires at least one team. Create the teams and link each team's channels and Pipelines. See [Create and configure teams →](/account-settings/create-configure-teams).
+  </Step>
+  <Step title="Decide each person's role">
+    List who will be an **Administrator**, **Manager**, or **Member**. See [Roles and permissions →](/members/roles-permissions).
+  </Step>
+  <Step title="Check your plan">
+    The number of users depends on your plan. Check **Billing & Usage** before inviting your whole team.
+  </Step>
+</Steps>
+
+## Invite
+
+Follow [Add a member →](/members/add-member): enter the **Email**, the **Role**, and the teams, and click **Add Member**. The person appears in the list with **Invitation Sent**.
+
+## What the invited person sees
+
+<Tabs>
+  <Tab title="Received the invitation by email">
+    1. The person opens the BluBash invitation email.
+    2. On the **Setup Password** screen, they enter their **Name**, **New Password**, and **Confirm Password**.
+    3. The password must have at least 8 characters, including an uppercase letter, a lowercase letter, a number, and a special character.
+    4. When they finish, they enter the workspace with the role and teams set in the invitation.
+  </Tab>
+  <Tab title="Created an account before being invited">
+    1. On first login, BluBash asks how the person will use the platform. They choose **Join an existing workspace**.
+    2. The **Waiting for your administrator** screen shows the account email with a **Copy** button.
+    3. The person sends that email to the Administrator, who adds it in **Members** with **Add Member**.
+    4. The screen checks automatically every minute. To check right away, use **Check now**. When the invitation is registered, **You have been added to a workspace!** appears and the person enters.
+  </Tab>
+</Tabs>
+
+<Warning>
+  The Administrator must use exactly the same email as the person's account. A different email creates a separate invitation and the waiting screen does not grant access.
+</Warning>
+
+<Tip>
+  Someone who chose **Join an existing workspace** by mistake can go back and use **Create my own workspace**. To work with their team, however, the person must be added to the company's workspace.
+</Tip>
+
+## After the person joins
+
+| Check | How |
+| --- | --- |
+| The **Invitation Sent** status is gone | **Members** page |
+| The person sees the right conversations | They must be in the teams that handle the channels of those conversations |
+| The AI agent transfers to their team | Review the agent's **Transfer to Team** skill |
+| The person knows the basics | Share [Start a conversation →](/conversations/start-new-attendance) and [Transfer a conversation →](/conversations/transfer-attendance) |
+
+## Common issues
+
+| Situation | Likely cause | What to do |
+| --- | --- | --- |
+| The person did not receive the invitation | Wrong email or message in the spam folder | Check the email in the list and use **Resend invitation** |
+| The person stays on **Waiting for your administrator** | The invitation was sent to a different email | Remove the wrong invitation and invite the email shown on the waiting screen |
+| The person logs in and sees **No Team Access** | They are not in any team | Add the person to a team |
+| You cannot send an invitation | There are no teams yet | Create a team first |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Add a member" icon="user-plus" href="/members/add-member">
+    Step-by-step for the invitation form.
+  </Card>
+
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Prepare the teams before inviting.
+  </Card>
+
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    Choose the right role for each person.
+  </Card>
+
+  <Card title="Implementation guide" icon="rocket" href="/implementation-guide">
+    See the recommended order to get BluBash running.
+  </Card>
+</CardGroup>

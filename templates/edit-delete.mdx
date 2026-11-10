@@ -1,0 +1,98 @@
+---
+title: "Edit and delete templates and quick replies"
+sidebarTitle: "Edit and delete"
+description: "Find, edit, and delete templates and quick replies in BluBash, understand the required permissions, and why some templates cannot be edited."
+---
+
+The **Templates & Quick Replies** page lists everything you can see: templates from your channels and quick replies from your teams. There, you search, edit, and delete ready-made messages.
+
+## The list
+
+| Column | What it shows |
+| --- | --- |
+| **Name** | Name of the template or quick reply. |
+| **Type** | **Template** or **Quick Reply**. |
+| **Category** | Template category. |
+| **Status** | Templates: **Pending Approval**, **Approved**, **Rejected**, **Partial**, or **Inactive**. Quick replies: **Active** or **Inactive**. |
+| **Channels/Teams** | Template channels or quick reply teams. Hover to see the status on each channel. |
+| **Created at** | Creation date. |
+| **Actions** | Buttons to edit and delete. |
+
+Use **Search templates and quick replies...** to filter the list. Click **Refresh** to reload approval statuses.
+
+## Who can edit and delete
+
+| Role | Permission |
+| --- | --- |
+| **Administrator** | Edits and deletes any template or quick reply. |
+| **Manager** | Edits and deletes items from the channels and teams they can access. |
+| **Member** | Cannot edit or delete. Only uses them in conversations. |
+
+To edit or delete, you need access to all channels or teams associated with the item. Otherwise, the buttons are disabled with the message **You need to have access to all teams/channels of this template to manage it**.
+
+## Edit
+
+<Steps>
+  <Step title="Click the pencil icon">
+    In the **Actions** column, click **Edit** on the item row.
+  </Step>
+  <Step title="Adjust the content">
+    The wizard opens directly at the **Edit** step, with the current data. The type and category chosen at creation do not change. Change the text, media, buttons, or variables and click **Continue**.
+  </Step>
+  <Step title="Review the associations">
+    Add or remove channels (template) or teams (quick reply). Keep at least one selected.
+  </Step>
+  <Step title="Save">
+    In the **Review** step, click **Update Template**.
+  </Step>
+</Steps>
+
+### When a template cannot be edited
+
+The edit button is disabled with the message **Cannot edit this template** when the template is not yet synced with WhatsApp on every associated channel. In that case, wait for the sync or create a new template.
+
+<Note>
+  Template changes follow Meta's rules. After editing an approved template, track the **Status** in the list. If the change alters the purpose of the message, create a new template instead and keep the old one until the new one is approved.
+</Note>
+
+## Delete
+
+<Steps>
+  <Step title="Click the trash icon">
+    In the **Actions** column, click **Delete** on the item row.
+  </Step>
+  <Step title="Confirm">
+    The **Delete Template** window shows **Are you sure you want to delete this template? This action cannot be undone.** and **This template will be removed from all channels and teams where it is being used.** Click **Delete Template**.
+  </Step>
+</Steps>
+
+<Warning>
+  Deletion cannot be undone. Before deleting a template, make sure it is not in use in an active campaign, especially an **Ongoing Campaign**.
+</Warning>
+
+## Best practices
+
+- **Review the list regularly.** Delete quick replies nobody uses and rejected templates you will not fix.
+- **Standardize names.** Prefixes such as `sales_`, `support_`, and `billing_` make search easier.
+- **Update together with the AI agent.** If information changes, such as a price or business hours, update the quick reply and the AI agent training on the same day.
+- **Test after editing.** Send the message to an internal contact and check variables, media, and buttons.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create a template" icon="file-text" href="/templates/create-template">
+    Create a new template for approval.
+  </Card>
+
+  <Card title="Create a quick reply" icon="zap" href="/templates/create-quick-reply">
+    Save a new ready-made message.
+  </Card>
+
+  <Card title="Manage campaigns" icon="megaphone" href="/campaigns/manage-campaigns">
+    Check which campaigns use your templates.
+  </Card>
+
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    See what each role can do.
+  </Card>
+</CardGroup>

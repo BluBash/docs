@@ -1,0 +1,108 @@
+---
+title: "Campanhas de WhatsApp na BluBash"
+sidebarTitle: "Introdução às campanhas"
+description: "Entenda as campanhas da BluBash: envios em massa e contínuos pelo WhatsApp, regras da Meta para templates, opt-in, janela de 24 horas, limites e custos."
+---
+
+Campanhas enviam a mesma mensagem, personalizada com dados de cada contato, para muitos contatos de uma vez. Use para promoções, lançamentos, lembretes, reativação de base, pesquisas e mensagens automáticas de boas-vindas ou pós-venda.
+
+<Warning>
+  As campanhas da BluBash são enviadas **somente pelo WhatsApp**. Instagram e Webchat são canais apenas receptivos e não aparecem na seleção de canal da campanha.
+</Warning>
+
+## Tipos de campanha
+
+| Tipo | Como funciona | Quando usar |
+| --- | --- | --- |
+| **Campanha Única** (Em Lote) | Você define a audiência com filtros e envia agora ou agenda para uma data. | Promoção relâmpago ou sazonal, lançamento, reativação da base, pesquisa ou NPS. |
+| **Campanha Contínua** (Automação) | Não usa lista fixa. Os contatos entram na audiência aos poucos, manualmente, pela API ou pela integração com o RD Station Marketing, e recebem a mensagem quando entram. | Boas-vindas a novos cadastros, pós-compra, aniversário, nutrição de leads. |
+
+## Quem pode usar
+
+| Papel | Acesso a **Campanhas** |
+| --- | --- |
+| **Administrador** | Cria, edita, inicia, pausa e exclui campanhas. |
+| **Gerente** | Cria, edita, inicia, pausa e exclui campanhas das suas equipes. |
+| **Membro** | Sem acesso. O menu não aparece. |
+
+<Note>
+  O recurso **Campanhas** depende do seu plano. Na seleção de canal, aparecem apenas os canais de WhatsApp que você tem permissão para usar.
+</Note>
+
+## Qual conexão de WhatsApp usar
+
+|  | **WhatsApp Business API (oficial)** | **WhatsApp Lite** |
+| --- | --- | --- |
+| Indicado para campanhas | Sim. É o caminho recomendado. | Apenas envios pequenos e para contatos que já conversam com você. |
+| Tipo de mensagem | **Template** aprovado pela Meta. Texto livre e respostas rápidas só são entregues a quem interagiu nas últimas 24 horas. | **Texto** ou respostas rápidas. |
+| Risco ao número | Controlado pelas regras e limites da Meta. | Alto. Envios em volume podem levar à restrição ou ao banimento do número. |
+| Custo por mensagem | Cobrado pela Meta conforme a categoria do template. | Não há cobrança da Meta, mas o risco operacional é maior. |
+
+<Warning>
+  Não use o WhatsApp Lite para disparos em massa. O WhatsApp pode suspender ou banir o número de forma permanente, e você perde o canal de atendimento junto.
+</Warning>
+
+## Regras da Meta para a API oficial
+
+As regras abaixo são definidas pela Meta e valem para qualquer envio pela API oficial do WhatsApp. A BluBash não altera essas regras.
+
+### Opt-in
+
+Envie mensagens proativas apenas para contatos que autorizaram receber comunicações da sua empresa pelo WhatsApp. Guarde a origem dessa autorização, por exemplo em uma etiqueta ou campo adicional. Disparos sem opt-in aumentam bloqueios e denúncias, o que derruba a qualidade do número.
+
+### Janela de 24 horas
+
+- Depois da última mensagem do contato, você tem 24 horas para enviar mensagens livres.
+- Fora da janela, só é possível iniciar a conversa com um **template** aprovado.
+- Quando o contato responde, a janela é reaberta.
+
+Por isso, campanhas para a base em geral devem usar **Template**. Mensagens de **Texto** e respostas rápidas só chegam a quem interagiu nas últimas 24 horas.
+
+### Templates e categorias
+
+Templates passam por aprovação da Meta antes do uso. A categoria define a finalidade e influencia o custo:
+
+| Categoria | Uso |
+| --- | --- |
+| **Marketing** | Promoções, ofertas, newsletters e campanhas. |
+| **Utilitário** | Confirmações de pedido, status de entrega, lembretes e notificações. |
+| **Autenticação** | Códigos de verificação e confirmações de login. |
+
+Veja [O que são templates e respostas rápidas →](/pt-BR/templates/what-are-templates-quick-replies).
+
+### Custos
+
+A Meta cobra pelas mensagens de template enviadas pela API oficial. O valor depende da categoria do template e do país do destinatário, e é definido e atualizado pela Meta. A BluBash não define esses valores. Consulte as regras vigentes na [Central de Ajuda da Meta para empresas](https://www.facebook.com/business/help) antes de planejar grandes envios.
+
+### Limites de envio e qualidade
+
+A Meta limita quantos contatos diferentes cada número pode alcançar com mensagens iniciadas pela empresa em um período, e ajusta esse limite conforme a qualidade do número. Bloqueios e denúncias reduzem a qualidade e podem restringir o número. Acompanhe a qualidade e o limite do seu número no [Meta Business Manager](https://business.facebook.com).
+
+Na BluBash, você também controla a **Velocidade de envio** da campanha, de 1 a 300 mensagens por minuto.
+
+## O que acontece quando o contato responde
+
+Cada resposta a uma campanha chega como conversa no canal de WhatsApp usado no envio. A partir daí, vale o atendimento híbrido configurado para o canal: o agente de IA pode responder, qualificar e transferir para a equipe, e a equipe continua o atendimento e registra negócios nos Pipelines.
+
+<Tip>
+  Antes de uma campanha grande, revise o treinamento do agente de IA com as perguntas que a oferta deve gerar. Assim o agente responde com segurança ao pico de respostas e transfere só o que precisa da equipe.
+</Tip>
+
+Cada envio também fica registrado no **Histórico** do contato, como **Campanha enviada**, **Campanha entregue**, **Campanha lida** ou **Campanha falhou**.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar uma campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Siga o assistente passo a passo.
+  </Card>
+  <Card title="Gerenciar campanhas" icon="chart-bar" href="/pt-BR/campaigns/manage-campaigns">
+    Acompanhe métricas, pause, retome e cancele envios.
+  </Card>
+  <Card title="Criar template" icon="file-text" href="/pt-BR/templates/create-template">
+    Crie templates para enviar pela API oficial.
+  </Card>
+  <Card title="WhatsApp oficial" icon="message-circle" href="/pt-BR/channels/configure-whatsapp-official">
+    Conecte a API oficial do WhatsApp.
+  </Card>
+</CardGroup>

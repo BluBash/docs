@@ -1,0 +1,375 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "BluBash Docs",
+  "description": "Documentation for BluBash — the AI-powered WhatsApp customer communication platform.",
+  "colors": {
+    "primary": "#4247f3",
+    "light": "#4247f3",
+    "dark": "#4247f3"
+  },
+  "favicon": "https://blubash.io/lovable-uploads/2ea709f5-a765-4342-ae77-0a7872c8d61c.png",
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant"]
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Go to App",
+      "href": "https://app.blubash.io"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/blubash",
+      "instagram": "https://instagram.com/blubash.io"
+    }
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get Started",
+                "icon": "rocket",
+                "pages": [
+                  "introduction",
+                  "key-concepts",
+                  "implementation-guide",
+                  "faq"
+                ]
+              },
+              {
+                "group": "AI Agents",
+                "icon": "bot",
+                "pages": [
+                  "ai-agents/what-are-ai-agents",
+                  "ai-agents/hybrid-service",
+                  "ai-agents/create-ai-agent",
+                  "ai-agents/train-ai-agent",
+                  "ai-agents/configure-agent-settings",
+                  "ai-agents/configure-skills",
+                  "ai-agents/test-ai-agent",
+                  "ai-agents/handoff-to-ai",
+                  "ai-agents/activate-deactivate-agent"
+                ]
+              },
+              {
+                "group": "Conversations",
+                "icon": "message-circle",
+                "pages": [
+                  "conversations/start-new-attendance",
+                  "conversations/transfer-attendance",
+                  "conversations/close-attendance",
+                  "conversations/internal-notes",
+                  "conversations/send-templates",
+                  "conversations/use-quick-messages",
+                  "conversations/tags-purpose-usage"
+                ]
+              },
+              {
+                "group": "Pipelines",
+                "icon": "kanban",
+                "pages": [
+                  "pipelines/overview",
+                  "pipelines/create-pipeline",
+                  "pipelines/deals",
+                  "pipelines/won-lost-reasons",
+                  "pipelines/derive-deals"
+                ]
+              },
+              {
+                "group": "Tasks",
+                "icon": "list-checks",
+                "pages": [
+                  "tasks/overview"
+                ]
+              },
+              {
+                "group": "Contacts",
+                "icon": "users",
+                "pages": [
+                  "contacts/add-new-contact",
+                  "contacts/edit-contact",
+                  "contacts/delete-contact",
+                  "contacts/search-filter-contacts",
+                  "contacts/manage-contact-tags",
+                  "contacts/use-custom-fields",
+                  "contacts/view-activity-timeline",
+                  "contacts/start-conversation-from-contact"
+                ]
+              },
+              {
+                "group": "Reports & Insights",
+                "icon": "chart-column",
+                "pages": [
+                  "reports/overview",
+                  "reports/conversations-report",
+                  "reports/ai-audit",
+                  "reports/performance-quality"
+                ]
+              },
+              {
+                "group": "Campaigns",
+                "icon": "megaphone",
+                "pages": [
+                  "campaigns/campaigns-introduction",
+                  "campaigns/create-campaign",
+                  "campaigns/manage-campaigns"
+                ]
+              },
+              {
+                "group": "Channels",
+                "icon": "wifi",
+                "pages": [
+                  "channels/create-channel",
+                  "channels/single-or-multiple-numbers",
+                  "channels/configure-whatsapp-lite",
+                  "channels/configure-whatsapp-official",
+                  "channels/configure-instagram",
+                  "channels/configure-webchat",
+                  "channels/edit-channel",
+                  "channels/activate-deactivate-channel",
+                  "channels/delete-channel",
+                  "channels/search-filter-channels"
+                ]
+              },
+              {
+                "group": "Templates",
+                "icon": "file-text",
+                "pages": [
+                  "templates/what-are-templates-quick-replies",
+                  "templates/create-template",
+                  "templates/create-quick-reply",
+                  "templates/use-variables",
+                  "templates/send-templates-quick-replies",
+                  "templates/edit-delete"
+                ]
+              },
+              {
+                "group": "Team & Settings",
+                "icon": "settings",
+                "pages": [
+                  "members/members-introduction",
+                  "members/roles-permissions",
+                  "members/add-member",
+                  "members/edit-member-permissions",
+                  "members/remove-member",
+                  "members/search-filter-members",
+                  "account-settings/create-configure-teams",
+                  "account-settings/create-tags",
+                  "account-settings/add-users"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API Reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "icon": "book-open",
+                "pages": [
+                  "developers/introduction"
+                ]
+              },
+              {
+                "group": "Endpoints",
+                "icon": "code",
+                "pages": [
+                  "developers/api/channels",
+                  "developers/api/campaigns"
+                ]
+              }
+            ]
+          }
+        ],
+        "default": false
+      },
+      {
+        "language": "pt-BR",
+        "tabs": [
+          {
+            "tab": "Documentação",
+            "groups": [
+              {
+                "group": "Começar",
+                "icon": "rocket",
+                "pages": [
+                  "pt-BR/introduction",
+                  "pt-BR/key-concepts",
+                  "pt-BR/implementation-guide",
+                  "pt-BR/faq"
+                ]
+              },
+              {
+                "group": "Agentes de IA",
+                "icon": "bot",
+                "pages": [
+                  "pt-BR/ai-agents/what-are-ai-agents",
+                  "pt-BR/ai-agents/hybrid-service",
+                  "pt-BR/ai-agents/create-ai-agent",
+                  "pt-BR/ai-agents/train-ai-agent",
+                  "pt-BR/ai-agents/configure-agent-settings",
+                  "pt-BR/ai-agents/configure-skills",
+                  "pt-BR/ai-agents/test-ai-agent",
+                  "pt-BR/ai-agents/handoff-to-ai",
+                  "pt-BR/ai-agents/activate-deactivate-agent"
+                ]
+              },
+              {
+                "group": "Conversas",
+                "icon": "message-circle",
+                "pages": [
+                  "pt-BR/conversations/start-new-attendance",
+                  "pt-BR/conversations/transfer-attendance",
+                  "pt-BR/conversations/close-attendance",
+                  "pt-BR/conversations/internal-notes",
+                  "pt-BR/conversations/send-templates",
+                  "pt-BR/conversations/use-quick-messages",
+                  "pt-BR/conversations/tags-purpose-usage"
+                ]
+              },
+              {
+                "group": "Pipelines",
+                "icon": "kanban",
+                "pages": [
+                  "pt-BR/pipelines/overview",
+                  "pt-BR/pipelines/create-pipeline",
+                  "pt-BR/pipelines/deals",
+                  "pt-BR/pipelines/won-lost-reasons",
+                  "pt-BR/pipelines/derive-deals"
+                ]
+              },
+              {
+                "group": "Tarefas",
+                "icon": "list-checks",
+                "pages": [
+                  "pt-BR/tasks/overview"
+                ]
+              },
+              {
+                "group": "Contatos",
+                "icon": "users",
+                "pages": [
+                  "pt-BR/contacts/add-new-contact",
+                  "pt-BR/contacts/edit-contact",
+                  "pt-BR/contacts/delete-contact",
+                  "pt-BR/contacts/search-filter-contacts",
+                  "pt-BR/contacts/manage-contact-tags",
+                  "pt-BR/contacts/use-custom-fields",
+                  "pt-BR/contacts/view-activity-timeline",
+                  "pt-BR/contacts/start-conversation-from-contact"
+                ]
+              },
+              {
+                "group": "Relatórios e Insights",
+                "icon": "chart-column",
+                "pages": [
+                  "pt-BR/reports/overview",
+                  "pt-BR/reports/conversations-report",
+                  "pt-BR/reports/ai-audit",
+                  "pt-BR/reports/performance-quality"
+                ]
+              },
+              {
+                "group": "Campanhas",
+                "icon": "megaphone",
+                "pages": [
+                  "pt-BR/campaigns/campaigns-introduction",
+                  "pt-BR/campaigns/create-campaign",
+                  "pt-BR/campaigns/manage-campaigns"
+                ]
+              },
+              {
+                "group": "Canais",
+                "icon": "wifi",
+                "pages": [
+                  "pt-BR/channels/create-channel",
+                  "pt-BR/channels/single-or-multiple-numbers",
+                  "pt-BR/channels/configure-whatsapp-lite",
+                  "pt-BR/channels/configure-whatsapp-official",
+                  "pt-BR/channels/configure-instagram",
+                  "pt-BR/channels/configure-webchat",
+                  "pt-BR/channels/edit-channel",
+                  "pt-BR/channels/activate-deactivate-channel",
+                  "pt-BR/channels/delete-channel",
+                  "pt-BR/channels/search-filter-channels"
+                ]
+              },
+              {
+                "group": "Templates",
+                "icon": "file-text",
+                "pages": [
+                  "pt-BR/templates/what-are-templates-quick-replies",
+                  "pt-BR/templates/create-template",
+                  "pt-BR/templates/create-quick-reply",
+                  "pt-BR/templates/use-variables",
+                  "pt-BR/templates/send-templates-quick-replies",
+                  "pt-BR/templates/edit-delete"
+                ]
+              },
+              {
+                "group": "Equipe e Configurações",
+                "icon": "settings",
+                "pages": [
+                  "pt-BR/members/members-introduction",
+                  "pt-BR/members/roles-permissions",
+                  "pt-BR/members/add-member",
+                  "pt-BR/members/edit-member-permissions",
+                  "pt-BR/members/remove-member",
+                  "pt-BR/members/search-filter-members",
+                  "pt-BR/account-settings/create-configure-teams",
+                  "pt-BR/account-settings/create-tags",
+                  "pt-BR/account-settings/add-users"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Referência da API",
+            "groups": [
+              {
+                "group": "Visão geral",
+                "icon": "book-open",
+                "pages": [
+                  "pt-BR/developers/introduction"
+                ]
+              },
+              {
+                "group": "Endpoints",
+                "icon": "code",
+                "pages": [
+                  "pt-BR/developers/api/channels",
+                  "pt-BR/developers/api/campaigns"
+                ]
+              }
+            ]
+          }
+        ],
+        "default": true
+      }
+    ]
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/pt-BR/introduction",
+      "permanent": false
+    }
+  ]
+}

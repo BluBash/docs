@@ -1,0 +1,97 @@
+---
+title: "Ver o histórico do contato"
+sidebarTitle: "Histórico do contato"
+description: "Acompanhe no Histórico do contato tudo o que aconteceu com ele na BluBash: alterações, etiquetas, negócios, tarefas, campanhas e ações do agente de IA."
+---
+
+O **Histórico** é a linha do tempo do contato. Ele mostra, em ordem cronológica, cada evento registrado: quem alterou o cadastro, quais etiquetas entraram ou saíram, como os negócios andaram nos Pipelines, quais tarefas foram criadas e quais campanhas o contato recebeu.
+
+Use o histórico para entender o contexto antes de responder, auditar alterações e ver o que o agente de IA fez durante o atendimento.
+
+## Abrir o histórico
+
+<Steps>
+  <Step title="Abra o contato">
+    Na barra lateral, clique em **Contatos** e depois no contato.
+  </Step>
+  <Step title="Veja a aba Histórico">
+    A aba **Histórico** abre por padrão no centro da página. Os eventos mais recentes aparecem primeiro.
+  </Step>
+  <Step title="Role para ver eventos antigos">
+    Ao rolar até o fim, a BluBash carrega os eventos anteriores automaticamente.
+  </Step>
+</Steps>
+
+Se o contato ainda não tem eventos, aparece **Nenhum histórico registrado ainda**.
+
+## O que cada evento mostra
+
+| Informação | Descrição |
+| --- | --- |
+| **Ícone e cor** | Identificam o tipo de evento, como etiqueta, negócio, tarefa ou campanha. |
+| **Descrição** | O que aconteceu, por exemplo **Etiqueta "vip" adicionada** ou **Negócio "Plano anual" movido de Proposta para Negociação**. |
+| **Autor** | Quem fez a ação: um usuário, um agente de IA, a API, uma integração, uma automação ou o sistema. |
+| **Data e hora** | Momento do evento, no seu fuso horário. |
+| **Detalhes** | Campos alterados, etapas de origem e destino ou status de entrega, quando houver. |
+
+## Tipos de evento
+
+| Categoria | Eventos |
+| --- | --- |
+| **Cadastro** | **Contato criado**, **Contato atualizado**, **Contato adicionado via importação**, **Contato atualizado via importação**, **Contato mesclado** |
+| **Responsáveis** | **Alteração de responsável**, com o responsável global ou da equipe antes e depois |
+| **Etiquetas** | **Etiqueta adicionada**, **Etiqueta removida** |
+| **Negócios** | **Negócio criado**, **Negócio movido**, **Negócio ganho**, **Negócio perdido**, **Negócio atualizado** |
+| **Tarefas** | **Tarefa criada**, **Tarefa concluída**, **Tarefa reaberta**, **Tarefa atualizada**, **Tarefa removida** |
+| **Campanhas** | **Campanha enviada**, **Campanha entregue**, **Campanha lida**, **Campanha falhou** |
+| **Mensagens e notas** | Mensagens recebidas e enviadas por canal, **Nota adicionada** |
+| **Automações e integrações** | **Automação disparada**, **Automação concluída**, **Automação falhou**, **Sincronização**, **Erro de integração** |
+
+## Ações do agente de IA no histórico
+
+No atendimento híbrido, o histórico mostra o trabalho do agente de IA lado a lado com o da equipe. Quando o agente atualiza dados do contato ou aplica uma etiqueta, o evento aparece com o nome do agente como autor.
+
+Isso permite:
+
+- Conferir se o agente coletou os dados certos antes da transferência.
+- Auditar etiquetas aplicadas automaticamente.
+- Ajustar o treinamento quando o agente gravar uma informação no campo errado.
+
+Veja [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service).
+
+## As outras abas do contato
+
+| Aba | O que mostra | Ação disponível |
+| --- | --- | --- |
+| **Conversas** | Conversas do contato, com status e prévia da última mensagem. O número entre parênteses indica conversas abertas. | **Crie uma conversa** |
+| **Negócios** | Pipelines e etapas deste contato, com valor e status (Aberto, Ganho, Perdido ou Arquivado). | **Crie um negócio** |
+| **Tarefas** | Tarefas do contato, com tipo (Lembrete, Ligação ou Reunião), prazo e vínculo opcional com um negócio. | **Crie uma tarefa** |
+
+<Tip>
+  Antes de assumir uma conversa transferida pelo agente de IA, abra o **Histórico** do contato. Em poucos segundos você vê os negócios em andamento, as últimas etiquetas e o que já foi combinado.
+</Tip>
+
+## Limitações
+
+- O histórico registra eventos a partir do momento em que o recurso correspondente passou a ser usado. Ações feitas fora da BluBash só aparecem se chegarem por integração ou API.
+- Ao excluir o contato, o histórico é excluído junto e não pode ser recuperado.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Editar contato" icon="pencil" href="/pt-BR/contacts/edit-contact">
+    Entenda os campos e quem pode alterá-los.
+  </Card>
+
+  <Card title="Negócios" icon="kanban" href="/pt-BR/pipelines/deals">
+    Trabalhe os negócios do contato nos Pipelines.
+  </Card>
+
+  <Card title="Tarefas" icon="list-checks" href="/pt-BR/tasks/overview">
+    Organize retornos, ligações e reuniões.
+  </Card>
+
+  <Card title="Iniciar conversa" icon="message-circle" href="/pt-BR/contacts/start-conversation-from-contact">
+    Fale com o contato a partir da página dele.
+  </Card>
+</CardGroup>

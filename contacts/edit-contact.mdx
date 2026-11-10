@@ -1,0 +1,151 @@
+---
+title: "Edit a contact and set owners"
+sidebarTitle: "Edit contact"
+description: "Edit contact data directly on the contact page, set owners by team (contact portfolio), and see what the AI agent updates on its own."
+---
+
+The contact page brings together everything BluBash knows about a person. You edit data directly in the fields, without opening forms, and every change is recorded in the **History**.
+
+## How the contact page is organized
+
+| Area | What it shows |
+| --- | --- |
+| **Header** | Name, email, and the quick actions **Conversation**, **Deal**, and **Task**. The **More options** menu (three dots) contains **Delete Contact**. |
+| **About this contact** | Phone, WhatsApp, Instagram, Organization, Source, UTM campaign, Global owner, additional fields, and Tags. |
+| **Center tabs** | The contact's **History**, **Conversations**, **Deals**, and **Tasks**. |
+
+To open the page, click **Contacts** in the sidebar and then click the contact.
+
+## Edit the data
+
+<Steps>
+  <Step title="Click the value you want to change">
+    Hover over an editable field. It is highlighted. Click the value to start editing. For name and email, click directly in the header. If the email is empty, click **Add email**.
+  </Step>
+  <Step title="Type the new value">
+    Text fields turn into an edit box in place. For **Phone** and **WhatsApp**, the **Edit phone number** or **Edit WhatsApp** window opens: select the country code and enter the number.
+  </Step>
+  <Step title="Save or cancel">
+    Press **Enter** or click outside the field to save. Press **Esc** to cancel. In the phone windows, use **Save** or **Cancel**.
+  </Step>
+</Steps>
+
+### Available fields
+
+| Field | Editable | Notes |
+| --- | --- | --- |
+| **Name** | Yes | Shown in the list, in conversations, and in deals. |
+| **Email** | Yes | Must have a valid format. |
+| **Phone** | Yes | Use the correct country code. |
+| **WhatsApp** | Yes | Identifies the contact in WhatsApp conversations. See the warning below. |
+| **WhatsApp username** or **WhatsApp ID** | No | Shown when WhatsApp identifies the contact by username or ID, without a number. |
+| **Instagram** | No | Shown for contacts who came through Instagram, with a link to the profile. |
+| **Organization** | Yes | Links the contact to an organization registered in **Contacts** > **Organizations**. |
+| **Source** | Yes | Ad, Organic, Referral, WhatsApp, Instagram, Import, Manual, or Other. |
+| **UTM campaign** | Yes | Name of the ad or UTM campaign that brought the contact. |
+| **Additional fields** | Yes | Fields created by the Administrator. Fields marked with `*` are required. Click **Show N empty fields** to see the ones without a value. |
+
+<Warning>
+  When you change a WhatsApp number that is already filled in, BluBash opens the **Update WhatsApp Number** window and lists the consequences: messages from the old number will create a new contact, conversation history may be lost, and duplicated data may appear. Confirm with **Update WhatsApp** only if you are certain.
+</Warning>
+
+If the new number already belongs to another contact, the **WhatsApp number already in use** window appears. Each WhatsApp number can be linked to only one contact. Click **View existing contact** to review the right record instead of creating a duplicate.
+
+## Set owners (contact portfolio)
+
+The contact portfolio defines who takes care of each contact. It prevents the same customer from being handled by different people in every conversation.
+
+| Type | How it works |
+| --- | --- |
+| **Global owner** | Default owner for the contact across the workspace. |
+| **Owners by team** | Overrides the global owner inside a specific team. Use it when, for example, Sales and Support have different owners for the same customer. |
+
+<Steps>
+  <Step title="Open owner management">
+    In **About this contact**, click **Global owner**. The **Manage owners** panel opens.
+  </Step>
+  <Step title="Choose the global owner">
+    Select a user or **Unassigned**.
+  </Step>
+  <Step title="Add team rules (optional)">
+    Click **Add team rule** and choose the team and the owner. Each team can appear only once. When you remove a rule, the team goes back to the global owner.
+  </Step>
+  <Step title="Review and save">
+    Click **Change owners**. Check the **Change summary** and click **Save**. The change appears in the **History** as **Owner change**.
+  </Step>
+</Steps>
+
+### Who can change owners
+
+| Role | Permission |
+| --- | --- |
+| **Administrator** | Changes the global owner and the rules of any team. |
+| **Manager** | Changes rules for the teams they manage. The global owner can be changed only when no owner is defined or when the current owner belongs to a team under their management. |
+| **Member** | Can assign themselves as owner when allowed. Cannot assign other people. |
+
+<Tip>
+  To assign owners automatically, turn on **Assign contact owner when taking a conversation** in the team settings. When a team member takes a conversation from a contact with no owner in that team, they become the owner. See [Create and configure teams →](/account-settings/create-configure-teams).
+</Tip>
+
+<Note>
+  The contact portfolio depends on your plan. If the feature is not included, BluBash shows the upgrade option.
+</Note>
+
+## What the AI agent updates on its own
+
+In hybrid service, the AI agent collects information during the conversation and keeps the profile up to date, with no manual work from your team.
+
+<Frame>
+  <img
+    src="/images/ai-agents/habilidades-lista.png"
+    alt="AI agent Skills tab with the native Update contact skill turned on"
+  />
+</Frame>
+
+- With the native **Update contact** skill turned on in the agent's **Skills** tab, it can update name, email, phone, and additional fields.
+- With the **Add tag** and **Remove tag** skills, it classifies the contact with tags.
+- With the **Manage deals** skill, it opens and moves the contact's deals in the pipeline.
+- Every change made by the agent appears in the contact's **History**, identified with the AI agent's name.
+
+<Info>
+  Describe in the agent's training which data it should ask for and which additional fields it should save to. This way your team receives the transferred conversation with the profile already complete. See [Configure skills and apps →](/ai-agents/configure-skills#native-skills).
+</Info>
+
+## Permissions
+
+| Role | Edit data | Delete contact |
+| --- | --- | --- |
+| **Administrator** | Yes, on all contacts | Yes |
+| **Manager** | Yes, on contacts of their teams | Yes |
+| **Member** | Yes, on contacts of their teams | No |
+
+Users without edit permission see the fields without the edit highlight.
+
+## Common errors
+
+| Situation | How to fix |
+| --- | --- |
+| **Please enter a valid email** | Fix the email format. |
+| **This WhatsApp number is already associated with another contact** | Open the existing contact with **View existing contact** and update that record. |
+| The field does not enter edit mode | You do not have edit permission or another field is being saved. Wait and try again. |
+| I cannot change the global owner | Your role does not allow it. See the permissions table above. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Additional fields" icon="list-plus" href="/contacts/use-custom-fields">
+    Learn the field types and how to fill them in.
+  </Card>
+
+  <Card title="Contact history" icon="history" href="/contacts/view-activity-timeline">
+    See who changed what and when.
+  </Card>
+
+  <Card title="Contact tags" icon="tag" href="/contacts/manage-contact-tags">
+    Classify contacts manually or with the AI agent.
+  </Card>
+
+  <Card title="Delete a contact" icon="trash-2" href="/contacts/delete-contact">
+    Remove contacts that should no longer exist in your base.
+  </Card>
+</CardGroup>

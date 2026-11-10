@@ -1,0 +1,151 @@
+---
+title: "Editar um contato e definir responsáveis"
+sidebarTitle: "Editar contato"
+description: "Edite dados do contato direto na página dele, defina responsáveis por equipe (carteirização) e entenda o que o agente de IA atualiza sozinho."
+---
+
+A página do contato concentra tudo o que a BluBash sabe sobre uma pessoa. Você edita os dados diretamente nos campos, sem abrir formulários, e cada alteração fica registrada no **Histórico**.
+
+## Como a página do contato é organizada
+
+| Área | O que mostra |
+| --- | --- |
+| **Cabeçalho** | Nome, e-mail e ações rápidas **Conversa**, **Negócio** e **Tarefa**. O menu **Mais opções** (três pontos) traz a ação **Excluir Contato**. |
+| **Informações importantes** | Telefone, WhatsApp, Instagram, Empresa, Origem, Campanha UTM, Responsável global, campos adicionais e Etiquetas. |
+| **Abas centrais** | **Histórico**, **Conversas**, **Negócios** e **Tarefas** do contato. |
+
+Para abrir a página, clique em **Contatos** na barra lateral e depois no contato desejado.
+
+## Editar os dados
+
+<Steps>
+  <Step title="Clique no valor que quer alterar">
+    Passe o cursor sobre um campo editável. Ele fica destacado. Clique no valor para entrar em edição. Para o nome e o e-mail, clique diretamente no cabeçalho. Se o e-mail estiver vazio, clique em **Adicionar e-mail**.
+  </Step>
+  <Step title="Digite o novo valor">
+    Campos de texto viram uma caixa de edição no próprio lugar. Para **Telefone** e **WhatsApp**, abre a janela **Editar número de telefone** ou **Editar WhatsApp**: selecione o código do país e insira o número.
+  </Step>
+  <Step title="Salve ou cancele">
+    Pressione **Enter** ou clique fora do campo para salvar. Pressione **Esc** para cancelar. Nas janelas de telefone, use **Salvar** ou **Cancelar**.
+  </Step>
+</Steps>
+
+### Campos disponíveis
+
+| Campo | Editável | Observação |
+| --- | --- | --- |
+| **Nome** | Sim | Exibido na lista, nas conversas e nos negócios. |
+| **Email** | Sim | Precisa ter formato válido. |
+| **Telefone** | Sim | Use o código do país correto. |
+| **WhatsApp** | Sim | Identifica o contato nas conversas de WhatsApp. Veja o aviso abaixo. |
+| **Usuário do WhatsApp** ou **ID WhatsApp** | Não | Aparece quando o WhatsApp identifica o contato por nome de usuário ou ID, sem número. |
+| **Instagram** | Não | Aparece para contatos que chegaram pelo Instagram, com link para o perfil. |
+| **Empresa** | Sim | Vincula o contato a uma empresa cadastrada em **Contatos** > **Empresas**. |
+| **Origem** | Sim | Anúncio, Orgânico, Indicação, WhatsApp, Instagram, Importação, Manual ou Outros. |
+| **Campanha UTM** | Sim | Nome do anúncio ou campanha UTM que trouxe o contato. |
+| **Campos adicionais** | Sim | Campos criados pelo Administrador. Os marcados com `*` são obrigatórios. Clique em **Mostrar N campos vazios** para ver os que ainda não têm valor. |
+
+<Warning>
+  Ao trocar um número de WhatsApp já preenchido, a BluBash abre a janela **Atualizar Número do WhatsApp** e mostra as consequências: mensagens do número antigo criarão um novo contato, o histórico de conversas pode ser perdido e podem surgir dados duplicados. Confirme com **Atualizar WhatsApp** apenas se tiver certeza.
+</Warning>
+
+Se o novo número já pertencer a outro contato, aparece a janela **Número WhatsApp já está em uso**. Cada número de WhatsApp só pode estar vinculado a um contato. Clique em **Ver Contato Existente** para revisar o cadastro correto em vez de duplicar.
+
+## Definir responsáveis (carteirização)
+
+A carteirização define quem cuida de cada contato. Ela evita que o mesmo cliente seja atendido por pessoas diferentes a cada conversa.
+
+| Tipo | Como funciona |
+| --- | --- |
+| **Responsável global** | Padrão do contato em todo o workspace. |
+| **Responsáveis por equipe** | Substitui o responsável global dentro de uma equipe específica. Use quando, por exemplo, Vendas e Suporte têm donos diferentes para o mesmo cliente. |
+
+<Steps>
+  <Step title="Abra o gerenciamento">
+    Em **Informações importantes**, clique em **Responsável global**. O painel **Gerenciar responsáveis** é aberto.
+  </Step>
+  <Step title="Escolha o responsável global">
+    Selecione um usuário ou **Sem responsável**.
+  </Step>
+  <Step title="Adicione regras por equipe (opcional)">
+    Clique em **Adicionar regra por equipe**, escolha a equipe e o responsável. Cada equipe pode aparecer apenas uma vez. Ao remover uma regra, a equipe volta a usar o responsável global.
+  </Step>
+  <Step title="Revise e salve">
+    Clique em **Alterar responsáveis**. Confira o **Resumo das alterações** e clique em **Salvar**. A alteração aparece no **Histórico** como **Alteração de responsável**.
+  </Step>
+</Steps>
+
+### Quem pode alterar responsáveis
+
+| Papel | Permissão |
+| --- | --- |
+| **Administrador** | Altera o responsável global e as regras de qualquer equipe. |
+| **Gerente** | Altera regras das equipes que gerencia. O responsável global só pode ser alterado quando não há responsável definido ou quando o atual está em uma equipe sob sua gestão. |
+| **Membro** | Pode se atribuir como responsável quando permitido. Não atribui outras pessoas. |
+
+<Tip>
+  Para carteirizar de forma automática, ative **Carteirizar contato ao assumir a conversa** nas configurações da equipe. Quando um atendente assume uma conversa de um contato sem responsável naquela equipe, ele passa a ser o responsável. Veja [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams).
+</Tip>
+
+<Note>
+  A carteirização de contatos depende do seu plano. Se o recurso não estiver incluído, a BluBash mostra a opção de upgrade.
+</Note>
+
+## O que o agente de IA atualiza sozinho
+
+No atendimento híbrido, o agente de IA coleta informações durante a conversa e mantém o cadastro em dia, sem trabalho manual da equipe.
+
+<Frame>
+  <img
+    src="/images/ai-agents/habilidades-lista.png"
+    alt="Aba Habilidades do agente de IA com a habilidade nativa Atualizar contato ativada"
+  />
+</Frame>
+
+- Com a habilidade nativa **Atualizar contato** ativada na aba **Habilidades** do agente, ele pode atualizar nome, e-mail, telefone e campos adicionais.
+- Com as habilidades **Adicionar etiqueta** e **Remover etiqueta**, ele classifica o contato com etiquetas.
+- Com a habilidade **Gerenciar negócios**, ele abre e movimenta os negócios do contato no pipeline.
+- Cada alteração feita pelo agente aparece no **Histórico** do contato, identificada com o nome do agente de IA.
+
+<Info>
+  Descreva no treinamento do agente quais dados ele deve pedir e em quais campos adicionais deve gravar. Assim a equipe recebe a conversa transferida com o cadastro já completo. Veja [Configurar habilidades e apps →](/pt-BR/ai-agents/configure-skills#habilidades-nativas).
+</Info>
+
+## Permissões
+
+| Papel | Editar dados | Excluir contato |
+| --- | --- | --- |
+| **Administrador** | Sim, em todos os contatos | Sim |
+| **Gerente** | Sim, nos contatos das suas equipes | Sim |
+| **Membro** | Sim, nos contatos das suas equipes | Não |
+
+Quem não tem permissão de edição vê os campos sem o destaque de edição.
+
+## Erros comuns
+
+| Situação | Como resolver |
+| --- | --- |
+| **Digite um e-mail válido** | Corrija o formato do e-mail. |
+| **Este número de WhatsApp já está associado a outro contato** | Abra o contato existente com **Ver Contato Existente** e atualize esse cadastro. |
+| O campo não entra em edição | Você não tem permissão de edição ou outro campo está sendo salvo. Aguarde e tente de novo. |
+| Não consigo alterar o responsável global | Seu papel não permite. Veja a tabela de permissões acima. |
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Campos adicionais" icon="list-plus" href="/pt-BR/contacts/use-custom-fields">
+    Entenda os tipos de campo e como preencher.
+  </Card>
+
+  <Card title="Histórico do contato" icon="history" href="/pt-BR/contacts/view-activity-timeline">
+    Veja quem alterou o quê e quando.
+  </Card>
+
+  <Card title="Etiquetas do contato" icon="tag" href="/pt-BR/contacts/manage-contact-tags">
+    Classifique contatos manualmente ou com o agente de IA.
+  </Card>
+
+  <Card title="Excluir contato" icon="trash-2" href="/pt-BR/contacts/delete-contact">
+    Remova contatos que não devem mais existir na base.
+  </Card>
+</CardGroup>

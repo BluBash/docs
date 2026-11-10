@@ -1,0 +1,79 @@
+---
+title: "Remove a member"
+description: "Revoke a person's access to your BluBash workspace. Only Administrators can remove members, and safety rules prevent accidental lockouts."
+---
+
+When someone leaves the company or no longer needs BluBash, remove them from the workspace. They lose access as soon as you confirm. You can also remove people whose invitation is still pending, to cancel access before their first login.
+
+<Note>
+  Only **Administrators** can remove members.
+</Note>
+
+## Before you remove someone
+
+Removal cannot be undone. Do a quick review first:
+
+| Check | Why | Where |
+| --- | --- | --- |
+| Open conversations assigned to the person | So customers are not left without an answer | **Conversations**: transfer to another person, to the team, or to the AI agent |
+| Deals and tasks they own | So follow-ups are not lost | **Pipelines** and **Tasks** |
+| Contacts assigned to them as owner | So each customer keeps an owner | Contact record |
+| Whether they are a team's only Manager | So the team stays coordinated | **Teams** → **Members** tab |
+
+<Tip>
+  If the person only moved to another area, do not remove them: adjust their teams instead. See [Edit a member's role →](/members/edit-member-permissions).
+</Tip>
+
+## Remove
+
+<Steps>
+  <Step title="Find the member">
+    In the side menu, click **Members** and find the person with **Search members...**.
+  </Step>
+  <Step title="Click the trash icon">
+    Click the trash icon (**Remove member**) on the person's row.
+  </Step>
+  <Step title="Confirm">
+    The **Remove Member** window asks **Are you sure you want to remove this member from the workspace?** and warns that **This action cannot be undone.** Click **Remove Member** to confirm or **Cancel** to go back.
+  </Step>
+</Steps>
+
+BluBash confirms with **Member removed successfully** and the person leaves the list.
+
+## Safety rules
+
+The remove icon is disabled in these cases:
+
+| Situation | Reason |
+| --- | --- |
+| Your own row | You cannot remove yourself from the workspace |
+| The workspace **Owner** | The owner cannot be removed |
+| The last member of the workspace | You cannot remove the last member from the workspace |
+
+The workspace must also keep at least one Administrator.
+
+## After removal
+
+- The person loses access to the workspace immediately.
+- If they still had the **Invitation Sent** status, the invitation no longer grants access.
+- To bring the person back, send a new invitation with **Add Member**.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Transfer a conversation" icon="arrow-right-left" href="/conversations/transfer-attendance">
+    Redistribute conversations before removing someone.
+  </Card>
+
+  <Card title="Add a member" icon="user-plus" href="/members/add-member">
+    Invite the person who will take over.
+  </Card>
+
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Review your team composition.
+  </Card>
+
+  <Card title="Members overview" icon="users" href="/members/members-introduction">
+    Go back to the members overview.
+  </Card>
+</CardGroup>

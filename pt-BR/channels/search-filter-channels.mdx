@@ -1,0 +1,70 @@
+---
+title: "Pesquisar e filtrar canais"
+description: "Encontre qualquer canal da BluBash (WhatsApp, Instagram ou Webchat) pelo nome, tipo, status ou número, e leia os indicadores da lista de canais."
+---
+
+A página **Canais** reúne todos os canais do workspace em cartões. Com poucos canais, você encontra tudo de relance. Quando o workspace cresce, com vários números de WhatsApp, contas do Instagram e Webchats, a busca filtra a lista enquanto você digita.
+
+## Pesquisar um canal
+
+<Steps>
+  <Step title="Abrir Canais">
+    No menu lateral, clique em **Canais**.
+  </Step>
+  <Step title="Digitar na busca">
+    No topo da página, digite no campo **Buscar canais...**. A lista é filtrada a cada letra, sem precisar apertar Enter. Termos parciais funcionam e a busca não diferencia maiúsculas de minúsculas.
+  </Step>
+  <Step title="Limpar a busca">
+    Apague o texto do campo para voltar a ver todos os canais. Se nada corresponder, a página mostra **Nenhum canal encontrado**.
+  </Step>
+</Steps>
+
+## O que a busca encontra
+
+| Você digita | Encontra | Exemplo |
+| --- | --- | --- |
+| Parte do nome do canal | Canais com esse trecho no nome | `comercial` |
+| O tipo do canal | Todos os canais do tipo | `whatsapp`, `instagram`, `webchat`, `api` |
+| O status interno, em inglês | Canais nesse status | `inactive`, `setup` |
+| Número ou nome verificado | Canais do WhatsApp Business API com esse número ou nome de exibição | `5517`, `Minha Empresa` |
+
+<Note>
+  Ao buscar por status, use os termos em inglês. Como "inactive" contém "active", buscar `active` traz canais ativos e inativos. Para ver só os inativos, digite `inactive`.
+</Note>
+
+<Tip>
+  Inclua a área ou a marca no nome dos canais, como "WhatsApp Comercial" e "Instagram Loja Centro". Fica mais fácil pesquisar e reconhecer cada canal na caixa de entrada.
+</Tip>
+
+## Atualizar a lista
+
+Clique no botão **Atualizar**, ao lado da busca, para recarregar a lista com os dados mais recentes. É útil depois de concluir uma conexão em outra aba ou quando outra pessoa alterou os canais.
+
+## Ler os cartões de canal
+
+| Elemento | O que mostra |
+| --- | --- |
+| Ícone | O tipo do canal: WhatsApp, Instagram, Webchat ou API. |
+| Indicador no ícone | Ponto verde para canal **Ativo**. Ponto laranja para canal aguardando conexão ou WhatsApp Lite desconectado. |
+| Nome | O **Nome do Canal** definido por você. |
+| Detalhes | Em canais de WhatsApp ativos: nome de exibição e número conectados. Nos demais: o tipo do canal e a data de criação. |
+| Lixeira | Aparece ao passar o mouse e abre a exclusão do canal. Veja [Excluir um canal →](/pt-BR/channels/delete-channel). |
+
+## O que acontece ao clicar em um canal
+
+| Situação do canal | O que abre |
+| --- | --- |
+| Conectado | A página do canal, com **Configurações do Canal**, dados da conexão e **Zona de Perigo**. |
+| WhatsApp ou Instagram aguardando conexão | A janela **Configurar Canal** para concluir a conexão. |
+| WhatsApp Lite | A BluBash mostra **Verificando status...**. Se a sessão caiu, abre **Configurar Canal** para reconectar. |
+
+## Limitações
+
+- Não há filtros separados por tipo ou status. A busca faz esse papel.
+- A busca por número e nome de exibição vale para canais do WhatsApp Business API.
+
+## Próximos passos
+
+- [Canais da BluBash: tipos e como criar →](/pt-BR/channels/create-channel)
+- [Editar um canal →](/pt-BR/channels/edit-channel)
+- [Ativar ou desativar um canal →](/pt-BR/channels/activate-deactivate-channel)

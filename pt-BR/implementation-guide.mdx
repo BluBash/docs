@@ -1,0 +1,121 @@
+---
+title: "Guia de implementação: configure a BluBash passo a passo"
+sidebarTitle: "Guia de implementação"
+description: "A ordem recomendada para configurar a BluBash: equipes, membros, etiquetas, Pipelines, canais, agente de IA e templates, até o primeiro atendimento híbrido."
+---
+
+Configure a BluBash nesta ordem. Cada etapa depende da anterior: membros precisam de equipes, canais precisam de uma equipe padrão, e o agente de IA precisa de equipes e etiquetas para transferir e classificar as conversas.
+
+<Info>
+  A maior parte desta configuração é feita por um **Administrador**. Só o Administrador cria e configura agentes de IA e gerencia membros. O **Gerente** pode montar Pipelines e acompanhar relatórios.
+</Info>
+
+## Visão geral
+
+| Etapa | O que você define | Quem faz |
+| --- | --- | --- |
+| 1. Equipes | Áreas de atendimento e distribuição das conversas | Administrador |
+| 2. Membros | Quem acessa a conta, com qual papel e em quais equipes | Administrador |
+| 3. Regras da equipe | SLA, calendário, encerramento e satisfação | Administrador |
+| 4. Etiquetas | Classificação de contatos e conversas | Administrador ou Gerente |
+| 5. Pipelines | Processos em etapas, motivos e derivação | Administrador ou Gerente |
+| 6. Canais | WhatsApp e, se quiser, Instagram e Webchat | Administrador |
+| 7. Agente de IA | Perfil, treinamento, habilidades e configurações | Administrador |
+| 8. Vínculo do agente | Qual agente atende em cada canal | Administrador |
+| 9. Templates e respostas rápidas | Mensagens aprovadas pela Meta e textos prontos | Administrador ou Gerente |
+| 10. Teste de ponta a ponta | Atendimento simulado do início ao fim | Toda a equipe |
+
+## Passo a passo
+
+<Steps>
+  <Step title="Crie as equipes">
+    Crie uma equipe por área, por exemplo Comercial, Suporte e Financeiro. Para cada equipe, escolha a distribuição de conversas: **Rodízio**, **Disponível** ou **Fila**.
+
+    [Criar e configurar equipes →](/pt-BR/account-settings/create-configure-teams)
+  </Step>
+  <Step title="Adicione os membros">
+    Convide cada pessoa com o papel certo (**Administrador**, **Gerente** ou **Membro**) e vincule às equipes em que ela atende. Um membro só recebe conversas das equipes de que participa.
+
+    [Papéis e permissões →](/pt-BR/members/roles-permissions) · [Adicionar um membro →](/pt-BR/members/add-member)
+  </Step>
+  <Step title="Configure as regras de cada equipe">
+    Nas configurações da equipe, defina:
+
+    - **Acompanhar meta de tempo** e **Prazo para resolver (horas)**, com padrão de 24 horas.
+    - **Calendário da Equipe**, com fuso, horário semanal, feriados e exceções.
+    - **Regras de Encerramento**, como **Exigir notas de resolução** e **Ativar mensagem de encerramento**.
+    - **Avaliação de Satisfação**, com nota de 1 a 5 enviada após o encerramento.
+
+    Sem SLA e calendário, os relatórios de tempo não refletem a operação real.
+  </Step>
+  <Step title="Crie as etiquetas">
+    Etiquetas classificam contatos e conversas. Elas são usadas pelo agente de IA, pelos filtros da caixa de entrada e pelas campanhas. Defina se cada etiqueta vale para todas as equipes ou só para algumas.
+
+    [Criar etiquetas →](/pt-BR/account-settings/create-tags)
+  </Step>
+  <Step title="Monte os Pipelines">
+    Crie um Pipeline por processo a partir dos templates **Vendas**, **Atendimento**, **Implantação** e **Cobrança**, ou do zero com **Personalizado**. Configure etapas, motivos de ganho e perda e a derivação entre áreas.
+
+    [Criar um Pipeline →](/pt-BR/pipelines/create-pipeline)
+  </Step>
+  <Step title="Conecte os canais">
+    Conecte pelo menos um número de WhatsApp e defina a **Equipe Padrão** de cada canal. Escolha o tipo de conexão:
+
+    - **WhatsApp Business API**: integração oficial da Meta, para alto volume, templates e campanhas.
+    - **WhatsApp Lite**: conexão por QR code, para começar rápido com baixo volume.
+
+    Se você também atende pelo Instagram ou pelo site, conecte agora:
+
+    - **Instagram**: conecte a conta profissional pela API oficial. O canal é apenas receptivo: as conversas começam quando o contato manda mensagem no Direct.
+    - **Webchat**: configure o widget e instale o código no seu site. O canal é apenas receptivo: o visitante inicia a conversa.
+
+    [Conectar um canal →](/pt-BR/channels/create-channel) · [WhatsApp Business API →](/pt-BR/channels/configure-whatsapp-official) · [WhatsApp Lite →](/pt-BR/channels/configure-whatsapp-lite) · [Instagram →](/pt-BR/channels/configure-instagram) · [Webchat →](/pt-BR/channels/configure-webchat) · [Um número ou vários? →](/pt-BR/channels/single-or-multiple-numbers)
+  </Step>
+  <Step title="Crie, treine e teste o agente de IA">
+    Crie o agente pelo assistente (**Perfil**, **Empresa** e **Revisão**), treine com as perguntas frequentes e configure as habilidades **Adicionar etiqueta**, **Transferir para equipe** e **Gerenciar negócios** (a nota interna já vem como habilidade nativa). Use **Testar Agente** antes de colocar o agente em um canal.
+
+    [Criar um agente de IA →](/pt-BR/ai-agents/create-ai-agent) · [Treinar →](/pt-BR/ai-agents/train-ai-agent) · [Habilidades →](/pt-BR/ai-agents/configure-skills) · [Testar →](/pt-BR/ai-agents/test-ai-agent)
+  </Step>
+  <Step title="Vincule o agente aos canais">
+    Em **Canais**, edite cada canal e escolha o agente no campo **Agente de IA (Opcional)**. A partir daí, as conversas novas desse canal começam com a IA. Você pode usar o mesmo agente em vários canais ou um agente diferente por canal.
+
+    [Editar um canal →](/pt-BR/channels/edit-channel) · [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+  </Step>
+  <Step title="Crie templates e respostas rápidas">
+    No WhatsApp Business API, templates aprovados pela Meta são obrigatórios para iniciar conversas e para responder depois da janela de 24 horas, além de serem a base das campanhas. Respostas rápidas agilizam textos que a equipe repete todos os dias.
+
+    [Criar um template →](/pt-BR/templates/create-template) · [Criar uma resposta rápida →](/pt-BR/templates/create-quick-reply)
+  </Step>
+  <Step title="Faça um teste de ponta a ponta">
+    Envie mensagens do seu número pessoal, do seu Instagram e do widget do site. Confira se o agente responde corretamente, se as notas e etiquetas são aplicadas, se a transferência chega à equipe certa e se o atendente consegue assumir, responder, devolver para a IA e encerrar.
+  </Step>
+</Steps>
+
+## Checklist antes de liberar para os clientes
+
+- Todas as pessoas que atendem estão nas equipes certas e conseguem ver as conversas.
+- Cada canal tem **Equipe Padrão** e, se for o caso, agente de IA vinculado.
+- O agente transfere para a equipe certa e deixa uma nota de resumo.
+- O calendário de cada equipe tem o horário real de atendimento.
+- No WhatsApp Business API, existe pelo menos um template aprovado para retomar conversas fora da janela de 24 horas.
+- A equipe sabe assumir uma conversa da IA, transferir, deixar notas internas e encerrar.
+
+<Warning>
+  Não teste com clientes reais. Use números e contas da própria equipe até o fluxo completo funcionar.
+</Warning>
+
+<Tip>
+  Comece simples. Nas primeiras semanas, mantenha o agente com poucas habilidades e a equipe criando os negócios pela conversa. Ajuste o treinamento com base nas conversas reais e só então amplie a automação.
+</Tip>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Atendimento híbrido" icon="users" href="/pt-BR/ai-agents/hybrid-service">
+    Como a IA e a equipe dividem a mesma conversa.
+  </Card>
+
+  <Card title="Iniciar uma conversa" icon="message-circle" href="/pt-BR/conversations/start-new-attendance">
+    A rotina da caixa de entrada para a sua equipe.
+  </Card>
+</CardGroup>

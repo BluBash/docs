@@ -1,0 +1,157 @@
+---
+title: "Conversas: caixa de entrada e nova conversa"
+sidebarTitle: "Iniciar uma conversa"
+description: "Conheça a caixa de entrada de Conversas, assuma conversas da fila ou da IA e inicie uma nova conversa com um contato no WhatsApp."
+---
+
+A tela de **Conversas** reúne em uma só caixa de entrada as mensagens do WhatsApp, do Instagram e do Webchat. Nesta página você aprende a encontrar conversas, assumir as que chegaram para você ou estão com a IA e iniciar uma conversa nova com um contato.
+
+## Conheça a caixa de entrada
+
+### Filtros rápidos
+
+No topo da lista, os filtros rápidos separam as conversas por situação. Em telas estreitas, parte deles fica em **Mais tipos**.
+
+| Filtro | O que mostra |
+| --- | --- |
+| **Todas** | Todas as conversas que você pode ver. |
+| **Minhas** | Conversas atribuídas a você. |
+| **Fila** | Conversas que aguardam alguém assumir. |
+| **IA** | Conversas conduzidas por um agente de IA. |
+| **Não lidas** | Conversas com mensagens que ninguém leu. |
+| **Encerradas** | Conversas já encerradas, para consulta. |
+
+### Busca e filtros avançados
+
+- Use o campo **Buscar conversas...** para encontrar uma conversa específica.
+- Clique em **Filtros** para abrir **Mais filtros** e combinar **Canal**, **Equipe**, **Membro** e **Etiquetas**. Os filtros ativos aparecem destacados abaixo da busca. Use **Limpar** para removê-los.
+
+### O que cada item da lista indica
+
+| Sinal | Significado |
+| --- | --- |
+| Ícone no canto da foto | O canal da conversa: WhatsApp, Instagram ou Webchat. Passe o mouse para ver o nome do canal. |
+| Ícone de brilho ao lado do nome | **Conversa híbrida (usuário + IA)**: a conversa tem um atendente e um agente de IA. |
+| Ícone de alerta e fundo destacado | **Transferida para você - requer atenção** ou **Pendente - aguardando sua ação**. |
+| Ícone de arquivo | A conversa está encerrada. |
+| Etiquetas coloridas | As etiquetas do contato. |
+| Número em destaque | Mensagens não lidas. |
+
+## Responda as conversas que chegam
+
+### Conversa pendente ou transferida para você
+
+Quando a conversa ainda não foi assumida, o campo de mensagem mostra **Esta conversa precisa ser atribuída**. Clique em **Atribuir a mim**. A conversa passa a ser sua e o campo de mensagem é liberado.
+
+### Conversa conduzida pelo agente de IA
+
+Se o canal tem um agente de IA, ele responde primeiro. Enquanto isso, o campo de mensagem é substituído pelo aviso **Agente de IA Ativo**, com o texto "nome do agente **está gerenciando esta conversa**".
+
+<Frame>
+  <img
+    src="/images/conversations/ia-atendendo.png"
+    alt="Conversa conduzida pelo agente de IA, com o aviso Agente de IA Ativo e o botão Assumir Conversa"
+  />
+</Frame>
+
+Para falar com o cliente:
+
+<Steps>
+  <Step title="Clique em Assumir Conversa">
+    O botão fica no aviso **Agente de IA Ativo**, no lugar do campo de mensagem.
+  </Step>
+
+  <Step title="Informe o motivo (opcional)">
+    Na janela **Assumir Conversa**, descreva por que você está assumindo, por exemplo "cliente pediu desconto".
+  </Step>
+
+  <Step title="Confirme">
+    Clique em **Assumir Conversa**. O agente para de responder e o campo de mensagem é liberado para você.
+  </Step>
+</Steps>
+
+Quando terminar a parte humana, você pode devolver a conversa para a IA com **Transferir para IA**.
+
+[Transferir para a IA →](/pt-BR/ai-agents/handoff-to-ai) · [Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+
+## Inicie uma nova conversa
+
+Inicie uma conversa quando você precisa procurar o cliente primeiro: um retorno de orçamento, uma cobrança, um lembrete. O contato precisa estar cadastrado. Se ainda não estiver, [adicione o contato](/pt-BR/contacts/add-new-contact) antes.
+
+### Em quais canais você pode iniciar
+
+| Canal | Pode iniciar? | Observação |
+| --- | --- | --- |
+| **WhatsApp Business API** | Sim | A primeira mensagem precisa ser um template aprovado pela Meta. |
+| **WhatsApp Lite** | Sim | Você envia mensagem livre. |
+| **Instagram** | Não | Apenas receptivo: a conversa começa quando o contato manda mensagem no Direct. |
+| **Webchat** | Não | Apenas receptivo: o visitante inicia pelo widget do site. |
+
+### Passo a passo
+
+<Steps>
+  <Step title="Abra Conversas">
+    Clique em **Conversas** no menu lateral.
+  </Step>
+  <Step title="Clique no botão +">
+    O botão fica no topo da lista, ao lado do botão de atualizar. A janela **Iniciar nova conversa** é aberta.
+  </Step>
+  <Step title="Escolha o contato">
+    Em **Contato**, digite pelo menos 3 caracteres do nome, do telefone ou do e-mail e selecione o contato nos resultados. Para trocar, clique em **Alterar contato**.
+  </Step>
+  <Step title="Escolha a equipe">
+    Em **Equipe**, selecione a equipe responsável pela conversa. Se você participa de uma só equipe, ela já vem selecionada.
+  </Step>
+  <Step title="Escolha o canal">
+    Em **Canal**, selecione o número de WhatsApp. A lista mostra apenas os canais da equipe escolhida. Canais do Instagram e do Webchat aparecem desabilitados, com a indicação **Apenas receptivo**.
+  </Step>
+  <Step title="Clique em Iniciar conversa">
+    A conversa é criada e aberta na tela.
+  </Step>
+  <Step title="Envie a primeira mensagem">
+    No **WhatsApp Business API**, a BluBash mostra o aviso **Iniciar conversa no WhatsApp** e o botão **Escolha o template**. Envie um template aprovado. Depois que o contato responder, você continua com mensagens livres. No **WhatsApp Lite**, escreva normalmente.
+
+    [Enviar um template →](/pt-BR/conversations/send-templates)
+  </Step>
+</Steps>
+
+<Info>
+  Se já existe uma conversa em andamento com o contato no mesmo canal, a BluBash não cria outra: você é levado para a conversa existente com o aviso **Redirecionado para conversa existente**.
+</Info>
+
+### Outras formas de iniciar
+
+- **Pela ficha do contato**: use a ação de conversa no contato. [Iniciar conversa pelo contato →](/pt-BR/contacts/start-conversation-from-contact)
+- **A partir de uma conversa encerrada**: abra a conversa e clique em **Iniciar nova conversa**. A BluBash cria a conversa no mesmo canal, de preferência com a mesma equipe.
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="O botão + não aparece">
+    Você precisa participar de pelo menos uma equipe ativa. Peça a um Administrador para incluir você na equipe certa.
+  </Accordion>
+
+  <Accordion title="Aparece a mensagem Você não pode iniciar conversas neste canal">
+    A equipe ou o canal não permite que você inicie conversas. Peça ao Administrador para revisar suas equipes e a opção **Permitir iniciar conversas** nas configurações da equipe. Em canais apenas receptivos, como Instagram e Webchat, só o contato inicia a conversa.
+  </Accordion>
+
+  <Accordion title="Aparece Nenhum canal disponível para esta equipe">
+    A equipe escolhida não tem canal vinculado. Escolha outra equipe ou peça ao Administrador para vincular um canal a ela.
+  </Accordion>
+
+  <Accordion title="O contato não aparece na busca">
+    Digite pelo menos 3 caracteres e confira a grafia ou o número. Se o contato não existir, cadastre-o em **Contatos**.
+  </Accordion>
+</AccordionGroup>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Enviar templates" icon="file-text" href="/pt-BR/conversations/send-templates">
+    Como iniciar e retomar conversas no WhatsApp Business API.
+  </Card>
+
+  <Card title="Transferir uma conversa" icon="arrow-right-left" href="/pt-BR/conversations/transfer-attendance">
+    Passe a conversa para outra equipe, outro atendente ou a IA.
+  </Card>
+</CardGroup>

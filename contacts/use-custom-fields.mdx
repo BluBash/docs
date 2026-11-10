@@ -1,0 +1,136 @@
+---
+title: "Use additional fields on contacts"
+sidebarTitle: "Additional fields"
+description: "Create additional fields in BluBash to store business data on each contact, fill them manually or through the AI agent, and use them in campaigns."
+---
+
+Additional fields store information beyond name, email, and phone. Examples: tax ID, current plan, renewal date, city, branch, or satisfaction score. They keep data structured and ready to segment campaigns and personalize messages.
+
+## How it works
+
+| Stage | Who does it | Where |
+| --- | --- | --- |
+| Create and configure fields | Administrator | **Additional Fields**, in the sidebar |
+| Fill in values | Administrator, Manager, Member, and AI agent | Contact page and conversation |
+| Use the values | Manager and Administrator | Campaign audience and variables, contact import |
+
+## Field types
+
+| Type | Recommended use | How it is filled |
+| --- | --- | --- |
+| **Text** | Free information, such as tax ID or city | Free typing |
+| **Number** | Quantities, such as number of employees | Numbers only |
+| **Currency** | Amounts, such as average ticket | Monetary value |
+| **Date** | Dates, such as birthday or renewal | Date picker |
+| **Email** | Secondary email | Validates email format |
+| **Phone** | Secondary phone | Country code and number |
+| **URL** | Website or profile link | Validates link format |
+| **Select** | One option from a list, such as plan | Dropdown |
+| **Multi select** | Several options, such as products of interest | List with multiple choices |
+| **Yes / No** | Binary answers, such as "accepts contact" | Toggle |
+| **Rating** | Scores, such as satisfaction | Stars |
+
+## Create an additional field
+
+<Note>
+  Only the **Administrator** can access **Additional Fields**. Managers and Members only fill in values.
+</Note>
+
+<Steps>
+  <Step title="Open Additional Fields">
+    In the sidebar, click **Additional Fields**. Select the **Contact** tab.
+  </Step>
+  <Step title="Start creating">
+    Click **Create contact field**. The window explains that the field will appear on contacts across the workspace.
+  </Step>
+  <Step title="Configure the field">
+    | Option | What it defines |
+    | --- | --- |
+    | **Field name** | Label shown on the contact page. |
+    | **Field type** | Data format. The type cannot be changed after creation. |
+    | **Description** | Optional helper text. |
+    | **Required** | The field must be filled when shown on a form. |
+    | **Visible** | Shows the field in forms. Hidden fields do not appear on the contact. |
+    | **Display order** | Field position in the list. |
+    | **Options** | List items, for **Select** and **Multi select** fields. Use **Add option**. |
+    | **Validation pattern** and **Validation message** | Optional rule (regular expression) and the error message shown when the value does not match it. |
+  </Step>
+  <Step title="Save">
+    Click **Create field**. The field receives an **ID**, which you copy with **Copy ID** to use in integrations and the API.
+  </Step>
+</Steps>
+
+### Organize, archive, and delete
+
+- Use **Move up** and **Move down** to reorder. Clear the search before reordering.
+- **Archive** removes the field from forms and keeps the saved values. Use **Restore** to bring it back.
+- **Delete field** permanently removes the definition. If any contact already has a value in the field, deletion is blocked. In that case, archive it.
+
+<Info>
+  The **Deal** tab creates fields for deals in Pipelines. These fields are available across the workspace, and you choose which ones appear on each Pipeline. See [Deals →](/pipelines/deals).
+</Info>
+
+## Fill in fields on a contact
+
+<Steps>
+  <Step title="Open the contact">
+    Click **Contacts** and then click the contact.
+  </Step>
+  <Step title="Find the field">
+    Additional fields appear in **About this contact**, after the owner. Required fields have `*` in the name. To see fields that are still empty, click **Show N empty fields**.
+  </Step>
+  <Step title="Edit the value">
+    Click the value. The editor changes according to the type: text box, calendar, list, stars, or toggle.
+  </Step>
+  <Step title="Save">
+    Press **Enter** or click outside the field. In lists, choose the option you want. Press **Esc** to cancel.
+  </Step>
+</Steps>
+
+Each change creates a **Contact updated** event in the **History**, with the changed fields and who changed them.
+
+## Filled in by the AI agent
+
+The AI agent can fill in additional fields during the conversation. For example, it asks for the city and the plan of interest and saves the answers on the contact before transferring to your team.
+
+1. In the agent, open the **Skills** tab and turn on the native **Update contact** skill.
+2. In the training, explain which information the agent should collect and the names of the matching fields.
+3. Test with **Test Agent** and check the contact's **History**.
+
+See [Configure the AI agent →](/ai-agents/configure-agent-settings).
+
+## Use the fields
+
+| Feature | How the field is used |
+| --- | --- |
+| **Campaigns: audience** | Filter contacts by field, with conditions such as **Equals**, **Contains**, **Is empty**, and **Has value**. |
+| **Campaigns: message** | Insert the field as a variable to personalize the text or map template variables. |
+| **Contact import** | Map CSV columns to additional fields. |
+| **API** | Use the field **ID** in integrations. |
+
+## Best practices
+
+- Prefer **Select** over **Text** when the possible values are known. This avoids spelling variations and makes filtering easier.
+- Mark as **Required** only what is truly essential.
+- Archive instead of deleting fields that already have data.
+- Use clear names, since they appear to your team and in campaign filters.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Edit a contact" icon="pencil" href="/contacts/edit-contact">
+    See all fields on the contact page.
+  </Card>
+
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Segment and personalize with additional fields.
+  </Card>
+
+  <Card title="Configure the agent" icon="bot" href="/ai-agents/configure-agent-settings">
+    Let the agent fill in the fields.
+  </Card>
+
+  <Card title="Use variables" icon="braces" href="/templates/use-variables">
+    Personalize templates with contact data.
+  </Card>
+</CardGroup>

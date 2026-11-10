@@ -1,0 +1,104 @@
+---
+title: "Roles and permissions"
+description: "Learn what Administrators, Managers, and Members can do in BluBash and how teams define which conversations, contacts, and Pipelines each person can access."
+---
+
+Access in BluBash combines two things: the **workspace role** (Administrator, Manager, or Member) defines what a person can do, and the **teams** they belong to define which conversations, contacts, channels, and Pipelines they work on.
+
+<Warning>
+  Every member must belong to at least one team. Without a team, the person cannot access conversations, contacts, Pipelines, or tasks.
+</Warning>
+
+## Roles at a glance
+
+| Role | Who it is for | Visibility |
+| --- | --- | --- |
+| **Administrator** | People responsible for the account, its configuration, and the AI agents | The whole workspace |
+| **Manager** | Area coordinators and supervisors | The teams they belong to |
+| **Member** | Day-to-day support staff, sales reps, and analysts | The teams they belong to |
+
+## What each role can do
+
+| Resource | Administrator | Manager | Member |
+| --- | --- | --- | --- |
+| Conversations | All | From their teams | From their teams |
+| Contacts | All, including delete | From their teams, including delete | From their teams, no delete |
+| Pipelines and deals | Create, configure, and delete | Create, configure, and delete | View and work their teams' Pipelines |
+| Tasks | **Mine**, **Teams**, and **Workspace** scopes | **Mine** and **Teams** scopes | **Mine** scope |
+| Campaigns | Yes | From their teams | No |
+| Templates | Manage all | Manage, within their teams | Use |
+| Tags | Manage all | Manage global tags and their teams' tags | Use |
+| Reports & Insights | Yes | From their teams | No |
+| AI agents | Create, train, and configure | No | No |
+| Channels | Manage | Does not manage | Does not manage |
+| Teams | Create, configure, and delete | Does not manage | Does not manage |
+| Members | Invite, edit, and remove | No | No |
+| Additional Fields | Create and edit | Fill in | Fill in |
+| Billing & Usage | Yes | No | No |
+
+<Note>
+  Only Administrators create, train, and configure AI agents. Managers and Members work on the conversations the AI agent transfers to their teams and can hand a conversation back to the AI when it makes sense.
+</Note>
+
+<Info>
+  A tag restricted to several teams can only be edited or deleted by someone who belongs to all of those teams. Global tags are managed by Administrators and Managers. See [Create tags →](/account-settings/create-tags).
+</Info>
+
+## Team role: Manager or Agent
+
+Besides the workspace role, each person has a role inside every team they belong to: **Manager** or **Agent**. You set it in the team's **Members** tab. Here, "Agent" is the person who handles conversations, not the AI agent.
+
+The team role identifies who coordinates that team and appears, for example, in the list of people when you transfer a conversation. It does not replace the workspace role: what the person can do in the platform is still defined by the Administrator, Manager, or Member role.
+
+## Where the AI agent fits in
+
+| Step | Who does it |
+| --- | --- |
+| Create, train, and configure the AI agent | Administrator |
+| Answer, qualify, and transfer to a team | AI agent, through the **Transfer to Team** skill |
+| Take over the transferred conversation | Members of the destination team |
+| Create and move deals in Pipelines | Managers and Administrators create Pipelines; everyone works their teams' deals |
+| Review quality with AI in reports | Managers and Administrators |
+
+<Tip>
+  Before transferring a conversation, leave an internal note with a summary of the case. Whoever receives it starts with the full context.
+</Tip>
+
+## How to choose each person's role
+
+| Profile | Recommended role |
+| --- | --- |
+| Owners and people responsible for account and AI agent configuration | **Administrator** |
+| Area coordinators and support supervisors | **Manager** |
+| Day-to-day support staff, sales reps, and analysts | **Member** |
+
+## Common issues
+
+| Situation | Likely cause | What to do |
+| --- | --- | --- |
+| The person logs in and sees **No Team Access** | They are not in any team | Add the person to a team in the team's **Members** tab |
+| A Manager cannot see a conversation | The conversation belongs to a channel or team they are not part of | Add the Manager to the responsible team |
+| A Member cannot find **Campaigns** or **Reports & Insights** | These features are not part of the Member role | Change the role to Manager, if appropriate |
+| The edit button for a tag is disabled | The person does not belong to all of the tag's teams | Ask an Administrator or adjust the teams |
+
+Review roles regularly and keep the number of Administrators low.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Add a member" icon="user-plus" href="/members/add-member">
+    Invite people with the right role and teams.
+  </Card>
+
+  <Card title="Edit a member's role" icon="user-cog" href="/members/edit-member-permissions">
+    Promote someone or restrict their access.
+  </Card>
+
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Set up each team's channels, Pipelines, and rules.
+  </Card>
+
+  <Card title="Tasks" icon="list-checks" href="/tasks/overview">
+    See how task scopes change by role.
+  </Card>
+</CardGroup>

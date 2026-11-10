@@ -1,0 +1,149 @@
+---
+title: "Gerenciar e acompanhar campanhas"
+sidebarTitle: "Gerenciar campanhas"
+description: "Filtre campanhas, acompanhe envios, entregas, leituras e falhas em tempo real, pause, retome, cancele e alimente campanhas contínuas na BluBash."
+---
+
+A tela **Campanhas** lista todas as campanhas do workspace que você pode ver. A partir dela, você acompanha o desempenho, controla o envio e alimenta campanhas contínuas.
+
+## A lista de campanhas
+
+Na barra lateral, clique em **Campanhas**. Alterne entre **Visualização em lista** e **Visualização em cards**.
+
+| Coluna | Conteúdo |
+| --- | --- |
+| **Campanha** | Nome e descrição. |
+| **Canal** | Canal de WhatsApp usado no envio. |
+| **Tipo** | **Template** ou **Texto**. |
+| **Mensagens** | Enviadas sobre o total, com entregues, pendentes e falhas. |
+| **Destinatários** | Total de contatos da audiência. |
+| **Agendamento** | Data agendada, início ou conclusão do envio. |
+| **Status** | Situação atual da campanha. |
+| **Ações** | Ações disponíveis para o status atual. |
+
+### Buscar e filtrar
+
+Use **Buscar campanhas...** para procurar pelo nome. Clique em **Filtros** para refinar:
+
+| Filtro | Opções |
+| --- | --- |
+| **Status** | Todas, Rascunho, Agendada, Enviando, Pausada, Concluída, Cancelada |
+| **Canal** | Qualquer canal de WhatsApp conectado |
+| **Período** | Intervalo de datas |
+| **Ordenação** | Campo (**Data de criação**, **Data de atualização**, **Nome**, **Data agendada**) e direção (**Crescente** ou **Decrescente**) |
+
+Clique em **Aplicar filtros**. Para voltar ao padrão, use **Limpar todos**.
+
+## Status da campanha
+
+| Status | Significado |
+| --- | --- |
+| **Rascunho** | Salva, mas ainda não iniciada. Pode ser editada. |
+| **Agendada** | Aguardando a data e hora definidas. |
+| **Enviando** | Mensagens sendo disparadas na velocidade configurada. Na Campanha Contínua, indica a automação ativa. |
+| **Pausada** | Envio interrompido temporariamente. |
+| **Concluída** | Todas as mensagens da audiência foram processadas. |
+| **Falhou** | O envio não pôde ser executado. Verifique o canal. |
+| **Cancelada** | Envio interrompido de forma definitiva. |
+
+## Controlar o envio
+
+| Ação | Quando aparece | Efeito |
+| --- | --- | --- |
+| **Iniciar** | Rascunho | Começa o envio. |
+| **Editar** | Rascunho | Abre o assistente para alterar a campanha. |
+| **Pausar** | Enviando | Interrompe temporariamente. As mensagens restantes ficam na fila. |
+| **Retomar** | Pausada | Continua de onde parou. |
+| **Cancelar** | Enviando ou Pausada, na Campanha Única | Interrompe o envio das mensagens restantes. Não pode ser desfeito. |
+| **Encerrar campanha** | Enviando ou Pausada, na Campanha Contínua | Encerra o envio contínuo e impede novos envios. |
+| **Deletar** | Rascunho, Agendada, Pausada, Concluída ou Cancelada | Exclui a campanha e todos os dados dela. Não pode ser desfeito. |
+
+<Warning>
+  Só é possível editar campanhas em **Rascunho**. Depois de iniciada, para mudar a mensagem ou a audiência, cancele e crie uma nova campanha.
+</Warning>
+
+## A página da campanha
+
+Clique em uma campanha para abrir os detalhes. O topo mostra canal, tipo de mensagem, agendamento, velocidade em msg/min e o total de destinatários (ou de contatos adicionados, na Campanha Contínua).
+
+### Visão Geral
+
+Clique em **Atualizar** para buscar os dados mais recentes.
+
+| Bloco | O que mostra |
+| --- | --- |
+| **Performance da Campanha** | **Taxa de Envio**, **Taxa de Entrega**, **Taxa de Leitura** e **Taxa de Falha**, com os totais. |
+| **Performance Timeline** | Evolução de envios, entregas e leituras ao longo do tempo. |
+| **Distribuição da Audiência** | Status atual de toda a audiência. |
+| **Insights da Campanha** | Análise automática, por exemplo **Alta entrega**, **Taxa de entrega abaixo de 50%** ou **Taxa de falha anormalmente alta**. |
+| **Detalhes Técnicos de Execução** | Estado atual da fila de envio em tempo real. |
+
+### Audiência
+
+Lista cada contato da campanha com o status individual: **Pendente**, **Na fila**, **Enviando**, **Enviada**, **Entregue**, **Lida**, **Falhou** ou **Cancelada**. Mostra também quando a mensagem foi enviada, entregue e lida.
+
+Na Campanha Contínua, a tabela mostra quando cada contato foi adicionado e a **Origem** (**Manual**, **API** ou **Integração**). Envios agendados individualmente podem ser cancelados com **Cancelar agendamento**.
+
+### Detalhes da Mensagem
+
+Mostra o tipo, o conteúdo ou template enviado, as variáveis e uma prévia com os dados do primeiro contato da audiência.
+
+### Integrações (Campanha Contínua)
+
+| Integração | Como usar |
+| --- | --- |
+| **API da Campanha** | Copie o endpoint e envie contatos do seu sistema com o header `x-api-key`. Veja [API de campanhas →](/pt-BR/developers/api/campaigns). |
+| **RD Station Marketing** | Copie a **Webhook URL** e cole em uma automação do RD Station Marketing. Em **Regras de mapeamento**, relacione campos do RD aos campos do contato (`name`, `email`, `phone` e campos adicionais `cf_*`) e clique em **Salvar mapeamento**. |
+
+## Alimentar uma Campanha Contínua manualmente
+
+<Steps>
+  <Step title="Abra a aba Audiência">
+    Na página da campanha, clique em **Audiência**.
+  </Step>
+  <Step title="Clique em Adicionar contatos">
+    Selecione os contatos na prévia, usando os mesmos filtros de audiência da criação.
+  </Step>
+  <Step title="Escolha quando enviar">
+    Selecione **Adicionar e enviar** para envio imediato ou **Adicionar e agendar** para escolher data e hora.
+  </Step>
+  <Step title="Confirme">
+    Confirme em **Confirmar envio** ou **Confirmar agendamento**.
+  </Step>
+</Steps>
+
+<Note>
+  Não é possível adicionar contatos enquanto a campanha estiver pausada ou encerrada.
+</Note>
+
+## Como interpretar as métricas
+
+| Métrica | O que indica | O que fazer se estiver baixa |
+| --- | --- | --- |
+| **Taxa de Entrega** | Mensagens que chegaram ao aparelho do contato. | Revise a qualidade da base, números sem DDI e a saúde do canal. |
+| **Taxa de Leitura** | Mensagens lidas entre as entregues. Contatos com confirmação de leitura desativada no WhatsApp não aparecem como lidos. | Teste outro horário, um gancho mais claro no início ou mídia. |
+| **Taxa de Falha** | Mensagens que não puderam ser enviadas. | Verifique o template, a janela de 24 horas, os limites da Meta e se o canal está ativo. |
+
+<Tip>
+  Cruze os resultados da campanha com os negócios criados nos Pipelines e com o **Relatório de conversas**. Assim você mede não só a leitura, mas o resultado comercial das respostas atendidas pelo agente de IA e pela equipe.
+</Tip>
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar uma campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Monte uma nova campanha com o assistente.
+  </Card>
+
+  <Card title="Introdução às campanhas" icon="book-open" href="/pt-BR/campaigns/campaigns-introduction">
+    Revise as regras da Meta, limites e custos.
+  </Card>
+
+  <Card title="Relatório de conversas" icon="chart-bar" href="/pt-BR/reports/conversations-report">
+    Acompanhe o volume de conversas geradas.
+  </Card>
+
+  <Card title="API de campanhas" icon="code" href="/pt-BR/developers/api/campaigns">
+    Integre seu sistema às campanhas contínuas.
+  </Card>
+</CardGroup>

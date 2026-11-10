@@ -1,0 +1,70 @@
+---
+title: "Search and filter channels"
+description: "Find any BluBash channel (WhatsApp, Instagram, or Webchat) by name, type, status, or number, and read the indicators in the channel list."
+---
+
+The **Channels** page shows every channel in the workspace as cards. With a few channels, you see everything at a glance. As the workspace grows, with several WhatsApp numbers, Instagram accounts, and Webchats, the search filters the list as you type.
+
+## Search for a channel
+
+<Steps>
+  <Step title="Open Channels">
+    In the side menu, click **Channels**.
+  </Step>
+  <Step title="Type in the search">
+    At the top of the page, type in the **Search channels...** field. The list filters with every letter, with no need to press Enter. Partial terms work, and the search is not case-sensitive.
+  </Step>
+  <Step title="Clear the search">
+    Delete the text in the field to see all channels again. If nothing matches, the page shows **No channels found**.
+  </Step>
+</Steps>
+
+## What the search finds
+
+| You type | It finds | Example |
+| --- | --- | --- |
+| Part of the channel name | Channels with that text in the name | `sales` |
+| The channel type | Every channel of that type | `whatsapp`, `instagram`, `webchat`, `api` |
+| The internal status | Channels in that status | `inactive`, `setup` |
+| Verified number or name | WhatsApp Business API channels with that number or display name | `5517`, `My Company` |
+
+<Note>
+  Because "inactive" contains "active", searching for `active` returns both active and inactive channels. To see only inactive ones, type `inactive`.
+</Note>
+
+<Tip>
+  Include the area or brand in channel names, such as "WhatsApp Sales" and "Instagram Downtown Store". It makes channels easier to search and to recognize in the inbox.
+</Tip>
+
+## Refresh the list
+
+Click the **Refresh** button, next to the search, to reload the list with the latest data. It helps after finishing a connection in another tab or when someone else changed the channels.
+
+## Read the channel cards
+
+| Element | What it shows |
+| --- | --- |
+| Icon | The channel type: WhatsApp, Instagram, Webchat, or API. |
+| Indicator on the icon | Green dot for an **Active** channel. Orange dot for a channel waiting for connection or a disconnected WhatsApp Lite channel. |
+| Name | The **Channel Name** you defined. |
+| Details | On active WhatsApp channels: the connected display name and number. On the others: the channel type and creation date. |
+| Trash icon | Appears on hover and opens the channel deletion. See [Delete a channel →](/channels/delete-channel). |
+
+## What happens when you click a channel
+
+| Channel situation | What opens |
+| --- | --- |
+| Connected | The channel page, with **Channel Settings**, connection details, and **Danger Zone**. |
+| WhatsApp or Instagram waiting for connection | The **Configure Channel** window to finish the connection. |
+| WhatsApp Lite | BluBash shows **Checking status...**. If the session dropped, it opens **Configure Channel** to reconnect. |
+
+## Limitations
+
+- There are no separate filters by type or status. The search does that job.
+- Searching by number and display name works for WhatsApp Business API channels.
+
+## Next steps
+
+- [BluBash channels: types and how to create one →](/channels/create-channel)
+- [Edit a channel →](/channels/edit-channel)
+- [Activate or deactivate a channel →](/channels/activate-deactivate-channel)

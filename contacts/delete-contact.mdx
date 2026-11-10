@@ -1,0 +1,86 @@
+---
+title: "Delete a contact"
+sidebarTitle: "Delete contact"
+description: "Permanently delete a contact from BluBash and understand which data is removed, who can delete, and when it is better not to delete."
+---
+
+Deleting a contact removes the record and all data linked to it. Use this action to remove duplicate or test records, or contacts who asked for their data to be removed.
+
+<Warning>
+  Deletion is **permanent and cannot be undone**. The contact's conversations, deals, and history are also removed and no longer appear in reports.
+</Warning>
+
+## Who can delete
+
+| Role | Can delete |
+| --- | --- |
+| **Administrator** | Yes |
+| **Manager** | Yes, on contacts of their teams |
+| **Member** | No. The option does not appear. |
+
+## Step by step
+
+<Steps>
+  <Step title="Open the contact">
+    In the sidebar, click **Contacts** and then click the contact you want to delete.
+  </Step>
+  <Step title="Open the options menu">
+    In the contact header, next to the name, click **More options** (three-dot icon).
+  </Step>
+  <Step title="Choose Delete Contact">
+    Click **Delete Contact**. The **Delete Contact** confirmation window opens, showing the contact's name and email or phone.
+  </Step>
+  <Step title="Review the affected data">
+    The window lists the **Data that will be deleted**. Make sure this is the right contact.
+  </Step>
+  <Step title="Confirm">
+    Click **Delete Contact**. BluBash shows **Contact deleted successfully** and returns to the contact list. To give up, click **Cancel**.
+  </Step>
+</Steps>
+
+## What is removed
+
+| Data | What happens |
+| --- | --- |
+| **Conversations** | The contact's conversations are removed. |
+| **Conversation History** | The exchanged messages no longer exist. |
+| **Contact Data** | Name, email, phone, WhatsApp, additional fields, tags, and owners. |
+| **Deals** | Deals linked to the contact in Pipelines are removed. |
+| **Files** | Media and documents linked to the contact. |
+| **Contact Reports** | The contact's data no longer counts in reports. |
+| **Contact Activities** | The entire **History**, including tasks and events. |
+
+## Before deleting
+
+- **Duplicate contact**: check which record has the most complete conversations and deals. Delete the other one.
+- **Inactive customer**: prefer keeping the contact and applying a tag, such as `inactive`. This preserves the history and metrics.
+- **Open deals**: mark deals as won or lost first if you want to keep the result in reports. Deleting the contact also removes its deals.
+- **Data removal request**: deleting is the right path when the data subject asks for their personal data to be erased.
+
+## Common errors
+
+| Message | Cause | How to fix |
+| --- | --- | --- |
+| **Cannot delete contact that has active conversations** | The contact has an ongoing conversation. | Close the active conversations and try again. See [Close a conversation →](/conversations/close-attendance). |
+| **Error deleting contact** | Temporary failure or missing permission. | Check your role and try again. |
+| The **Delete Contact** option does not appear | Your role is Member. | Ask a Manager or Administrator to delete it. |
+
+<Note>
+  If the contact sends a new message after being deleted, BluBash creates a new contact, without the previous history.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Search contacts" icon="search" href="/contacts/search-filter-contacts">
+    Find duplicates before deleting.
+  </Card>
+
+  <Card title="Contact tags" icon="tag" href="/contacts/manage-contact-tags">
+    Mark inactive contacts instead of deleting them.
+  </Card>
+
+  <Card title="Roles and permissions" icon="shield" href="/members/roles-permissions">
+    See what each role can do.
+  </Card>
+</CardGroup>

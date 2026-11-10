@@ -1,0 +1,88 @@
+---
+title: "Gerencie os membros do workspace"
+sidebarTitle: "Introdução a membros"
+description: "Convide pessoas para o workspace, defina o papel de cada uma e vincule a equipes para que trabalhem com o agente de IA nas conversas e Pipelines."
+---
+
+Na BluBash, membros são as pessoas da sua empresa que acessam o workspace: atendentes, vendedores, coordenadores e administradores. Eles trabalham lado a lado com os agentes de IA. O agente atende, qualifica e transfere para uma equipe, e os membros dessa equipe assumem a conversa, cuidam dos negócios nos Pipelines e acompanham as tarefas.
+
+A página **Membros** concentra a gestão dessas pessoas: convite, função, reenvio de convite e remoção.
+
+<Note>
+  Somente **Administradores** acessam a página **Membros**. Gerentes e Membros não veem essa página no menu.
+</Note>
+
+## Como o acesso funciona
+
+O acesso de cada pessoa combina duas camadas:
+
+| Camada | O que define | Onde configurar |
+| --- | --- | --- |
+| **Função no workspace** | O que a pessoa pode fazer: Administrador, Gerente ou Membro | Página **Membros** |
+| **Equipes** | Sobre quais conversas, contatos, canais e Pipelines ela atua | No convite e, depois, na aba **Membros** de cada equipe |
+
+<Warning>
+  Todo membro precisa pertencer a pelo menos uma equipe. Sem equipe, a pessoa não consegue usar o produto. Por isso, crie as equipes antes de convidar as pessoas.
+</Warning>
+
+## Papéis disponíveis
+
+<CardGroup cols={3}>
+  <Card title="Administrador" icon="shield">
+    Acesso total: membros, equipes, canais, agentes de IA, Campos Adicionais, faturamento e todas as conversas.
+  </Card>
+  <Card title="Gerente" icon="users">
+    Coordena as suas equipes: Pipelines, campanhas, relatórios, templates e etiquetas. Não gerencia agentes de IA, membros nem faturamento.
+  </Card>
+  <Card title="Membro" icon="user">
+    Atende as conversas e trabalha os contatos e negócios das suas equipes. Não acessa campanhas nem relatórios.
+  </Card>
+</CardGroup>
+
+Veja a comparação completa em [Papéis e permissões →](/pt-BR/members/roles-permissions).
+
+## O que você faz na página Membros
+
+| Ação | Onde | Detalhes |
+| --- | --- | --- |
+| Convidar | Botão **Adicionar Membro** | E-mail, função e equipes. [Adicionar um membro →](/pt-BR/members/add-member) |
+| Alterar a função | Ícone de lápis (**Editar membro**) | [Editar a função de um membro →](/pt-BR/members/edit-member-permissions) |
+| Reenviar convite | Ícone **Reenviar convite** | Aparece para quem está com o status **Convite Enviado** |
+| Remover | Ícone de lixeira (**Remover membro**) | [Remover um membro →](/pt-BR/members/remove-member) |
+| Pesquisar | Campo **Pesquisar membros...** | [Pesquisar membros →](/pt-BR/members/search-filter-members) |
+| Atualizar a lista | Botão **Atualizar** | Recarrega os dados mais recentes |
+
+A lista mostra as colunas **Nome**, **Email**, **Função** e **Ações**, além do total de membros exibidos.
+
+## Membros, plano e faturamento
+
+- O plano contratado define quantos usuários e quantas equipes o workspace comporta. Consulte em **Faturamento & Uso**, área exclusiva de Administradores, que também mostra o consumo de **Créditos IA** e **Créditos de Campanhas**.
+- Antes de um downgrade, a BluBash mostra o impacto: quantos membros seriam removidos do workspace e quantas equipes seriam desativadas. Se a mudança exigir remover usuários que não podem sair, o downgrade fica bloqueado até você resolver.
+- O workspace deve ter sempre pelo menos um Administrador.
+
+## Boas práticas
+
+- Monte as equipes primeiro e só depois convide as pessoas, já escolhendo as equipes certas.
+- Mantenha poucos Administradores. Use **Gerente** para coordenadores que precisam de relatórios e Pipelines sem acesso à configuração da conta.
+- Revise a lista periodicamente e remova no mesmo dia quem saiu da empresa.
+- Ao mudar a estrutura das equipes, revise também as habilidades **Transferir para Equipe** dos agentes de IA, que apontam para equipes específicas.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Estruture as equipes antes de convidar as pessoas.
+  </Card>
+
+  <Card title="Adicionar um membro" icon="user-plus" href="/pt-BR/members/add-member">
+    Envie o convite com função e equipes.
+  </Card>
+
+  <Card title="Papéis e permissões" icon="shield" href="/pt-BR/members/roles-permissions">
+    Compare o que cada papel pode fazer.
+  </Card>
+
+  <Card title="Atendimento híbrido" icon="bot" href="/pt-BR/ai-agents/hybrid-service">
+    Entenda como membros e agentes de IA dividem o atendimento.
+  </Card>
+</CardGroup>

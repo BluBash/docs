@@ -1,0 +1,151 @@
+---
+title: "Create a campaign"
+sidebarTitle: "Create campaign"
+description: "Create a WhatsApp campaign in BluBash with the wizard: type, details, channel, audience filters, template or text, scheduling, and review."
+---
+
+The campaign wizard guides you step by step, from the campaign type to the final review. When you finish, you can save it as a draft, start it right away, or schedule it.
+
+<Note>
+  Only **Managers** and **Administrators** create campaigns. Campaigns are sent only through WhatsApp channels. Read the [Campaigns introduction →](/campaigns/campaigns-introduction) first to understand Meta's rules.
+</Note>
+
+## Before you start
+
+- Have an active WhatsApp channel. For sends to your general base, use the **WhatsApp Business API (official)**.
+- On the official API, create and get approval for the template you will send. See [Create a template →](/templates/create-template).
+- Organize contacts with tags and additional fields to filter the audience.
+- Confirm that contacts opted in to receive messages from your company.
+
+## Step by step
+
+<Steps>
+  <Step title="Open the wizard">
+    In the sidebar, click **Campaigns** and then **New Campaign**.
+  </Step>
+  <Step title="Choose the campaign type">
+    | Type | When to choose it |
+    | --- | --- |
+    | **Single Campaign** (Batch) | One-off send to an audience defined now, immediate or scheduled. |
+    | **Ongoing Campaign** (Automation) | Automatic send to contacts who join the campaign over time, manually, through the API, or through RD Station Marketing. |
+
+    Click **Next**.
+  </Step>
+  <Step title="Fill in the campaign details">
+    | Field | Description |
+    | --- | --- |
+    | **Campaign name** | Short name to identify the campaign. Up to 100 characters. |
+    | **Description (optional)** | Campaign goal for your team. |
+    | **Sending speed** | Messages sent per minute, from 1 to 300. The default is 60. |
+    | **Send now** or **Schedule** | Single Campaign only. In **Schedule**, choose the **Date and time**. You cannot schedule in the past or more than 365 days ahead. |
+
+    <Warning>
+      Very high sending rates may result in channel restrictions. Adjust the speed to the audience size and your number's limits.
+    </Warning>
+  </Step>
+  <Step title="Select the sending channel">
+    Choose the WhatsApp channel that will deliver the campaign. Only channels you are allowed to use appear. Make sure the channel is active.
+
+    If **No WhatsApp channels available** appears, create a channel or ask the Administrator for access.
+  </Step>
+  <Step title="Define the audience (Single Campaign)">
+    Combine filters to reach the right contacts. The **Audience preview**, on the right, shows how many contacts are selected and sample contacts.
+
+    | Filter | How it works |
+    | --- | --- |
+    | **Tags** | Selects contacts with the chosen tags. |
+    | **Filter by conversation status** | **All**, **Open only**, or **Closed only**. |
+    | **Last interaction** | Period of the last interaction: **Today**, **Yesterday**, **Last 7 days**, **Last 30 days**, **This month**, **Last month**, or **Custom date**. |
+    | **Field Filters** | Filters by **Default Fields** (Name, Email, Phone) or **Additional Fields**, with conditions such as **Equals**, **Not equals**, **Contains**, **Not contains**, **Starts with**, **Ends with**, **Is empty**, and **Has value**. |
+
+    You must apply at least one filter, and the audience must have at least one contact to continue.
+
+    <Info>
+      The Ongoing Campaign skips this step. It does not use a fixed list: you add contacts after it is created.
+    </Info>
+  </Step>
+  <Step title="Choose how you will communicate">
+    | Format | When to use it |
+    | --- | --- |
+    | **Template** | Uses a saved template. On the official API, choose a template approved by Meta to reach contacts outside the 24-hour window. |
+    | **Manual text** | Free message personalized with variables. On the official API, it is delivered only to contacts who interacted in the last 24 hours. |
+  </Step>
+  <Step title="Compose the message">
+    **If you chose Template:**
+
+    1. In **Use an approved template**, search for and select the template. Filter by **All**, **Templates**, or **Quick replies**.
+    2. In **Variable mapping**, link each template variable to a contact field or additional field. All variables must be mapped.
+    3. Check the **Preview**, which shows header, body, footer, and buttons with a sample contact's data.
+
+    **If you chose Manual text:**
+
+    1. Write in **Message content**.
+    2. Use **Variables** to insert contact data, such as Name, Email, Phone, or additional fields.
+    3. Check the **Preview**, which shows how the first contact in the audience will see the message.
+
+    <Tip>
+      Templates and quick replies can include an image, video, or document. Media usually increases the read rate for offers and launches.
+    </Tip>
+  </Step>
+  <Step title="Review and confirm">
+    Check **Basic information**, **Channel**, **Audience**, **Schedule**, and **Message**. Then choose:
+
+    | Button | Result |
+    | --- | --- |
+    | **Save draft** | Saves without sending. You start it later from the list or the campaign page. |
+    | **Save and start** | Saves and starts sending immediately. Appears when you chose **Send now**. |
+    | **Save and schedule** | Saves and schedules the send for the chosen date. Appears when you chose **Schedule**. |
+    | **Create campaign** | For an Ongoing Campaign, creates the campaign and activates the automation. |
+  </Step>
+</Steps>
+
+## After creating an Ongoing Campaign
+
+The Ongoing Campaign starts with no contacts. To feed the audience, open the campaign and use:
+
+| Method | How |
+| --- | --- |
+| **Manual** | In the **Audience** tab, click **Add contacts**, select contacts in the preview, and choose **Add and send** or **Add and schedule**. |
+| **API** | In the **Integrations** tab, copy the campaign endpoint and send contacts from your system, authenticating with `x-api-key`. See [Campaigns API →](/developers/api/campaigns). |
+| **RD Station Marketing** | In the **Integrations** tab, copy the webhook and paste it into an RD Station Marketing automation. Each lead sent joins the audience. |
+
+See [Manage campaigns →](/campaigns/manage-campaigns).
+
+## Best practices
+
+- Start with a small audience to validate the message before sending to your whole base.
+- Schedule for business hours and avoid late nights and holidays.
+- Use lower speeds on new numbers or numbers with low quality at Meta.
+- Personalize with the contact's name and a relevant detail, such as the plan or product of interest.
+- Prepare the AI agent and your team for the volume of replies the campaign will generate.
+
+## Common errors
+
+| Message | Cause | How to fix |
+| --- | --- | --- |
+| **Select a channel to continue.** | No channel selected. | Select a WhatsApp channel. |
+| **Select a template to continue.** | Template format without a template. | Choose a template from the list. |
+| **Map all required template variables before continuing.** | Some variables have no linked field. | Complete the **Variable mapping**. |
+| **Write the message content before continuing.** | Manual text format without content. | Write the message. |
+| **Define the schedule date and time.** | **Schedule** without a date. | Choose the date and time. |
+| **No templates available right now.** | The channel has no approved templates. | Create and get approval for a template for the channel. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Manage campaigns" icon="chart-bar" href="/campaigns/manage-campaigns">
+    Track deliveries, reads, and failures.
+  </Card>
+
+  <Card title="Campaigns introduction" icon="book-open" href="/campaigns/campaigns-introduction">
+    Review Meta rules, limits, and costs.
+  </Card>
+
+  <Card title="Use variables" icon="braces" href="/templates/use-variables">
+    Personalize templates with contact data.
+  </Card>
+
+  <Card title="Additional fields" icon="list-plus" href="/contacts/use-custom-fields">
+    Create fields to segment the audience.
+  </Card>
+</CardGroup>

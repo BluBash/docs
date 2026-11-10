@@ -1,0 +1,121 @@
+---
+title: "Implementation guide: set up BluBash step by step"
+sidebarTitle: "Implementation guide"
+description: "The recommended order to set up BluBash: teams, members, tags, Pipelines, channels, AI agent and templates, up to your first hybrid conversation."
+---
+
+Set up BluBash in this order. Each step depends on the previous one: members need teams, channels need a default team, and the AI agent needs teams and tags to transfer and classify conversations.
+
+<Info>
+  Most of this setup is done by an **Administrator**. Only Administrators create and configure AI agents and manage members. A **Manager** can build Pipelines and follow reports.
+</Info>
+
+## Overview
+
+| Step | What you define | Who does it |
+| --- | --- | --- |
+| 1. Teams | Service areas and conversation distribution | Administrator |
+| 2. Members | Who accesses the account, with which role and in which teams | Administrator |
+| 3. Team rules | SLA, calendar, closure and satisfaction | Administrator |
+| 4. Tags | Classification of contacts and conversations | Administrator or Manager |
+| 5. Pipelines | Staged processes, reasons and derivation | Administrator or Manager |
+| 6. Channels | WhatsApp and, optionally, Instagram and Webchat | Administrator |
+| 7. AI agent | Profile, training, skills and settings | Administrator |
+| 8. Agent link | Which agent serves on each channel | Administrator |
+| 9. Templates and quick replies | Meta-approved messages and ready-made texts | Administrator or Manager |
+| 10. End-to-end test | A simulated conversation from start to finish | The whole team |
+
+## Step by step
+
+<Steps>
+  <Step title="Create the teams">
+    Create one team per area, for example Sales, Support and Finance. For each team, choose how conversations are distributed: **Round Robin**, **Available** or **Queue**.
+
+    [Create and configure teams →](/account-settings/create-configure-teams)
+  </Step>
+  <Step title="Add the members">
+    Invite each person with the right role (**Administrator**, **Manager** or **Member**) and add them to the teams they serve. A member only receives conversations from the teams they belong to.
+
+    [Roles and permissions →](/members/roles-permissions) · [Add a member →](/members/add-member)
+  </Step>
+  <Step title="Configure each team's rules">
+    In the team settings, define:
+
+    - **Track time goal** and **Time to resolve (hours)**, with a 24-hour default.
+    - **Team Calendar**, with time zone, weekly hours, holidays and exceptions.
+    - **Closure Rules**, such as **Require resolution notes** and **Enable closure message**.
+    - **Satisfaction Survey**, with a 1 to 5 rating sent after closing.
+
+    Without SLA and calendar, time reports do not reflect your real operation.
+  </Step>
+  <Step title="Create the tags">
+    Tags classify contacts and conversations. They are used by the AI agent, by the inbox filters and by campaigns. Decide whether each tag applies to all teams or only to some.
+
+    [Create tags →](/account-settings/create-tags)
+  </Step>
+  <Step title="Build the Pipelines">
+    Create one Pipeline per process from the **Sales**, **Support**, **Onboarding** and **Collections** templates, or from scratch with **Custom**. Set up stages, won and lost reasons and derivation between areas.
+
+    [Create a Pipeline →](/pipelines/create-pipeline)
+  </Step>
+  <Step title="Connect the channels">
+    Connect at least one WhatsApp number and set the **Default Team** for each channel. Choose the connection type:
+
+    - **WhatsApp Business API**: Meta's official integration, for high volume, templates and campaigns.
+    - **WhatsApp Lite**: QR code connection, to start fast with low volume.
+
+    If you also serve customers on Instagram or on your website, connect them now:
+
+    - **Instagram**: connect your professional account through the official API. The channel is receptive only: conversations start when the contact sends a Direct message.
+    - **Webchat**: configure the widget and install the code on your website. The channel is receptive only: the visitor starts the conversation.
+
+    [Connect a channel →](/channels/create-channel) · [WhatsApp Business API →](/channels/configure-whatsapp-official) · [WhatsApp Lite →](/channels/configure-whatsapp-lite) · [Instagram →](/channels/configure-instagram) · [Webchat →](/channels/configure-webchat) · [One number or several? →](/channels/single-or-multiple-numbers)
+  </Step>
+  <Step title="Create, train and test the AI agent">
+    Create the agent with the wizard (**Profile**, **Company** and **Review**), train it with your frequent questions and configure the **Add tag**, **Transfer to team** and **Manage deals** skills (internal notes already come as a native skill). Use **Test Agent** before putting the agent on a channel.
+
+    [Create an AI agent →](/ai-agents/create-ai-agent) · [Train →](/ai-agents/train-ai-agent) · [Skills →](/ai-agents/configure-skills) · [Test →](/ai-agents/test-ai-agent)
+  </Step>
+  <Step title="Link the agent to the channels">
+    In **Channels**, edit each channel and choose the agent in the **AI Agent (Optional)** field. From then on, new conversations on that channel start with the AI. You can use the same agent on several channels or a different agent per channel.
+
+    [Edit a channel →](/channels/edit-channel) · [Hybrid service →](/ai-agents/hybrid-service)
+  </Step>
+  <Step title="Create templates and quick replies">
+    On the WhatsApp Business API, Meta-approved templates are required to start conversations and to reply after the 24-hour window, and they are the basis for campaigns. Quick replies speed up texts your team repeats every day.
+
+    [Create a template →](/templates/create-template) · [Create a quick reply →](/templates/create-quick-reply)
+  </Step>
+  <Step title="Run an end-to-end test">
+    Send messages from your personal number, your Instagram account and the website widget. Check that the agent answers correctly, that notes and tags are applied, that the transfer reaches the right team, and that a team member can take over, reply, hand back to the AI and close.
+  </Step>
+</Steps>
+
+## Checklist before going live
+
+- Everyone who serves customers is in the right teams and can see the conversations.
+- Each channel has a **Default Team** and, when applicable, a linked AI agent.
+- The agent transfers to the right team and leaves a summary note.
+- Each team's calendar has the real business hours.
+- On the WhatsApp Business API, there is at least one approved template to resume conversations outside the 24-hour window.
+- The team knows how to take over a conversation from the AI, transfer, add internal notes and close.
+
+<Warning>
+  Do not test with real customers. Use your team's own numbers and accounts until the full flow works.
+</Warning>
+
+<Tip>
+  Start simple. In the first weeks, keep the agent with few skills and let the team create deals from the conversation. Refine the training based on real conversations, and only then expand automation.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Hybrid service" icon="users" href="/ai-agents/hybrid-service">
+    How the AI and the team share the same conversation.
+  </Card>
+
+  <Card title="Start a conversation" icon="message-circle" href="/conversations/start-new-attendance">
+    The inbox routine for your team.
+  </Card>
+</CardGroup>

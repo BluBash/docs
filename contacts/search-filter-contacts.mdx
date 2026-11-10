@@ -1,0 +1,98 @@
+---
+title: "Search and find contacts"
+sidebarTitle: "Search contacts"
+description: "Find contacts in BluBash by name, email, or phone, learn the search rules, and see how to segment your base by tags and fields."
+---
+
+The contact list shows the people in your base and lets you find any record with search. To build segments by tag, interaction, or additional field, use the campaign audience filters described at the end of this page.
+
+## The contact list
+
+In the sidebar, click **Contacts**. The **People** tab shows contacts and the **Organizations** tab shows registered organizations.
+
+| Column | Content |
+| --- | --- |
+| **Name** | Contact name and photo. |
+| **Email** | Registered email. |
+| **Phone** | Registered phone. |
+| **Created at** | Date the contact was created. |
+| **Actions** | Menu with **View Details** and **Start Conversation**. |
+
+The list loads contacts in blocks. When you scroll to the end, BluBash loads the next ones automatically. The counter at the top shows how many contacts are visible out of the total.
+
+<Info>
+  What you see depends on your role. The **Administrator** sees all contacts in the workspace. **Manager** and **Member** see contacts from the teams they belong to.
+</Info>
+
+## Search for a contact
+
+<Steps>
+  <Step title="Open the list">
+    Click **Contacts** in the sidebar.
+  </Step>
+  <Step title="Type the term">
+    In the **Search contacts...** field, type part of the name, email, or phone.
+  </Step>
+  <Step title="Check the results">
+    The search runs automatically as you type, with no need to press Enter. The footer shows **Showing N result(s) found**.
+  </Step>
+  <Step title="Open the contact">
+    Click the row to open the contact page. When you go back, the list keeps the search term.
+  </Step>
+</Steps>
+
+### Search rules
+
+| Situation | Behavior |
+| --- | --- |
+| Text (name or email) | Search starts at 3 characters. |
+| Phone number | Search starts at 4 digits. |
+| Empty field | The list shows all contacts again. |
+| No results | **No contacts found** appears. |
+
+<Tip>
+  If you cannot find the contact by phone, try the name or email. The number may have been registered in a different format.
+</Tip>
+
+## Quick actions in the list
+
+Click the **Actions** menu on a row to:
+
+- **View Details**: opens the contact page.
+- **Start Conversation**: opens the new conversation flow with the contact already selected. The option appears only for users who can start conversations.
+
+## Segment your base
+
+The contact list has no filters by tag or field. To work with groups of contacts, use these features:
+
+| Goal | Where to do it |
+| --- | --- |
+| Send a message to a segment | **Campaigns**: the audience step filters by tags, conversation status, last interaction, and contact fields, with a preview of the count. Available to Manager and Administrator. |
+| Classify contacts to find them later | Apply **tags** to the contact, manually or through the AI agent. |
+| Store structured data for segmentation | Use **additional fields** and filter by them in campaigns. |
+
+## Best practices
+
+- Search before creating a contact manually. This avoids duplicates.
+- Standardize numbers with the country code. Phone search becomes more reliable.
+- Use tags with consistent names, for example `active-customer` and `cold-lead`, to segment in campaigns.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Contact tags" icon="tag" href="/contacts/manage-contact-tags">
+    Classify contacts to segment them later.
+  </Card>
+
+  <Card title="Additional fields" icon="list-plus" href="/contacts/use-custom-fields">
+    Store structured data for each contact.
+  </Card>
+
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Filter the audience by tags and fields.
+  </Card>
+
+  <Card title="Add contacts" icon="user-plus" href="/contacts/add-new-contact">
+    Create or import contacts.
+  </Card>
+</CardGroup>

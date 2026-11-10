@@ -1,0 +1,104 @@
+---
+title: "Papéis e permissões"
+description: "Entenda o que Administrador, Gerente e Membro podem fazer na BluBash e como as equipes definem quais conversas, contatos e Pipelines cada pessoa acessa."
+---
+
+O acesso na BluBash combina duas coisas: a **função no workspace** (Administrador, Gerente ou Membro) define o que a pessoa pode fazer, e as **equipes** de que ela participa definem sobre quais conversas, contatos, canais e Pipelines ela atua.
+
+<Warning>
+  Todo membro precisa pertencer a pelo menos uma equipe. Sem equipe, a pessoa não acessa conversas, contatos, Pipelines nem tarefas.
+</Warning>
+
+## Resumo dos papéis
+
+| Papel | Para quem | Visão |
+| --- | --- | --- |
+| **Administrador** | Responsáveis pela conta, pela configuração e pelos agentes de IA | Todo o workspace |
+| **Gerente** | Coordenadores e supervisores de área | As equipes de que participa |
+| **Membro** | Atendentes, vendedores e analistas do dia a dia | As equipes de que participa |
+
+## O que cada papel pode fazer
+
+| Recurso | Administrador | Gerente | Membro |
+| --- | --- | --- | --- |
+| Conversas | Todas | Das suas equipes | Das suas equipes |
+| Contatos | Todos, inclusive excluir | Das suas equipes, inclusive excluir | Das suas equipes, sem excluir |
+| Pipelines e negócios | Criar, configurar e excluir | Criar, configurar e excluir | Ver e trabalhar os Pipelines das suas equipes |
+| Tarefas | Escopos **Minhas**, **Equipes** e **Workspace** | Escopos **Minhas** e **Equipes** | Escopo **Minhas** |
+| Campanhas | Sim | Das suas equipes | Não |
+| Templates | Gerenciar todos | Gerenciar, nas suas equipes | Usar |
+| Etiquetas | Gerenciar todas | Gerenciar as globais e as das suas equipes | Usar |
+| Relatórios e Insights | Sim | Das suas equipes | Não |
+| Agentes de IA | Criar, treinar e configurar | Não | Não |
+| Canais | Gerenciar | Não gerencia | Não gerencia |
+| Equipes | Criar, configurar e excluir | Não gerencia | Não gerencia |
+| Membros | Convidar, editar e remover | Não | Não |
+| Campos Adicionais | Criar e editar | Preencher | Preencher |
+| Faturamento & Uso | Sim | Não | Não |
+
+<Note>
+  Somente Administradores criam, treinam e configuram agentes de IA. Gerentes e Membros trabalham com as conversas que o agente transfere para as suas equipes e podem devolver uma conversa para a IA quando fizer sentido.
+</Note>
+
+<Info>
+  Uma etiqueta restrita a várias equipes só pode ser editada ou removida por quem participa de todas essas equipes. Etiquetas globais são gerenciadas por Administradores e Gerentes. Veja [Criar etiquetas →](/pt-BR/account-settings/create-tags).
+</Info>
+
+## Função na equipe: Gerente ou Agente
+
+Além da função no workspace, cada pessoa tem uma função dentro de cada equipe de que participa: **Gerente** ou **Agente**. Você define essa função na aba **Membros** da equipe. Aqui, "Agente" é a pessoa que atende, não o agente de IA.
+
+A função na equipe identifica quem coordena aquela equipe e aparece, por exemplo, na lista de pessoas ao transferir uma conversa. Ela não substitui a função no workspace: o que a pessoa pode fazer na plataforma continua definido pelo papel de Administrador, Gerente ou Membro.
+
+## Onde o agente de IA entra
+
+| Etapa | Quem faz |
+| --- | --- |
+| Criar, treinar e configurar o agente de IA | Administrador |
+| Atender, qualificar e transferir para uma equipe | Agente de IA, pela habilidade **Transferir para Equipe** |
+| Assumir a conversa transferida | Membros da equipe de destino |
+| Criar e mover negócios nos Pipelines | Gerentes e Administradores criam Pipelines; todos trabalham os negócios das suas equipes |
+| Analisar a qualidade com IA nos relatórios | Gerentes e Administradores |
+
+<Tip>
+  Antes de transferir uma conversa, deixe uma nota interna com o resumo do caso. Quem recebe começa o atendimento já com o contexto.
+</Tip>
+
+## Como escolher o papel de cada pessoa
+
+| Perfil | Papel recomendado |
+| --- | --- |
+| Sócios e responsáveis pela configuração da conta e dos agentes de IA | **Administrador** |
+| Coordenadores de área e supervisores de atendimento | **Gerente** |
+| Atendentes, vendedores e analistas do dia a dia | **Membro** |
+
+## Erros comuns
+
+| Situação | Causa provável | O que fazer |
+| --- | --- | --- |
+| A pessoa entra e vê a tela **Sem Acesso a Equipes** | Ela não participa de nenhuma equipe | Adicione a pessoa a uma equipe na aba **Membros** da equipe |
+| O Gerente não vê uma conversa | A conversa é de um canal ou equipe de que ele não participa | Inclua o Gerente na equipe responsável |
+| O Membro não encontra **Campanhas** ou **Relatórios e Insights** | Esses recursos não fazem parte do papel Membro | Altere a função para Gerente, se for o caso |
+| O botão de editar uma etiqueta está desabilitado | A pessoa não participa de todas as equipes da etiqueta | Peça a um Administrador ou ajuste as equipes |
+
+Reveja os papéis periodicamente e mantenha poucos Administradores.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Adicionar um membro" icon="user-plus" href="/pt-BR/members/add-member">
+    Convide pessoas com a função e as equipes certas.
+  </Card>
+
+  <Card title="Editar a função de um membro" icon="user-cog" href="/pt-BR/members/edit-member-permissions">
+    Promova ou restrinja o acesso de alguém.
+  </Card>
+
+  <Card title="Criar e configurar equipes" icon="users" href="/pt-BR/account-settings/create-configure-teams">
+    Defina canais, Pipelines e regras de cada equipe.
+  </Card>
+
+  <Card title="Tarefas" icon="list-checks" href="/pt-BR/tasks/overview">
+    Veja como os escopos de tarefas mudam por papel.
+  </Card>
+</CardGroup>

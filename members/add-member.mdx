@@ -1,0 +1,99 @@
+---
+title: "Add a member"
+description: "Invite a person to your BluBash workspace with their email, role, and teams. Only Administrators can send invitations."
+---
+
+Adding a member means sending an email invitation with the person's role and teams. They set their own name and password on first access and, from then on, receive the conversations the AI agent transfers to their teams.
+
+<Note>
+  Only **Administrators** can add members. The **Add Member** button is not shown to Managers and Members.
+</Note>
+
+## Before you start
+
+- **Create teams first.** The invitation requires at least one team. If the workspace has no teams yet, BluBash shows **No teams available. Create a team before adding members.** See [Create and configure teams →](/account-settings/create-configure-teams).
+- **Check your plan limit.** The number of users depends on your plan, shown in **Billing & Usage**.
+- **Decide on the role.** See [Roles and permissions →](/members/roles-permissions) if you are unsure between Manager and Member.
+
+## Send the invitation
+
+<Steps>
+  <Step title="Open Members">
+    In the side menu, click **Members**, then click **Add Member** in the top-right corner.
+  </Step>
+  <Step title="Enter email and role">
+    Fill in the fields and click **Continue**.
+
+    | Field | Required | Description |
+    | --- | --- | --- |
+    | **Email** | Yes | The address the person uses at work. The invitation is sent there. |
+    | **Role** | Yes | **Administrator**, **Manager**, or **Member**. The default is **Member**. |
+  </Step>
+  <Step title="Select the teams">
+    Check the teams the person will join. Use **Search teams...** to filter the list and **Select all** or **Clear selection** to check or uncheck everything at once. The counter shows how many teams are selected.
+
+    <Warning>
+      Select at least one team. Without a team, the member cannot access the product's features.
+    </Warning>
+  </Step>
+  <Step title="Send">
+    Click **Add Member**. BluBash confirms with **Member invitation sent successfully** and the person appears in the list with the **Invitation Sent** status.
+  </Step>
+</Steps>
+
+To go back and fix the email or role, click **Back** on the teams step.
+
+## What happens after the invitation
+
+| Moment | What happens |
+| --- | --- |
+| Invitation sent | The person receives an invitation email and appears in the list with **Invitation Sent** |
+| First access | They open the invitation and, on the **Setup Password** screen, enter their **Name** and create a password |
+| Access granted | The **Invitation Sent** status disappears and the person sees the conversations, contacts, and Pipelines of the selected teams |
+| Conversations | When the AI agent uses **Transfer to Team** for one of those teams, the conversation becomes available to them |
+
+The password must have at least 8 characters, including an uppercase letter, a lowercase letter, a number, and a special character.
+
+<Info>
+  The member's name is set by the person in their own profile. Administrators do not enter or edit it.
+</Info>
+
+## Resend the invitation
+
+If the person cannot find the invitation email, click the **Resend invitation** icon on their row. The icon is shown while the status is **Invitation Sent**.
+
+## Best practices
+
+- Use each person's work email. Avoid shared addresses: each team member needs their own access so reports and ownership stay accurate.
+- Select only the teams the person will actually work in. Extra teams increase the number of conversations they receive.
+- Keep the number of Administrators low. For coordination, use **Manager**.
+- Ask the person to check their spam folder if the invitation does not arrive.
+
+## Common issues
+
+| Situation | What to do |
+| --- | --- |
+| **No teams available. Create a team before adding members.** | Create a team in **Teams** and try again |
+| **Select at least one team** | Check at least one team before sending |
+| **Please enter a valid email** | Fix the email address |
+| The person logged in but sees no conversations | Check that they are in the right team and that this team handles the channel of those conversations |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Edit a member's role" icon="user-cog" href="/members/edit-member-permissions">
+    Adjust the role after the invitation.
+  </Card>
+
+  <Card title="Create and configure teams" icon="users" href="/account-settings/create-configure-teams">
+    Manage who belongs to each team.
+  </Card>
+
+  <Card title="Add users" icon="user-plus" href="/account-settings/add-users">
+    See the full flow for bringing a person into the workspace.
+  </Card>
+
+  <Card title="Remove a member" icon="user-minus" href="/members/remove-member">
+    Revoke access for people who left.
+  </Card>
+</CardGroup>

@@ -1,0 +1,136 @@
+---
+title: "Usar campos adicionais nos contatos"
+sidebarTitle: "Campos adicionais"
+description: "Crie campos adicionais na BluBash para guardar dados do seu negócio em cada contato, preencha manualmente ou pelo agente de IA e use em campanhas."
+---
+
+Campos adicionais guardam informações que vão além de nome, e-mail e telefone. Exemplos: CPF, plano contratado, data de renovação, cidade, unidade ou nota de satisfação. Eles deixam os dados estruturados e prontos para segmentar campanhas e personalizar mensagens.
+
+## Como funciona
+
+| Etapa | Quem faz | Onde |
+| --- | --- | --- |
+| Criar e configurar os campos | Administrador | **Campos Adicionais**, na barra lateral |
+| Preencher os valores | Administrador, Gerente, Membro e agente de IA | Página do contato e conversa |
+| Usar os valores | Gerente e Administrador | Audiência e variáveis das campanhas, importação de contatos |
+
+## Tipos de campo
+
+| Tipo | Uso indicado | Como é preenchido |
+| --- | --- | --- |
+| **Texto** | Informações livres, como CPF ou cidade | Digitação livre |
+| **Número** | Quantidades, como número de funcionários | Apenas números |
+| **Moeda** | Valores, como ticket médio | Valor monetário |
+| **Data** | Datas, como aniversário ou renovação | Seletor de data |
+| **Email** | E-mail secundário | Valida o formato de e-mail |
+| **Telefone** | Telefone secundário | Código do país e número |
+| **URL** | Site ou link de perfil | Valida o formato de link |
+| **Seleção** | Uma opção de uma lista, como plano | Lista suspensa |
+| **Seleção múltipla** | Várias opções, como produtos de interesse | Lista com múltiplas escolhas |
+| **Sim / Não** | Respostas binárias, como "aceita contato" | Alternância |
+| **Avaliação** | Notas, como satisfação | Estrelas |
+
+## Criar um campo adicional
+
+<Note>
+  Somente o **Administrador** acessa **Campos Adicionais**. Gerentes e Membros apenas preenchem os valores.
+</Note>
+
+<Steps>
+  <Step title="Abra Campos Adicionais">
+    Na barra lateral, clique em **Campos Adicionais**. Selecione a aba **Contato**.
+  </Step>
+  <Step title="Inicie a criação">
+    Clique em **Criar campo de contato**. A janela informa que o campo aparecerá nos contatos do workspace.
+  </Step>
+  <Step title="Configure o campo">
+    | Opção | O que define |
+    | --- | --- |
+    | **Nome do campo** | Rótulo exibido na página do contato. |
+    | **Tipo do campo** | Formato do dado. O tipo não pode ser alterado após a criação. |
+    | **Descrição** | Texto de ajuda opcional. |
+    | **Obrigatório** | O campo deve ser preenchido quando aparecer no formulário. |
+    | **Visível** | Mostra o campo nos formulários. Campos ocultos não aparecem no contato. |
+    | **Ordem de exibição** | Posição do campo na lista. |
+    | **Opções** | Itens da lista, para campos de **Seleção** e **Seleção múltipla**. Use **Adicionar opção**. |
+    | **Padrão de validação** e **Mensagem de validação** | Regra opcional (expressão regular) e mensagem de erro exibida quando o valor não segue a regra. |
+  </Step>
+  <Step title="Salve">
+    Clique em **Criar campo**. O campo recebe um **ID**, que você copia com **Copiar ID** para usar em integrações e na API.
+  </Step>
+</Steps>
+
+### Organizar, arquivar e excluir
+
+- Use **Mover para cima** e **Mover para baixo** para reordenar. Limpe a busca antes de reordenar.
+- **Arquivar** tira o campo dos formulários e mantém os valores salvos. Use **Restaurar** para trazê-lo de volta.
+- **Excluir campo** remove a definição de forma permanente. Se algum contato já tiver valor no campo, a exclusão é bloqueada. Nesse caso, arquive.
+
+<Info>
+  A aba **Negócio** cria campos para os negócios dos Pipelines. Esses campos ficam disponíveis no workspace e você escolhe quais aparecem em cada Pipeline. Veja [Negócios →](/pt-BR/pipelines/deals).
+</Info>
+
+## Preencher campos em um contato
+
+<Steps>
+  <Step title="Abra o contato">
+    Clique em **Contatos** e depois no contato.
+  </Step>
+  <Step title="Localize o campo">
+    Os campos adicionais aparecem em **Informações importantes**, depois do responsável. Campos obrigatórios têm `*` no nome. Para ver campos ainda vazios, clique em **Mostrar N campos vazios**.
+  </Step>
+  <Step title="Edite o valor">
+    Clique no valor. O editor muda conforme o tipo: caixa de texto, calendário, lista, estrelas ou alternância.
+  </Step>
+  <Step title="Salve">
+    Pressione **Enter** ou clique fora do campo. Em listas, escolha a opção desejada. Pressione **Esc** para cancelar.
+  </Step>
+</Steps>
+
+Cada alteração gera o evento **Contato atualizado** no **Histórico**, com os campos alterados e quem alterou.
+
+## Preenchimento pelo agente de IA
+
+O agente de IA pode preencher campos adicionais durante a conversa. Por exemplo, ele pergunta a cidade e o plano de interesse e grava as respostas no contato antes de transferir para a equipe.
+
+1. No agente, abra a aba **Habilidades** e ative a habilidade nativa **Atualizar contato**.
+2. No treinamento, explique quais informações o agente deve coletar e o nome dos campos correspondentes.
+3. Teste com **Testar Agente** e confira o **Histórico** do contato.
+
+Veja [Configurar o agente de IA →](/pt-BR/ai-agents/configure-agent-settings).
+
+## Usar os campos
+
+| Recurso | Como o campo é usado |
+| --- | --- |
+| **Campanhas: audiência** | Filtre contatos por campo, com condições como **Igual a**, **Contém**, **Está vazio** e **Tem valor**. |
+| **Campanhas: mensagem** | Insira o campo como variável para personalizar o texto ou mapear variáveis de template. |
+| **Importação de contatos** | Mapeie colunas do CSV para campos adicionais. |
+| **API** | Use o **ID** do campo em integrações. |
+
+## Boas práticas
+
+- Prefira **Seleção** a **Texto** quando os valores possíveis são conhecidos. Isso evita variações de escrita e facilita filtros.
+- Marque como **Obrigatório** só o que for realmente essencial.
+- Arquive em vez de excluir campos que já têm dados.
+- Use nomes claros, pois eles aparecem para a equipe e nos filtros das campanhas.
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Editar contato" icon="pencil" href="/pt-BR/contacts/edit-contact">
+    Veja todos os campos da página do contato.
+  </Card>
+
+  <Card title="Criar uma campanha" icon="megaphone" href="/pt-BR/campaigns/create-campaign">
+    Segmente e personalize com campos adicionais.
+  </Card>
+
+  <Card title="Configurar o agente" icon="bot" href="/pt-BR/ai-agents/configure-agent-settings">
+    Deixe o agente preencher os campos.
+  </Card>
+
+  <Card title="Usar variáveis" icon="braces" href="/pt-BR/templates/use-variables">
+    Personalize templates com dados do contato.
+  </Card>
+</CardGroup>

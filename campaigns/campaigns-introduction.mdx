@@ -1,0 +1,108 @@
+---
+title: "WhatsApp campaigns in BluBash"
+sidebarTitle: "Campaigns introduction"
+description: "Learn about BluBash campaigns: bulk and ongoing WhatsApp sends, Meta rules for templates, opt-in, the 24-hour window, limits, and costs."
+---
+
+Campaigns send the same message, personalized with each contact's data, to many contacts at once. Use them for promotions, launches, reminders, re-engagement, surveys, and automatic welcome or post-sale messages.
+
+<Warning>
+  BluBash campaigns are sent **only through WhatsApp**. Instagram and Webchat are receptive-only channels and do not appear in the campaign channel selection.
+</Warning>
+
+## Campaign types
+
+| Type | How it works | When to use it |
+| --- | --- | --- |
+| **Single Campaign** (Batch) | You define the audience with filters and send now or schedule a date. | Flash or seasonal promotions, launches, re-engagement, surveys, or NPS. |
+| **Ongoing Campaign** (Automation) | It does not use a fixed list. Contacts join the audience over time, manually, through the API, or through the RD Station Marketing integration, and receive the message when they join. | Welcome messages for new sign-ups, post-purchase, birthdays, lead nurturing. |
+
+## Who can use it
+
+| Role | Access to **Campaigns** |
+| --- | --- |
+| **Administrator** | Creates, edits, starts, pauses, and deletes campaigns. |
+| **Manager** | Creates, edits, starts, pauses, and deletes campaigns for their teams. |
+| **Member** | No access. The menu does not appear. |
+
+<Note>
+  The **Campaigns** feature depends on your plan. In the channel selection, only the WhatsApp channels you are allowed to use appear.
+</Note>
+
+## Which WhatsApp connection to use
+
+|  | **WhatsApp Business API (official)** | **WhatsApp Lite** |
+| --- | --- | --- |
+| Recommended for campaigns | Yes. It is the recommended path. | Only small sends and to contacts who already talk to you. |
+| Message type | **Template** approved by Meta. Free text and quick replies are delivered only to contacts who interacted in the last 24 hours. | **Manual text** or quick replies. |
+| Risk to the number | Controlled by Meta's rules and limits. | High. Bulk sends can lead to restriction or a ban of the number. |
+| Cost per message | Charged by Meta according to the template category. | No Meta charge, but higher operational risk. |
+
+<Warning>
+  Do not use WhatsApp Lite for bulk sends. WhatsApp can suspend or permanently ban the number, and you lose your service channel with it.
+</Warning>
+
+## Meta rules for the official API
+
+The rules below are defined by Meta and apply to any send through the official WhatsApp API. BluBash does not change these rules.
+
+### Opt-in
+
+Send proactive messages only to contacts who agreed to receive communications from your company on WhatsApp. Keep a record of that consent, for example in a tag or additional field. Sending without opt-in increases blocks and reports, which lowers the number's quality.
+
+### The 24-hour window
+
+- After the contact's last message, you have 24 hours to send free-form messages.
+- Outside the window, you can only start the conversation with an approved **template**.
+- When the contact replies, the window opens again.
+
+That is why campaigns to your general base should use **Template**. **Manual text** messages and quick replies only reach contacts who interacted in the last 24 hours.
+
+### Templates and categories
+
+Templates go through Meta approval before use. The category defines the purpose and affects the cost:
+
+| Category | Use |
+| --- | --- |
+| **Marketing** | Promotions, offers, newsletters, and campaigns. |
+| **Utility** | Order confirmations, delivery status, reminders, and notifications. |
+| **Authentication** | Verification codes and login confirmations. |
+
+See [What are templates and quick replies →](/templates/what-are-templates-quick-replies).
+
+### Costs
+
+Meta charges for template messages sent through the official API. The price depends on the template category and the recipient's country, and it is defined and updated by Meta. BluBash does not set these prices. Check the current rules in the [Meta Business Help Center](https://www.facebook.com/business/help) before planning large sends.
+
+### Sending limits and quality
+
+Meta limits how many different contacts each number can reach with business-initiated messages in a given period, and adjusts that limit according to the number's quality. Blocks and reports lower the quality and can restrict the number. Track your number's quality and limit in [Meta Business Manager](https://business.facebook.com).
+
+In BluBash, you also control the campaign's **Sending speed**, from 1 to 300 messages per minute.
+
+## What happens when the contact replies
+
+Each reply to a campaign arrives as a conversation on the WhatsApp channel used for the send. From there, the hybrid service configured for the channel applies: the AI agent can reply, qualify, and transfer to your team, and your team continues the conversation and records deals in Pipelines.
+
+<Tip>
+  Before a large campaign, review the AI agent's training with the questions the offer is likely to generate. This way the agent handles the peak of replies with confidence and transfers only what needs your team.
+</Tip>
+
+Each send is also recorded in the contact's **History**, as **Campaign sent**, **Campaign delivered**, **Campaign read**, or **Campaign failed**.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create a campaign" icon="megaphone" href="/campaigns/create-campaign">
+    Follow the step-by-step wizard.
+  </Card>
+  <Card title="Manage campaigns" icon="chart-bar" href="/campaigns/manage-campaigns">
+    Track metrics and pause, resume, or cancel sends.
+  </Card>
+  <Card title="Create a template" icon="file-text" href="/templates/create-template">
+    Create templates to send through the official API.
+  </Card>
+  <Card title="Official WhatsApp" icon="message-circle" href="/channels/configure-whatsapp-official">
+    Connect the official WhatsApp API.
+  </Card>
+</CardGroup>

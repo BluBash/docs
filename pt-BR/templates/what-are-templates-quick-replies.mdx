@@ -1,0 +1,108 @@
+---
+title: "Templates e respostas rápidas: visão geral"
+sidebarTitle: "O que são templates e respostas rápidas"
+description: "Entenda a diferença entre templates aprovados pela Meta e respostas rápidas, em quais canais cada um funciona e quando usar cada um na BluBash."
+---
+
+A BluBash tem dois tipos de mensagem pronta: **templates de mensagem** e **respostas rápidas**. Os dois ficam na mesma página, **Templates e Respostas Rápidas**, mas têm regras diferentes de aprovação, canal e uso.
+
+- **Template de Mensagem**: mensagem estruturada que a Meta precisa aprovar antes do uso. Existe apenas para o **WhatsApp Business API**.
+- **Resposta Rápida**: mensagem pronta para uso imediato, sem aprovação. Funciona em todos os canais.
+
+## Templates de mensagem
+
+No WhatsApp Business API, a Meta só permite mensagem livre até 24 horas depois da última mensagem do contato. Fora dessa janela, a única forma de falar com o contato é enviar um template aprovado.
+
+Use templates para:
+
+- **Iniciar uma conversa** com um contato que nunca escreveu para você.
+- **Retomar uma conversa** depois de mais de 24 horas sem mensagem do contato.
+- **Enviar notificações**: confirmação de pedido, lembrete de agendamento, aviso de pagamento.
+- **Disparar campanhas** pelo WhatsApp Business API.
+
+Cada template tem uma categoria da Meta, que define o tipo de conteúdo permitido e como a Meta cobra o envio:
+
+| Categoria da Meta | Uso | Exemplo |
+| --- | --- | --- |
+| **Marketing** | Promoções, ofertas, novidades, convites para retomar contato comercial | "Black Friday: 50% de desconto em toda a loja" |
+| **Utilitário** | Confirmações, atualizações de pedido, lembretes, avisos de conta | "Seu pedido #123 foi enviado" |
+| **Autenticação** | Códigos de verificação e confirmação de login | "Seu código de verificação é 123456" |
+
+<Info>
+  A Meta cobra pelo envio de templates diretamente na sua conta Meta. O valor depende da categoria do template e do país do destinatário. A BluBash não define esses valores. Consulte as regras vigentes na [Central de Ajuda da Meta para empresas](https://www.facebook.com/business/help).
+</Info>
+
+## Respostas rápidas
+
+Respostas rápidas são um banco de mensagens prontas para a equipe usar durante a conversa. Elas não passam pela Meta, ficam disponíveis assim que são criadas e podem conter texto, imagem, vídeo, documento ou cartões de contato.
+
+Use respostas rápidas para:
+
+- **Saudações** e apresentação do atendente.
+- **Perguntas frequentes**: prazos, formas de pagamento, política de troca.
+- **Informações fixas**: endereço, horário de atendimento, chave Pix.
+- **Materiais**: catálogo em PDF, tabela de preços, vídeo de demonstração.
+- **Encerramentos** padronizados.
+
+## Principais diferenças
+
+|  | Template de mensagem | Resposta rápida |
+| --- | --- | --- |
+| **Aprovação da Meta** | Obrigatória | Não precisa |
+| **Canais** | Apenas WhatsApp Business API | WhatsApp Business API, WhatsApp Lite, Instagram e Webchat |
+| **Fora da janela de 24 horas (WhatsApp Business API)** | Pode ser enviado | Não pode ser enviada |
+| **Conteúdo** | **Cabeçalho**, **Corpo**, **Rodapé** e **Botões** | **Texto**, **Imagem**, **Vídeo**, **Documento** ou **Contatos** |
+| **Variáveis** | Até 10 no corpo e 1 no cabeçalho | Sim, no texto da mensagem |
+| **Disponível para** | Os canais selecionados | As equipes selecionadas |
+| **Uso em campanhas** | Sim | Não |
+| **Status** | Aguardando Aprovação, Aprovado, Rejeitado, Parcial, Inativo | Ativo ou Inativo |
+
+## Regras por canal
+
+| Canal | Templates | Respostas rápidas |
+| --- | --- | --- |
+| **WhatsApp Business API** | Obrigatórios para iniciar conversa e para retomar depois de 24 horas | Dentro da janela de 24 horas |
+| **WhatsApp Lite** | Não usa. Você envia mensagem livre a qualquer momento | Sempre que puder responder |
+| **Instagram** | Não usa. Você responde em até 7 dias após a última mensagem do contato | Dentro da janela do Instagram |
+| **Webchat** | Não usa. O visitante inicia a conversa pelo widget | Durante a conversa |
+
+## Templates, respostas rápidas e o agente de IA
+
+No atendimento híbrido, o agente de IA conduz o primeiro contato e transfere para a equipe quando precisa. As mensagens prontas entram nos dois pontos em que a pessoa da equipe age:
+
+- **Depois da transferência**: o atendente assume a conversa e usa respostas rápidas para manter o padrão da empresa sem digitar tudo de novo.
+- **Contato que parou de responder**: se passaram mais de 24 horas no WhatsApp Business API, o atendente envia um template para retomar. Quando o contato responde, a janela reabre.
+
+[Atendimento híbrido →](/pt-BR/ai-agents/hybrid-service)
+
+## Quem cria e quem usa
+
+| Papel | O que pode fazer |
+| --- | --- |
+| **Administrador** | Criar, editar e excluir todos os templates e respostas rápidas |
+| **Gerente** | Criar, editar e excluir templates e respostas rápidas dos canais e equipes a que tem acesso |
+| **Membro** | Usar nas conversas os templates dos seus canais e as respostas rápidas das suas equipes |
+
+A página lista apenas o que você pode ver: templates dos seus canais e respostas rápidas das suas equipes.
+
+[Papéis e permissões →](/pt-BR/members/roles-permissions)
+
+## Próximos passos
+
+<CardGroup cols={2}>
+  <Card title="Criar um template" icon="file-text" href="/pt-BR/templates/create-template">
+    Monte o template e envie para aprovação da Meta.
+  </Card>
+
+  <Card title="Criar uma resposta rápida" icon="zap" href="/pt-BR/templates/create-quick-reply">
+    Cadastre mensagens prontas para a equipe.
+  </Card>
+
+  <Card title="Usar variáveis" icon="braces" href="/pt-BR/templates/use-variables">
+    Personalize mensagens com dados do contato.
+  </Card>
+
+  <Card title="Enviar na conversa" icon="send" href="/pt-BR/templates/send-templates-quick-replies">
+    Veja como a equipe usa templates e respostas rápidas.
+  </Card>
+</CardGroup>

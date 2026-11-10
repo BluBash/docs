@@ -1,0 +1,132 @@
+---
+title: "Create tags"
+description: "Create tags to classify contacts and conversations and use them in filters, campaigns, Pipelines, and AI agent skills."
+---
+
+Tags classify contacts and conversations. With them you filter the inbox, segment campaigns, filter Pipeline boards, and let the AI agent label each customer automatically during the conversation. In the interface, the feature appears as **Tags**.
+
+<Info>
+  A tag can be applied to the **contact** or to the **conversation**. Contact tags describe who the person is and stay with them across all conversations. Conversation tags describe that specific conversation.
+</Info>
+
+## Where tags are used
+
+| Where | How |
+| --- | --- |
+| Conversations | In the contact panel, under **Contact Tags** and **Conversation Tags**. Inbox filters include tags |
+| Contacts | In the contact record and when importing contacts, in **Automatically add tags to imported contacts** |
+| AI agent | **Add Tag** and **Remove Tag** skills, which the agent triggers during the conversation |
+| Campaigns | In the audience, under **Tags**, to choose who receives the campaign |
+| Pipelines | In the board's **Tags** filter |
+
+## Who can create and manage tags
+
+| Role | Can see | Can create and manage |
+| --- | --- | --- |
+| **Administrator** | All tags | All |
+| **Manager** | Global tags and their teams' tags | Global tags and tags restricted to teams they belong to |
+| **Member** | Global tags and their teams' tags | Uses the available tags in conversations and contacts |
+
+<Note>
+  To edit or delete a tag restricted to teams, you must belong to **all** of its teams. Otherwise, the buttons are disabled with the note **You need access to all teams of this tag to manage it**.
+</Note>
+
+## Create a tag
+
+<Steps>
+  <Step title="Open Tags">
+    In the side menu, click **Tags**. The **Manage Tags** page lists the existing tags.
+  </Step>
+
+  <Step title="Click Add Tag">
+    The button is in the top-right corner of the page.
+  </Step>
+
+  <Step title="Fill in the fields">
+    | Field | Required | Description |
+    | --- | --- | --- |
+    | **Name** | Yes | A short, clear label, such as "Active customer" or "Qualified lead" |
+    | **Description** | No | When to use the tag. Helps the team and serves as a reference when configuring the AI agent |
+    | **Color** | Yes | Pick it in the selector or type the hex code. The default is blue (`#3B82F6`) |
+    | **Available for all teams** | On by default | Leave it on for a global tag |
+    | **Select specific teams** | When the option above is off | Restricts the tag to the selected teams |
+  </Step>
+
+  <Step title="Save">
+    Click **Create Tag**. BluBash confirms with **Tag created successfully!**
+  </Step>
+</Steps>
+
+In the list, the **Teams** column shows the tag's teams or the **Global** badge. The other columns are **Name**, **Description**, **Color**, **Created at**, and **Actions**. Use **Search tags...** to find a tag.
+
+## Edit or delete
+
+- **Edit**: click **Edit** on the tag's row, adjust the fields, and click **Save Changes**.
+- **Delete**: click **Delete** and confirm with **Delete Tag**.
+
+<Warning>
+  When you delete a tag, it is removed from all contacts and conversations where it was applied. This cannot be undone. First review the campaigns and AI agent skills that use the tag.
+</Warning>
+
+## Tags and the AI agent
+
+The AI agent can apply and remove tags on its own, based on what the customer says:
+
+| Skill | What it does | Example |
+| --- | --- | --- |
+| **Add Tag** | Adds a tag to the contact | Tag "Interest: annual plan" when the customer asks about the annual plan |
+| **Remove Tag** | Removes a specific tag from the contact | Remove "Overdue" when the customer confirms payment |
+
+Create the tag before configuring the skill, because the skill points to an existing tag. Describe in the skill when the agent should use it. See [Configure skills →](/ai-agents/configure-skills).
+
+<Tip>
+  Connect both ends: the AI agent tags contacts during conversations and, later, you use those tags to build a campaign audience or filter a Pipeline board.
+</Tip>
+
+## Tag ideas
+
+<CardGroup cols={2}>
+  <Card title="Customer type" icon="users">
+    Individual, Company, Distributor, Reseller
+  </Card>
+
+  <Card title="Source" icon="log-in">
+    Referral, Instagram, Website, Event
+  </Card>
+
+  <Card title="Relationship status" icon="handshake">
+    Active customer, Inactive customer, Former customer
+  </Card>
+
+  <Card title="Interest" icon="star">
+    Product A, Technical support, Consulting
+  </Card>
+</CardGroup>
+
+## Best practices
+
+- Define a naming pattern, such as "Source: Instagram" and "Interest: Product A", so the list stays easy to read.
+- Use colors by category: one color for source, another for status, another for interest.
+- Avoid tags for information that already lives elsewhere. Deal stage belongs in the Pipeline; ownership belongs in contact ownership.
+- Restrict to specific teams the tags that only make sense for one area.
+- Review the list regularly and remove duplicates.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Use tags in conversations" icon="tag" href="/conversations/tags-purpose-usage">
+    Apply tags during conversations.
+  </Card>
+
+  <Card title="Manage contact tags" icon="contact" href="/contacts/manage-contact-tags">
+    Organize contacts with tags.
+  </Card>
+
+  <Card title="Configure skills" icon="zap" href="/ai-agents/configure-skills">
+    Let the AI agent apply tags.
+  </Card>
+
+  <Card title="Create a campaign" icon="send" href="/campaigns/create-campaign">
+    Segment the audience by tags.
+  </Card>
+</CardGroup>

@@ -1,0 +1,111 @@
+---
+title: "Set up Webchat"
+description: "Add a chat to your website with BluBash Webchat: install the code, customize the look, and serve visitors with an AI agent and your team."
+---
+
+Webchat is a chat widget for your website. The visitor clicks the button, enters their name and email, and talks to your business in real time. Conversations land in the same inbox as WhatsApp and Instagram, and can be handled by the AI agent and your team. The widget supports text, images, audio, video, and documents, and its look is customizable.
+
+<Info>
+  Webchat is a receptive-only channel. The website visitor starts the conversation.
+</Info>
+
+## When to use it
+
+- You want to serve visitors while they are on your website, for example on the pricing or checkout page.
+- You want the AI agent to answer questions and capture contacts with name and email, 24 hours a day.
+- You want a support link to share where you cannot install code, such as in an email signature.
+
+## Before you start
+
+- Have access to edit the website code, or someone who can paste the script for you.
+- Have at least one team created to be the **Default Team**.
+
+## Create and install Webchat
+
+<Steps>
+  <Step title="Create the channel">
+    In **Channels**, click **Add Channel** and choose the **WebChat** card. Fill in **Channel Name** and **Default Team**, choose the **AI Agent (Optional)**, and click **Create Channel**.
+  </Step>
+  <Step title="Open the installation details">
+    BluBash opens the channel page. On the **WebChat** card, you find:
+
+    | Field | What it is for |
+    | --- | --- |
+    | **Channel ID** | The channel identifier, used by the script. |
+    | **Public URL** | Direct link to access the webchat interface, with nothing to install. |
+    | **Embed Code** | Script to embed the chat widget on your website. |
+  </Step>
+  <Step title="Copy the code">
+    Click **Copy Code**. The code looks like this:
+
+    ```html
+    <script src="https://BLUBASH-ADDRESS/webchat-widget.js" data-channel-id="CHANNEL-ID" data-position="bottom-right"></script>
+    ```
+
+    Always use the code copied from the screen, because it already includes the correct address and ID.
+  </Step>
+  <Step title="Paste it on your website">
+    Paste the code before the closing `</body>` tag on every page where the chat should appear. In website builders, use the custom footer scripts field.
+  </Step>
+  <Step title="Check the status">
+    On the channel page, open **Danger Zone** and make sure **Channel Status** is **Active**. When the channel is inactive, the widget shows **Chat Unavailable** to the visitor.
+  </Step>
+  <Step title="Test it">
+    Open your website, click the chat button, enter a name and email, and send a message. Check that the conversation shows up in the default team's inbox.
+  </Step>
+</Steps>
+
+<Tip>
+  Use the **Public URL** where you cannot install the script: email signatures, social media bios, QR codes on printed material, or a button on another page.
+</Tip>
+
+## Customize the widget
+
+On the same page, the **Webchat Configuration** section controls the look and behavior. On the right, the **Widget Preview** shows how the chat looks on the site, closed and open. After making changes, click **Save**. While there are pending changes, the page shows "You have unsaved changes".
+
+| Section | Field | What it does |
+| --- | --- | --- |
+| **Appearance & Branding** | **Primary Color** | Color of the chat's buttons, links, and highlights, in hexadecimal (for example, `#0171E4`, the default). |
+|  | **Chat Title** | Title in the chat header. If left blank, the preview shows "Support". |
+|  | **Chat Subtitle** | Text below the title. If left blank, the preview shows "We're online". |
+|  | **Welcome Message** | Bubble shown next to the chat button on the site. Each line becomes a bubble. Leave blank to hide it. |
+|  | **Message Input Placeholder** | Sample text in the field where the visitor types. |
+| **Media Permissions** | **Allow Media** | Lets the visitor send images, videos, audio, and documents. On by default. |
+|  | **Maximum File Size (MB)** | Limit per file, from 1 to 50 MB. The default is 50 MB. Only shown when **Allow Media** is on. |
+| **Chat Behavior** | **Show Agent Name** | Shows the name of whoever is handling the chat in the header. On by default. |
+
+## The visitor experience
+
+1. The visitor sees the chat button and, if configured, the welcome message in bubbles.
+2. When they open the chat, they enter their name and then their email. These details are required on Webchat and identify the contact in BluBash.
+3. They send a message and the conversation lands in the inbox.
+4. The AI agent replies, if one is linked to the channel, and transfers to the team when needed.
+5. The visitor can end the chat. A closed conversation shows **Conversation Closed** and does not accept new messages. To talk again, the visitor starts a new conversation.
+
+## How the AI agent takes part
+
+Webchat is a great place for the AI agent: the visitor is already interested and expects an immediate reply. Link an agent trained on your website's information, set up the **Transfer to Team** skill for cases that need a team member, and track quality in the reports. See [Hybrid service →](/ai-agents/hybrid-service) and [Train the AI agent →](/ai-agents/train-ai-agent).
+
+## Limitations
+
+| Limitation | Details |
+| --- | --- |
+| Receptive only | You cannot start conversations on Webchat. |
+| No templates or campaigns | Meta-approved templates and campaigns belong to [WhatsApp Business API →](/channels/configure-whatsapp-official). |
+| Inactive or deleted channel | The widget tells the visitor the chat is unavailable and does not open new conversations. |
+| Linking to teams | A team's **Channels** tab only lists WhatsApp channels to add. To connect Webchat to a team, set it as the channel's **Default Team**. |
+
+## Common errors
+
+| Situation | Cause and fix |
+| --- | --- |
+| The chat button does not appear | The code was not pasted on every page, was pasted outside `</body>`, or the website cache has not refreshed yet. |
+| The visitor sees **Chat Unavailable** | The channel is inactive. Activate it in **Danger Zone**. |
+| The visitor cannot send a file | **Allow Media** is off, or the file exceeds the **Maximum File Size (MB)**. |
+| The color is not saved | The value is not hexadecimal. Use the `#RRGGBB` format, for example `#0171E4`. |
+
+## Next steps
+
+- [BluBash channels: types and how to create one →](/channels/create-channel)
+- [Activate or deactivate a channel →](/channels/activate-deactivate-channel)
+- [Connect Instagram →](/channels/configure-instagram)
