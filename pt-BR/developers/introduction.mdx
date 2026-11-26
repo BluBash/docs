@@ -49,7 +49,7 @@ Administradores do workspace criam e gerenciam as chaves em **Configurações > 
     Clique em **Criar chave** e dê um nome que identifique a integração, por exemplo `Integração com o ERP`.
   </Step>
   <Step title="Copie a chave">
-    A chave aparece uma única vez. Copie e guarde em um local seguro, como o cofre de segredos do seu servidor. A BluBash guarda apenas uma versão cifrada e não consegue mostrar a chave de novo.
+    A chave aparece uma única vez. Copie e guarde em um local seguro, como o cofre de segredos do seu servidor. A BluBash não guarda a chave em si, só um hash dela, por isso não consegue mostrá-la de novo.
   </Step>
 </Steps>
 
@@ -119,7 +119,7 @@ X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
 | `200` | Sucesso | Processe a resposta. |
 | `400` | Dados inválidos na requisição | Leia a mensagem de erro e corrija o payload. Não repita sem corrigir. |
 | `401` | API Key ausente, inválida ou revogada | Confira o cabeçalho `X-API-Key` e se a chave aparece em **Configurações > Desenvolvedores > Chaves de API**. |
-| `403` | Assinatura inativa (`SUBSCRIPTION_INACTIVE`) ou recurso não disponível no plano | Regularize a assinatura em **Assinatura** ou fale com o comercial da BluBash. Não repita a chamada antes disso. |
+| `403` | Assinatura inativa (`SUBSCRIPTION_INACTIVE`) ou recurso não disponível no plano | Regularize a assinatura em **Faturamento e Uso** ou fale com o comercial da BluBash. Não repita a chamada antes disso. |
 | `404` | Recurso não encontrado | Confira o `channelId` ou o `campaignId`. |
 | `500` | Erro interno | Tente de novo com backoff exponencial e a mesma chave de idempotência. |
 

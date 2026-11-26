@@ -37,9 +37,64 @@ X-API-Key: YOUR_API_KEY
 Content-Type: application/json
 ```
 
-### Get the API Key
+### Create an API Key
 
-The BluBash interface does not have a screen to generate API keys. Request the workspace API Key from BluBash support. To use the Channels API, also ask for the API channel setup, which support handles.
+Workspace admins create and manage keys in **Settings > Developers > API keys**.
+
+<Steps>
+  <Step title="Open the keys screen">
+    In **Settings**, under **Developers**, click **API keys**.
+  </Step>
+  <Step title="Create the key">
+    Click **Create key** and give it a name that identifies the integration, for example `ERP integration`.
+  </Step>
+  <Step title="Copy the key">
+    The key is shown only once. Copy it and store it somewhere safe, such as your server's secrets vault. BluBash does not store the key itself, only a hash of it, so it cannot show the key again.
+  </Step>
+</Steps>
+
+Create one key per integration, so you can revoke one without affecting the others.
+
+### Manage keys
+
+The list shows each key's name, last 4 characters, who created it, creation date, and usage:
+
+| Status | Meaning |
+| --- | --- |
+| **In use** | The key authenticated a call in the last 30 days. |
+| **No recent use** | The last call was more than 30 days ago. |
+| **Never used** | The key has not authenticated any call yet. |
+
+- **Rename:** changes only the name; the key stays the same.
+- **Revoke:** the key stops working right away and calls with it get `401`. This cannot be undone.
+- **Lost the key:** revoke it, create another, then update the integration.
+
+<Note>
+  Keys that support delivered before this screen existed keep working. The workspace default key is not listed. To manage the integration from the panel, create a new key and swap it into your integration.
+</Note>
+
+To use the Channels API, also ask support for the API channel setup.
+
+### Active subscription
+
+The API only accepts calls from workspaces with an active subscription, under the same rule that applies to sending messages and to AI agent replies:
+
+| Subscription status | API calls |
+| --- | --- |
+| Trial within its period | Accepted |
+| Active | Accepted |
+| Past due, up to 10 days | Accepted |
+| Past due for more than 10 days, canceled, expired, incomplete, or payment failed | Refused with `403` |
+
+The refusal carries the code `SUBSCRIPTION_INACTIVE` in the response body. Handle the error by the `code` field, because the `message` text can change.
+
+```json
+{
+  "statusCode": 403,
+  "code": "SUBSCRIPTION_INACTIVE",
+  "message": "A assinatura foi cancelada. Por favor, reative sua assinatura para continuar usando o sistema."
+}
+```
 
 <Warning>
   Treat the API Key like a password. Do not put it in code that runs in the browser or in your customer's app, or in public repositories. Make calls from your server.
@@ -63,8 +118,8 @@ X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
 | --- | --- | --- |
 | `200` | Success | Process the response. |
 | `400` | Invalid request data | Read the error message and fix the payload. Do not retry without fixing it. |
-| `401` | Missing or invalid API Key | Check the `X-API-Key` header. |
-| `403` | Feature not available on your plan | Contact BluBash support or sales. |
+| `401` | Missing, invalid, or revoked API Key | Check the `X-API-Key` header and whether the key is listed in **Settings > Developers > API keys**. |
+| `403` | Inactive subscription (`SUBSCRIPTION_INACTIVE`) or feature not available on your plan | Settle the subscription in **Billing & Usage** or contact BluBash sales. Do not retry before that. |
 | `404` | Resource not found | Check the `channelId` or `campaignId`. |
 | `500` | Internal error | Retry with exponential backoff and the same idempotency key. |
 
@@ -84,4 +139,4 @@ X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
 
 ## Support
 
-To get the API Key, set up the API channel, or ask integration questions, contact BluBash support at [suporte@blubash.io](mailto:suporte@blubash.io).
+To set up the API channel or ask integration questions, contact BluBash support at [suporte@blubash.io](mailto:suporte@blubash.io).
