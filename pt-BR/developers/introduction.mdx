@@ -37,9 +37,64 @@ X-API-Key: SUA_API_KEY
 Content-Type: application/json
 ```
 
-### Obter a API Key
+### Criar uma API Key
 
-A interface da BluBash não tem uma tela para gerar chaves de API. Solicite a API Key do workspace ao suporte da BluBash. Para usar a Channels API, peça também a configuração do canal API, que é feita pelo suporte.
+Administradores do workspace criam e gerenciam as chaves em **Configurações > Desenvolvedores > Chaves de API**.
+
+<Steps>
+  <Step title="Abra a tela de chaves">
+    Em **Configurações**, na seção **Desenvolvedores**, clique em **Chaves de API**.
+  </Step>
+  <Step title="Crie a chave">
+    Clique em **Criar chave** e dê um nome que identifique a integração, por exemplo `Integração com o ERP`.
+  </Step>
+  <Step title="Copie a chave">
+    A chave aparece uma única vez. Copie e guarde em um local seguro, como o cofre de segredos do seu servidor. A BluBash guarda apenas uma versão cifrada e não consegue mostrar a chave de novo.
+  </Step>
+</Steps>
+
+Crie uma chave para cada integração. Assim você revoga uma sem afetar as outras.
+
+### Gerenciar as chaves
+
+A lista mostra o nome, os 4 últimos caracteres, quem criou, a data de criação e o uso de cada chave:
+
+| Status | Significado |
+| --- | --- |
+| **Em uso** | A chave autenticou alguma chamada nos últimos 30 dias. |
+| **Sem uso recente** | A última chamada foi há mais de 30 dias. |
+| **Nunca usada** | A chave ainda não autenticou nenhuma chamada. |
+
+- **Renomear:** muda só o nome; a chave continua a mesma.
+- **Revogar:** a chave para de funcionar na hora e as chamadas com ela recebem `401`. A ação não pode ser desfeita.
+- **Perdeu a chave:** revogue e crie outra, depois atualize a integração.
+
+<Note>
+  Chaves entregues pelo suporte antes desta tela continuam funcionando. A chave padrão do workspace não aparece na lista. Para passar a gerenciar a integração pelo painel, crie uma chave nova e troque a chave na sua integração.
+</Note>
+
+Para usar a Channels API, peça também ao suporte a configuração do canal API.
+
+### Assinatura ativa
+
+A API só aceita chamadas de workspaces com assinatura ativa, pela mesma regra que vale para o envio de mensagens e para as respostas dos agentes de IA:
+
+| Situação da assinatura | Chamadas à API |
+| --- | --- |
+| Período de teste dentro do prazo | Aceitas |
+| Ativa | Aceitas |
+| Em atraso, até 10 dias | Aceitas |
+| Em atraso há mais de 10 dias, cancelada, expirada, incompleta ou com pagamento recusado | Recusadas com `403` |
+
+A recusa traz o código `SUBSCRIPTION_INACTIVE` no corpo da resposta. Trate o erro pelo campo `code`, porque o texto de `message` pode mudar.
+
+```json
+{
+  "statusCode": 403,
+  "code": "SUBSCRIPTION_INACTIVE",
+  "message": "A assinatura foi cancelada. Por favor, reative sua assinatura para continuar usando o sistema."
+}
+```
 
 <Warning>
   Trate a API Key como uma senha. Não a coloque em código que roda no navegador ou no aplicativo do cliente, nem em repositórios públicos. Faça as chamadas a partir do seu servidor.
@@ -63,8 +118,8 @@ X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
 | --- | --- | --- |
 | `200` | Sucesso | Processe a resposta. |
 | `400` | Dados inválidos na requisição | Leia a mensagem de erro e corrija o payload. Não repita sem corrigir. |
-| `401` | API Key ausente ou inválida | Confira o cabeçalho `X-API-Key`. |
-| `403` | Recurso não disponível no plano | Fale com o suporte ou com o comercial da BluBash. |
+| `401` | API Key ausente, inválida ou revogada | Confira o cabeçalho `X-API-Key` e se a chave aparece em **Configurações > Desenvolvedores > Chaves de API**. |
+| `403` | Assinatura inativa (`SUBSCRIPTION_INACTIVE`) ou recurso não disponível no plano | Regularize a assinatura em **Assinatura** ou fale com o comercial da BluBash. Não repita a chamada antes disso. |
 | `404` | Recurso não encontrado | Confira o `channelId` ou o `campaignId`. |
 | `500` | Erro interno | Tente de novo com backoff exponencial e a mesma chave de idempotência. |
 
@@ -84,4 +139,4 @@ X-Idempotency-Key: 7f9c2b1e-5d3a-4c8e-9a1b-2e6f0d4c8a10
 
 ## Suporte
 
-Para obter a API Key, configurar o canal API ou tirar dúvidas de integração, fale com o suporte da BluBash em [suporte@blubash.io](mailto:suporte@blubash.io).
+Para configurar o canal API ou tirar dúvidas de integração, fale com o suporte da BluBash em [suporte@blubash.io](mailto:suporte@blubash.io).
